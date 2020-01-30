@@ -18,7 +18,7 @@
 				}
 			});
 		});
-		
+		   
 		$('#ablist').click(function() {
 			$.ajax({
 				type : 'Get',
