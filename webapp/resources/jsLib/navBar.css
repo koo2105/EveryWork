@@ -1,0 +1,118 @@
+
+	html {
+		font-size: 12px;
+	}
+   body{
+      margin: 0 auto; /* margin: »óÇÏ(0) ÁÂ¿ì(auto) => Áß¾ÓÁ¤·Ä */
+      width: 1920px;
+      padding-top: 48px;
+   }
+   
+   .nav-container{
+   /* display:  flex; */
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   background-color: darkslategrey;
+   list-style-type: none;
+   position: fixed;
+   top: 0;
+   overflow: hidden;
+   }
+   
+   .nav-item a {
+   padding: 15px;
+   cursor: pointer;
+   text-decoration: none;
+   color: white;
+   display: inline-block;
+   font-size: 14px;
+   }
+   
+   .nav-item-right {
+   float: right;
+   text-align: right;
+   }
+   .nav-item-right a{
+   margin-right: 15px;
+   padding-bottom: 0px;
+   }
+   .nav-item-left {
+   float: left;
+   text-align: left;
+   }
+   
+   .nav-logo{
+   background-color: lightseagreen;
+   
+   }
+   .nav-item-left:hover{
+   background-color: gray;
+   }
+
+   .main-title{
+   font-size: 22px;
+   }
+   .title{
+   font-size: 16px;
+   }
+   .sub-title{
+   font-size: 14px;
+   }
+   
+   	 .main-banner{
+	  
+	  }
+	  
+	  .top-nav-bar .tab_right .tab_email .dropdown-menu {
+    right: -20px !important;
+    left: auto !important;
+}
+	  
+	  .open>.dropdown-menu {
+    display: block;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background-clip: padding-box;
+}
+.top-nav-bar .tab_right .tab_email .dropdown-menu a {
+    cursor: pointer;
+}
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap;
+}
+
+.dropdown-menu ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+

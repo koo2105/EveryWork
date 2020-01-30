@@ -1,0 +1,539 @@
+/* specForm style  */
+
+.spec-ctrl body {
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+.spec-container .section-container.spec-saver .section-title {
+	margin-bottom: 0px;
+}
+.spec-ctrl {
+    min-height: 100%;
+    background: #f0f0f0;
+    padding-bottom: 30px;
+}
+
+.spec-container {
+	width: 940px;
+	height: calc(100% - 60px - 20px);
+	margin: 0 auto;
+}
+
+
+
+.spec-container .section-container .section-title {
+	width: 100%;
+	background: #fff;
+	color: #ff6813;
+	font-weight: 700;
+	font-size: 20px;
+	padding: 10px 20px;
+	border-bottom: solid 1px #ddd;
+	margin-bottom: 0px;
+	margin-top: 30px; height : 60px;
+	line-height: calc(60px - 10px * 2 - 1px);
+	height: 60px;
+}
+
+.spec-ctrl .spec-container .section-container.spec-saver .section-content {
+    padding: 15px;
+}
+.spec-ctrl .spec-container .section-container .section-content {
+    background: #fff;
+}
+
+.spec-container .section-container .section-title .spec-save-time {
+	font-size: 12px;
+	display: inline;
+	font-weight: 400;
+	margin-top: 5px;
+	margin-left: 10px;
+	color: #999;
+}
+
+.specs .subtitle {
+	padding: 15px 10px;
+	font-weight: bold;
+	font-size: 16px;
+	color: #333;
+	display: inline-block;
+}
+
+.specs .subtitle>div {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.specs .subtitle>span {
+	font-size: 13px;
+	font-weight: normal;
+	color: #999;
+}
+
+.specs .add-del-btn.btn {
+	font-size: 15px;
+	line-height: 20px;
+	float: right;
+	width: 20px;
+	height: 20px;
+	padding: 0px;
+	color: white;
+	background-color: #999;
+}
+
+
+
+.specs.basic-information .edit-spec .content {
+	height: 250px;
+	margin-bottom: 15px;
+}
+
+.specs .content {
+	padding: 0 10px;
+}
+
+.specs .content .image {
+	float: left;
+	width: 190px;
+	height: 200px;
+}
+
+.specs .content .image .image-area {
+	position: relative;
+	width: 160px;
+	height: 200px;
+	margin-right: 30px;
+	border: solid 1px #ddd;
+}
+
+.specs .content .image .image-area>img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	max-width: 158px;
+	max-height: 198px;
+}
+
+.spec-ctrl img {
+	vertical-align: middle;
+	border: 0;
+}
+
+.spec-container .section-container .section-title .spec-save-time {
+	font-size: 12px;
+	display: inline;
+	font-weight: 400;
+	margin-top: 5px;
+	margin-left: 10px;
+	color: #999;
+}
+.specs.basic-information.edit-spec .content {
+    height: 250px;
+    margin-bottom: 15px;
+}
+.specs.basic-information.edit-spec .content .image-buttons {
+	margin-top: 10px;
+}
+
+.specs .content .image .image-buttons {
+	position: relative;
+	text-align: center;
+	margin-right: 30px;
+	margin-top: 10px;
+}
+
+.specs .content .image .image-buttons .btn:nth-child(1) {
+	margin-right: 2px;
+}
+
+.specs .content .image .image-buttons .btn {
+	padding: 6px 10px 6px;
+	cursor: pointer;
+}
+
+.button-orange.button-bordered {
+	background: white;
+	color: #ff6813;
+	border: 1px solid #ff6813;
+}
+
+.specs .content table.basic-information-table {
+	width: calc(900px - 190px - 20px);
+	table-layout: auto;
+}
+
+
+.specs .content table {
+	width: 880px;
+	margin-bottom: 15px;
+	table-layout: fixed;
+}
+
+.spec-ctrl table {
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+	    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+
+.spec-ctrl colgroup {
+    display: table-column-group;
+}
+
+.spec-ctrl col[Attributes Style] {
+    width: 100px;
+}
+.spec-ctrl user agent stylesheet
+col {
+    display: table-column;
+}
+
+.specs .content table tr th {
+    width: 100px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #999;
+    background: #eee;
+}
+.specs .content table tr th, .specs .content table tr td {
+    height: 46px;
+    border: solid 1px #ddd;
+}
+
+
+.spec-ctrl th {
+    text-align: left;
+      display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+}
+
+.spec-ctrl td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+.specs .content table tr td {
+    padding: 0 15px;
+}
+.specs .content table tr th, .specs .content table tr td {
+    height: 46px;
+    border: solid 1px #ddd;
+}
+
+
+.spec-ctrl tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.specs .subtitle>div {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+.spec-ctrl .spec-container .section-container.spec-saver input {
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+.specs .content table .small-input-text {
+    width: 80px;
+}
+
+.spec-ctrl input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+
+.spec-ctrl button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.spec-ctrl textarea {
+	overflow: auto;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    flex-direction: column;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;
+    padding: 2px;
+}
+.specs .content table textarea {
+    width: 100%;
+    height: 80%;
+    padding: 4px 8px;
+    margin-top: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+
+.specs .content table select {
+    height: 30px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    background: white;
+}
+
+
+.spec-ctrl select {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    cursor: default;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    border-image: initial;
+}
+.specs .add-del-btn.btn {
+    font-size: 15px;
+    line-height: 20px;
+    float: right;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    color: white;
+    background-color: #999;
+}
+
+.spec-ctrl .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.specs .spec-school-major-box span:last-child {
+    cursor: pointer;
+    font-size: 12px;
+    color: #ff6813;
+    float: right;
+}
+.specs .spec-school-major-box {
+    height: 30px;
+    width: 170px;
+    line-height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 4px 10px;
+    display: inline-block;
+}  /* end specForm */
+
+
+
+
+/* resumeForm style */
+
+/* category */
+a{
+	text-decoration: none;
+	background: transparent;
+	text-decoration: none;
+}
+div {
+	display: block;
+}
+
+.resumeFrom-container {
+	box-sizing: border-box;
+	border-right: 1px solid #ddd;
+}
+
+.resume-menu-container {
+	background-color: white;
+	width: 250px;
+	height: 100%;
+	float: left;
+	text-align: center; /* 디브 속 내용 가운데정렬 */
+	box-sizing: border-box;
+	margin-left: 30px;
+	margin-top: 40px;
+}
+
+.resume-menu-container li {
+list-style: none;
+text-align: left;
+line-height: 30px;
+font-size: 25px;
+}
+
+.title {
+	font-size: 15px;
+	color: #555;
+	font-weight: bold;
+}
+
+.resume-category-title {
+	font-size: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+	box-sizing: border-box;
+	text-align: 
+}
+
+.resume-menu-container li>a>span{
+	text-align: center;
+	font-size: 13px;
+    font-weight: bold;
+    color: black;
+}
+/* resumeForm2 */
+
+/* Import Google Font */
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans);
+
+/* RESET */
+* {
+	padding: 0;
+	margin: 0;
+	font-size: 1em;
+	box-sizing: border-box;
+	font-family: 'Nunito Sans';
+	color: hsl(0, 0%, 50%);
+}
+
+/* Containing areas */
+.resume-container {
+	width: 600px;
+	margin: 1em auto;
+	float: left;
+	margin-left: 30px;
+	margin-top: 100px;
+	
+}
+.resume-title{
+color: #ff6813;
+font-size: 14px;
+font-weight: bold;
+ margin-right: 5px;
+}
+
+.ta-container {
+	width: 100%;
+	border: 1px solid hsl(0, 0%, 70%);
+	border-radius: 0.25em;
+	margin: 0.25em 0 1.5em;
+}
+
+.hasfocus {
+	box-shadow: 0px 0px 6px hsl(210, 50%, 60%);
+}
+
+/* The textarea itself */
+.resume-container textarea {
+	padding: 0.25em;
+	width: 100%;
+	max-width: 100%;
+	border: none;
+	vertical-align: bottom;
+	color: hsl(0, 0%, 50%);
+	border-radius: 0.25em;
+	outline: none;
+}
+.ta-question {
+border-bottom : 5px solid #ddd;
+}
+
+/* The status bar */
+.status-bar {
+	background: hsl(0, 0%, 90%);
+	padding: 0.25em;
+	text-align: right;
+	font-family: sans-serif;
+	font-size: 0.7em;
+	width: 100%;
+	color: hsl(0, 0%, 50%);
+	border-radius: 0 0 0.25em 0.25em;
+}
+
+.resume-container table {
+	width: auto;
+	margin-left: auto;
+	line-height: 1em;
+}
+
+.charcount, .remaining {
+	font-weight: bold;
+}
+
+.over {
+	color: hsl(0, 80%, 60%);
+}
+/* The submit button */
+.resume-container .btn {
+	
+	padding: 0.4em 1.2em;
+	background: hsl(0, 0%, 100%);
+	border: 1px solid hsl(0, 0%, 60%);
+	color: hsl(0, 0%, 50%);
+	border-radius: 0.25em;
+}
+
+.resume-container .btn:enabled:hover {
+	background: hsl(0, 0%, 90%);
+}
+
+.resume-container .btn:enabled:active {
+	background: hsl(0, 0%, 30%);
+	color: hsl(0, 0%, 90%)
+}
+
+.resume-container .btn:disabled {
+	border: 1px solid hsl(0, 0%, 90%);
+	color: hsl(0, 0%, 90%);
+}
+
+
+

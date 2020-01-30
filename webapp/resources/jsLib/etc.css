@@ -1,0 +1,891 @@
+/*   recommended-employments  */
+
+.recommended-employments-container {
+    background: #3F4B5F;
+    padding: 40px 0;
+}
+   
+  .recommended-employments-container .inner-wrapper {
+    width: 1280px;
+    height: 100%;
+    padding: 0 40px;
+    margin: 0 auto;
+    position: relative;
+}
+   
+   .recommended-employments-container .inner-wrapper .title-container .main-title {
+    font-size: 22px;
+    font-weight: 100;
+}
+   .recommended-employments-container .inner-wrapper .title-container {
+    color: #fff;
+}
+
+.recommended-employments-container .inner-wrapper .title-container .sub-title {
+    font-size: 12px;
+    margin-left: 15px;
+}
+   
+   .recommended-employments-container .inner-wrapper .employments-container {
+    width: 100%;
+    height: 324px;
+    margin-top: 20px;
+    display: flex;
+}
+
+.recommended-employments-container .inner-wrapper .employments-container .employments {
+    position: relative;
+    width: 1140px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets {
+    position: absolute;
+    width: 2085px;
+    left: 0px;
+    transition: left .5s;
+    display: flex;
+}
+
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set {
+    width: 1040px;
+    height: 100%;
+}
+
+
+
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment {
+    display: inline-block;
+    background: #fff;
+    width: calc(20% - 5px);
+    height: calc(50% - 4px);
+    width: 204px;
+    height: 160px;
+    margin-left: 5px;
+    padding: 14px 5px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment .ad-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #999;
+    font-size: 13px;
+}
+
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment .logo {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment .company-name {
+    color: #555555;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment .field {
+    color: #777777;
+    height: 21px;
+    font-size: 15px;
+    letter-spacing: -0.5px;
+}
+
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment .recommendation-info {
+    color: #ff6813;
+    font-size: 12px;
+    letter-spacing: -0.5px;
+}
+.dotdotdot {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment .recommendation-info :nth-child(2) {
+    white-space: pre;
+}
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment .recommendation-info {
+    height: 20px;
+    color: #ff6813;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    letter-spacing: -0.5px;
+}
+
+
+/* img section-title */
+.spec-ctrl .spec-container .section-container .section-title {
+    width: 100%;
+    background: #fff;
+    color: #ff6813;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-bottom: solid 1px #ddd;
+    margin-bottom: 0px;
+    height: 60px;
+    line-height: calc(60px - 10px * 2 - 1px);
+}
+
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position {
+    height: calc(100% - 65px - 110px - 60px);
+    position: relative;
+}
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-load, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-resize, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position {
+    padding: 15px;
+}
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position {
+    border-bottom: 2px dashed #d8d8d8;
+}
+
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position .body .before-image {
+    float: left;
+    height: 100%;
+    width: calc(50% - 50px / 2);
+    margin-left: 10%;
+    margin-right: 5%;
+    border: 2px solid #d8d8d8;
+}
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position .body .before-image, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position .body .after-image {
+    display: inline-block;
+}
+.crop-it-container .crop-handles .handle.bottom-right {
+    cursor: se-resize;
+    bottom: -5px;
+    right: -5px;
+}
+.crop-it-container .crop-handles .handle {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    position: absolute;
+    z-index: 1000;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+}
+
+.crop-it-container * {
+    box-sizing: border-box;
+}
+
+.crop-it-container .crop-area img {
+    margin: -1px;
+    position: absolute;
+    max-width: none !important;
+}
+.crop-it-container img {
+    width: 100%;
+    opacity: 1;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.crop-it-container .cropper {
+    position: absolute;
+    border: 1px solid #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer {
+    background: #fff;
+    box-shadow: 0 0 5px #d8d8d8;
+    margin: 0 auto;
+    color: #999;
+    height: 100%;
+}
+
+element.style {
+    width: 413px;
+    height: 532px;
+    top: 0px;
+    left: 0px;
+}
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-load {
+    height: 65px;
+}
+
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-load, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-resize, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position {
+    padding: 15px;
+}
+
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-load .head, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-resize .head, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position .head {
+    color: #ff6813;
+    font-size: 15px;
+    font-weight: 700;
+    width: 150px;
+    vertical-align: top;
+}
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-load .head, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-load .body, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-resize .head, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-resize .body, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position .head, .spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-position .body {
+    display: inline-block;
+}
+
+.btn-default {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+.spec-ctrl .spec-container .section-container.spec-image-resizer .section-content .image-resizer .image-resize .body>div>div>input {
+    border: none;
+    width: 50px;
+}
+
+
+
+
+<!--resume-container -->
+
+div {
+	display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+.resume-container {
+	height: calc(100% - 60px - 20px);
+	min-height: 250px;
+	max-width: 100%;
+	margin: 0 auto;
+	position: relative;
+	display: flex;
+	z-index: 0;
+}
+
+.resume-container .resume-flex {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-bottom: 20px;
+}
+
+.flex {
+	flex: 1;
+}
+
+.resume-container .resume-main-wrapper {
+	height: calc(100% - 20px);
+	transition: height 0.3s linear;
+	width: 700px;
+	min-width: 300px;
+	margin-left: 50px;
+}
+
+.resume-top-gg {
+	box-shadow: 0px 0px 5px #d8d8d8;
+	background: #fff;
+	height: 30px;
+	margin: -10px 0 10px 0;
+	font-size: 13px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* padding: 0 15px 0 10px; */
+	color: #777;
+}
+
+.resume-top-gg a {
+	display: inline-block;
+	text-decoration: none;
+	color: #777;
+	width: 100%;
+	height: 100%;
+	line-height: 30px;
+}
+
+.dotdotdot {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+a {
+	color: #428bca;
+	text-decoration: none;
+}
+
+a {
+	background: transparent;
+}
+
+.dotdotdot {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.resume-top-gg i {
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'liga';
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper {
+	box-shadow: 0px 0px 5px #d8d8d8;
+	height: 100%;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar
+	{
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: 100%;
+	height: 38px;
+	background: #fff;
+	box-shadow: 0px 0px 5px #d8d8d8;
+	border-bottom: dashed 1px #d8d8d8;
+	padding: 0 20px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-left
+	{
+	flex: 1;
+	color: #999;
+	min-width: calc(100% - 300px - 20px - 95px);
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-left>span:nth-child(1)
+	{
+	font-size: 14px;
+	font-weight: bold;
+	color: #ff6813;
+	margin-right: 5px;
+	max-width: calc(100% - 105px);
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-left>span
+	{
+	float: left;
+}
+
+.dotdotdot {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-right
+	{
+	display: flex;
+	align-items: center;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-right .divider
+	{
+	color: #ccc;
+	margin: 0 5px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-right>div
+	{
+	display: inline-block;
+	color: #888;
+	cursor: pointer;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-right>div.recruit-ref-button>a
+	{
+	color: #888;
+}
+
+.dropdown-menu {
+	right: -20px !important;
+	left: auto !important;
+}
+
+.dropdown-menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1000;
+	display: none;
+	float: left;
+	min-width: 160px;
+	padding: 5px 0;
+	margin: 2px 0 0;
+	list-style: none;
+	font-size: 14px;
+	text-align: left;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 4px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	background-clip: padding-box;
+}
+
+ul {
+	display: block;
+	list-style-type: disc;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-info-bar .resume-info-right .divider
+	{
+	color: #ccc;
+	margin: 0 5px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area
+	{
+	position: relative;
+	height: calc(100% - 38px);
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs
+	{
+	height: 100%;
+	width: 100%;
+	position: relative;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav
+	{
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	width: 38px;
+	left: -38px;
+	float: left;
+	font-weight: bold;
+}
+
+.nav {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li:nth-child(1)
+	{
+	margin-top: -4px;
+}
+
+.nav-stacked>li {
+	float: none;
+}
+
+.nav>li {
+	position: relative;
+	display: block;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li.active .nav-link
+	{
+	width: 50px;
+	right: 7px;
+	background: #ff6813;
+	color: #fff;
+	z-index: 100;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li .nav-link
+	{
+	margin-top: 4px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+	height: 30px;
+	background: linear-gradient(to right, #fff 92%, #d8d8d8);
+	padding: 4px 0px;
+	border-radius: 0px;
+	color: #ff6813;
+	position: relative;
+	cursor: pointer;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li.active .nav-link .remove-qna-button
+	{
+	left: 10px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li .nav-link .remove-qna-button
+	{
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	height: 13px;
+}
+
+img {
+	vertical-align: middle;
+}
+
+img {
+	border: 0;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li+li
+	{
+	margin-top: 4px;
+	margin-bottom: 0px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li.add-qna a
+	{
+	background: #999;
+	color: #fff;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li .nav-link
+	{
+	margin-top: 4px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+	height: 30px;
+	background: linear-gradient(to right, #fff 92%, #d8d8d8);
+	padding: 4px 0px;
+	border-radius: 0px;
+	color: #ff6813;
+	position: relative;
+	cursor: pointer;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li.add-qna a
+	{
+	background: #999;
+	color: #fff;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li.remove-qna
+	{
+	width: 100%;
+	position: absolute;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs ul.nav li+li
+	{
+	margin-top: 4px;
+	margin-bottom: 0px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content
+	{
+	width: 100%;
+	position: absolute;
+	float: left;
+	height: 100%;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane
+	{
+	height: 100%;
+	padding-left: 12px;
+	padding-right: 12px;
+	background: #fff;
+}
+
+.tab-content>.active {
+	display: block;
+}
+.unselectable {
+ 
+    user-select: none;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container
+	{
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+element.style {
+	overflow: hidden;
+	overflow-wrap: break-word;
+	resize: none;
+	height: 38px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .qna-question
+	{
+	display: block;
+	min-height: 78px;
+	max-height: 118px;
+	width: 100%;
+	resize: none;
+	border: none;
+	padding: 15px 5px 3px;
+	outline: none;
+}
+
+:placeholder-shown {
+	color: #bbb;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+button, input, optgroup, select, textarea {
+	font: inherit;
+	margin: 0;
+}
+textarea {
+    overflow: auto;
+}
+textarea {
+	text-rendering: auto;
+	letter-spacing: normal;
+	word-spacing: normal;
+	text-transform: none;
+	text-indent: 0px;
+	text-shadow: none;
+	display: inline-block;
+	text-align: start;
+	flex-direction: column;
+	cursor: text;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .editor-container .answer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 20px);
+    line-height: 21px;
+    padding: 10px 5px;
+    resize: none;
+    border: none;
+    outline: none;
+    z-index: 10;
+    background-color: transparent;
+}
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .check-wrapper
+	{
+	position: relative;
+	height: 25px;
+}
+
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .check-wrapper .recruit-error
+	{
+	right: 0px;
+	top: -10px;
+}
+
+.recruit-error {
+	position: absolute;
+	cursor: pointer;
+	background-color: #FAFAFA;
+	width: 120px;
+	height: 30px;
+	border: 1px solid #DDDDDD;
+	border-radius: 140px;
+}
+
+.recruit-error i {
+	float: left;
+	font-size: 23px;
+	line-height: 28px;
+	padding-left: 3px;
+	color: #ff6813;
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: 'liga';
+}
+
+.recruit-error .text {
+	float: left;
+	line-height: 28px;
+	font-size: 12px;
+	padding-left: 6px;
+	font-weight: bold;
+	color: #999;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .editor-container
+	{
+	position: relative;
+	height: calc(100% - 150px);
+	overflow-y: auto;
+	border-top: 1px solid #d8d8d8;
+	border-bottom: 1px solid #d8d8d8;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .editor-container .answer.spell-back
+	{
+	color: transparent;
+	background-color: transparent;
+	z-index: 0;
+	overflow-y: hidden;
+	white-space: pre-wrap;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .editor-container .answer
+	{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 20px);
+	line-height: 21px;
+	padding: 10px 5px;
+	resize: none;
+	border: none;
+	outline: none;
+	z-index: 10;
+	background-color: transparent;
+}
+
+:placeholder-shown {
+    color: #bbb;
+}
+
+:placeholder-shown {
+	color: #bbb;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container
+	{
+	height: 50px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container .count-option-wrapper
+	{
+	float: left;
+	width: 330px;
+	font-size: 13px;
+	color: #999;
+	margin-top: 10px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container .count-option-wrapper .count-indicator
+	{
+	font-size: 17px;
+	color: #888;
+	font-weight: bold;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container .count-option-wrapper .count-indicator
+	{
+	font-size: 17px;
+	color: #888;
+	font-weight: bold;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container .count-option-wrapper
+	{
+	float: left;
+	width: 330px;
+	font-size: 13px;
+	color: #999;
+	margin-top: 10px;
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container .count-progress-wrapper
+	{
+	float: left;
+	width: calc(100% - 330px);
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container .count-progress-wrapper .progress
+	{
+	height: 15px;
+	margin-bottom: 0;
+}
+
+.progress {
+	overflow: hidden;
+	height: 20px;
+	margin-bottom: 20px;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.resume-container .resume-main-wrapper .resume-editor-wrapper .resume-editor-area .qna-tabs .tab-content .tab-pane .qna-answer-container .count-container .count-progress-wrapper .progress-bar
+	{
+	background-color: #ff6813;
+}
+
+.progress-bar[aria-valuenow="0"] {
+	color: #777777;
+	min-width: 30px;
+	background-color: transparent;
+	background-image: none;
+	box-shadow: none;
+}
+
+.progress-bar {
+	min-width: 0px !important;
+}
+
+.progress-bar {
+	float: left;
+	width: 0%;
+	height: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	color: #ffffff;
+	text-align: center;
+	background-color: #428bca;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+	transition: width 0.6s ease;
+}
+
+.resizer {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 0px;
+	height: 0px;
+	border-bottom: 10px solid #999999;
+	border-left: 10px solid transparent;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	cursor: nwse-resize;
+}

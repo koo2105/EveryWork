@@ -1,0 +1,281 @@
+/* blog */
+
+a{
+	text-decoration: none;
+    /* color: #428bca; */
+	background: transparent;
+	text-decoration: none;
+}
+ div {
+   display: block;
+} 
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+
+.menu-container{
+background-color: white;
+width: 250px;
+height: 100%;
+float: left;
+text-align: center; /* 디브 속 내용 가운데정렬 */ 
+box-sizing: border-box;
+}
+
+.mb-container {
+box-sizing: border-box;
+
+}
+.menu-container li{
+list-style: disc;
+text-align: left;
+line-height: 30px;
+font-size: 25px;
+}
+
+
+.title {
+	font-size: 13px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+	box-sizing: border-box;
+	
+}
+.category-title {
+	font-size: 15px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+	box-sizing: border-box;
+	text-align: 
+}
+.category-name{
+	font-size: 15px;
+    color:#ff6813;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.menu-container li>a>span{
+	text-align: center;
+	font-size: 13px;
+    font-weight: bold;
+    color: black;
+}
+
+.blog-index-container {
+    padding: 65px 35px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+.blog-index-container .category .posts .post .post-info .description {
+    font-size: 13px;
+    color: #555;
+    white-space: pre-wrap;
+    overflow: auto;
+}
+
+.blog-index-container .category .posts .post .post-info .date-and-count {
+    font-size: 11px;
+    color: #999;
+    margin: 5px 0 15px;
+   }
+.blog-index-container .category .posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 800px;
+    border-bottom: 3px solid #ddd;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.blog-index-container .category .posts .post {
+    display: flex;
+    padding: 25px 0;
+    width: 385px;
+    height: 200px;
+    text-decoration: none;
+}
+
+
+.blog-content-right{
+background-color:white;
+color:black;
+width:1670px;
+height:100%;
+float: left;
+}
+
+.blog-index-container .category .posts .post .post-info {
+    width: calc(100% - 150px);
+    padding-left: 20px;
+    max-height: 100%;
+    overflow-y: hidden;
+}
+
+
+/* EWNews */
+
+
+.blog-content-container .blog-content-right {
+    width: calc(100% - 220px);
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+
+.blog-category-container .posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 800px;
+    box-sizing: border-box;
+}
+
+.blog-category-container .posts .post {
+    display: flex;
+    padding: 25px 0;
+    width: 100%;
+    height: 200px;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-category-container .posts .post .post-info {
+    width: calc(100% - 150px);
+    padding-left: 20px;
+    max-height: 100%;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+.blog-category-container .posts .post .post-info .title {
+    font-size: 15px;
+    color: #555;
+    font-weight: bold;
+}
+.blog-category-container .posts .post .post-info .date-and-count {
+    font-size: 11px;
+    color: #999;
+    margin: 5px 0 15px;
+}
+
+.blog-category-container .posts .post .post-info .description {
+    font-size: 13px;
+    color: #555;
+    white-space: pre-wrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+/* resumeWell */
+
+.blog-category-container {
+    padding: 65px 35px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.blog-category-container .posts .post {
+    display: flex;
+    padding: 25px 0;
+    width: 100%;
+    height: 200px;
+    text-decoration: none;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.blog-category-container .posts .post .post-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+}
+
+
+/* useEW */
+
+
+
+.blog-category-container .posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 800px;
+    box-sizing: border-box;
+}
+
+
+/* post */
+
+.blog-post-container .category-name {
+    font-size: 13px;
+    color: #888;
+    box-sizing: border-box;
+}
+
+.blog-post-container .post .title {
+    font-size: 20px;
+    color: #555;
+    margin: 20px 0;
+}
+
+.blog-post-container .post .info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #888;
+}
+
+.blog-post-container .post .content {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.blog-post-container .post .content * {
+    font-family: 'Nanum Gothic', sans-serif !important;
+}
+
+.blog-content-right p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0 0 10px;
+}
+
+.blog-content-right img {
+    vertical-align: middle;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+/* detail */
+
+
+.title {
+	font-size: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+	box-sizing: border-box;
+}
+
+
