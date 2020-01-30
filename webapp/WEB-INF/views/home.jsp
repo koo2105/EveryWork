@@ -4,6 +4,8 @@
 <head>
    <title>EveryWork</title>
 	<link rel="stylesheet" type="text/css" href="resources/jsLib/homeStyle.css">
+	<script src="resources/jsLib/namchulAjax.js"></script>
+	
 
 </head>
 <body>

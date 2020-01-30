@@ -51,9 +51,6 @@ function gonggoinsert(){
 	      }
 	   });
 	}
-$(function(){
-	
-})
 //01-30추가
 function gonggoupdate(){
    $.ajax({
@@ -65,6 +62,13 @@ function gonggoupdate(){
    });
 }
 
+function mlogin(){
+	   $('#login-div').toggle();
+	}
+
+$(function(){
+	
+})
 
 
 

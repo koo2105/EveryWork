@@ -17,6 +17,7 @@
    list-style-type: none;
    position: fixed;
    top: 0;
+   z-index :10;
    overflow: hidden;
    }
    
@@ -48,6 +49,19 @@
    }
    .nav-item-left:hover{
    background-color: gray;
+   }
+   
+   #login-div{
+      background-color:white; 
+      display: none;
+      width: 400px;
+      height: 400px;
+      position:absolute;
+      top: 48px;
+      right: 100px;
+      border-radius: 5px;
+      border: 2px solid darkslategrey;
+      
    }
 
    .main-title{

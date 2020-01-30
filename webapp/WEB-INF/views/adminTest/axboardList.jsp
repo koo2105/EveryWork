@@ -9,6 +9,7 @@
 <title>** BoardList Spring MVC2 **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script src="resources/jsLib/namchulAjax.js"></script>
 
 <style>
 	.result { color:blue; }
@@ -65,8 +66,8 @@
 </c:forEach>
 </table>
 <hr>
-<a href="binsertf" class="button">공고 등록</a>
-<a href="#" class="button">공고 수정</a>
+<a href="#" class="button" onclick="gonggoinsert()">공고 등록</a>
+<a href="#" class="button" onclick="gonggoupdate()">공고 수정</a>
 <a href="#" class="button">공고 삭제</a>
 
 <c:if test="${loginID!=null}">

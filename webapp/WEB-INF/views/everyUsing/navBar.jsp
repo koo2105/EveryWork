@@ -7,6 +7,14 @@
 <meta charset="UTF-8">
 <title> NavBar </title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/navBar.css">
+<script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script src="resources/jsLib/namchulAjax.js"></script>
+
+<style>
+#login-div{
+}
+
+</style>
 </head>
 <body>
 
@@ -23,8 +31,12 @@
 		</c:if>
 		<c:if test="${loginID==null}">
 		<div class= "nav-item nav-item-right nav-join"><a href="joinForm">회원가입</a></div>
-		<div class= "nav-item nav-item-right nav-login"><a href="#">로그인</a></div>
+		<div class= "nav-item nav-item-right nav-login"><a href="#" onclick="mlogin()">로그인</a></div>
 		</c:if>
+		</div>
+		<div id="login-div">
+		<jsp:include page="/WEB-INF/views/member/loginForm.jsp"></jsp:include>
+	  <%--  	<%@include file="/WEB-INF/views/member/loginForm.jsp" %> --%>
 		</div>
 </nav>
 

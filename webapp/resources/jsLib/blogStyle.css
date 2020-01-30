@@ -218,6 +218,14 @@ float: left;
 
 /* post */
 
+.blog-post-container{
+	margin-top: 70px;
+	margin-left: 30px;
+	width: 940px;
+}
+
+
+
 .blog-post-container .category-name {
     font-size: 13px;
     color: #888;
@@ -228,6 +236,7 @@ float: left;
     font-size: 20px;
     color: #555;
     margin: 20px 0;
+      padding: 10px;
 }
 
 .blog-post-container .post .info {
@@ -235,17 +244,22 @@ float: left;
     justify-content: space-between;
     font-size: 13px;
     color: #888;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .blog-post-container .post .content {
     margin-top: 10px;
     border-top: 1px solid #ddd;
     padding-top: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 15px;
     color: #555;
     line-height: 1.5;
     box-sizing: border-box;
 }
+
 
 .blog-post-container .post .content * {
     font-family: 'Nanum Gothic', sans-serif !important;

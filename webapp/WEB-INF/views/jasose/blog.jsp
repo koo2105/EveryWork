@@ -29,7 +29,7 @@
 						<a>뉴스 클리핑</a>
 					</div>
 					<div class="posts">
-						<a class="post">
+						<a class="post"  href="labDetail">
 							<div class="post-thumbnail">
 								<img src="resources/img/simson7.gif" width="200" height="200">
 							</div>
@@ -41,7 +41,7 @@
 									카드업계, 신규채용 줄이고 OO경력자 뽑았다. 은행 취업 전략 잘 짜기! 취준생 5명 중 1명 최종합격 후
 									입사포기하는 이유. GS파워, 셀트리온, KT&amp;G 등 인기 채용 기업 소식까지 지금 바로 확인하세요!</div>
 							</div>
-						</a> <a class="post">
+						</a> <a class="post"  href="labDetail">
 							<div class="post-thumbnail">
 								<img src="resources/img/hhh.jpg" width="200" height="200">
 							</div>
@@ -61,7 +61,7 @@
 						<a>EveryWork 활용하기</a>
 					</div>
 					<div class="posts">
-						<a class="post">
+						<a class="post"  href="labDetail">
 							<div class="post-thumbnail">
 								<img src="resources/img/jyp3.jpg" width="200" height="200">
 							</div>
@@ -71,7 +71,7 @@
 								<div class="description">지원자 분석과 합격자 분석이 '데이터랩'으로 새롭게
 									론칭되었어요!</div>
 							</div>
-						</a> <a class="post">
+						</a> <a class="post"  href="labDetail">
 							<div class="post-thumbnail">
 								<img src="resources/img/ccc.gif" width="200" height="200">
 							</div>
@@ -93,7 +93,7 @@
 						<a>자소서 잘 쓰는 법</a>
 					</div>
 					<div class="posts">
-						<a class="post">
+						<a class="post"  href="labDetail">
 							<div class="post-thumbnail">
 								<img src="resources/img/jyp2.jpg" width="200" height="200">
 							</div>
@@ -104,7 +104,7 @@
 									여부를 결정하는 등의 취업 전략을 세우거나 2. 합격자의 스펙을 확인하여 본인의 장단점을 파악하고 직무에 필요한
 									요건을 준비하는데 참고한다는 의견이 많았습니다.</div>
 							</div>
-						</a> <a class="post">
+						</a> <a class="post"  href="labDetail">
 							<div class="post-thumbnail">
 								<img src="resources/img/hot.gif" width="200" height="200">
 							</div>

@@ -25,7 +25,7 @@
 
 				<div class="category-name">자소서 잘 쓰는 법</div>
 				<div class="posts">
-					<a class="post">
+					<a class="post"  href="labDetail">
 						<div class="post-thumbnail">
 							<img src="resources/img/aaaa.jpg" width="150" height="150">
 						</div>
@@ -42,7 +42,7 @@
 
 
 						</div>
-					</a> <a class="post">
+					</a> <a class="post"  href="labDetail">
 						<div class="post-thumbnail">
 							<img src="resources/img/bbbb.jpg" width="150" height="150">
 						</div>
@@ -58,7 +58,7 @@
 
 
 						</div>
-					</a> <a class="post">
+					</a> <a class="post"  href="labDetail">
 						<div class="post-thumbnail">
 							<img src="resources/img/cccc.jpg" width="150" height="150">
 						</div>

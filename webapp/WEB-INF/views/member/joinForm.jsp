@@ -95,9 +95,9 @@ box-sizing: border-box;
            <input type="radio" name="sex" value="여" alt="여자" >여자&nbsp;&nbsp;<br><br><br>
            
            <div class="join-subtitle">모두 동의합니다</div>
-           <input class="radio-sex" type="radio" name="agree" value="이용" alt="이용" checked >이용약관 동의<br>
-           <input type="radio" name="agree" value="개인" alt="개인" >개인정보 취급방침 동의<br>
-           <input type="radio" name="agree" value="마케팅" alt="마케팅" >마케팅 정보 수신 동의<br><br>
+           <input class="radio-sex" type="checkbox" name="agree" value="이용" alt="이용" checked >이용약관 동의<br>
+           <input type="checkbox" name="agree" value="개인" alt="개인" >개인정보 취급방침 동의<br>
+           <input type="checkbox" name="agree" value="마케팅" alt="마케팅" >마케팅 정보 수신 동의<br><br>
             
       	<div class="join-button">
             <input type="submit" value="회원가입">

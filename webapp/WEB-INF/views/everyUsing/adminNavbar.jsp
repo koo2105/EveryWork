@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>admin Navbar</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/navBar.css">
-
+<script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script src="resources/jsLib/namchulAjax.js"></script>
 </head>
 <body>
 
@@ -25,7 +26,7 @@
 			<div class="nav-item nav-item-right nav-login">
 				<a href="#">로그인</a>
 			</div>
-		</div>
+	
 	</nav>
 </body>
 </html>

@@ -21,7 +21,7 @@
 
 				<div class="category-name">EveryWork활용하기</div>
 				<div class="posts">
-					<a class="post">
+					<a class="post"  href="labDetail">
 						<div class="post-thumbnail">
 							<img src="resources/img/aaaa.jpg" width="150" height="150">
 						</div>
@@ -39,7 +39,7 @@
 
 						</div>
 					</a> 
-					<a class="post">
+					<a class="post"  href="labDetail">
 						<div class="post-thumbnail">
 							<img src="resources/img/bbbb.jpg" width="150" height="150">
 						</div>
@@ -56,7 +56,7 @@
 
 						</div>
 					</a> 
-					<a class="post">
+					<a class="post"  href="labDetail">
 						<div class="post-thumbnail">
 							<img src="resources/img/cccc.jpg" width="150" height="150">
 						</div>

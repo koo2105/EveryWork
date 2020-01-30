@@ -5,9 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** Spring [새글 등록] _ inCheck **</title>
+<title>** Spring [공고 수정] _ inCheck **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script src="resources/jsLib/namchulAjax.js"></script>
 
 <script>
 var tCheck=false;
@@ -51,7 +52,7 @@ var cnt2=0;
 function selfqadd(cnt){
 	const str =`<li id=qadd`+cnt2+`>
       문항 <input type="text" name="#" id="#" maxlength="80" />
-    	  <a href="#delete" onclick="attachdelete('qadd`+cnt2+`')"><img width="15px" src="resources/img/gonggo-.png"></a>
+    	  <a href="#delete"  onclick="attachdelete('qadd`+cnt2+`')"><img width="15px" src="resources/img/gonggo-.png"></a>
       </li>`;
       $("#selfq"+cnt).append(str);
       cnt2++;
@@ -59,8 +60,8 @@ function selfqadd(cnt){
 </script>
 </head>
 <body>
-<h2>** 새 공고 등록 **</h2>
-<form action="binsert" method="post">
+<h2>** 기존 공고 수정 **</h2>
+<form action="bupdate" method="post">
 <table>
 <tr height="40"><td class="admin-title">I D</td>
 	<td><input type="text" name="id" value="${loginID}" readonly="readonly"></td></tr>
@@ -99,7 +100,7 @@ function selfqadd(cnt){
 <tr height="40"><td class="admin-title">Image</td>
 		<td><input type="file" name="uploadfilef" id="uploadfilef"><br>
 		<img src="" class="select_img"/>
-<tr><td></td><td><input type="submit" value="등록" onclick="return inCheck()">
+<tr><td></td><td><input type="submit" value="수정" onclick="return inCheck()">
                  <input type="reset" value="취소"></td>	
 </table>
 </form>
