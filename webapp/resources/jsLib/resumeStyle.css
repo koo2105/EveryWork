@@ -301,6 +301,7 @@ col {
     border-radius: 4px;
     border: solid 1px #ddd;
     background: white;
+    vertical-align: middle;
 }
 
 
@@ -345,13 +346,14 @@ col {
     touch-action: manipulation;
     cursor: pointer;
     background-image: none;
-    border: 1px solid transparent;
+    border: 1px solid;
     white-space: nowrap;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     border-radius: 4px;
     user-select: none;
+    
 }
 
 .specs .spec-school-major-box span:last-child {
@@ -368,6 +370,7 @@ col {
     border-radius: 4px;
     padding: 4px 10px;
     display: inline-block;
+    vertical-align: middle;
 }  /* end specForm */
 
 
@@ -403,29 +406,30 @@ div {
 
 .resume-menu-container li {
 list-style: none;
-text-align: left;
+text-align: center;
 line-height: 30px;
-font-size: 25px;
+cursor: pointer;
+
+
+/* font-size: 25px; */
 }
 
-.title {
-	font-size: 15px;
-	color: #555;
-	font-weight: bold;
-}
 
 .resume-category-title {
-	font-size: 15px;
+	color: #555555;
+    font-size: 17px;
     font-weight: bold;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
 	box-sizing: border-box;
-	text-align: 
+	text-align: center;
+	
 }
 
 .resume-menu-container li>a>span{
 	text-align: center;
 	font-size: 13px;
+	color: #555;
     font-weight: bold;
     color: black;
 }
@@ -441,30 +445,41 @@ font-size: 25px;
 	font-size: 1em;
 	box-sizing: border-box;
 	font-family: 'Nunito Sans';
-	color: hsl(0, 0%, 50%);
 }
 
 /* Containing areas */
 .resume-container {
-	width: 600px;
+	width: 700px;
 	margin: 1em auto;
 	float: left;
-	margin-left: 30px;
-	margin-top: 100px;
-	
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
 }
+
 .resume-title{
 color: #ff6813;
 font-size: 14px;
 font-weight: bold;
  margin-right: 5px;
+
+ 
+}
+.resume-form{
+	
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .ta-container {
-	width: 100%;
+	width: 85%;
 	border: 1px solid hsl(0, 0%, 70%);
 	border-radius: 0.25em;
 	margin: 0.25em 0 1.5em;
+
+	
+ 
 }
 
 .hasfocus {
@@ -519,6 +534,7 @@ border-bottom : 5px solid #ddd;
 	border: 1px solid hsl(0, 0%, 60%);
 	color: hsl(0, 0%, 50%);
 	border-radius: 0.25em;
+	
 }
 
 .resume-container .btn:enabled:hover {
@@ -536,4 +552,15 @@ border-bottom : 5px solid #ddd;
 }
 
 
+.resume-form .plus-btn div>a{
+    font-size: 15px;
+    line-height: 20px;
+    float: right;
+    width: 20px;
+    height: 20px;
+    padding: 0px;
+    color: white;
+    background-color: #999;
+    
+}
 

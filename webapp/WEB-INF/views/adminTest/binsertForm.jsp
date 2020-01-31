@@ -10,23 +10,8 @@
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 
 <script>
-var tCheck=false;
 
-$(function() {
-	$('#title').focus();
-	$('#title').focusout(function() {
-	 	tCheck=ttCheck();
-	}); // title_focusout
-}); // ready
 
-function inCheck() {
-	if (tCheck==true ) {
-		return true;
-	}else {
-		tCheck=ttCheck();
-		return false;
-	};
-} //inCheck 
 var cnt =0;
 function attachAddr(){
 	  const str = `<li id=conadd`+cnt+`>

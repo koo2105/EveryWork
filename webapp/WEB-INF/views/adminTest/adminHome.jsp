@@ -101,6 +101,7 @@ div {
 	float: left;
 	text-align: center; /* 디브 속 내용 가운데정렬 */
 	box-sizing: border-box;
+	cursor: pointer;
 }
 
 .blog-content-right {

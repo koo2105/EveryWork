@@ -3,8 +3,7 @@
 <html>
 <head>
 <title>Blog</title>
-<link rel="stylesheet" type="text/css"
-	href="resources/jsLib/blogStyle.css">
+<link rel="stylesheet" type="text/css"	href="resources/jsLib/blogStyle.css">
 
 <style>
 </style>

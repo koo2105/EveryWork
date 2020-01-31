@@ -1,26 +1,27 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>이력서</title>
-<link rel="stylesheet" type="text/css" href="resources/jsLib/resumeStyle.css">
-
+ <link rel="stylesheet" type="text/css" href="resources/jsLib/resumeStyle.css">
+<!-- <link rel="stylesheet" type="text/css"	href="resources/jsLib/blogStyle.css"> -->
 <style>
+ body {
 
-
-
-
-
+	color: hsl(0, 0%, 50%);
+}
 </style>
+
 </head>
 <body>
 
 
 <!-- top nav -->
-	<%@ include file="/WEB-INF/views/everyUsing/navBar.jsp"%>
+<jsp:include page="/WEB-INF/views/everyUsing/navBar.jsp"></jsp:include>
 
+ 
 
 <div ng-controller="SpecCtrl" class="spec-ctrl ng-scope">
   <div class="spec-container">
@@ -229,9 +230,38 @@
           <span ng-bind="univ.major_subject.content" class="ng-binding"></span>
           <span ng-click="search_univ_major('major', item.category, univ.number)">검색</span>
         </div>
-        <div class="add-del-btn inner-btn btn" ng-click="add_achievement_minor(univ, item.category, 19)">+</div>
       </td>
     </tr>
+    <tr>
+      <th>전공</th>
+      <td colspan="5">
+        <select class="minor_subject_selector ng-pristine ng-valid ng-touched" ng-change="change_minor_subject(univ, item.category, univ.minor_subject_status[$index], $index)" ng-model="univ.minor_subject_status[$index].content">
+          <option value="">-</option>
+          <option value="0">복수전공</option>
+          <option value="1">부전공</option>
+        </select>
+        <div class="spec-school-major-box">
+          <span ng-bind="univ.minor_subject[$index].content" class="ng-binding"></span>
+          <span ng-click="search_univ_major('minor', item.category, univ.number, $index)">검색</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>전공</th>
+      <td colspan="5">
+        <select class="minor_subject_selector ng-pristine ng-valid ng-touched" ng-change="change_minor_subject(univ, item.category, univ.minor_subject_status[$index], $index)" ng-model="univ.minor_subject_status[$index].content">
+          <option value="">-</option>
+          <option value="0">복수전공</option>
+          <option value="1">부전공</option>
+        </select>
+        <div class="spec-school-major-box">
+          <span ng-bind="univ.minor_subject[$index].content" class="ng-binding"></span>
+          <span ng-click="search_univ_major('minor', item.category, univ.number, $index)">검색</span>
+        </div>
+      </td>
+    </tr>
+
+    
     <!-- ngRepeat: minor_subject in univ.minor_subject track by $index -->
     <!-- ngIf: !$first -->
   </tbody></table><!-- end ngRepeat: univ in currentApplicant.specs.university track by $index -->
@@ -240,7 +270,6 @@
   <!-- ngIf: hasSpecContent(item.category) --><div class="subtitle ng-scope" ng-if="hasSpecContent(item.category)">
     <div ng-bind="item.subtitle" class="ng-binding">대학원</div>
     <!-- ngIf: item.category === 0 -->
-    <div ng-show="item.category !== 0 &amp;&amp; item.category !== 1 &amp;&amp; item.category !== 9" class="add-del-btn outter-btn btn" ng-click="add_content(item.category)">+</div>
   </div><!-- end ngIf: hasSpecContent(item.category) -->
   <!-- ngInclude: item.template --><div class="content ng-scope" ng-include="item.template"><div class="category-wrapper ng-scope" data-category="3">
   <!-- ngRepeat: gradu in currentApplicant.specs.graduate_school track by $index --><table ng-class="'graduate-school-table category-repeater'" data-category-number="" ng-repeat="gradu in currentApplicant.specs.graduate_school track by $index" class="ng-scope graduate-school-table category-repeater">
@@ -305,7 +334,34 @@
           <span ng-bind="gradu.major_subject.content" class="ng-binding"></span>
           <span ng-click="search_univ_major('major', item.category, gradu.number)">검색</span>
         </div>
-        <div class="add-del-btn inner-btn btn" ng-click="add_achievement_minor(gradu, item.category, 28)">+</div>
+      </td>
+    </tr>
+        <tr>
+      <th>전공</th>
+      <td colspan="5">
+        <select class="minor_subject_selector ng-pristine ng-valid ng-touched" ng-change="change_minor_subject(univ, item.category, univ.minor_subject_status[$index], $index)" ng-model="univ.minor_subject_status[$index].content">
+          <option value="">-</option>
+          <option value="0">복수전공</option>
+          <option value="1">부전공</option>
+        </select>
+        <div class="spec-school-major-box">
+          <span ng-bind="univ.minor_subject[$index].content" class="ng-binding"></span>
+          <span ng-click="search_univ_major('minor', item.category, univ.number, $index)">검색</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>전공</th>
+      <td colspan="5">
+        <select class="minor_subject_selector ng-pristine ng-valid ng-touched" ng-change="change_minor_subject(univ, item.category, univ.minor_subject_status[$index], $index)" ng-model="univ.minor_subject_status[$index].content">
+          <option value="">-</option>
+          <option value="0">복수전공</option>
+          <option value="1">부전공</option>
+        </select>
+        <div class="spec-school-major-box">
+          <span ng-bind="univ.minor_subject[$index].content" class="ng-binding"></span>
+          <span ng-click="search_univ_major('minor', item.category, univ.number, $index)">검색</span>
+        </div>
       </td>
     </tr>
     <!-- ngRepeat: minor_subject in gradu.minor_subject track by $index -->
