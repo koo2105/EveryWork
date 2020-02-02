@@ -1,2 +1,0 @@
-# EveryWork
-tutorial repository

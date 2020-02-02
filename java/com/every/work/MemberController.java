@@ -36,10 +36,10 @@ public class MemberController {
 		if (vo!=null ) {  // 로그인 성공
 			session.setAttribute("loginID",vo.getEmem_id());
 			session.setAttribute("loginNM",vo.getEmem_name());
-			mv.setViewName("login/loginSuccess");
+			mv.setViewName("home");
 		}else { // // 로그인 실패
 			mv.addObject("Error","L");
-			mv.setViewName("login/loginForm");
+			mv.setViewName("Member/loginForm");
 		} // if
 		return mv ;
 	}// login
