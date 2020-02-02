@@ -108,11 +108,7 @@ public class HomeController {
 	// µÕ ³¿­Z½º
 
 	//ÁöÀ±¾²
-	@RequestMapping(value = "/loginf") // ·Î±×ÀÎ Æû
-	public ModelAndView loginf(ModelAndView mv) {
-		mv.setViewName("Member/loginForm");
-		return mv;
-	}
+
 
 	@RequestMapping(value = "/blog") // ÀÚ¼Ò¼­¿¬±¸¼Ò
 	public ModelAndView blog(ModelAndView mv) {

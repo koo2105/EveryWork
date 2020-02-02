@@ -15,6 +15,7 @@ import vo.EmemberVO;
 
 @Controller
 public class MemberController {
+
 	@Autowired
 	MService service ;
 	
