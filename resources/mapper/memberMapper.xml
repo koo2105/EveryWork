@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="work.mapper.MemberMapper">
+
+<!-- selectList -->
+
+<select id="selectList" resultType="vo.EmemberVO">
+		select * from emember order by emem_id
+	</select>
+	
+	<!-- login -->
+	<select id="login" resultType="vo.EmemberVO">
+	select * from emember where emem_id=#{emem_id} and emem_pw=#{emem_pw}
+	</select>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	</mapper>
