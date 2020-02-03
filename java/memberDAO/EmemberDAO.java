@@ -15,7 +15,7 @@ public class EmemberDAO {
 	
 	@Autowired
 	private SqlSession dao ;
-	private final static String NS="work.mapper.EmemberMapper.";
+	private final static String NS="work.mappers.memberMapper.";
 
 	
 	public ArrayList<EmemberVO> selectList() {

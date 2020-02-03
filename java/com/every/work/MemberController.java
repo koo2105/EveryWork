@@ -24,7 +24,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/loginf")
 	public ModelAndView loginf(ModelAndView mv) {
-		mv.setViewName("Member/loginForm");
+		mv.setViewName("member/loginForm");
 		return mv;
 	}// loginf 
 	
@@ -40,7 +40,7 @@ public class MemberController {
 			mv.setViewName("home");
 		}else { // // 로그인 실패
 			mv.addObject("Error","L");
-			mv.setViewName("Member/loginForm");
+			mv.setViewName("member/loginForm");
 		} // if
 		return mv ;
 	}// login
