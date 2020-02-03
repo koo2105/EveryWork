@@ -65,13 +65,26 @@ function gonggoupdate(){
 function mlogin(){
 	   $('#login-div').toggle();
 	}
+
 function mInfo(){
 	   $('#mInfo-div').toggle();
 	}
 
+function pwCheck() {
+	var pw1 = $('#password').val();
+	var pw2 = $('#password2').val();
+	if(pw1!=pw2){
+		$('#pMessage').html('비밀번호가 일치하지 않습니다.');
+	}else $('#pMessage').html('');
+}
+
+
+
+
+
 $(function(){
 	
-})
+}); //ready
 
 
 

@@ -10,6 +10,7 @@ import vo.EmemberVO;
 
 
 
+
 @Repository
 public class EmemberDAO {
 	
@@ -22,13 +23,17 @@ public class EmemberDAO {
 		return (ArrayList)dao.selectList(NS+"selectList");
 	} // selectList()
 	
-	public EmemberVO selectOne(EmemberVO vo) {
+	public EmemberVO selectOne(EmemberVO vo) {   
 		return dao.selectOne(NS+"selectOne",vo);
 	} // selectOne
 	
 	public EmemberVO login(EmemberVO vo) {
 		return dao.selectOne(NS+"login",vo); 
 	} // login
+	
+	public int insert(EmemberVO vo) {
+		return dao.insert(NS+"ememberInsert", vo);
+	} // insert
 	
 	
 }//end EmemberDAO 

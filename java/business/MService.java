@@ -17,10 +17,11 @@ public interface MService {
 	// login
 	EmemberVO login(EmemberVO vo);
 
-	/*// join
+	
 	int insert(EmemberVO vo);
 
-	// update
+	
+	/*// update
 	int update(EmemberVO vo);
 
 	// delete

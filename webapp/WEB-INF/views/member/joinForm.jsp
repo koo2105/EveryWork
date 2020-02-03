@@ -5,6 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>**Everywork Join **</title>
+<script src="resources/jsLib/namchulAjax.js"></script>
+<script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+
+<script>
+$(function() {
+	$('#password2').focusout(function() {
+		pwCheck();
+	}); // password_focusout
+
+});
+
+
+</script>
 <style>
 
  div {
@@ -68,31 +81,31 @@ box-sizing: border-box;
   <!-- top nav -->
 <%@ include file="/WEB-INF/views/everyUsing/navBar.jsp" %>
 
-
+<form action="join" method="post">
    <div class="join-container">
       <div class="join">
          <div class="join-title">회원가입</div>
          <div class="join-subtitle">아이디(이메일)</div>
-         <input class="join-form" id="id" type="text" name="id">
+         <input class="join-form" id="id" type="text" name="emem_id">
 
          <div class="join-subtitle">패스워드(비밀번호)</div>
-         <input class="join-form" id="password" type="password" name="pass">
+         <input class="join-form" id="password" type="password" name="emem_pw">
 
          <div class="join-subtitle">패스워드 확인(비밀번호)</div>
-         <input class="join-form" id="password" type="password" name="pass2">
-
+         <input class="join-form" id="password2" type="password"><br>
+		 <span id="pMessage" class="eMessage"></span>
          <div class="join-subtitle">이름</div>
-         <input class="join-form" id="name" type="text" name="name">
+         <input class="join-form" id="name" type="text" name="emem_name">
 
          <div class="join-subtitle">휴대폰 번호</div>
-         <input class="join-form" id="number" type="text" name="number">
+         <input class="join-form" id="number" type="text" name="emem_pnum">
 
          <div class="join-subtitle">생년월일</div>
-         <input class="join-form" id="birthd" type="date" name="birthd">
+         <input class="join-form" id="birthd" type="date" name="emem_birthd">
          
          <div class="join-subtitle">성별</div>
-           <input class="radio-sex" type="radio" name="sex" value="남" alt="남자" checked >남자&nbsp;&nbsp;
-           <input type="radio" name="sex" value="여" alt="여자" >여자&nbsp;&nbsp;<br><br><br>
+           <input class="radio-sex" type="radio" name="emem_gender" value="남" alt="남자" checked >남자&nbsp;&nbsp;
+           <input type="radio" name="emem_gender" value="여" alt="여자" >여자&nbsp;&nbsp;<br><br><br>
            
            <div class="join-subtitle">모두 동의합니다</div>
            <input class="radio-sex" type="checkbox" name="agree" value="이용" alt="이용" checked >이용약관 동의<br>
@@ -104,7 +117,7 @@ box-sizing: border-box;
        	</div>
          </div>	 
    </div>
-
+</form>
 
 </body>
 </html>

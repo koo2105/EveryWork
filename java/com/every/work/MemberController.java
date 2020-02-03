@@ -1,15 +1,20 @@
 package com.every.work;
 
+import java.io.File;
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import business.MService;
 import vo.EmemberVO;
+
 
 
 
@@ -45,6 +50,30 @@ public class MemberController {
 		return mv ;
 	}// login
 	
+	
+	@RequestMapping(value = "/joinf")
+	public ModelAndView joinf(ModelAndView mv) {
+		mv.setViewName("member/joinForm");
+		return mv;
+	}// joinf 
+	
+	
+	@RequestMapping(value = "/join")
+	public ModelAndView join(HttpServletRequest request, ModelAndView mv, EmemberVO vo) throws IOException {
+	
+	   
+		if (service.insert(vo)>0) { 
+			// 회원가입 성공 
+			// -> loginForm 으로  
+			mv.addObject("Join","T");
+			mv.setViewName("home");
+		}else { 
+			// 회원가입 실패 -> /member/doFinish.jsp
+			mv.addObject("Error","J");
+			mv.setViewName("everyUsing/doFinish");
+		} // if		
+		return mv ;
+	}// join
 
 	
 

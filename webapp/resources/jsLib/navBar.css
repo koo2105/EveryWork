@@ -141,4 +141,8 @@
     padding-inline-start: 40px;
 }
 
-
+.eMessage {
+	color: red;
+	font-style: italic;
+	font-size: x-small;
+}
