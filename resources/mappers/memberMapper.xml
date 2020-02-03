@@ -16,6 +16,11 @@
 	select * from emember where emem_id=#{emem_id} and emem_pw=#{emem_pw}
 	</select>	
 	
+	<insert id="ememberInsert">
+  	insert into emember values(#{emem_id},#{emem_pw},
+  	#{emem_name},#{emem_pnum},#{emem_birthd},#{emem_gender})
+  	
+  </insert>
 	
 	
 	

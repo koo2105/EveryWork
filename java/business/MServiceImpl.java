@@ -37,11 +37,13 @@ public class MServiceImpl implements MService {
 		return dao.login(vo);
 	}
 	
-/*	// join
+	// join
 	@Override
 	public int insert(EmemberVO vo) {
 		return dao.insert(vo);
 	}
+	
+	/*
 	// update
 	@Override
 	public int update(EmemberVO vo) {
