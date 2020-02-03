@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** Everywork Join **</title>
+<title>** Everywork mInfo **</title>
 <style>
  div {
    display: block;
 } 
 
-.join-title {
+.mInfo-title {
    font-size: 30px;
    color: darkslategrey;
    font-weight: bold;
@@ -20,19 +20,19 @@
    text-align: center;
 }
 
-.join{
+.mInfo{
    margin: auto;
    width: 310px;
    margin-bottom: 30px;
 }
 
-.join-form {
+.mInfo-form {
    width: 300px;
    height: 30px;
    margin-bottom: 10px;
 }
 
-.join-subtitle {
+.mInfo-subtitle {
    font-size : 15;
    font-weight:bold;
    text-align: left;
@@ -43,7 +43,7 @@
    padding-bottom: 10px;
 }
 
-.join-button {
+.mInfo-button {
    font-size : 15;
    font-weight:bold;
    width: 300px;
@@ -65,14 +65,14 @@ box-sizing: border-box;
 
 
 <form action="logout" method="post">
-   <div class="join-container">
-      <div class="join">
-         <div class="join-title">${loginID}</div>
-         <div class="join-subtitle">개인정보변경</div>
-         <div class="join-subtitle">로그아웃</div>
-         <div class="join-subtitle">문의하기</div>
-         <div class="join-subtitle">이용약관</div>
-         <div class="join-subtitle">개인정보취급방침</div>
+   <div class="mInfo-container">
+      <div class="mInfo">
+         <div class="mInfo-title">${loginID}</div>
+         <div class="mInfo-subtitle">개인정보변경</div>
+         <div class="mInfo-subtitle">로그아웃</div>
+         <div class="mInfo-subtitle">문의하기</div>
+         <div class="mInfo-subtitle">이용약관</div>
+         <div class="mInfo-subtitle">개인정보취급방침</div>
          </div>	 
    </div>
 </form>

@@ -552,15 +552,22 @@ border-bottom : 5px solid #ddd;
 }
 
 
-.resume-form .plus-btn div>a{
+.resume-container .resume-form .plus-btn {
     font-size: 15px;
     line-height: 20px;
-    float: right;
+  	float: right;
     width: 20px;
     height: 20px;
     padding: 0px;
     color: white;
     background-color: #999;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
     
+}
+
+.btn {
+	cursor: pointer;
 }
 

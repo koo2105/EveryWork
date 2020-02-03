@@ -30,7 +30,7 @@ body{
     <tr><td>자소서는 EveryWork에서 :)</td><td class="charcount"></td></tr>
 				</table>
 			</div>
-		<div onclick="attachdelete('resumeFormPlus`+cnt+`')">-</div>
+		<div class="plus-btn"><a onclick="attachdelete('resumeFormPlus`+cnt+`')">-</a></div>
 		</div>	
 		`;
 		  $("#con").append(str); // JQuery를 이용해서 juso24라는 id값을 가져와서 그곳에 append 시킨다.
