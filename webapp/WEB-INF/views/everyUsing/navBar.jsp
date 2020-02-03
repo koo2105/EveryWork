@@ -21,7 +21,7 @@
 		<div class= "nav-item nav-item-left nav-spec"><a href="specForm">이력서</a></div>
 		<div class= "nav-item nav-item-left nav-blog"><a href="blog">자소서연구소</a></div>
 		<c:if test="${loginID!=null}">
-		<div class= "nav-item nav-item-right nav-login-icon"><a href="#"><img src="./resources/img/login_icon.png" height="25px"></a>
+		<div class= "nav-item nav-item-right nav-login-icon"><a href="#" onclick="mInfo()"><img src="./resources/img/login_icon.png" height="25px"></a>
 		</div><!-- end nav-login-icon -->
 		</c:if>
 		<c:if test="${loginID==null}">
@@ -32,6 +32,9 @@
 		<div id="login-div">
 		<jsp:include page="/WEB-INF/views/member/loginForm.jsp"></jsp:include>
 	  <%--  	<%@include file="/WEB-INF/views/member/loginForm.jsp" %> --%>
+		</div>
+		<div id="mInfo-div">
+		<jsp:include page="/WEB-INF/views/member/memberInfo.jsp"></jsp:include>
 		</div>
 </nav>
 

@@ -63,6 +63,18 @@
       border: 2px solid darkslategrey;
       
    }
+   #mInfo-div{
+      background-color:white; 
+      display: none;
+      width: 400px;
+      height: 400px;
+      position:absolute;
+      top: 48px;
+      right: 100px;
+      border-radius: 5px;
+      border: 2px solid darkslategrey;
+      
+   }
 
    .main-title{
    font-size: 22px;

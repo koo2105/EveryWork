@@ -65,6 +65,9 @@ function gonggoupdate(){
 function mlogin(){
 	   $('#login-div').toggle();
 	}
+function mInfo(){
+	   $('#mInfo-div').toggle();
+	}
 
 $(function(){
 	
