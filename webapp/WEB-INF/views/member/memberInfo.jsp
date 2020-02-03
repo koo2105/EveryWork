@@ -68,7 +68,7 @@ box-sizing: border-box;
    <div class="mInfo-container">
       <div class="mInfo">
          <div class="mInfo-title">${loginID}</div>
-         <div class="mInfo-subtitle">개인정보변경</div>
+         <div class="mInfo-subtitle"><a href="mdetail?emem_id=${loginID}">개인정보변경</a></div>
          <div class="mInfo-subtitle">로그아웃</div>
          <div class="mInfo-subtitle">문의하기</div>
          <div class="mInfo-subtitle">이용약관</div>

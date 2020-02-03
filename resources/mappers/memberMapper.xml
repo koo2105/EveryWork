@@ -20,10 +20,17 @@
   	insert into emember values(#{emem_id},#{emem_pw},
   	#{emem_name},#{emem_pnum},#{emem_birthd},#{emem_gender})
   	
-  </insert>
+ 	 </insert>
 	
+	<select id="selectOne" resultType="vo.EmemberVO">
+	select * from emember where emem_id=#{emem_id} 
+	</select>	
 	
-	
+	<update id="ememberUpdate">
+ 	 update member set password=#{password},name=#{name},lev=#{lev},
+	 birthd=#{birthd},point=#{point},weight=#{weight},uploadfile=#{uploadfile} where id=#{id}	
+  
+  </update>
 	
 	
 	

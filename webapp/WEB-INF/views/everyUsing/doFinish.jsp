@@ -16,6 +16,12 @@
 	===> <a href="joinf">[회원가입]</a>
 </c:if>
 
+<c:if test="${Error=='U'}">
+	<h3>정보 수정에 실패했습니다~~~</h3>
+	<h3>다시 하시겠습니까 ?</h3>
+	===> <a href="updatef?id=${loginID}">[내정보]</a>
+</c:if>
+
 
 <br>
 <hr>

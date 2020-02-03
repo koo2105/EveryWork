@@ -5,19 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>**Everywork Join **</title>
-
-<script src="resources/jsLib/namchulAjax.js"></script>
-<script src="resources/jsLib/jquery-3.2.1.min.js"></script>
-<script>
-$(function() {
-	$('#password2').focusout(function() {
-		pwCheck();
-	}); // password_focusout
-
-});
-
-</script>
-
 <style>
  div {
    display: block;
@@ -86,25 +73,19 @@ box-sizing: border-box;
          <div class="join-subtitle">아이디(이메일)</div>
          <input class="join-form" id="id" type="text" name="emem_id" value="${Detail.emem_id}" readonly="readonly">
 
-        <!--   <div class="join-subtitle">패스워드 변경(비밀번호)</div>
-         <input class="join-form" id="password" type="password" name="emem_pw">
-
-         <div class="join-subtitle">패스워드 변경 확인(비밀번호)</div>
-         <input class="join-form" id="password2" type="password" ><br>
-          <span id="pMessage" class="eMessage"></span> -->
-
          <div class="join-subtitle">이름</div>
-         <input class="join-form" id="name" type="text" name="emem_name" value="${Detail.emem_name}">
+         <input class="join-form" id="name" type="text" name="emem_name"  value="${Detail.emem_name}" readonly="readonly">
 
          <div class="join-subtitle">휴대폰 번호</div>
-         <input class="join-form" id="number" type="text" name="emem_pnum" value="${Detail.emem_pnum}">
+         <input class="join-form" id="number" type="text" name="emem_pnum"   value="${Detail.emem_pnum}" readonly="readonly">
 
          <div class="join-subtitle">생년월일</div>
-         <input class="join-form" id="birthd" type="date" name="emem_birthd" value="${Detail.emem_birthd}">
+         <input class="join-form" id="birthd" type="date" name="emem_birthd"  value="${Detail.emem_birthd}" readonly="readonly">
        
             
       	<div class="join-button">
-            <input type="submit" value="저장하기">
+            <input type="submit" value="수정하기">
+       		<a href="updatef?emem_id=${loginID}"></a>
        	</div>
          </div>	 
    </div>

@@ -21,9 +21,9 @@ public interface MService {
 	int insert(EmemberVO vo);
 
 	
-	/*// update
 	int update(EmemberVO vo);
 
+	/*
 	// delete
 	int delete(EmemberVO vo);*/
 

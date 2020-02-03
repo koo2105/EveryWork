@@ -43,12 +43,14 @@ public class MServiceImpl implements MService {
 		return dao.insert(vo);
 	}
 	
-	/*
+	
 	// update
 	@Override
 	public int update(EmemberVO vo) {
 		return dao.update(vo);
 	}
+	
+	/*
 	// delete
 	@Override
 	public int delete(EmemberVO vo) {

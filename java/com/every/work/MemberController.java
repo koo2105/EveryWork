@@ -18,12 +18,29 @@ import vo.EmemberVO;
 
 
 
+
 @Controller
 public class MemberController {
 
 	@Autowired
 	MService service ;
 	
+	@RequestMapping(value = "/mdetail")
+	public ModelAndView mdetail(ModelAndView mv, EmemberVO vo) {
+		vo = service.selectOne(vo);
+		mv.addObject("Detail", vo);
+		mv.setViewName("member/memberDetail");
+		return mv;
+	}// loginf
+	
+	
+	@RequestMapping(value = "/updatef")
+	public ModelAndView updatef(ModelAndView mv, EmemberVO vo) {
+		vo = service.selectOne(vo);
+		mv.addObject("Detail", vo);
+		mv.setViewName("member/updateForm");
+		return mv;
+	}// loginf 
 
 
 	
@@ -75,6 +92,23 @@ public class MemberController {
 		return mv ;
 	}// join
 
+	
+	@RequestMapping(value = "/update")
+	public ModelAndView update(HttpServletRequest request, ModelAndView mv, EmemberVO vo) throws IOException  {
+		
+		
+		if (service.update(vo)>0) { 
+			// 회원수정 성공 
+			// -> memberList.jsp 으로  
+			request.getSession().setAttribute("loginNM", vo.getEmem_name());
+			mv.setViewName("redirect:updatef");
+		}else { 
+			// 회원수정 실패 -> /member/doFinish.jsp
+			mv.addObject("Error","U");
+			mv.setViewName("member/doFinish");
+		} // if		
+		return mv ;
+	}// update
 	
 
 

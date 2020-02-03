@@ -11,6 +11,7 @@ import vo.EmemberVO;
 
 
 
+
 @Repository
 public class EmemberDAO {
 	
@@ -34,6 +35,10 @@ public class EmemberDAO {
 	public int insert(EmemberVO vo) {
 		return dao.insert(NS+"ememberInsert", vo);
 	} // insert
+	
+	public int update(EmemberVO vo) {
+		return dao.update(NS+"ememberUpdate", vo);
+	} // update
 	
 	
 }//end EmemberDAO 
