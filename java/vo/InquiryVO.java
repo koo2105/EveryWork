@@ -51,6 +51,7 @@ public class InquiryVO {
 	public void setInq_state(String inq_state) {
 		this.inq_state = inq_state;
 	}
+	
 	@Override
 	public String toString() {
 		return "InquiryVO [inq_id=" + inq_id + ", admin_id=" + admin_id + ", inq_title=" + inq_title + ", inq_content="

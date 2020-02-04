@@ -18,5 +18,9 @@
 <select id="answerList" resultType="vo.InquiryVO">
 		select * from inquiry order by inq_id desc
 </select>	
+
+<select id="blogList" resultType="vo.SelflabVO">
+		select * from selflab order by lab_id desc
+</select>	
 	
 	</mapper>

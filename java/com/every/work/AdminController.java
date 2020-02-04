@@ -11,6 +11,7 @@ import business.AdService;
 import vo.EmemberVO;
 import vo.InquiryVO;
 import vo.JobopenVO;
+import vo.SelflabVO;
 
 
 
@@ -46,6 +47,14 @@ public class AdminController {
 		ArrayList<InquiryVO> list = service.answerList();
 		mv.addObject("Answerlist", list);
 		mv.setViewName("adminTest/answerList");
+		return mv;
+	}//
+	
+	@RequestMapping(value = "/ajlist")
+	public ModelAndView ajlist(ModelAndView mv) {
+		ArrayList<SelflabVO> list = service.blogList();
+		mv.addObject("Bloglist", list);
+		mv.setViewName("adminTest/blogList");
 		return mv;
 	}//
 

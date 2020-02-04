@@ -151,14 +151,6 @@ public class HomeController {
 		return mv;
 	}
 
-
-
-	@RequestMapping(value = "/ajlist")
-	public ModelAndView ajlist(ModelAndView mv) {
-		mv.setViewName("adminTest/blogList");
-		return mv;
-	}//
-
 	@RequestMapping(value = "/binsertf")
 	public ModelAndView binsertf(ModelAndView mv) {
 		mv.setViewName("adminTest/binsertForm");

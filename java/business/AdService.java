@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import vo.EmemberVO;
 import vo.InquiryVO;
 import vo.JobopenVO;
+import vo.SelflabVO;
 
 
 
@@ -14,5 +15,6 @@ public interface AdService {
 	ArrayList<EmemberVO> selectList();
 	ArrayList<JobopenVO> jobopenList();
 	ArrayList<InquiryVO> answerList();
+	ArrayList<SelflabVO> blogList();
 
 }

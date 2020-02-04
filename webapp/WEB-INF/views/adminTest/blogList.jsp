@@ -29,40 +29,19 @@
 <h2>** 자소서 연구소 관리 **</h2>
 <table width=800>
 <tr class="admin-title" >
-	<td>Seq</td><td>Category</td><td>Title</td>
-	<td>RegDate</td><td>ID</td>
+	<td>글 번호</td><td>제목</td><td>카테고리</td>
+	<td>등록일</td><td>ID</td>
 </tr>
-<c:forEach var="mm" items="${Banana}" varStatus="vs">
-	<tr height=30 align="center">
-	 <!-- jQuery 를 이용해서 값전달 Test -->
-	 <td class="cq textLink" id="seq${vs.index}">${mm.seq}</td>
+<c:forEach var="mm" items="${Bloglist}" varStatus="vs">
+		<tr height=30 align="center">
+	 	 <td>${mm.lab_id}</td>
+	 	 
 		<td align="left">
-		 <c:if test="${mm.indent>0}">
-   			<c:forEach begin="1" end="${mm.indent}">
-   			<span>&nbsp;&nbsp;</span>
-  			</c:forEach>
-   			<span style="color:red">re..</span>
-   			</c:if>
-   			
-		<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
-		<c:if test="${loginID!=mm.id}">
-			<%-- <a href="#" onclick="axBDetail(${mm.seq},'C')">${mm.title}</a> --%>
-			<a href="javascript:;" onclick="axBDetailJson(${mm.seq},'C','${vs.index}')" class="ct textLink">${mm.title}</a>
-		</c:if>
-		<!-- <a href="#"            .... scroll 위치 이동 
-			 <a href="javascript:;" .... 사용하면 해결         -->
-			 
-		<!-- detail 에서 countUp(조회수 증가) 안하는경우 -->
-		<c:if test="${loginID==mm.id}">
-			<%-- <a href="javascript:;" onclick="axBDetail(${mm.seq},'L')">${mm.title}</a> --%>
-			<a href="#" onclick="axBDetailJson(${mm.seq},'L','${vs.index}')" class="ct textLink">${mm.title}</a>
-		</c:if>
-	</td>
-	<td>${mm.category}</td><td>${mm.regdate}</td><td>${mm.id}</td>
+			<a href="#" onclick="#">${mm.lab_title}</a>
+		</td> 
+	<td align="left">${mm.lab_cat}</td><td>${mm.lab_date}</td>
+	<td>${mm.admin_id}</td>
 	</tr>
-	<tr><td></td>
-		<td colspan="4"><span id='result${vs.index}' class=result></span>
-	</td></tr>
 </c:forEach>
 </table>
 <hr>
@@ -70,7 +49,7 @@
 <a href="#" class="button" onclick="blogupdatef()">글 수정</a>
 <a href="#" class="button" onclick="#">글 삭제</a>
 <c:if test="${loginID!=null}">
-	<a href="binsertf">[새글등록]</a>&nbsp;
+	<a href="#">[새글등록]</a>&nbsp;
 </c:if>
 
 <div id="content"></div>

@@ -9,6 +9,7 @@ import adminDAO.AdminDAO;
 import vo.EmemberVO;
 import vo.InquiryVO;
 import vo.JobopenVO;
+import vo.SelflabVO;
 
 // Service 클래스
 // => Controller 와  DAO 사이에서 
@@ -37,6 +38,11 @@ public class AdServiceImpl implements AdService {
 	@Override
 	public ArrayList<InquiryVO> answerList() {
 		return dao.answerList();
+	}
+	
+	@Override
+	public ArrayList<SelflabVO> blogList() {
+		return dao.blogList();
 	}
 	
 } // class

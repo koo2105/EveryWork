@@ -3,9 +3,9 @@ package vo;
 public class SelflabVO {
 
 	private int lab_id;
-	private String lab_cat;
+	private String admin_id;
 	private String lab_title;
-	private String lab_name;
+	private String lab_cat;
 	private int lab_count;
 	private String lab_date;
 	private String lab_content;
@@ -16,11 +16,11 @@ public class SelflabVO {
 	public void setLab_id(int lab_id) {
 		this.lab_id = lab_id;
 	}
-	public String getLab_cat() {
-		return lab_cat;
+	public String getAdmin_id() {
+		return admin_id;
 	}
-	public void setLab_cat(String lab_cat) {
-		this.lab_cat = lab_cat;
+	public void setAdmin_id(String admin_id) {
+		this.admin_id = admin_id;
 	}
 	public String getLab_title() {
 		return lab_title;
@@ -28,11 +28,11 @@ public class SelflabVO {
 	public void setLab_title(String lab_title) {
 		this.lab_title = lab_title;
 	}
-	public String getLab_name() {
-		return lab_name;
+	public String getLab_cat() {
+		return lab_cat;
 	}
-	public void setLab_name(String lab_name) {
-		this.lab_name = lab_name;
+	public void setLab_cat(String lab_cat) {
+		this.lab_cat = lab_cat;
 	}
 	public int getLab_count() {
 		return lab_count;
@@ -58,13 +58,13 @@ public class SelflabVO {
 	public void setLab_img(String lab_img) {
 		this.lab_img = lab_img;
 	}
-	
 	@Override
 	public String toString() {
-		return "SelflabVO [lab_id=" + lab_id + ", lab_cat=" + lab_cat + ", lab_title=" + lab_title + ", lab_name="
-				+ lab_name + ", lab_count=" + lab_count + ", lab_date=" + lab_date + ", lab_content=" + lab_content
+		return "SelflabVO [lab_id=" + lab_id + ", admin_id=" + admin_id + ", lab_title=" + lab_title + ", lab_cat="
+				+ lab_cat + ", lab_count=" + lab_count + ", lab_date=" + lab_date + ", lab_content=" + lab_content
 				+ ", lab_img=" + lab_img + "]";
 	}
+	
 	
 	
 	
