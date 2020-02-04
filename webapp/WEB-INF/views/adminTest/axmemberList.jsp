@@ -16,25 +16,19 @@
 <table width=800>
 <tr class="admin-title">
 	<td>I D</td><td>Name</td>
-	<td>PhoneNum</td><td>BirthDay</td><td>Sex</td>
+	<td>PhoneNum</td><td>BirthDay</td><td>Gender</td>
 
 </tr>
-<c:forEach var="mm" items="${Apple}">
+<c:forEach var="mm" items="${List}">
 	<tr align="center" height=30>
 	
-<!-- 	반복문에 event 적용하기
-	1) jQuery : class , this 이용
-	<td><span class="cc textLink">${mm.id}</span></td>
+
+	<td><a href="#" onclick="aidList('${mm.emem_id}')" class="textLink" >${mm.emem_id}</a></td>
 	
-	2) JScript : a Tag의 onclick 이벤트 이용 
-		=> function의 매개변수 이용 : aidList('banana') 
-	-->
-	<td><a href="#" onclick="aidList('${mm.id}')" class="textLink" >${mm.id}</a></td>
-	
-	<td>${mm.name}</td>
-	<td>${mm.num}</td>
-	<td>${mm.birthd}</td>
-	<td>${mm.sex}</td>
+	<td>${mm.emem_name}</td>
+	<td>${mm.emem_pnum}</td>
+	<td>${mm.emem_birthd}</td>
+	<td>${mm.emem_gender}</td>
 	</tr>
 </c:forEach>
 </table>

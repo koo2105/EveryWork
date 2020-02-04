@@ -21,11 +21,7 @@ public class MServiceImpl implements MService {
 	@Autowired
 	EmemberDAO dao ;
 	
-	// selectList
-	@Override
-	public ArrayList<EmemberVO> selectList() {
-		return dao.selectList();
-	}
+
 	// selctOne
 	@Override
 	public EmemberVO selectOne(EmemberVO vo) {

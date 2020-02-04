@@ -207,17 +207,17 @@
   </div>
   <div class="info-list">
     <div>
-      <span>(주)앵커리어(대표: 윤상호)</span> |
-      <span>개인정보보호관리자: 윤상호</span>
+      <span>(주)냄춀닷컴(대표: 김남쵸리)</span> |
+      <span>개인정보보호관리자: 디제이쿠(a.k.a.구준엽)</span>
     </div>
     <div>
-      <span>서울시 강남구 선릉로76길 20, 301호(대치동 유영빌딩)</span> |
-      <span>대표번호: 02-6264-7582 광고문의: 02-6264-7581</span>
+      <span>그린컴퓨터 아카데미(금곡동 지영빌딩 505호)</span> |
+      <span>대표번호: 010-1234-4567 광고문의: 010-2222-3333</span>
     </div>
     <div>
-      <span>사업자등록: 138-87-00058</span> |
+      <span>사업자등록: 111-11-00000</span> |
       <span>직업정보제공사업: J1200020160017</span> |
-      <span>통신판매업: 2016-서울강남-00784</span>
+      <span>통신판매업: 2020-서울청담-00000</span>
     </div>
     <div>
       <span>Copyright Anchoreer Co., Inc. All rights reserved.</span>

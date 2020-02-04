@@ -163,11 +163,7 @@ public class HomeController {
 		return mv;
 	}// 
 
-	@RequestMapping(value = "/amlist")
-	public ModelAndView amlist(ModelAndView mv) {
-		mv.setViewName("adminTest/axmemberList");
-		return mv;
-	}//
+
 
 	@RequestMapping(value = "/anlist")
 	public ModelAndView anlist(ModelAndView mv) {

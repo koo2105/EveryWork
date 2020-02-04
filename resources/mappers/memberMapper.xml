@@ -5,11 +5,7 @@
 
 <mapper namespace="work.mappers.memberMapper">
 
-<!-- selectList -->
 
-<select id="selectList" resultType="vo.EmemberVO">
-		select * from emember order by emem_id
-	</select>
 	
 	<!-- login -->
 	<select id="login" resultType="vo.EmemberVO">
@@ -31,32 +27,4 @@
 	 emem_birthd=#{emem_birthd} where emem_id=#{emem_id}	
   
   </update>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	</mapper>

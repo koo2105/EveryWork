@@ -8,9 +8,6 @@ import vo.EmemberVO;
 
 public interface MService {
 
-	// selectList
-	ArrayList<EmemberVO> selectList();
-
 	// selctOne
 	EmemberVO selectOne(EmemberVO vo);
 
