@@ -27,8 +27,8 @@
 	</select>	
 	
 	<update id="ememberUpdate">
- 	 update member set password=#{password},name=#{name},lev=#{lev},
-	 birthd=#{birthd},point=#{point},weight=#{weight},uploadfile=#{uploadfile} where id=#{id}	
+ 	 update emember set emem_pw=#{emem_pw},emem_name=#{emem_name},emem_pnum=#{emem_pnum},
+	 emem_birthd=#{emem_birthd} where emem_id=#{emem_id}	
   
   </update>
 	

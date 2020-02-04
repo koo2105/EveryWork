@@ -66,7 +66,7 @@ box-sizing: border-box;
 
 <%@ include file="/WEB-INF/views/everyUsing/navBar.jsp" %>
 
-	<form action="update" method="post">
+	<form action="#" method="post">
    <div class="join-container">
       <div class="join">
          <div class="join-title">회원 정보 수정</div>
@@ -84,8 +84,8 @@ box-sizing: border-box;
        
             
       	<div class="join-button">
-            <input type="submit" value="수정하기">
-       		<a href="updatef?emem_id=${loginID}"></a>
+           <!--  <input type="submit" value="수정하기"> -->
+       		<a href="updatef?emem_id=${loginID}">수정하기</a>
        	</div>
          </div>	 
    </div>

@@ -1,6 +1,5 @@
 package com.every.work;
 
-import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +8,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import business.MService;
@@ -36,7 +34,7 @@ public class MemberController {
 	
 	@RequestMapping(value = "/updatef")
 	public ModelAndView updatef(ModelAndView mv, EmemberVO vo) {
-		vo = service.selectOne(vo);
+		vo = service.selectOne(vo);	
 		mv.addObject("Detail", vo);
 		mv.setViewName("member/updateForm");
 		return mv;
@@ -95,13 +93,13 @@ public class MemberController {
 	
 	@RequestMapping(value = "/update")
 	public ModelAndView update(HttpServletRequest request, ModelAndView mv, EmemberVO vo) throws IOException  {
-		
-		
+
 		if (service.update(vo)>0) { 
 			// 회원수정 성공 
 			// -> memberList.jsp 으로  
 			request.getSession().setAttribute("loginNM", vo.getEmem_name());
-			mv.setViewName("redirect:updatef");
+			mv.addObject("Success","T");
+			mv.setViewName("everyUsing/doFinish");
 		}else { 
 			// 회원수정 실패 -> /member/doFinish.jsp
 			mv.addObject("Error","U");
@@ -109,6 +107,13 @@ public class MemberController {
 		} // if		
 		return mv ;
 	}// update
+	
+	@RequestMapping(value = "/mlogout")
+	public ModelAndView mlogout(HttpServletRequest request, ModelAndView mv, EmemberVO vo) {
+		request.getSession().invalidate();
+		mv.setViewName("redirect:home"); 
+		return mv ;
+	}// login
 	
 
 

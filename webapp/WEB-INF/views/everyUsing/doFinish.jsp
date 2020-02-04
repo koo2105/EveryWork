@@ -8,8 +8,6 @@
 <title>** Member MVC2 DoFinish **</title>
 </head>
 <body>
-<h2>** Spring MVC2_@ DoFinish **</h2>
-
 <c:if test="${Error=='J'}">
 	<h3>회원 가입 실패~~</h3>
 	<h3>다시 하시겠습니까 ?</h3>
@@ -20,6 +18,10 @@
 	<h3>정보 수정에 실패했습니다~~~</h3>
 	<h3>다시 하시겠습니까 ?</h3>
 	===> <a href="updatef?id=${loginID}">[내정보]</a>
+</c:if>
+<c:if test="${Success=='T'}">
+	<h3>정보 수정 완료</h3>
+	===> <a href="home">[홈으로]</a>
 </c:if>
 
 

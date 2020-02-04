@@ -86,13 +86,13 @@ box-sizing: border-box;
          <div class="join-subtitle">아이디(이메일)</div>
          <input class="join-form" id="id" type="text" name="emem_id" value="${Detail.emem_id}" readonly="readonly">
 
-        <!--   <div class="join-subtitle">패스워드 변경(비밀번호)</div>
+         <div class="join-subtitle">패스워드 변경(비밀번호)</div>
          <input class="join-form" id="password" type="password" name="emem_pw">
 
          <div class="join-subtitle">패스워드 변경 확인(비밀번호)</div>
          <input class="join-form" id="password2" type="password" ><br>
-          <span id="pMessage" class="eMessage"></span> -->
-
+          <span id="pMessage" class="eMessage"></span> 
+          
          <div class="join-subtitle">이름</div>
          <input class="join-form" id="name" type="text" name="emem_name" value="${Detail.emem_name}">
 
@@ -105,6 +105,7 @@ box-sizing: border-box;
             
       	<div class="join-button">
             <input type="submit" value="저장하기">
+            
        	</div>
          </div>	 
    </div>

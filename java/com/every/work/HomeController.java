@@ -116,11 +116,6 @@ public class HomeController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/updateForm")
-	public ModelAndView updateForm(ModelAndView mv) {
-		mv.setViewName("member/updateForm");
-		return mv;
-	}
 
 	// category list
 	@RequestMapping(value = "/useEW")
