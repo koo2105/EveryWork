@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import vo.EmemberVO;
+import vo.InquiryVO;
+import vo.JobopenVO;
 
 @Repository
 public class AdminDAO {
@@ -20,4 +22,12 @@ public class AdminDAO {
 		return (ArrayList)dao.selectList(NS+"selectList");
 	} // selectList()
 	
+	
+	public ArrayList<JobopenVO> jobopenList() {
+		return (ArrayList)dao.selectList(NS+"jobopenList");
+	} // selectList()
+	
+	public ArrayList<InquiryVO> answerList() {
+		return (ArrayList)dao.selectList(NS+"answerList");
+	} // selectList()
 }//end EmemberDAO 

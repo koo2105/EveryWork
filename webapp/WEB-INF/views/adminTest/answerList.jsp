@@ -28,47 +28,28 @@
 <h2>** 문의 관리 **</h2>
 <table width=800>
 <tr class="admin-title" >
-	<td>Seq</td><td>Title</td><td>ID</td>
-	<td>RegDate</td><td>State</td>
+	<td>문의 번호</td><td>제목</td><td>관리자ID</td>
+	<td>등록일</td><td>답변 상태</td><td>조회수</td>
 </tr>
-<c:forEach var="mm" items="${Banana}" varStatus="vs">
+<c:forEach var="mm" items="${Answerlist}" varStatus="vs">
 	<tr height=30 align="center">
-	 <!-- jQuery 를 이용해서 값전달 Test -->
-	 <td class="cq textLink" id="seq${vs.index}">${mm.seq}</td>
+	
+	 	 <td>${mm.inq_id}</td>
+	 	 
 		<td align="left">
-		 <c:if test="${mm.indent>0}">
-   			<c:forEach begin="1" end="${mm.indent}">
-   			<span>&nbsp;&nbsp;</span>
-  			</c:forEach>
-   			<span style="color:red">re..</span>
-   			</c:if>
-   			
-		<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
-		<c:if test="${loginID!=mm.id}">
-			<%-- <a href="#" onclick="axBDetail(${mm.seq},'C')">${mm.title}</a> --%>
-			<a href="javascript:;" onclick="axBDetailJson(${mm.seq},'C','${vs.index}')" class="ct textLink">${mm.title}</a>
-		</c:if>
-		<!-- <a href="#"            .... scroll 위치 이동 
-			 <a href="javascript:;" .... 사용하면 해결         -->
-			 
-		<!-- detail 에서 countUp(조회수 증가) 안하는경우 -->
-		<c:if test="${loginID==mm.id}">
-			<%-- <a href="javascript:;" onclick="axBDetail(${mm.seq},'L')">${mm.title}</a> --%>
-			<a href="#" onclick="axBDetailJson(${mm.seq},'L','${vs.index}')" class="ct textLink">${mm.title}</a>
-		</c:if>
-	</td>
-	<td>${mm.id}</td><td>${mm.regdate}</td><td>${mm.state}</td>
+			<a href="#" onclick="#">${mm.inq_title}</a>
+		</td> 
+	 
+
+	
+	<td align="left">${mm.admin_id}</td><td>${mm.inq_date}</td>
+	<td>${mm.inq_state}</td><td>${mm.inq_count}</td>
 	</tr>
-	<tr><td></td>
-		<td colspan="4"><span id='result${vs.index}' class=result></span>
-	</td></tr>
 </c:forEach>
 </table>
 <hr>
 
-<c:if test="${loginID!=null}">
-	<a href="binsertf">[새글등록]</a>&nbsp;
-</c:if>
+
 
 <div id="content"></div>
 </body>

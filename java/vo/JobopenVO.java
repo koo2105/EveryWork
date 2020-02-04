@@ -9,7 +9,7 @@ public class JobopenVO {
 	private String jobopen_sdate;
 	private String jobopen_edate;
 	private String jobopen_cimg;
-	
+	private String jobopen_count;
 	public int getJobopen_id() {
 		return jobopen_id;
 	}
@@ -58,13 +58,20 @@ public class JobopenVO {
 	public void setJobopen_cimg(String jobopen_cimg) {
 		this.jobopen_cimg = jobopen_cimg;
 	}
+	public String getJobopen_count() {
+		return jobopen_count;
+	}
+	public void setJobopen_count(String jobopen_count) {
+		this.jobopen_count = jobopen_count;
+	}
 	@Override
 	public String toString() {
 		return "JobopenVO [jobopen_id=" + jobopen_id + ", jobopen_name=" + jobopen_name + ", jobopen_pimg="
 				+ jobopen_pimg + ", jobopen_company=" + jobopen_company + ", jobopen_link=" + jobopen_link
 				+ ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate=" + jobopen_edate + ", jobopen_cimg="
-				+ jobopen_cimg + "]";
+				+ jobopen_cimg + ", jobopen_count=" + jobopen_count + "]";
 	}
+	
 	
 	
 	

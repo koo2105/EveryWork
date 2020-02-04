@@ -151,25 +151,7 @@ public class HomeController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/aidlist")
-	public ModelAndView aidlist(ModelAndView mv) {
-		mv.setViewName("adminTest/axboardList");
-		return mv;
-	}
 
-	@RequestMapping(value = "/ablist")
-	public ModelAndView ablist(ModelAndView mv) {
-		mv.setViewName("adminTest/axboardList");
-		return mv;
-	}// 
-
-
-
-	@RequestMapping(value = "/anlist")
-	public ModelAndView anlist(ModelAndView mv) {
-		mv.setViewName("adminTest/answerList");
-		return mv;
-	}//
 
 	@RequestMapping(value = "/ajlist")
 	public ModelAndView ajlist(ModelAndView mv) {

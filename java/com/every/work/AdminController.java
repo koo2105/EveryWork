@@ -9,6 +9,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import business.AdService;
 import vo.EmemberVO;
+import vo.InquiryVO;
+import vo.JobopenVO;
 
 
 
@@ -29,6 +31,23 @@ public class AdminController {
 		return mv;
 	}// mlist 
 	
+	
+	@RequestMapping(value = "/ablist")
+	public ModelAndView ablist(ModelAndView mv) {
+		ArrayList<JobopenVO> list = service.jobopenList();
+		mv.addObject("Joblist", list);
+		mv.setViewName("adminTest/axboardList");
+		return mv;
+	}// blist
+	
+
+	@RequestMapping(value = "/anlist")
+	public ModelAndView anlist(ModelAndView mv) {
+		ArrayList<InquiryVO> list = service.answerList();
+		mv.addObject("Answerlist", list);
+		mv.setViewName("adminTest/answerList");
+		return mv;
+	}//
 
 
 } // class

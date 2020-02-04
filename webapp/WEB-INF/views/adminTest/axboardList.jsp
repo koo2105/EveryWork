@@ -29,40 +29,34 @@
 <h2>** 채용 공고 관리 **</h2>
 <table width=800>
 <tr class="admin-title" >
-	<td>Seq</td><td>Company</td><td>ID</td>
-	<td>RegDate</td>
+	<td>공고 번호</td><td>회사명</td><td>관리자ID</td>
+	<td>시작일자</td><td>마감일자</td><td>조회수</td>
 </tr>
-<c:forEach var="mm" items="${Banana}" varStatus="vs">
+<c:forEach var="mm" items="${Joblist}" varStatus="vs">
 	<tr height=30 align="center">
 	 <!-- jQuery 를 이용해서 값전달 Test -->
-	 <td class="cq textLink" id="seq${vs.index}">${mm.seq}</td>
-		<td align="left">
-		 <c:if test="${mm.indent>0}">
-   			<c:forEach begin="1" end="${mm.indent}">
-   			<span>&nbsp;&nbsp;</span>
-  			</c:forEach>
-   			<span style="color:red">re..</span>
-   			</c:if>
-   			
+	 <td>${mm.jobopen_id}</td>
+	 
+	<td align="left">
 		<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
-		<c:if test="${loginID!=mm.id}">
-			<%-- <a href="#" onclick="axBDetail(${mm.seq},'C')">${mm.title}</a> --%>
-			<a href="javascript:;" onclick="axBDetailJson(${mm.seq},'C','${vs.index}')" class="ct textLink">${mm.company}</a>
+		<c:if test="${loginID!=mm.jobopen_name}">
+			<a href="#" onclick="#">${mm.jobopen_company}</a>
 		</c:if>
 		<!-- <a href="#"            .... scroll 위치 이동 
 			 <a href="javascript:;" .... 사용하면 해결         -->
 			 
+			 
 		<!-- detail 에서 countUp(조회수 증가) 안하는경우 -->
-		<c:if test="${loginID==mm.id}">
-			<%-- <a href="javascript:;" onclick="axBDetail(${mm.seq},'L')">${mm.title}</a> --%>
-			<a href="#" onclick="axBDetailJson(${mm.seq},'L','${vs.index}')" class="ct textLink">${mm.company}</a>
+		<c:if test="${loginID==mm.jobopen_name}">
+			<a href="#" onclick="#">${mm.jobopen_company}</a>
 		</c:if>
-	</td>
-	<td>${mm.id}</td><td>${mm.regdate}</td>
+	</td> 
+	 
+
+	
+	<td align="left">${mm.jobopen_name}</td>
+	<td>${mm.jobopen_sdate}</td><td>${mm.jobopen_edate}</td><td>${mm.jobopen_count}</td>
 	</tr>
-	<tr><td></td>
-		<td colspan="4"><span id='result${vs.index}' class=result></span>
-	</td></tr>
 </c:forEach>
 </table>
 <hr>

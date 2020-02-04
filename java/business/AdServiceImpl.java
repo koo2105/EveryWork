@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import adminDAO.AdminDAO;
-import memberDAO.EmemberDAO;
 import vo.EmemberVO;
+import vo.InquiryVO;
+import vo.JobopenVO;
 
 // Service 클래스
 // => Controller 와  DAO 사이에서 
@@ -26,6 +27,16 @@ public class AdServiceImpl implements AdService {
 	@Override
 	public ArrayList<EmemberVO> selectList() {
 		return dao.selectList();
+	}
+	
+	@Override
+	public ArrayList<JobopenVO> jobopenList() {
+		return dao.jobopenList();
+	}
+	
+	@Override
+	public ArrayList<InquiryVO> answerList() {
+		return dao.answerList();
 	}
 	
 } // class

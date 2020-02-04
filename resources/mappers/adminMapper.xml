@@ -11,4 +11,12 @@
 		select * from emember order by emem_id
 	</select>
 	
+<select id="jobopenList" resultType="vo.JobopenVO">
+		select * from jobopen order by jobopen_id desc
+</select>	
+
+<select id="answerList" resultType="vo.InquiryVO">
+		select * from inquiry order by inq_id desc
+</select>	
+	
 	</mapper>
