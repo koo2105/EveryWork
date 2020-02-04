@@ -22,6 +22,9 @@
 	margin: 0 auto;
 }
 
+.specs .content table.basic-information-table .basic-info-addr {
+    width: 90%;
+}
 
 
 .spec-container .section-container .section-title {
@@ -223,10 +226,6 @@ col {
 .specs .content table tr td {
     padding: 0 15px;
 }
-.specs .content table tr th, .specs .content table tr td {
-    height: 46px;
-    border: solid 1px #ddd;
-}
 
 
 .spec-ctrl tbody {
@@ -239,7 +238,6 @@ col {
     display: inline-block;
     margin-right: 10px;
 }
-
 
 .spec-ctrl .spec-container .section-container.spec-saver input {
     border: 1px solid #d8d8d8;
@@ -255,7 +253,6 @@ col {
     font-size: inherit;
     line-height: inherit;
 }
-
 
 .spec-ctrl button, input, optgroup, select, textarea {
     color: inherit;
