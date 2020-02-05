@@ -300,9 +300,16 @@ col {
     background: white;
     vertical-align: middle;
 }
+.specs .content table input {
+    height: 30px;
+    border-radius: 4px;
+    border: solid 1px #ddd;
+    background: white;
+    vertical-align: middle;
+}
 
 
-.spec-ctrl select {
+.spec-ctrl select,.spec-ctrl input {
     text-rendering: auto;
     letter-spacing: normal;
     word-spacing: normal;
@@ -359,6 +366,19 @@ col {
     color: #ff6813;
     float: right;
 }
+
+.specs .add-del-btn.btn.inner-btn {
+    margin-top: 5px;
+}
+
+.specs .content table tr td div {
+    display: inline-block;
+}
+
+.specs .content table select.minor_subject_selector {
+    float: left;
+    margin-right: 8px;
+}
 .specs .spec-school-major-box {
     height: 30px;
     width: 170px;
@@ -368,7 +388,46 @@ col {
     padding: 4px 10px;
     display: inline-block;
     vertical-align: middle;
-}  /* end specForm */
+
+}  
+
+.specs .content table tr.table-option-row td .delete-content {
+    display: inline-block;
+    cursor: pointer;
+     text-align: right;
+}
+
+
+.specs .content table tr.table-option-row td {
+    height: 30px;
+    text-align: right;
+    border: none;
+    color: #999;
+}
+
+
+
+.specs .content #con9 tr th, .specs .content #con9 tr td {
+    height: 46px;
+    border: solid 1px #ddd;
+}
+
+ .specs .content #con9 table tr th {
+    width: 100px;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #999;
+    background: #eee;
+}
+ .specs .content #con9 th {
+    text-align: left;
+    display: table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+}
+
+
+/* end specForm */
 
 
 
