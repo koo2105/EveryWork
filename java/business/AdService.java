@@ -2,6 +2,7 @@ package business;
 
 import java.util.ArrayList;
 
+import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
 import vo.JobopenVO;
@@ -16,5 +17,6 @@ public interface AdService {
 	ArrayList<JobopenVO> jobopenList();
 	ArrayList<InquiryVO> answerList();
 	ArrayList<SelflabVO> blogList();
+	AdminVO adminLogin(AdminVO vo);
 
 }

@@ -19,13 +19,6 @@
 			<div class="nav-item nav-item-left nav-recruit">
 				<a href="adminf"> 관리자페이지 </a> 
 			</div>
-			
-			<div class="nav-item nav-item-right nav-join">
-				<a href="#">회원가입</a>
-			</div>
-			<div class="nav-item nav-item-right nav-login">
-				<a href="#">로그인</a>
-			</div>
 	
 	</nav>
 </body>

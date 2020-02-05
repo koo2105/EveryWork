@@ -2,12 +2,16 @@ package com.every.work;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import business.AdService;
+import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
 import vo.JobopenVO;
@@ -23,6 +27,11 @@ public class AdminController {
 	@Autowired
 	AdService service ;
 	
+	@RequestMapping(value = "/adminhome")
+	public ModelAndView adminhome(ModelAndView mv) {
+		mv.setViewName("adminTest/adminhome");
+		return mv;
+	}// mlist 
 
 	@RequestMapping(value = "/amlist")
 	public ModelAndView amlist(ModelAndView mv) {
@@ -57,6 +66,28 @@ public class AdminController {
 		mv.setViewName("adminTest/blogList");
 		return mv;
 	}//
-
+	
+	@RequestMapping(value = "/adminloginf")
+	public ModelAndView loginf(ModelAndView mv) {
+		mv.setViewName("adminTest/adminLoginForm");
+		return mv;
+	}// loginf 
+	
+	
+	@RequestMapping(value = "/adminlogin")
+	public ModelAndView login(HttpServletRequest request, ModelAndView mv, AdminVO vo) {
+		
+		HttpSession session = request.getSession() ;
+		vo = service.adminLogin(vo);
+		if (vo!=null ) {  // 로그인 성공
+			session.setAttribute("adloginID",vo.getAdmin_id());
+			session.setAttribute("adloginNM",vo.getAdmin_name());
+			mv.setViewName("adminTest/adminHome");
+		}else { // // 로그인 실패
+			mv.addObject("Error","AL");
+			mv.setViewName("adminTest/adminHome");
+		} // if
+		return mv ;
+	}// login
 
 } // class

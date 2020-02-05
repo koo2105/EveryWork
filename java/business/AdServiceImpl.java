@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import adminDAO.AdminDAO;
+import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
 import vo.JobopenVO;
@@ -43,6 +44,11 @@ public class AdServiceImpl implements AdService {
 	@Override
 	public ArrayList<SelflabVO> blogList() {
 		return dao.blogList();
+	}
+	
+	@Override
+	public AdminVO adminLogin(AdminVO vo) {
+		return dao.adminLogin(vo);
 	}
 	
 } // class

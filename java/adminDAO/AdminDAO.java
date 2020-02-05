@@ -6,9 +6,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 import vo.SelflabVO;
 
 @Repository
@@ -35,4 +38,22 @@ public class AdminDAO {
 	public ArrayList<SelflabVO> blogList() {
 		return (ArrayList)dao.selectList(NS+"blogList");
 	} // selectList()
+
+	public AdminVO adminLogin(AdminVO vo) {		
+		return dao.selectOne(NS+"adminLogin",vo); 
+	} // login
+	
+	public int jobopenInsert(JobopenVO vo) {
+		return dao.insert(NS+"jobopenInsert", vo);
+	} // insert
+
+	public int jobcategoryInsert(JobcategoryVO vo,JobopenVO jvo) {
+		
+		return dao.insert(NS+"jobcategoryInsert", vo);
+	} // insert
+	
+	public int jobqaInsert(JobqaVO vo,JobopenVO jvo) {
+		
+		return dao.insert(NS+"jobqaInsert", vo);
+	} // insert
 }//end EmemberDAO 

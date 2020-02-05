@@ -227,7 +227,7 @@
     </div>
     
 <div class="admin-container">
-    <div class="admin-title"><a href="adminf">관리자페이지</a>
+    <div class="admin-title"><a href="adminloginf">관리자페이지</a>
     </div>
 </div>
 

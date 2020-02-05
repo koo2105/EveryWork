@@ -22,5 +22,21 @@
 <select id="blogList" resultType="vo.SelflabVO">
 		select * from selflab order by lab_id desc
 </select>	
+
+<select id="adminLogin" resultType="vo.AdminVO">
+	select * from admin where admin_id=#{admin_id} and admin_password=#{admin_password}
+</select>
 	
+<insert id="jobopenInsert">
+  	insert into jobopen values((select nvl(max(jobopen_id), 0)+1 from jobopen),#{admin_id},#{jobopen_pimg},#{jobopen_company},#{jobopen_link},#{jobopen_sdate},#{jobopen_edate},#{jobopen_cimg},0 )
+</insert>
+
+<insert id="jobcategoryInsert">
+  	insert into jobcategory values((select nvl(max(jc_id), 0)+1 from jobcategory),#{jobopen_id},#{jc_div},#{jc_part})
+</insert>
+
+<insert id="jobqaInsert">
+  	insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from jobqa), #{jobopen_id},#{jobqa_q})
+</insert>
+
 	</mapper>
