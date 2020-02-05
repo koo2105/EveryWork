@@ -48,12 +48,29 @@ public class AdminDAO {
 	} // insert
 
 	public int jobcategoryInsert(JobcategoryVO vo,JobopenVO jvo) {
-		
-		return dao.insert(NS+"jobcategoryInsert", vo);
+		int cnt=0;
+		for(int i=0;i<jvo.getJc_div().length;i++) {
+			for(int j=0;j<jvo.getJc_div().length;j++) {
+				vo.setJobopen_id(jvo.getJobopen_id());
+				vo.setJc_div(jvo.getJc_div()[j]);
+				vo.setJc_part(jvo.getJc_part()[j]);
+			}
+			dao.insert(NS+"jobcategoryInsert", vo);
+			cnt++;
+		}
+		return cnt;
 	} // insert
 	
 	public int jobqaInsert(JobqaVO vo,JobopenVO jvo) {
-		
-		return dao.insert(NS+"jobqaInsert", vo);
+		int cnt=0;
+		for(int i=0;i<jvo.getJobqa_q().length;i++) {
+			for(int j=0;j<jvo.getJobqa_q().length;j++) {
+				vo.setJobopen_id(jvo.getJobopen_id());
+				vo.setJobqa_q(jvo.getJobqa_q()[j]);
+			}
+			dao.insert(NS+"jobqaInsert", vo);
+			cnt++;
+		}
+		return cnt;
 	} // insert
 }//end EmemberDAO 

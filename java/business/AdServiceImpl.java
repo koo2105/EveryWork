@@ -9,7 +9,9 @@ import adminDAO.AdminDAO;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 import vo.SelflabVO;
 
 // Service Å¬·¡½º
@@ -49,6 +51,19 @@ public class AdServiceImpl implements AdService {
 	@Override
 	public AdminVO adminLogin(AdminVO vo) {
 		return dao.adminLogin(vo);
+	}
+	
+	@Override
+	public int jobopenInsert(JobopenVO vo) {
+		return dao.jobopenInsert(vo);
+	}
+	@Override
+	public int jobcategoryInsert(JobcategoryVO vo, JobopenVO jvo) {
+		return dao.jobcategoryInsert(vo, jvo);
+	}
+	@Override
+	public int jobqaInsert(JobqaVO vo, JobopenVO jvo) {
+		return dao.jobqaInsert(vo, jvo);
 	}
 	
 } // class

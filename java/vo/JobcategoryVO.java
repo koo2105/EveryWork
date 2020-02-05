@@ -6,6 +6,7 @@ public class JobcategoryVO {
 	private int jobopen_id ; //references jobopen(jobopen_id)
 	private String jc_div ; 
 	private String jc_part ;
+	
 	public int getJc_id() {
 		return jc_id;
 	}
