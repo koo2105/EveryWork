@@ -92,6 +92,7 @@ public class AdminController {
 	public ModelAndView jobopeninsert(HttpServletRequest request, ModelAndView mv, JobopenVO vo1, JobcategoryVO vo2,
 			JobqaVO vo3) throws IOException {
 		if (vo1 != null) {
+			
 			MultipartFile jobopen_pimgf = vo1.getJobopen_pimgf();
 			String file1, file2;
 			if (!jobopen_pimgf.isEmpty()) {
@@ -104,6 +105,18 @@ public class AdminController {
 				file2 = "NO Image";
 			vo1.setJobopen_cimg(file2);
 
+			MultipartFile jobopen_cimgf = vo1.getJobopen_cimgf();
+			String file3, file4;
+			if (!jobopen_cimgf.isEmpty()) {
+
+				file3 = "D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"
+						+ jobopen_cimgf.getOriginalFilename();
+				jobopen_cimgf.transferTo(new File(file3));
+				file4 = "resources/uploadImage/" + jobopen_cimgf.getOriginalFilename();
+			} else
+				file4 = "NO Image";
+			vo1.setJobopen_cimg(file4);
+			
 			service.jobopenInsert(vo1, vo2, vo3);
 			mv.addObject("JOI", "T");
 		} else {

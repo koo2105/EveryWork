@@ -8,6 +8,17 @@
 <title>** Member MVC2 DoFinish **</title>
 </head>
 <body>
+<c:if test="${JOI=='T'}">
+	<h3>공고 등록 성공</h3>
+	<h3>홈으로</h3>
+	===> <a href="adminhome">[어드민홈]</a>
+</c:if>
+<c:if test="${Error=='JOE'}">
+	<h3>공고 등록 실패..</h3>
+	<h3>홈으로</h3>
+	===> <a href="adminhome">[어드민홈]</a>
+</c:if>
+
 <c:if test="${Error=='J'}">
 	<h3>회원 가입 실패~~</h3>
 	<h3>다시 하시겠습니까 ?</h3>

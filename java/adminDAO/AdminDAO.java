@@ -42,13 +42,13 @@ public class AdminDAO {
 	} // login
 
 	public int jobopenInsert(JobopenVO vo1, JobcategoryVO vo2, JobqaVO vo3) {
-		int cat =0;
-		int qa =0;
-		int cnt=0;
-		
-		if(vo1!=null) {
-			cnt=dao.insert(NS + "jobopenInsert", vo1);
-			
+		int cat = 0;
+		int qa = 0;
+		int cnt = 0;
+
+		if (vo1 != null) {
+			cnt = dao.insert(NS + "jobopenInsert", vo1);
+
 			if (vo1.getJc_div() != null) {
 				for (int i = 0; i < vo1.getJc_div().length; i++) {
 					vo2.setJobopen_id(vo1.getJobopen_id());
@@ -56,14 +56,19 @@ public class AdminDAO {
 					vo2.setJc_part(vo1.getJc_part()[i]);
 					dao.insert(NS + "jobcategoryInsert", vo2);
 					cat++;
-					
-					vo3.setJobopen_id(vo1.getJobopen_id());
+
+				}
+
+			}
+			if (vo1.getJobqa_q() != null) {
+				for (int i = 0; i < vo1.getJobqa_q().length; i++) {
+					vo3.setJc_id(vo2.getJc_id());
 					vo3.setJobqa_q(vo1.getJobqa_q()[i]);
 					dao.insert(NS + "jobqaInsert", vo3);
 					qa++;
 				}
 			}
-		}		
+		}
 		return cnt;
 	} // insert
 

@@ -45,7 +45,7 @@ function selfqadd(cnt){
 </head>
 <body>
 <h2>** 새 공고 등록 **</h2>
-<form action="jobopeninsert" method="post">
+<form action="jobopeninsert" method="post" enctype="multipart/form-data">
 <table>
 <tr height="40"><td class="admin-title">I D</td>
 	<td><input type="text" name="admin_id" id="admin_id" value="${adloginID}" readonly="readonly"></td></tr>
