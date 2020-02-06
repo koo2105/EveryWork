@@ -22,6 +22,13 @@ function jDetailOpen(){
 function jDetailClose(){
 	$('.jobDetail-div').hide();
 }
+
+function answerOpen(){
+		$('.answer-div').show();
+	}
+function answerClose(){
+		$('.answer-div').hide();
+	}
 function bloginsertf(){
 	$.ajax({
 		type : 'Get',

@@ -189,7 +189,7 @@
 <div class="question-link">
 	<div>
 		<a href="#"><img src="./resources/img/question.png"/></a> 
-		<div class="sub-title"><a href="#">문의하기</a></div>
+		<div class="sub-title"><a href='#' onclick='answerOpen()'>문의하기</a></div>
 	</div>
 
 </div>
@@ -201,7 +201,7 @@
     <a href="https://ko-kr.facebook.com/jasoseol" target="_blank"><img src="https://jasoseol.com/assets/index/footer-facebook-icon-f2c8575d54456f8dd70b33808bc67f4bdfaac09e35cf852fcbed6ae8fa390409.png"></a>
   </div>
   <div class="about">
-    <a href="" ng-click="inquiry()">문의하기</a> |
+    <a href='#' onclick='answerOpen()'>문의하기</a> |
     <a href="/privacy">개인정보취급방침</a> |
     <a href="" ng-click="partnership()">제휴/광고</a>
   </div>
@@ -229,6 +229,10 @@
 <div class="admin-container">
     <div class="admin-title"><a href="adminloginf">관리자페이지</a>
     </div>
+</div>
+
+<div class="answer-div">
+<jsp:include page="/WEB-INF/views/member/answerForm.jsp"></jsp:include>
 </div>
 
 </body>

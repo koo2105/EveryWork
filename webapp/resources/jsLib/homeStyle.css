@@ -188,4 +188,19 @@
     
 }
 
+.answer-div {
+	display:none;
+	background-color: yellow;
+	width: 600px;
+	height: 800px; /* ³ªÁß¿¡ »©±â */
+	position: absolute;
+	top:700px;
+	left: 50%;
+	margin-left: -250px;
+	border: solid 1px #d8d8d8;
+	border-radius: 5px;
+	padding-top: 35px;
+	padding-bottom: 50px;
+	
+}
 
