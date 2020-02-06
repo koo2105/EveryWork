@@ -41,32 +41,30 @@ public class AdminDAO {
 		return dao.selectOne(NS + "adminLogin", vo);
 	} // login
 
-	public int jobopenInsert(JobopenVO vo) {
-		return dao.insert(NS + "jobopenInsert", vo);
-	} // insert
-
-	public int jobcategoryInsert(JobcategoryVO vo, JobopenVO jvo) {
-		int cnt = 0;
-		if (jvo.getJc_div() != null) {
-			for (int i = 0; i < jvo.getJc_div().length; i++) {
-				vo.setJobopen_id(jvo.getJobopen_id());
-				vo.setJc_div(jvo.getJc_div()[i]);
-				vo.setJc_part(jvo.getJc_part()[i]);
-				dao.insert(NS + "jobcategoryInsert", vo);
-				cnt++;
+	public int jobopenInsert(JobopenVO vo1, JobcategoryVO vo2, JobqaVO vo3) {
+		int cat =0;
+		int qa =0;
+		int cnt=0;
+		
+		if(vo1!=null) {
+			cnt=dao.insert(NS + "jobopenInsert", vo1);
+			
+			if (vo1.getJc_div() != null) {
+				for (int i = 0; i < vo1.getJc_div().length; i++) {
+					vo2.setJobopen_id(vo1.getJobopen_id());
+					vo2.setJc_div(vo1.getJc_div()[i]);
+					vo2.setJc_part(vo1.getJc_part()[i]);
+					dao.insert(NS + "jobcategoryInsert", vo2);
+					cat++;
+					
+					vo3.setJobopen_id(vo1.getJobopen_id());
+					vo3.setJobqa_q(vo1.getJobqa_q()[i]);
+					dao.insert(NS + "jobqaInsert", vo3);
+					qa++;
+				}
 			}
-		}
+		}		
 		return cnt;
 	} // insert
 
-	public int jobqaInsert(JobqaVO vo, JobopenVO jvo) {
-		int cnt = 0;
-		for (int i = 0; i < jvo.getJobqa_q().length; i++) {
-			vo.setJobopen_id(jvo.getJobopen_id());
-			vo.setJobqa_q(jvo.getJobqa_q()[i]);
-			dao.insert(NS + "jobqaInsert", vo);
-			cnt++;
-		}
-		return cnt;
-	} // insert
 }// end EmemberDAO
