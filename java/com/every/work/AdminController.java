@@ -14,7 +14,9 @@ import business.AdService;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 import vo.SelflabVO;
 
 
@@ -89,5 +91,22 @@ public class AdminController {
 		} // if
 		return mv ;
 	}// login
+	
+	@RequestMapping(value = "/jobopeninsert")
+	public ModelAndView jobopeninsert(HttpServletRequest request, ModelAndView mv, JobopenVO vo1, JobcategoryVO vo2, JobqaVO vo3 ) {
+		if(vo1!=null) {
+			service.jobopenInsert(vo1);	
+			if(vo2!=null) {
+				service.jobcategoryInsert(vo2, vo1);
+			}
+			if(vo3!=null) {
+				service.jobqaInsert(vo3,vo1);
+			}
+		}
+		mv.setViewName("everyUsing/doFinish");
+		return mv ;
+	}// login
+	
+	
 
 } // class
