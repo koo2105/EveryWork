@@ -101,6 +101,10 @@ function universityAddr(){
 	cnt8++;
 }//educationAddr()
 
+function universitydelete(id){
+	$('#'+id).remove();
+} // universitydelete(id)
+
 //대학교
 var cnt9 = 0;
 
@@ -196,23 +200,14 @@ function graduate_schoolAddr(){
 								</table>
 								<!-- end ngRepeat: gradu in currentApplicant.specs.graduate_school track by $index -->
 							</div>
-						</div>
-	
-	
-	
-	
-	
-	`;
+						</div>`;
 	$("#con9").append(str); // JQuery를 이용해서 juso24라는 id값을 가져와서 그곳에 append 시킨다.
 	cnt9++;
 }//educationAddr()
 
-
-
-
 function graduate_schooldelete(id){
 	$('#'+id).remove();
-} // universitydelete(id)
+} //  graduate_schooldelete(id)
 
 
 /*
@@ -243,15 +238,6 @@ function uni_majordelete(id){
 	$('#'+id).remove();
 } // uni_majordelete(id)
 */
-
-
-
-
-
-
-
-
-
 
 
 
