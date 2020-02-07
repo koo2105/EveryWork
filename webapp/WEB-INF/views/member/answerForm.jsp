@@ -36,8 +36,9 @@
    width: 300px;
    height: 300px;
    margin-bottom: 10px;
+   resize: none;
+  
 }
-
 
 .answer-subtitle {
    font-size : 15;
@@ -85,8 +86,7 @@ box-sizing: border-box;
          <input class="id-form" id="emem_id" type="text" name="emem_id">
 
          <div class="answer-subtitle">문의 내용</div>
-         <input class="answer-form" id="inq_content" type="text" name="inq_content">
-
+		 <textarea class="answer-form" id="inq_content" name="inq_content"></textarea>
         
       	<div class="answer-button">
             <input type="submit" value="문의">

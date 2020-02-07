@@ -115,6 +115,11 @@ public class MemberController {
 		return mv ;
 	}// login
 	
+	@RequestMapping(value = "/terms")
+	public ModelAndView terms(ModelAndView mv) {
+		mv.setViewName("member/termsForm"); 
+		return mv ;
+	}// login
 
 
 } // class
