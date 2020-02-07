@@ -1,6 +1,6 @@
 package vo;
 
-public class CareerVO {
+public class SpecCareerVO {
 	
 	private int car_id;
 	private int res_id;

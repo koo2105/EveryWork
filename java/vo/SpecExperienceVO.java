@@ -1,6 +1,6 @@
 package vo;
 
-public class ExperienceVO {
+public class SpecExperienceVO {
 	private int exp_id;
 	private int res_id;
 	private String exp_name;

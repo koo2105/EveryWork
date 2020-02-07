@@ -1,6 +1,6 @@
 package vo;
 
-public class OverseasVO {
+public class SpecOverseasVO {
 	private int ov_id;
 	private int res_id;
 	private String ov_country;

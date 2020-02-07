@@ -1,6 +1,6 @@
 package vo;
 
-public class LicenseVO {
+public class SpecLicenseVO {
 
 	private int lic_id;
 	private int res_id;

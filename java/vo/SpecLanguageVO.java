@@ -1,6 +1,6 @@
 package vo;
 
-public class LanguageVO {
+public class SpecLanguageVO {
 	
 	private int lan_id;
 	private int res_id;

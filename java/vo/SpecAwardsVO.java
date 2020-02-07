@@ -1,6 +1,6 @@
 package vo;
 
-public class AwardsVO {
+public class SpecAwardsVO {
 	private int aw_id;
 	private int res_id;
 	private String aw_name;

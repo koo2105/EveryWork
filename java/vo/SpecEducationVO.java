@@ -1,6 +1,6 @@
 package vo;
 
-public class EducationVO {
+public class SpecEducationVO {
 	private int edu_id;
 	private int res_id;
 	private String edu_name;
