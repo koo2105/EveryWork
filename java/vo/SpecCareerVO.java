@@ -3,7 +3,7 @@ package vo;
 public class SpecCareerVO {
 	
 	private int car_id;
-	private int res_id;
+	private int spec_id;
 	private String car_name;
 	private String car_speriod;
 	private String car_eperiod;
@@ -17,11 +17,11 @@ public class SpecCareerVO {
 	public void setCar_id(int car_id) {
 		this.car_id = car_id;
 	}
-	public int getRes_id() {
-		return res_id;
+	public int getSpec_id() {
+		return spec_id;
 	}
-	public void setRes_id(int res_id) {
-		this.res_id = res_id;
+	public void setSpec_id(int spec_id) {
+		this.spec_id = spec_id;
 	}
 	public String getCar_name() {
 		return car_name;
@@ -67,10 +67,11 @@ public class SpecCareerVO {
 	}
 	@Override
 	public String toString() {
-		return "CareerVO [car_id=" + car_id + ", res_id=" + res_id + ", car_name=" + car_name + ", car_speriod="
+		return "SpecCareerVO [car_id=" + car_id + ", spec_id=" + spec_id + ", car_name=" + car_name + ", car_speriod="
 				+ car_speriod + ", car_eperiod=" + car_eperiod + ", car_rank=" + car_rank + ", car_dep=" + car_dep
 				+ ", car_work=" + car_work + ", car_res=" + car_res + "]";
 	}
+	
 	
 	
 

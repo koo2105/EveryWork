@@ -1,9 +1,9 @@
 package vo;
 
-public class SpecLanguageVO {
+public class SpecLanguageVO extends SpecAwardsVO{
 	
 	private int lan_id;
-	private int res_id;
+	private int spec_id;
 	private String lan_sort;
 	private String lan_name;
 	private String lan_grade;
@@ -15,11 +15,11 @@ public class SpecLanguageVO {
 	public void setLan_id(int lan_id) {
 		this.lan_id = lan_id;
 	}
-	public int getRes_id() {
-		return res_id;
+	public int getSpec_id() {
+		return spec_id;
 	}
-	public void setRes_id(int res_id) {
-		this.res_id = res_id;
+	public void setSpec_id(int spec_id) {
+		this.spec_id = spec_id;
 	}
 	public String getLan_sort() {
 		return lan_sort;
@@ -47,10 +47,10 @@ public class SpecLanguageVO {
 	}
 	@Override
 	public String toString() {
-		return "LanguageVO [lan_id=" + lan_id + ", res_id=" + res_id + ", lan_sort=" + lan_sort + ", lan_name="
+		return "SpecLanguageVO [lan_id=" + lan_id + ", spec_id=" + spec_id + ", lan_sort=" + lan_sort + ", lan_name="
 				+ lan_name + ", lan_grade=" + lan_grade + ", lan_date=" + lan_date + "]";
 	}
-
+	
 	
 	
 }

@@ -1,8 +1,8 @@
 package vo;
 
-public class SpecAwardsVO {
+public class SpecAwardsVO extends SpecOverseasVO {
 	private int aw_id;
-	private int res_id;
+	private int spec_id;
 	private String aw_name;
 	private String aw_story;
 	private String aw_pub;
@@ -13,11 +13,11 @@ public class SpecAwardsVO {
 	public void setAw_id(int aw_id) {
 		this.aw_id = aw_id;
 	}
-	public int getRes_id() {
-		return res_id;
+	public int getSpec_id() {
+		return spec_id;
 	}
-	public void setRes_id(int res_id) {
-		this.res_id = res_id;
+	public void setSpec_id(int spec_id) {
+		this.spec_id = spec_id;
 	}
 	public String getAw_name() {
 		return aw_name;
@@ -45,8 +45,10 @@ public class SpecAwardsVO {
 	}
 	@Override
 	public String toString() {
-		return "AwardsVO [aw_id=" + aw_id + ", res_id=" + res_id + ", aw_name=" + aw_name + ", aw_story=" + aw_story
-				+ ", aw_pub=" + aw_pub + ", aw_date=" + aw_date + "]";
+		return "SpecAwardsVO [aw_id=" + aw_id + ", spec_id=" + spec_id + ", aw_name=" + aw_name + ", aw_story="
+				+ aw_story + ", aw_pub=" + aw_pub + ", aw_date=" + aw_date + "]";
 	}
+	
+	
 	
 }

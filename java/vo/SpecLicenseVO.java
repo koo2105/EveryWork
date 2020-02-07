@@ -1,9 +1,9 @@
 package vo;
 
-public class SpecLicenseVO {
+public class SpecLicenseVO extends SpecCareerVO{
 
 	private int lic_id;
-	private int res_id;
+	private int spec_id;
 	private String lic_name;
 	private String lic_pub;
 	private String lic_grade;
@@ -13,11 +13,11 @@ public class SpecLicenseVO {
 	public void setLic_id(int lic_id) {
 		this.lic_id = lic_id;
 	}
-	public int getRes_id() {
-		return res_id;
+	public int getSpec_id() {
+		return spec_id;
 	}
-	public void setRes_id(int res_id) {
-		this.res_id = res_id;
+	public void setSpec_id(int spec_id) {
+		this.spec_id = spec_id;
 	}
 	public String getLic_name() {
 		return lic_name;
@@ -39,9 +39,11 @@ public class SpecLicenseVO {
 	}
 	@Override
 	public String toString() {
-		return "LicenseVO [lic_id=" + lic_id + ", res_id=" + res_id + ", lic_name=" + lic_name + ", lic_pub=" + lic_pub
-				+ ", lic_grade=" + lic_grade + "]";
+		return "SpecLicenseVO [lic_id=" + lic_id + ", spec_id=" + spec_id + ", lic_name=" + lic_name + ", lic_pub="
+				+ lic_pub + ", lic_grade=" + lic_grade + "]";
 	}
+	
+
 	
 	
 

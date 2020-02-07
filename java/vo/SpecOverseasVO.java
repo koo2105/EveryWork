@@ -1,8 +1,8 @@
 package vo;
 
-public class SpecOverseasVO {
+public class SpecOverseasVO extends SpecExperienceVO{
 	private int ov_id;
-	private int res_id;
+	private int spec_id;
 	private String ov_country;
 	private String ov_pub;
 	private String ov_purpose;
@@ -12,11 +12,11 @@ public class SpecOverseasVO {
 	public void setOv_id(int ov_id) {
 		this.ov_id = ov_id;
 	}
-	public int getRes_id() {
-		return res_id;
+	public int getSpec_id() {
+		return spec_id;
 	}
-	public void setRes_id(int res_id) {
-		this.res_id = res_id;
+	public void setSpec_id(int spec_id) {
+		this.spec_id = spec_id;
 	}
 	public String getOv_country() {
 		return ov_country;
@@ -38,9 +38,10 @@ public class SpecOverseasVO {
 	}
 	@Override
 	public String toString() {
-		return "OverseasVO [ov_id=" + ov_id + ", res_id=" + res_id + ", ov_country=" + ov_country + ", ov_pub=" + ov_pub
-				+ ", ov_purpose=" + ov_purpose + "]";
+		return "SpecOverseasVO [ov_id=" + ov_id + ", spec_id=" + spec_id + ", ov_country=" + ov_country + ", ov_pub="
+				+ ov_pub + ", ov_purpose=" + ov_purpose + "]";
 	}
-
+	
+	
 	
 }
