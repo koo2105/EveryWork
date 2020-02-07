@@ -72,7 +72,7 @@ box-sizing: border-box;
          <div class="mInfo-subtitle"><a href="mlogout">로그아웃</a></div>
          <div class="mInfo-subtitle"><a href="#" onclick="answerOpen()">문의하기</a></div>
          <div class="mInfo-subtitle"><a href="terms">이용약관</a></div>
-         <div class="mInfo-subtitle">개인정보취급방침</div>
+         <div class="mInfo-subtitle"><a href="privacy">개인정보취급방침</a></div>
          </div>	 
    </div>
 </form>

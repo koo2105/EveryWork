@@ -120,6 +120,12 @@ public class MemberController {
 		mv.setViewName("member/termsForm"); 
 		return mv ;
 	}// login
+	
+	@RequestMapping(value = "/privacy")
+	public ModelAndView privacy(ModelAndView mv) {
+		mv.setViewName("member/privacyForm"); 
+		return mv ;
+	}// login
 
 
 } // class

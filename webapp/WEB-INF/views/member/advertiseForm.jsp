@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** Answer Form **</title>
+<title>** Advertisement Form**</title>
 <style>
  div {
    display: block;
 } 
 
-.answer-title {
+.adver-title {
    font-size: 30px;
    color: darkslategrey;
    font-weight: bold;
@@ -20,7 +20,7 @@
    text-align: center;
 }
 
-.answer{
+.adver{
    margin: auto;
    width: 310px;
    margin-bottom: 30px;
@@ -32,7 +32,7 @@
    margin-bottom: 10px;
 }
 
-.answer-form {
+.adver-form {
    width: 300px;
    height: 300px;
    margin-bottom: 10px;
@@ -40,7 +40,7 @@
   
 }
 
-.answer-subtitle {
+.adver-subtitle {
    font-size : 15;
    font-weight:bold;
    text-align: left;
@@ -51,7 +51,7 @@
    padding-bottom: 10px;
 }
 
-.answer-button {
+.adver-button {
    font-size : 15;
    font-weight:bold;
    width: 300px;
@@ -77,19 +77,19 @@ box-sizing: border-box;
 <body>
 
 
-<form action="answer" method="post">
-   <div class="answer-container">
-   <div class="x-btn"><a href="#" onclick="answerClose()"><img alt="닫기" src="resources/img/x_btn.png"></a></div>
-      <div class="answer">
-         <div class="answer-title">문의하기</div>
-         <div class="answer-subtitle">아이디(이메일)</div>
+<form action="adver" method="post">
+   <div class="adver-container">
+   <div class="x-btn"><a href="#" onclick="adverClose()"><img alt="닫기" src="resources/img/x_btn.png"></a></div>
+      <div class="adver">
+         <div class="adver-title">제휴 제안</div>
+         <div class="adver-subtitle">아이디(이메일)</div>
          <input class="id-form" id="emem_id" type="text" name="emem_id" value="${loginID}" readonly="readonly">
 
-         <div class="answer-subtitle">문의 내용</div>
-		 <textarea class="answer-form" id="inq_content" name="inq_content"></textarea>
+         <div class="adver-subtitle">제휴/광고 내용</div>
+		 <textarea class="adver-form" id="adv_content" name="adv_content"></textarea>
         
-      	<div class="answer-button">
-            <input type="submit" value="문의">
+      	<div class="adver-button">
+            <input type="submit" value="보내기">
        	</div>
          </div>	 
    </div>

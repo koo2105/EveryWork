@@ -202,8 +202,8 @@
   </div>
   <div class="about">
     <a href='#' onclick='answerOpen()'>문의하기</a> |
-    <a href="/privacy">개인정보취급방침</a> |
-    <a href="" ng-click="partnership()">제휴/광고</a>
+    <a href="privacy">개인정보취급방침</a> |
+    <a href='#' onclick='adverOpen()'>제휴/광고</a>
   </div>
   <div class="info-list">
     <div>
@@ -233,6 +233,10 @@
 
 <div class="answer-div">
 <jsp:include page="/WEB-INF/views/member/answerForm.jsp"></jsp:include>
+</div>
+
+<div class="adver-div">
+<jsp:include page="/WEB-INF/views/member/advertiseForm.jsp"></jsp:include>
 </div>
 
 </body>

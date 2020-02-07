@@ -33,6 +33,8 @@
 </h1>
 	<form action="#" method="post" id="#" enctype="multipart/form-data">
 	<table width=573>
+	<tr><td>ID</td>
+	<td><input type="text" size="50" name="admin_id" id="admin_id" value="${adloginID}" readonly="readonly"><br></td></tr>
 	<tr><td>제목</td>
 	<td><input type="text" name="bititle" id="bititle" size="50"><br></td></tr>
 	<tr><td>메인사진</td>

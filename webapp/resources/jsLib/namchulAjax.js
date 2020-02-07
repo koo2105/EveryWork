@@ -29,6 +29,15 @@ function answerOpen(){
 function answerClose(){
 		$('.answer-div').hide();
 	}
+
+function adverOpen(){
+	$('.adver-div').show();
+}
+function adverClose(){
+	$('.adver-div').hide();
+}
+
+
 function bloginsertf(){
 	$.ajax({
 		type : 'Get',
