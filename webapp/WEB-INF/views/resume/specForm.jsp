@@ -624,14 +624,12 @@ body {
 					</div>
 					<!-- end 해외연수 -->
 
-					<div class="specs edit-spec ng-scope advantage"
-						id="advantageFormPlus">
+					<div class="specs edit-spec ng-scope advantage">
 						<!-- ngIf: hasSpecContent(item.category) -->
 						<div class="subtitle ng-scope">
 							<div class="ng-binding">취업우대사항</div>
 							<!-- ngIf: item.category === 0 -->
-							<div class="add-del-btn outter-btn btn ng-hide"
-								onclick="advantageAddr()">+</div>
+					
 						</div>
 						<!-- end ngIf: hasSpecContent(item.category) -->
 						<!-- ngInclude: item.template -->
@@ -692,7 +690,7 @@ body {
 								</div>
 							</div>
 						</div>
-						<div id="con5"></div>
+				
 					</div>
 					<!-- end 취업우대사항 -->
 

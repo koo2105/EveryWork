@@ -520,7 +520,7 @@ function abroaddelete(id){
 
 
 
-var cnt5 = 0;
+/*var cnt5 = 0;
 function advantageAddr(){
 	const str = `<div class="content ng-scope" id=advantageFormPlus`+cnt5+`>
 								<div class="category-wrapper ng-scope">
@@ -593,7 +593,7 @@ function advantageAddr(){
 function advantagedelete(id){
 	$('#'+id).remove();
 } // advantagedelete(id)
-
+*/
 
 
 
