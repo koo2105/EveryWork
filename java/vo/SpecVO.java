@@ -1,6 +1,6 @@
 package vo;
 
-public class ResumeVO {
+public class SpecVO {
 
 	private int res_id;
 	private String emem_id;
