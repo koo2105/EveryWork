@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class JobopenVO {
 	private int jobopen_id;
-	private String jobopen_name;
+	private String admin_id;
 	private String jobopen_pimg;
 	private MultipartFile jobopen_pimgf;
 	private String jobopen_company;
@@ -19,18 +19,17 @@ public class JobopenVO {
 	private String[] jc_div;
 	private String[] jc_part;
 	private String[] jobqa_q;
-	
 	public int getJobopen_id() {
 		return jobopen_id;
 	}
 	public void setJobopen_id(int jobopen_id) {
 		this.jobopen_id = jobopen_id;
 	}
-	public String getJobopen_name() {
-		return jobopen_name;
+	public String getAdmin_id() {
+		return admin_id;
 	}
-	public void setJobopen_name(String jobopen_name) {
-		this.jobopen_name = jobopen_name;
+	public void setAdmin_id(String admin_id) {
+		this.admin_id = admin_id;
 	}
 	public String getJobopen_pimg() {
 		return jobopen_pimg;
@@ -104,16 +103,16 @@ public class JobopenVO {
 	public void setJobqa_q(String[] jobqa_q) {
 		this.jobqa_q = jobqa_q;
 	}
-	
 	@Override
 	public String toString() {
-		return "JobopenVO [jobopen_id=" + jobopen_id + ", jobopen_name=" + jobopen_name + ", jobopen_pimg="
-				+ jobopen_pimg + ", jobopen_pimgf=" + jobopen_pimgf + ", jobopen_company=" + jobopen_company
-				+ ", jobopen_link=" + jobopen_link + ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate="
-				+ jobopen_edate + ", jobopen_cimg=" + jobopen_cimg + ", jobopen_cimgf=" + jobopen_cimgf
-				+ ", jobopen_count=" + jobopen_count + ", jc_div=" + Arrays.toString(jc_div) + ", jc_part="
-				+ Arrays.toString(jc_part) + ", jobqa_q=" + Arrays.toString(jobqa_q) + "]";
+		return "JobopenVO [jobopen_id=" + jobopen_id + ", admin_id=" + admin_id + ", jobopen_pimg=" + jobopen_pimg
+				+ ", jobopen_pimgf=" + jobopen_pimgf + ", jobopen_company=" + jobopen_company + ", jobopen_link="
+				+ jobopen_link + ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate=" + jobopen_edate
+				+ ", jobopen_cimg=" + jobopen_cimg + ", jobopen_cimgf=" + jobopen_cimgf + ", jobopen_count="
+				+ jobopen_count + ", jc_div=" + Arrays.toString(jc_div) + ", jc_part=" + Arrays.toString(jc_part)
+				+ ", jobqa_q=" + Arrays.toString(jobqa_q) + "]";
 	}
+	
 	
 	
 	

@@ -39,7 +39,7 @@
 	 
 	<td align="left">
 		<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
-		<c:if test="${loginID!=mm.jobopen_name}">
+		<c:if test="${loginID!=mm.admin_id}">
 			<a href="#" onclick="#">${mm.jobopen_company}</a>
 		</c:if>
 		<!-- <a href="#"            .... scroll 위치 이동 
@@ -47,14 +47,14 @@
 			 
 			 
 		<!-- detail 에서 countUp(조회수 증가) 안하는경우 -->
-		<c:if test="${loginID==mm.jobopen_name}">
+		<c:if test="${loginID==mm.admin_id}">
 			<a href="#" onclick="#">${mm.jobopen_company}</a>
 		</c:if>
 	</td> 
 	 
 
 	
-	<td align="left">${mm.jobopen_name}</td>
+	<td align="left">${mm.admin_id}</td>
 	<td>${mm.jobopen_sdate}</td><td>${mm.jobopen_edate}</td><td>${mm.jobopen_count}</td>
 	</tr>
 </c:forEach>
@@ -64,9 +64,7 @@
 <a href="#" class="button" onclick="gonggoupdate()">공고 수정</a>
 <a href="#" class="button">공고 삭제</a>
 
-<c:if test="${loginID!=null}">
-	<a href="binsertf">[새글등록]</a>&nbsp;
-</c:if>
+
 
 <div id="content"></div>
 </body>
