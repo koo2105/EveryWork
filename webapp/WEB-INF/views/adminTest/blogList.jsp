@@ -39,7 +39,11 @@
 		<td align="left">
 			<a href="#" onclick="#">${mm.lab_title}</a>
 		</td> 
-	<td align="left">${mm.lab_cat}</td><td>${mm.lab_date}</td>
+	<td align="left">
+<c:if test="${mm.lab_cat=='1'}">EveryWork활용하기</c:if>
+<c:if test="${mm.lab_cat=='2'}">자소서 잘 쓰는 법</c:if>
+<c:if test="${mm.lab_cat=='3'}">EveryWork 소식</c:if>
+</td><td>${mm.lab_date}</td>
 	<td>${mm.admin_id}</td>
 	</tr>
 </c:forEach>

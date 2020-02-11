@@ -108,15 +108,6 @@ public class HomeController {
 	// µÕ ³¿­Z½º
 
 	//ÁöÀ±¾²
-
-
-	@RequestMapping(value = "/blog") // ÀÚ¼Ò¼­¿¬±¸¼Ò
-	public ModelAndView blog(ModelAndView mv) {
-		mv.setViewName("jasose/blog");
-		return mv;
-	}
-
-
 	// category list
 	@RequestMapping(value = "/useEW")
 	public ModelAndView useEW(ModelAndView mv) {
@@ -124,11 +115,6 @@ public class HomeController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/resumeWell")
-	public ModelAndView resumeWell(ModelAndView mv) {
-		mv.setViewName("jasose/resumeWell");
-		return mv;
-	}
 
 	@RequestMapping(value = "/EWNews")
 	public ModelAndView EWNews(ModelAndView mv) {

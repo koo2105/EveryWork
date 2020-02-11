@@ -15,9 +15,9 @@
 	      </div>
 	         <ul>
 	            <li><a href="blog" class="blog-All"><span>전체보기</span></a></li>
-	            <li><a href="useEW" class="blog-subtitle"><span>EveryWork활용하기</span></a></li>
-	            <li><a href="resumeWell" class="blog-subtitle"><span>자소서 잘 쓰는 법</span></a></li>
-	            <li><a href="EWNews" class="blog-subtitle"><span>EveryWork 소식</span></a></li>
+	            <li><a href="resumelist?lab_cat=1" class="blog-subtitle"><span>EveryWork활용하기</span></a></li>
+	            <li><a href="resumelist?lab_cat=2" class="blog-subtitle"><span>자소서 잘 쓰는 법</span></a></li>
+	            <li><a href="resumelist?lab_cat=3" class="blog-subtitle"><span>EveryWork 소식</span></a></li>
 	          
 	         </ul>
 	    </div>
