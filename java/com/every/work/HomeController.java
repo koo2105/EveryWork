@@ -52,11 +52,6 @@ public class HomeController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/specForm")
-	public ModelAndView specForm(ModelAndView mv) {
-		mv.setViewName("resume/specForm");
-		return mv;
-	}
 	//µÕ Áö¿µ¾²
 
 	//³¿­Z¾²

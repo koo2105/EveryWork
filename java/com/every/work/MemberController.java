@@ -58,6 +58,7 @@ public class MemberController {
 		if (vo!=null ) {  // 로그인 성공
 			session.setAttribute("loginID",vo.getEmem_id());
 			session.setAttribute("loginNM",vo.getEmem_name());
+		//	mv.addObject("HisGo","H");
 			mv.setViewName("home");
 		}else { // // 로그인 실패
 			mv.addObject("Error","L");

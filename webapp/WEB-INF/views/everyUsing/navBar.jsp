@@ -18,7 +18,7 @@
 		<div class= "nav-item nav-item-left nav-logo"><a href="home"><b>EveryWork</b></a></div>
 		<div class= "nav-item nav-item-left nav-recruit"><a href="jobMain">채용공고</a></div>
 		<div class= "nav-item nav-item-left nav-resume"><a href="resumeForm">자기소개서</a></div>
-		<div class= "nav-item nav-item-left nav-spec"><a href="specForm">이력서</a></div>
+		<div class= "nav-item nav-item-left nav-spec"><a href="specForm?emem_id=${loginID}">이력서</a></div>
 		<div class= "nav-item nav-item-left nav-blog"><a href="blog">자소서연구소</a></div>
 		<c:if test="${loginID!=null}">
 		<div class= "nav-item nav-item-right nav-login-icon"><a href="#" onclick="mInfo()"><img src="./resources/img/login_icon.png" height="25px"></a>

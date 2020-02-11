@@ -3,7 +3,7 @@ package vo;
 public class SpecVO{
 
 	private int spec_id;
-	private int emem_id;
+	private String emem_id;
 	private String spec_pt;
 	private String spec_name;
 	private String spec_birthd;
@@ -29,10 +29,10 @@ public class SpecVO{
 	public void setSpec_id(int spec_id) {
 		this.spec_id = spec_id;
 	}
-	public int getEmem_id() {
+	public String getEmem_id() {
 		return emem_id;
 	}
-	public void setEmem_id(int emem_id) {
+	public void setEmem_id(String emem_id) {
 		this.emem_id = emem_id;
 	}
 	public String getSpec_pt() {
@@ -153,6 +153,8 @@ public class SpecVO{
 				+ spec_milsperiod + ", spec_mileperiod=" + spec_mileperiod + ", spec_mildis=" + spec_mildis
 				+ ", spec_rank=" + spec_rank + "]";
 	}
+	
+	
 	
 	
 	

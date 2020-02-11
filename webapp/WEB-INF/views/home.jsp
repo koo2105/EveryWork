@@ -241,5 +241,16 @@
 <jsp:include page="/WEB-INF/views/member/advertiseForm.jsp"></jsp:include>
 </div>
 
+<%-- <c:if test="${HisGo=='H'}">
+ <script type="text/javascript">
+ 
+ history.go(-1);
+ 
+ </script>
+</c:if> --%>
+
+
+
+
 </body>
 </html>

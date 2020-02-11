@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,15 +25,18 @@ body {
 	<%@ include file="/WEB-INF/views/everyUsing/navBar.jsp"%>
 
 	<!-- SpecCtrl -->
-	<div class="spec-ctrl">
+	<div class="spec-ctrl" >
+	
 		<div class="spec-container">
 			<div class="section-container spec-saver">
+			
 				<div class="section-title">
 					이력서
-					<div class="spec-save-time ng-scope">로그인을 하지 않으면 저장되지 않습니다.</div>
+					<c:if test="${loginID==null}">
+					<div class="spec-save-time ng-scope"><b>로그인<b>을 하지 않으면 저장되지 않습니다.</div>
+					</c:if>
 				</div>
 				<div class="section-content new ng-scope">
-
 					<div class="fullpage-loading"></div>
 
 					<div class="specs edit-spec ng-scope basic-information">
@@ -74,10 +79,10 @@ body {
 										<tbody>
 											<tr>
 												<th>이름</th>
-												<td><input type="text"
-													class="small-input-text ng-pristine ng-untouched ng-valid"></td>
+												<td><input type="text" id="spec_name" name="spec_name"
+													class="small-input-text ng-pristine ng-untouched ng-valid" value="${sDetail.spec_name}"></td>
 												<th>생년월일</th>
-												<td colspan="3"><input type="date"
+												<td colspan="3"><input type="date" id="spec_birthd" name="spec_birthd" 
 													class="ng-pristine ng-untouched ng-valid"></td>
 												<th>성별</th>
 												<td><select class="ng-pristine ng-untouched ng-valid">
@@ -88,23 +93,23 @@ body {
 											</tr>
 											<tr>
 												<th>전화번호</th>
-												<td colspan="3"><input type="text"
+												<td colspan="3"><input type="text" id="spec_Num " name="spec_Num "
 													class="ng-pristine ng-untouched ng-valid"></td>
 												<th>휴대폰번호</th>
-												<td colspan="3"><input type="text"
+												<td colspan="3"><input type="text" id="spec_phoneNum" name="spec_phoneNum"
 													class="ng-pristine ng-untouched ng-valid"></td>
 											</tr>
 											<tr>
 												<th>이메일</th>
-												<td colspan="3"><input type="text"
+												<td colspan="3"><input type="text" id="spec_email" name="spec_email"
 													class="ng-pristine ng-untouched ng-valid"></td>
 												<th>SNS</th>
-												<td colspan="3"><input type="text"
+												<td colspan="3"><input type="text" id="spec_sns" name="spec_sns"
 													class="ng-pristine ng-untouched ng-valid"></td>
 											</tr>
 											<tr>
 												<th>주소</th>
-												<td colspan="7"><input type="text"
+												<td colspan="7"><input type="text" id="spec_add" name="spec_add"
 													class="basic-info-addr ng-pristine ng-untouched ng-valid"></td>
 											</tr>
 										</tbody>
@@ -797,7 +802,6 @@ body {
 						<div id="con7"></div>
 					</div>
 					<!-- end 교육 -->
-
 
 				</div>
 				<!-- end section-content -->
