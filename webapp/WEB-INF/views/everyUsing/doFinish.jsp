@@ -35,6 +35,18 @@
 	===> <a href="home">[홈으로]</a>
 </c:if>
 
+<c:if test="${Success=='AT'}">
+	<h3>문의 등록 완료</h3>
+	===> <a href="home">[홈으로]</a>
+</c:if>
+
+<c:if test="${Error=='AU'}">
+	<h3>문의 등록에 실패하셨습니다~~~</h3>
+	<h3>다시 하시겠습니까 ?</h3>
+	===> <a href="home">[홈으로]</a>
+</c:if>
+
+
 
 <br>
 <hr>

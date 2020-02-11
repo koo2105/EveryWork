@@ -24,5 +24,7 @@ public class SelflabDAO {
 		ArrayList<SelflabVO> list = (ArrayList) dao.selectList(NS+"selflablistAll",vo);
 		return list;
 	} // selectList()
+	
+
 
 }// end EmemberDAO

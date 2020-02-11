@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import vo.EmemberVO;
+import vo.InquiryVO;
 
 
 
@@ -32,6 +33,10 @@ public class EmemberDAO {
 	public int update(EmemberVO vo) {
 		return dao.update(NS+"ememberUpdate", vo);
 	} // update
+	
+	public int answerInsert(InquiryVO vo) {
+		return dao.insert(NS+"answerInsert", vo);
+	} // insert
 	
 	
 }//end EmemberDAO 

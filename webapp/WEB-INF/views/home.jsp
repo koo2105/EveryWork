@@ -23,7 +23,7 @@
 			<c:if test="${loginID !=null}">
 			<span class="main-title"><strong>${loginID}</strong></span><span class="title">님 맞춤 공고</span> 
 			</c:if>
-			<span class="sub-title">자소설닷컴 이용 패턴을 분석해 연관성 높은 공고를 추천합니다.</span></div>
+			<span class="sub-title">EveryWork의 이용 패턴을 분석해 연관성 높은 공고를 추천합니다.</span></div>
 				<div class="wrap-item-top"><a href="#"></a>1</div>
 				<div class="wrap-item-top"><a href="#"></a>2</div>
 				<div class="wrap-item-top"><a href="#"></a>3</div>

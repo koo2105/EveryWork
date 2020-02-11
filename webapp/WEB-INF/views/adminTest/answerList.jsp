@@ -28,7 +28,7 @@
 <h2>** 문의 관리 **</h2>
 <table width=800>
 <tr class="admin-title" >
-	<td>문의 번호</td><td>제목</td><td>관리자ID</td>
+	<td>문의 번호</td><td>제목</td><td>회원ID</td>
 	<td>등록일</td><td>답변 상태</td><td>조회수</td>
 </tr>
 <c:forEach var="mm" items="${Answerlist}" varStatus="vs">
@@ -42,7 +42,7 @@
 	 
 
 	
-	<td align="left">${mm.admin_id}</td><td>${mm.inq_date}</td>
+	<td align="left">${mm.emem_id}</td><td>${mm.inq_date}</td>
 	<td>${mm.inq_state}</td><td>${mm.inq_count}</td>
 	</tr>
 </c:forEach>

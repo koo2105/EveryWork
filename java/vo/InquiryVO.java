@@ -3,7 +3,7 @@ package vo;
 public class InquiryVO {
 
 	private int inq_id;
-	private String admin_id;//references emember(emem_id)
+	private String emem_id;//references emember(emem_id)
 	private String inq_title;
 	private String inq_content;
 	private String inq_date;
@@ -15,11 +15,11 @@ public class InquiryVO {
 	public void setInq_id(int inq_id) {
 		this.inq_id = inq_id;
 	}
-	public String getAdmin_id() {
-		return admin_id;
+	public String getEmem_id() {
+		return emem_id;
 	}
-	public void setAdmin_id(String admin_id) {
-		this.admin_id = admin_id;
+	public void setEmem_id(String emem_id) {
+		this.emem_id = emem_id;
 	}
 	public String getInq_title() {
 		return inq_title;
@@ -51,13 +51,14 @@ public class InquiryVO {
 	public void setInq_state(String inq_state) {
 		this.inq_state = inq_state;
 	}
-	
 	@Override
 	public String toString() {
-		return "InquiryVO [inq_id=" + inq_id + ", admin_id=" + admin_id + ", inq_title=" + inq_title + ", inq_content="
+		return "InquiryVO [inq_id=" + inq_id + ", emem_id=" + emem_id + ", inq_title=" + inq_title + ", inq_content="
 				+ inq_content + ", inq_date=" + inq_date + ", inq_count=" + inq_count + ", inq_state=" + inq_state
 				+ "]";
 	}
+
+	
 	
 	
 	

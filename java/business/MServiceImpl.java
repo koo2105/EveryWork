@@ -1,12 +1,11 @@
 package business;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import memberDAO.EmemberDAO;
 import vo.EmemberVO;
+import vo.InquiryVO;
 
 // Service 클래스
 // => Controller 와  DAO 사이에서 
@@ -46,6 +45,10 @@ public class MServiceImpl implements MService {
 		return dao.update(vo);
 	}
 	
+	@Override
+	public int answerInsert(InquiryVO vo) {
+		return dao.answerInsert(vo);
+	}
 	/*
 	// delete
 	@Override

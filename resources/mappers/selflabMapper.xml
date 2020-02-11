@@ -16,6 +16,6 @@
 		<![CDATA[ select * from (select * from selflab where lab_cat=#{lab_cat} order by lab_id desc) where rownum<=2]]>
 </select>
 
-
+ 
 
 	</mapper>

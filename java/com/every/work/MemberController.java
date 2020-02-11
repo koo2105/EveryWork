@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import business.MService;
 import vo.EmemberVO;
+import vo.InquiryVO;
 
 
 
@@ -103,7 +104,7 @@ public class MemberController {
 		}else { 
 			// 회원수정 실패 -> /member/doFinish.jsp
 			mv.addObject("Error","U");
-			mv.setViewName("member/doFinish");
+			mv.setViewName("everyUsing/doFinish");
 		} // if		
 		return mv ;
 	}// update
@@ -127,5 +128,21 @@ public class MemberController {
 		return mv ;
 	}// login
 
+	@RequestMapping(value = "/asinsert")
+	public ModelAndView answer(ModelAndView mv, InquiryVO vo) {
+		System.out.println(vo);
+		
+		if (service.answerInsert(vo)>0) { 
+			mv.addObject("Success","AT");
+			mv.setViewName("everyUsing/doFinish");
+		}else { 
+			// 회원수정 실패 -> /member/doFinish.jsp
+			mv.addObject("Error","AU");
+			mv.setViewName("everyUsing/doFinish");
+		} // if		
+		return mv ;
+		
+	}// joinf 
+	
 
 } // class

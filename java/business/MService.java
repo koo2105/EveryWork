@@ -1,8 +1,7 @@
 package business;
 
-import java.util.ArrayList;
-
 import vo.EmemberVO;
+import vo.InquiryVO;
 
 
 
@@ -16,9 +15,10 @@ public interface MService {
 
 	
 	int insert(EmemberVO vo);
-
 	
 	int update(EmemberVO vo);
+	
+	int answerInsert(InquiryVO vo);
 
 	/*
 	// delete

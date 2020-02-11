@@ -77,13 +77,16 @@ box-sizing: border-box;
 <body>
 
 
-<form action="answer" method="post">
+<form action="asinsert" method="post">
    <div class="answer-container">
    <div class="x-btn"><a href="#" onclick="answerClose()"><img alt="닫기" src="resources/img/x_btn.png"></a></div>
       <div class="answer">
          <div class="answer-title">문의하기</div>
          <div class="answer-subtitle">아이디(이메일)</div>
          <input class="id-form" id="emem_id" type="text" name="emem_id" value="${loginID}" readonly="readonly">
+         
+           <div class="answer-subtitle">문의 제목</div>
+         <input class="id-form" id="inq_title" type="text" name="inq_title">
 
          <div class="answer-subtitle">문의 내용</div>
 		 <textarea class="answer-form" id="inq_content" name="inq_content"></textarea>
