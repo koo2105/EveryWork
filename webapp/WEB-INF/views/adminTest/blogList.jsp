@@ -6,11 +6,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** BoardList Spring MVC2 **</title>
+<title>** 자소서 연구소 관리 **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
+<script>
+function binfoDetail(lab_id) {
+	$.ajax({
+		type : 'post',
+		data : {
+			lab_id : lab_id
+		},
+		url : 'binfoDetail',
+		success : function(result) {
+			$('#adminArea').html('');
+			$('#adminArea').html(result);
+		}
 
+	});
+};
+</script>
 <style>
 	.result { color:blue; }
 	
@@ -34,10 +49,11 @@
 </tr>
 <c:forEach var="mm" items="${Bloglist}" varStatus="vs">
 		<tr height=30 align="center">
-	 	 <td>${mm.lab_id}</td>
+		
+	 	 <td><a href="#" onclick="binfoDetail('${mm.lab_id}')">${mm.lab_id}</a></td>
 	 	 
 		<td align="left">
-			<a href="#" onclick="#">${mm.lab_title}</a>
+			${mm.lab_title}
 		</td> 
 	<td align="left">
 <c:if test="${mm.lab_cat=='1'}">EveryWork활용하기</c:if>

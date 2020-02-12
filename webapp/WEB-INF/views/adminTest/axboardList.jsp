@@ -6,11 +6,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** BoardList Spring MVC2 **</title>
+<title>** 채용 공고 관리 **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
+<script>
+function bdetail(jobopen_company) {
+	$.ajax({
+		type : 'post',
+		data : {
+			jobopen_company : jobopen_company
+		},
+		url : 'bdetail',
+		success : function(result) {
+			$('#adminArea').html('');
+			$('#adminArea').html(result);
+		}
 
+	});
+};
+
+</script>
 <style>
 	.result { color:blue; }
 	
@@ -40,7 +56,7 @@
 	<td align="left">
 		<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
 		<c:if test="${loginID!=mm.admin_id}">
-			<a href="#" onclick="#">${mm.jobopen_company}</a>
+			<a href="#" onclick=" bdetail('${mm.jobopen_company}')">${mm.jobopen_company}</a>
 		</c:if>
 		<!-- <a href="#"            .... scroll 위치 이동 
 			 <a href="javascript:;" .... 사용하면 해결         -->

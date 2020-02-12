@@ -6,10 +6,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** MemberList Spring MVC2 **</title>
+<title>** 회원 관리 **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script>
+function aminfoDetail(emem_id) {
+	$.ajax({
+		type : 'post',
+		data : {
+			emem_id : emem_id
+		},
+		url : 'minfo',
+		success : function(result) {
+			$('#adminArea').html('');
+			$('#adminArea').html(result);
+		}
 
+	});
+};
+</script>
 </head>
 <body>
 <h2>** 회원 관리 **</h2>
@@ -22,8 +37,8 @@
 <c:forEach var="mm" items="${List}">
 	<tr align="center" height=30>
 	
-
-	<td><a href="#" onclick="aidList('${mm.emem_id}')" class="textLink" >${mm.emem_id}</a></td>
+	<td><a href="#" onclick="aminfoDetail('${mm.emem_id}')" >${mm.emem_id}</a></td>
+	<%-- <td><a href="minfo" onclick="aidList('${mm.emem_id}')" class="textLink" >${mm.emem_id}</a></td> --%>
 	
 	<td>${mm.emem_name}</td>
 	<td>${mm.emem_pnum}</td>
@@ -33,6 +48,6 @@
 </c:forEach>
 </table>
 <hr>
-<a href="#" class="button">회원 삭제</a>
+
 </body>
 </html>

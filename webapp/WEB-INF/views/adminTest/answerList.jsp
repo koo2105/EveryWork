@@ -6,10 +6,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** BoardList Spring MVC2 **</title>
+<title>** 문의 관리 **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script>
+function answerDetail(inq_id) {
+	$.ajax({
+		type : 'post',
+		data : {
+			inq_id : inq_id
+		},
+		url : 'answerDetail',
+		success : function(result) {
+			$('#adminArea').html('');
+			$('#adminArea').html(result);
+		}
 
+	});
+};
+</script>
 <style>
 	.result { color:blue; }
 	
@@ -34,10 +49,10 @@
 <c:forEach var="mm" items="${Answerlist}" varStatus="vs">
 	<tr height=30 align="center">
 	
-	 	 <td>${mm.inq_id}</td>
+	 	 <td><a href="#" onclick="answerDetail('${mm.inq_id}')">${mm.inq_id}</a></td>
 	 	 
 		<td align="left">
-			<a href="#" onclick="#">${mm.inq_title}</a>
+			${mm.inq_title}
 		</td> 
 	 
 

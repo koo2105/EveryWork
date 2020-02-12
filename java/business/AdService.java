@@ -21,5 +21,12 @@ public interface AdService {
 	ArrayList<SelflabVO> blogList();
 	AdminVO adminLogin(AdminVO vo);
 	int jobopenInsert(JobopenVO vo);
+	JobopenVO bdetail(JobopenVO vo);
+	EmemberVO minfo(EmemberVO vo);
+	int delete(EmemberVO vo);
+	SelflabVO binfoDetail(SelflabVO vo);
+	InquiryVO answerDetail(InquiryVO vo);
+	int binfodelete(SelflabVO vo);
+
 
 }

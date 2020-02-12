@@ -7,6 +7,16 @@
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
 
+<c:if test="${Success=='SS'}">
+	<script>
+		alert('삭제되었습니다.');
+	</script>
+</c:if>
+<c:if test="${Success=='XX'}">
+	<script>
+		alert('삭제 실패.');
+	</script>
+</c:if>
 <script>
 	$(function() {
 		$('#amlist').click(function() {
@@ -18,7 +28,7 @@
 				}
 			});
 		});
-		   
+
 		$('#ablist').click(function() {
 			$.ajax({
 				type : 'Get',
@@ -28,7 +38,7 @@
 				}
 			});
 		});
-		
+
 		$('#anlist').click(function() {
 			$.ajax({
 				type : 'Get',
@@ -38,7 +48,7 @@
 				}
 			});
 		});
-		
+
 		$('#ajlist').click(function() {
 			$.ajax({
 				type : 'Get',
@@ -48,8 +58,19 @@
 				}
 			});
 		});
+		$('#aminfoDetail').click(function() {
+			$.ajax({
+				type : 'Get',
+				url : 'minfo',
+				success : function(result) {
+					$('#adminArea').html(result);
+				}
+			});
+		});
 
-	}); // ready
+	});// ready
+
+	
 </script>
 <style>
 div {
@@ -146,7 +167,7 @@ div {
 </style>
 </head>
 <body>
-<%@ include file="/WEB-INF/views/everyUsing/adminNavbar.jsp" %>
+	<%@ include file="/WEB-INF/views/everyUsing/adminNavbar.jsp"%>
 
 	<div class="mb-container">
 		<div class="menu-container">
@@ -173,7 +194,7 @@ div {
 			<!-- 본문 div -->
 			<div class="blog-index-container" id="adminArea">
 				<!-- 본문 div -->
-				
+
 			</div>
 		</div>
 	</div>

@@ -58,5 +58,33 @@ public class AdServiceImpl implements AdService {
 		return dao.jobopenInsert(vo);
 	}
 
+	@Override
+	public JobopenVO bdetail(JobopenVO vo) {
+		return dao.bdetail(vo);
+	}
 	
+	@Override
+	public EmemberVO minfo(EmemberVO vo) {
+		return dao.minfo(vo);
+	}
+	
+	@Override
+	public int delete(EmemberVO vo) {
+		return dao.delete(vo);
+	}
+
+	@Override
+	public SelflabVO binfoDetail(SelflabVO vo) {
+		return dao.binfoDetail(vo);
+	}
+
+	@Override
+	public InquiryVO answerDetail(InquiryVO vo) {
+		return dao.answerDetail(vo);
+	}
+
+	@Override
+	public int binfodelete(SelflabVO vo) {
+		return dao.binfoDelete(vo);
+	}
 } // class

@@ -17,9 +17,7 @@ import business.AdService;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
-import vo.JobcategoryVO;
 import vo.JobopenVO;
-import vo.JobqaVO;
 import vo.SelflabVO;
 
 @Controller
@@ -127,4 +125,64 @@ public class AdminController {
 		return mv;
 	}// login
 
+	
+	@RequestMapping(value = "/bdetail")
+	public ModelAndView bdetail(ModelAndView mv,JobopenVO vo) {
+		vo=service.bdetail(vo);
+		mv.addObject("Detail", vo);
+		mv.setViewName("adminTest/bdetail");
+		return mv;
+	}// mlist 
+	
+	@RequestMapping(value = "/minfo")
+	public ModelAndView minfo(ModelAndView mv,EmemberVO vo) {
+		vo=service.minfo(vo);
+		mv.addObject("minfo", vo);
+		mv.setViewName("adminTest/minfo");
+		return mv;
+	}// mlist 
+	
+	@RequestMapping(value = "/minfoDelete")
+	public ModelAndView minfoDelete(HttpServletRequest request, ModelAndView mv, EmemberVO vo) {
+	
+				if (service.delete(vo)>0) {
+					// È¸¿ø Å»Åð ¼º°ø : session »èÁ¦ -> home.jsp
+					mv.addObject("Success", "SS");
+				}else { // doFinish.jsp ·Î  
+					mv.addObject("Success", "XX");
+				}
+				  mv.setViewName("adminTest/adminHome");
+			
+		return mv ;
+	}// mdelete
+	
+	
+	@RequestMapping(value = "/binfoDetail")
+	public ModelAndView binfoDetail(ModelAndView mv,SelflabVO vo) {
+		vo=service.binfoDetail(vo);
+		mv.addObject("binfoDetail", vo);
+		mv.setViewName("adminTest/binfoDetail");
+		return mv;
+	}// binfoDetail 
+	
+	@RequestMapping(value = "/binfoDelete")
+	public ModelAndView binfoDelete(HttpServletRequest request, ModelAndView mv, SelflabVO vo) {
+		if (service.binfodelete(vo)>0) {
+			// È¸¿ø Å»Åð ¼º°ø : session »èÁ¦ -> home.jsp
+			mv.addObject("Success", "SS");
+		}else { // doFinish.jsp ·Î  
+			mv.addObject("Success", "XX");
+		}
+		mv.setViewName("adminTest/adminHome");
+		return mv ;
+	}// mdelete
+	
+	
+	@RequestMapping(value = "/answerDetail")
+	public ModelAndView answerDetail(ModelAndView mv,InquiryVO vo) {
+		vo=service.answerDetail(vo);
+		mv.addObject("answerDetail", vo);
+		mv.setViewName("adminTest/answerDetail");
+		return mv;
+	}// binfoDetail 
 } // class

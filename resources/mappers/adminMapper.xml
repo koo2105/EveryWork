@@ -26,6 +26,14 @@
 <select id="adminLogin" resultType="vo.AdminVO">
 	select * from admin where admin_id=#{admin_id} and admin_password=#{admin_password}
 </select>
+
+<select id="bdetail" resultType="vo.JobopenVO">
+	select * from jobopen where jobopen_company=#{jobopen_company} 
+</select>
+
+<select id="minfo" resultType="vo.EmemberVO">
+	select * from emember where emem_id=#{emem_id} 
+</select>
 	
 <insert id="jobopenInsert">
   	insert into jobopen values((select nvl(max(jobopen_id), 0)+1 from jobopen),#{admin_id},#{jobopen_pimg},#{jobopen_company},#{jobopen_link},#{jobopen_sdate},#{jobopen_edate},#{jobopen_cimg},0 )
@@ -38,5 +46,20 @@
 <insert id="jobqaInsert">
   	insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from jobqa), #{jobopen_id},#{jobqa_q})
 </insert>
+
+<delete id="minfoDelete">
+	 delete from emember where emem_id=#{emem_id}	
+</delete>
+
+<select id="binfoDetail" resultType="vo.SelflabVO">
+	select * from selflab where lab_id=#{lab_id} 
+</select>
+<delete id="binfoDelete">
+	 delete from selflab where lab_id=#{lab_id}	
+</delete>
+
+<select id="answerDetail" resultType="vo.InquiryVO">
+	select * from inquiry where inq_id=#{inq_id} 
+</select>
 
 	</mapper>

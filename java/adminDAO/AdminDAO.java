@@ -9,9 +9,7 @@ import org.springframework.stereotype.Repository;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
-import vo.JobcategoryVO;
 import vo.JobopenVO;
-import vo.JobqaVO;
 import vo.SelflabVO;
 
 @Repository
@@ -50,4 +48,30 @@ public class AdminDAO {
 		return cnt;
 	} // insert
 
+	public JobopenVO bdetail(JobopenVO vo) {
+		return dao.selectOne(NS + "bdetail",vo);
+	} // selectList()
+	
+	public EmemberVO minfo(EmemberVO vo) {
+		return dao.selectOne(NS + "minfo",vo);
+	} // selectList()
+	
+	
+	public int delete(EmemberVO vo) {
+		return dao.delete(NS+"minfoDelete", vo);
+	} // delete
+	
+	public SelflabVO binfoDetail(SelflabVO vo) {
+		return dao.selectOne(NS + "binfoDetail",vo);
+	} // binfoDetail()
+	
+	public int binfoDelete(SelflabVO vo) {
+		return dao.delete(NS + "binfoDelete",vo);
+	} // binfoDelete()
+	
+	public InquiryVO answerDetail(InquiryVO vo) {
+		return dao.selectOne(NS + "answerDetail",vo);
+	} // answerDetail()
+	
+	
 }// end EmemberDAO
