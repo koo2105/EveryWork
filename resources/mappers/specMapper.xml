@@ -7,37 +7,69 @@
 <mapper namespace="work.mappers.specMapper">
 
 
-<!-- selectList -->
+<!-- selectList 
 <select id="specSelectOne" resultType="vo.SpecVO">
+
 		select * from spec where emem_id=#{emem_id} 
-	</select>
+		select * from license where spec_id=(select spec_id from spec where emem_id=#{emem_id});
+	</select>-->
 
 
 
 
 
 
+<select id="specSelectOne" resultType="vo.SpecVO">
 
+select * from spec where emem_id=#{emem_id} 
 
+</select>
 
+<select id="universityList" resultType="vo.SpecVO">
 
+select * from university where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="graduateSchList" resultType="vo.SpecVO">
 
+select * from graduateSch where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="licenseList" resultType="vo.SpecVO">
 
+select * from license where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="careerList" resultType="vo.SpecVO">
 
+select * from career where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="languageList" resultType="vo.SpecVO">
 
+select * from language where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="awardsList" resultType="vo.SpecVO">
 
+select * from awards where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="overseasList" resultType="vo.SpecVO">
 
+select * from overseas where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="experienceList" resultType="vo.SpecVO">
 
+select * from experience where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
+<select id="educationList" resultType="vo.SpecVO">
 
+select * from education where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
+</select>
 
 
 

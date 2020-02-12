@@ -1,12 +1,10 @@
 package business;
 
-import java.util.ArrayList;
-
 import vo.SpecVO;
 
 
 
-public interface SService {
+public interface SpService {
 
 //	// selectList
 //	ArrayList<SpecVO> specSelectList();

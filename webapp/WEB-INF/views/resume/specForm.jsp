@@ -82,34 +82,46 @@ body {
 												<td><input type="text" id="spec_name" name="spec_name"
 													class="small-input-text ng-pristine ng-untouched ng-valid" value="${sDetail.spec_name}"></td>
 												<th>생년월일</th>
-												<td colspan="3"><input type="date" id="spec_birthd" name="spec_birthd" 
-													class="ng-pristine ng-untouched ng-valid"></td>
+												<td colspan="3"><input type="date" id="spec_birthd" name="spec_birthd" value="${sDetail.spec_birthd}" 
+													class="ng-pristine ng-untouched ng-valid" ></td>
 												<th>성별</th>
 												<td><select class="ng-pristine ng-untouched ng-valid">
-														<option value="">-</option>
+												<c:if test="${sDetail.spec_gender==null}">
+														<option value="" selected="selected">-</option>
 														<option value="0">남자</option>
 														<option value="1">여자</option>
+												</c:if>
+												<c:if test="${sDetail.spec_gender=='0'}">
+														<option value="" >-</option>
+														<option value="0" selected="selected">남자</option>
+														<option value="1">여자</option>
+												</c:if>
+												<c:if test="${sDetail.spec_gender=='1'}">
+														<option value="">-</option>
+														<option value="0">남자</option>
+														<option value="1" selected="selected">여자</option>
+												</c:if>
 												</select></td>
 											</tr>
 											<tr>
 												<th>전화번호</th>
-												<td colspan="3"><input type="text" id="spec_Num " name="spec_Num "
+												<td colspan="3"><input type="text" id="spec_Num " name="spec_Num " value="${sDetail.spec_Num}"
 													class="ng-pristine ng-untouched ng-valid"></td>
 												<th>휴대폰번호</th>
-												<td colspan="3"><input type="text" id="spec_phoneNum" name="spec_phoneNum"
+												<td colspan="3"><input type="text" id="spec_phoneNum" name="spec_phoneNum" value="${sDetail.spec_phoneNum}
 													class="ng-pristine ng-untouched ng-valid"></td>
 											</tr>
 											<tr>
 												<th>이메일</th>
-												<td colspan="3"><input type="text" id="spec_email" name="spec_email"
+												<td colspan="3"><input type="text" id="spec_email" name="spec_email" value="${sDetail.spec_email}
 													class="ng-pristine ng-untouched ng-valid"></td>
 												<th>SNS</th>
-												<td colspan="3"><input type="text" id="spec_sns" name="spec_sns"
+												<td colspan="3"><input type="text" id="spec_sns" name="spec_sns" value="${sDetail.spec_sns}
 													class="ng-pristine ng-untouched ng-valid"></td>
 											</tr>
 											<tr>
 												<th>주소</th>
-												<td colspan="7"><input type="text" id="spec_add" name="spec_add"
+												<td colspan="7"><input type="text" id="spec_add" name="spec_add" value="${sDetail.spec_add}
 													class="basic-info-addr ng-pristine ng-untouched ng-valid"></td>
 											</tr>
 										</tbody>
@@ -145,23 +157,53 @@ body {
 									<tbody>
 										<tr>
 											<th>기간</th>
-											<td colspan="3"><input type="month"
-												class="ng-pristine ng-untouched ng-valid"> <span
-												class="duration-wave-mark"> ~ </span> <input type="month"
-												class="ng-pristine ng-untouched ng-valid"></td>
+											<td colspan="3">
+											<input type="date"	class="ng-pristine ng-untouched ng-valid" value="${sDetail.spec_hsperiod}"> 
+											<span class="duration-wave-mark"> ~ </span> 
+											<input type="date"	class="ng-pristine ng-untouched ng-valid" value="${sDetail.spec_heperiod}"></td>
 										</tr>
 										<tr>
 											<th>학교명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${sDetail.spec_hname}"></td>
 											<th>분류</th>
 											<td><select
 												class="select-to-save ng-pristine ng-untouched ng-valid">
-													<option value="">-</option>
+												<c:if test="${sDetail.spec_hkind==null}">
+													<option value="" selected="selected">-</option>
 													<option value="0">문과</option>
 													<option value="1">이과</option>
 													<option value="2">전문(실업)계</option>
 													<option value="3">예체능</option>
+												</c:if>
+												<c:if test="${sDetail.spec_hkind=='0'}">
+													<option value="">-</option>
+													<option value="0" selected="selected">문과</option>
+													<option value="1">이과</option>
+													<option value="2">전문(실업)계</option>
+													<option value="3">예체능</option>
+												</c:if>
+												<c:if test="${sDetail.spec_hkind=='1'}">
+													<option value="">-</option>
+													<option value="0">문과</option>
+													<option value="1" selected="selected">이과</option>
+													<option value="2">전문(실업)계</option>
+													<option value="3">예체능</option>
+												</c:if>
+												<c:if test="${sDetail.spec_hkind=='2'}">
+													<option value="">-</option>
+													<option value="0">문과</option>
+													<option value="1">이과</option>
+													<option value="2" selected="selected">전문(실업)계</option>
+													<option value="3">예체능</option>
+												</c:if>
+												<c:if test="${sDetail.spec_hkind=='3'}">
+													<option value="">-</option>
+													<option value="0">문과</option>
+													<option value="1">이과</option>
+													<option value="2">전문(실업)계</option>
+													<option value="3" selected="selected">예체능</option>
+												</c:if>
 											</select></td>
 										</tr>
 									</tbody>
@@ -198,10 +240,10 @@ body {
 									<tbody>
 										<tr>
 											<th>기간</th>
-											<td colspan="5"><input type="month"
-												class="ng-pristine ng-untouched ng-valid"> <span
-												class="duration-wave-mark"> ~ </span> <input type="month"
-												class="ng-pristine ng-untouched ng-valid"></td>
+											<td colspan="5">
+											<input type="date" class="ng-pristine ng-untouched ng-valid"> 
+											<span class="duration-wave-mark"> ~ </span> 
+											<input type="date"	class="ng-pristine ng-untouched ng-valid"></td>
 										</tr>
 										<tr>
 											<th>학교명</th>
@@ -301,9 +343,9 @@ body {
 									<tbody>
 										<tr>
 											<th>기간</th>
-											<td colspan="5"><input type="month"
+											<td colspan="5"><input type="date"
 												class="ng-pristine ng-untouched ng-valid"> <span
-												class="duration-wave-mark"> ~ </span> <input type="month"
+												class="duration-wave-mark"> ~ </span> <input type="date"
 												class="ng-pristine ng-untouched ng-valid"></td>
 										</tr>
 										<tr>
@@ -451,9 +493,9 @@ body {
 											<td><input type="text"
 												class="ng-pristine ng-untouched ng-valid"></td>
 											<th>기간</th>
-											<td><input type="month" style="width: 135px"
+											<td><input type="date" style="width: 135px"
 												class="ng-pristine ng-untouched ng-valid"> <span
-												class="duration-wave-mark"> ~ </span> <input type="month"
+												class="duration-wave-mark"> ~ </span> <input type="date"
 												style="width: 135px"
 												class="ng-pristine ng-untouched ng-valid"></td>
 										</tr>
@@ -651,43 +693,89 @@ body {
 										<tbody>
 											<tr>
 												<th>보훈사항</th>
-												<td colspan="3"><input type="radio" name="patriot"
-													value="true" class="ng-pristine ng-untouched ng-valid">대상
-													<input type="radio" name="patriot" value="false"
-													class="ng-pristine ng-untouched ng-valid">비대상</td>
+												<td colspan="3">
+												<c:if test="${sDetail.spec_vet==null}">
+												<input type="radio" name="patriot" value="0" class="ng-pristine ng-untouched ng-valid">대상
+													<input type="radio" name="patriot" value="1" class="ng-pristine ng-untouched ng-valid">비대상
+													</c:if>
+													<c:if test="${sDetail.spec_vet=='0'}">
+												<input type="radio" name="patriot" value="0" checked="checked" class="ng-pristine ng-untouched ng-valid">대상
+													<input type="radio" name="patriot" value="1" class="ng-pristine ng-untouched ng-valid">비대상
+													</c:if>
+													<c:if test="${sDetail.spec_vet=='1'}">
+												<input type="radio" name="patriot" value="0" class="ng-pristine ng-untouched ng-valid">대상
+													<input type="radio" name="patriot" value="1" checked="checked" class="ng-pristine ng-untouched ng-valid">비대상
+													</c:if>
+													</td>
 											</tr>
 											<tr>
 												<th>장애여부</th>
-												<td colspan="3"><input type="radio" name="handicapped"
-													value="true" class="ng-pristine ng-untouched ng-valid">대상
-													<input type="radio" name="handicapped" value="false"
-													class="ng-pristine ng-untouched ng-valid">비대상 <input
-													type="text"
-													class="ng-pristine ng-untouched ng-valid ng-hide">
+												<td colspan="3">
+												<c:if test="${sDetail.spec_obs==null}">
+												<input type="radio" name="handicapped" value="0" class="ng-pristine ng-untouched ng-valid">대상
+												<input type="radio" name="handicapped" value="1" class="ng-pristine ng-untouched ng-valid">비대상
+												</c:if>
+												<c:if test="${sDetail.spec_obs=='0'}">
+												<input type="radio" name="handicapped" value="0" checked="checked" class="ng-pristine ng-untouched ng-valid">대상
+												<input type="radio" name="handicapped" value="1" class="ng-pristine ng-untouched ng-valid">비대상
+												</c:if>
+												<c:if test="${sDetail.spec_obs=='1'}">
+												<input type="radio" name="handicapped" value="0" class="ng-pristine ng-untouched ng-valid">대상
+												<input type="radio" name="handicapped" value="1" checked="checked" class="ng-pristine ng-untouched ng-valid">비대상
+												</c:if>
+												<input	type="text" name="넣어야댐" value="${sDetail.spec_obscontent}" class="ng-pristine ng-untouched ng-valid ng-hide">
 												</td>
 											</tr>
 											<tr>
 												<th>병역구분</th>
-												<td><input type="radio" name="military_division"
+												<td>
+												<c:if test="${sDetail.spec_mil==null}">
+													<input type="radio" name="military_division"
 													class="ng-pristine ng-untouched ng-valid" value="0">군필
 													<input type="radio" name="military_division"
 													class="ng-pristine ng-untouched ng-valid" value="1">미필
 													<input type="radio" name="military_division"
-													class="ng-pristine ng-untouched ng-valid" value="2">면제</td>
+													class="ng-pristine ng-untouched ng-valid" value="2">면제
+												</c:if>
+												<c:if test="${sDetail.spec_mil=='0'}">
+													<input type="radio" name="military_division" checked="checked"
+													class="ng-pristine ng-untouched ng-valid" value="0">군필
+													<input type="radio" name="military_division"
+													class="ng-pristine ng-untouched ng-valid" value="1">미필
+													<input type="radio" name="military_division"
+													class="ng-pristine ng-untouched ng-valid" value="2">면제
+												</c:if>
+												<c:if test="${sDetail.spec_mil=='1'}">
+													<input type="radio" name="military_division"
+													class="ng-pristine ng-untouched ng-valid" value="0">군필
+													<input type="radio" name="military_division" checked="checked"
+													class="ng-pristine ng-untouched ng-valid" value="1">미필
+													<input type="radio" name="military_division"
+													class="ng-pristine ng-untouched ng-valid" value="2">면제
+												</c:if>
+												<c:if test="${sDetail.spec_mil=='2'}">
+													<input type="radio" name="military_division"
+													class="ng-pristine ng-untouched ng-valid" value="0">군필
+													<input type="radio" name="military_division"
+													class="ng-pristine ng-untouched ng-valid" value="1">미필
+													<input type="radio" name="military_division" checked="checked"
+													class="ng-pristine ng-untouched ng-valid" value="2">면제
+												</c:if>
+													</td>
 												<th>복무기간</th>
-												<td><input type="month" style="width: 135px"
-													class="ng-pristine ng-untouched ng-valid"> <span
-													class="duration-wave-mark"> ~ </span> <input type="month"
-													style="width: 135px"
-													class="ng-pristine ng-untouched ng-valid"></td>
+												<td>
+												<input type="date" style="width: 135px" value="${sDetail.spec_milsperiod}" class="ng-pristine ng-untouched ng-valid"> 
+												<span class="duration-wave-mark"> ~ </span> 
+												<input type="date"	style="width: 135px" value="${sDetail.spec_mileperiod}" class="ng-pristine ng-untouched ng-valid">
+												</td>
 											</tr>
 											<tr>
 												<th>군별</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${sDetail.spec_mildis}" ></td>
 												<th>계급</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${sDetail.spec_rank}"></td>
 											</tr>
 											<!-- ngIf: !$first -->
 										</tbody>

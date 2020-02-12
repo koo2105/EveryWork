@@ -1,28 +1,41 @@
 package vo;
 
+import java.util.ArrayList;
+
 public class SpecVO{
 
 	private int spec_id;
 	private String emem_id;
 	private String spec_pt;
 	private String spec_name;
-	private String spec_birthd;
+	private String spec_birthd;	
+	private String spec_gender;
 	private String spec_Num;
 	private String spec_phoneNum;
 	private String spec_email;
 	private String spec_sns;
 	private String spec_add;
 	private String spec_hsperiod ;
+	private String spec_heperiod ;
 	private String spec_hname;
 	private String spec_hkind;
 	private String spec_vet;
 	private String spec_obs;
+	private String spec_obscontent;
 	private String spec_mil;
 	private String spec_milsperiod;
 	private String spec_mileperiod;
 	private String spec_mildis;
 	private String spec_rank;
-	
+	private ArrayList<SpecAwardsVO> alist ;  
+	private ArrayList<SpecCareerVO> clist ;
+	private ArrayList<SpecEducationVO> edlist ;
+	private ArrayList<SpecExperienceVO> exlist ;
+	private ArrayList<SpecGraduateSchVO> mlist ;
+	private ArrayList<SpecLanguageVO> lalist ;
+	private ArrayList<SpecLicenseVO> lilist ;
+	private ArrayList<SpecOverseasVO> olist ;
+	private ArrayList<SpecUniversityVO> ulist ;
 	public int getSpec_id() {
 		return spec_id;
 	}
@@ -52,6 +65,12 @@ public class SpecVO{
 	}
 	public void setSpec_birthd(String spec_birthd) {
 		this.spec_birthd = spec_birthd;
+	}
+	public String getSpec_gender() {
+		return spec_gender;
+	}
+	public void setSpec_gender(String spec_gender) {
+		this.spec_gender = spec_gender;
 	}
 	public String getSpec_Num() {
 		return spec_Num;
@@ -89,6 +108,12 @@ public class SpecVO{
 	public void setSpec_hsperiod(String spec_hsperiod) {
 		this.spec_hsperiod = spec_hsperiod;
 	}
+	public String getSpec_heperiod() {
+		return spec_heperiod;
+	}
+	public void setSpec_heperiod(String spec_heperiod) {
+		this.spec_heperiod = spec_heperiod;
+	}
 	public String getSpec_hname() {
 		return spec_hname;
 	}
@@ -112,6 +137,12 @@ public class SpecVO{
 	}
 	public void setSpec_obs(String spec_obs) {
 		this.spec_obs = spec_obs;
+	}
+	public String getSpec_obscontent() {
+		return spec_obscontent;
+	}
+	public void setSpec_obscontent(String spec_obscontent) {
+		this.spec_obscontent = spec_obscontent;
 	}
 	public String getSpec_mil() {
 		return spec_mil;
@@ -143,20 +174,73 @@ public class SpecVO{
 	public void setSpec_rank(String spec_rank) {
 		this.spec_rank = spec_rank;
 	}
+	public ArrayList<SpecAwardsVO> getAlist() {
+		return alist;
+	}
+	public void setAlist(ArrayList<SpecAwardsVO> alist) {
+		this.alist = alist;
+	}
+	public ArrayList<SpecCareerVO> getClist() {
+		return clist;
+	}
+	public void setClist(ArrayList<SpecCareerVO> clist) {
+		this.clist = clist;
+	}
+	public ArrayList<SpecEducationVO> getEdlist() {
+		return edlist;
+	}
+	public void setEdlist(ArrayList<SpecEducationVO> edlist) {
+		this.edlist = edlist;
+	}
+	public ArrayList<SpecExperienceVO> getExlist() {
+		return exlist;
+	}
+	public void setExlist(ArrayList<SpecExperienceVO> exlist) {
+		this.exlist = exlist;
+	}
+	public ArrayList<SpecGraduateSchVO> getMlist() {
+		return mlist;
+	}
+	public void setMlist(ArrayList<SpecGraduateSchVO> mlist) {
+		this.mlist = mlist;
+	}
+	public ArrayList<SpecLanguageVO> getLalist() {
+		return lalist;
+	}
+	public void setLalist(ArrayList<SpecLanguageVO> lalist) {
+		this.lalist = lalist;
+	}
+	public ArrayList<SpecLicenseVO> getLilist() {
+		return lilist;
+	}
+	public void setLilist(ArrayList<SpecLicenseVO> lilist) {
+		this.lilist = lilist;
+	}
+	public ArrayList<SpecOverseasVO> getOlist() {
+		return olist;
+	}
+	public void setOlist(ArrayList<SpecOverseasVO> olist) {
+		this.olist = olist;
+	}
+	public ArrayList<SpecUniversityVO> getUlist() {
+		return ulist;
+	}
+	public void setUlist(ArrayList<SpecUniversityVO> ulist) {
+		this.ulist = ulist;
+	}
 	@Override
 	public String toString() {
 		return "SpecVO [spec_id=" + spec_id + ", emem_id=" + emem_id + ", spec_pt=" + spec_pt + ", spec_name="
-				+ spec_name + ", spec_birthd=" + spec_birthd + ", spec_Num=" + spec_Num + ", spec_phoneNum="
-				+ spec_phoneNum + ", spec_email=" + spec_email + ", spec_sns=" + spec_sns + ", spec_add=" + spec_add
-				+ ", spec_hsperiod=" + spec_hsperiod + ", spec_hname=" + spec_hname + ", spec_hkind=" + spec_hkind
-				+ ", spec_vet=" + spec_vet + ", spec_obs=" + spec_obs + ", spec_mil=" + spec_mil + ", spec_milsperiod="
+				+ spec_name + ", spec_birthd=" + spec_birthd + ", spec_gender=" + spec_gender + ", spec_Num=" + spec_Num
+				+ ", spec_phoneNum=" + spec_phoneNum + ", spec_email=" + spec_email + ", spec_sns=" + spec_sns
+				+ ", spec_add=" + spec_add + ", spec_hsperiod=" + spec_hsperiod + ", spec_heperiod=" + spec_heperiod
+				+ ", spec_hname=" + spec_hname + ", spec_hkind=" + spec_hkind + ", spec_vet=" + spec_vet + ", spec_obs="
+				+ spec_obs + ", spec_obscontent=" + spec_obscontent + ", spec_mil=" + spec_mil + ", spec_milsperiod="
 				+ spec_milsperiod + ", spec_mileperiod=" + spec_mileperiod + ", spec_mildis=" + spec_mildis
-				+ ", spec_rank=" + spec_rank + "]";
+				+ ", spec_rank=" + spec_rank + ", alist=" + alist + ", clist=" + clist + ", edlist=" + edlist
+				+ ", exlist=" + exlist + ", mlist=" + mlist + ", lalist=" + lalist + ", lilist=" + lilist + ", olist="
+				+ olist + ", ulist=" + ulist + "]";
 	}
-	
-	
-	
-	
 	
 	
 	
