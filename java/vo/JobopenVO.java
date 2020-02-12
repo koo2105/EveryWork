@@ -16,9 +16,6 @@ public class JobopenVO {
 	private String jobopen_cimg;
 	private MultipartFile jobopen_cimgf;
 	private String jobopen_count;
-	private String[] jc_div;
-	private String[] jc_part;
-	private String[] jobqa_q;
 	public int getJobopen_id() {
 		return jobopen_id;
 	}
@@ -85,36 +82,16 @@ public class JobopenVO {
 	public void setJobopen_count(String jobopen_count) {
 		this.jobopen_count = jobopen_count;
 	}
-	public String[] getJc_div() {
-		return jc_div;
-	}
-	public void setJc_div(String[] jc_div) {
-		this.jc_div = jc_div;
-	}
-	public String[] getJc_part() {
-		return jc_part;
-	}
-	public void setJc_part(String[] jc_part) {
-		this.jc_part = jc_part;
-	}
-	public String[] getJobqa_q() {
-		return jobqa_q;
-	}
-	public void setJobqa_q(String[] jobqa_q) {
-		this.jobqa_q = jobqa_q;
-	}
 	@Override
 	public String toString() {
 		return "JobopenVO [jobopen_id=" + jobopen_id + ", admin_id=" + admin_id + ", jobopen_pimg=" + jobopen_pimg
 				+ ", jobopen_pimgf=" + jobopen_pimgf + ", jobopen_company=" + jobopen_company + ", jobopen_link="
 				+ jobopen_link + ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate=" + jobopen_edate
 				+ ", jobopen_cimg=" + jobopen_cimg + ", jobopen_cimgf=" + jobopen_cimgf + ", jobopen_count="
-				+ jobopen_count + ", jc_div=" + Arrays.toString(jc_div) + ", jc_part=" + Arrays.toString(jc_part)
-				+ ", jobqa_q=" + Arrays.toString(jobqa_q) + "]";
+				+ jobopen_count + "]";
 	}
+
+
 	
-	
-	
-	
-	
+
 }

@@ -20,6 +20,6 @@ public interface AdService {
 	ArrayList<InquiryVO> answerList();
 	ArrayList<SelflabVO> blogList();
 	AdminVO adminLogin(AdminVO vo);
-	int jobopenInsert(JobopenVO vo1,JobcategoryVO vo2,JobqaVO vo3);
+	int jobopenInsert(JobopenVO vo);
 
 }

@@ -89,11 +89,10 @@ public class AdminController {
 	}// login
 
 	@RequestMapping(value = "/jobopeninsert")
-	public ModelAndView jobopeninsert(HttpServletRequest request, ModelAndView mv, JobopenVO vo1, JobcategoryVO vo2,
-			JobqaVO vo3) throws IOException {
-		if (vo1 != null) {
-			
-			MultipartFile jobopen_pimgf = vo1.getJobopen_pimgf();
+	public ModelAndView jobopeninsert(HttpServletRequest request, ModelAndView mv, JobopenVO vo) throws IOException {
+		if (vo != null) {
+
+			MultipartFile jobopen_pimgf = vo.getJobopen_pimgf();
 			String file1, file2;
 			if (!jobopen_pimgf.isEmpty()) {
 
@@ -103,9 +102,9 @@ public class AdminController {
 				file2 = "resources/uploadImage/" + jobopen_pimgf.getOriginalFilename();
 			} else
 				file2 = "NO Image";
-			vo1.setJobopen_cimg(file2);
+			vo.setJobopen_pimg(file2);
 
-			MultipartFile jobopen_cimgf = vo1.getJobopen_cimgf();
+			MultipartFile jobopen_cimgf = vo.getJobopen_cimgf();
 			String file3, file4;
 			if (!jobopen_cimgf.isEmpty()) {
 
@@ -115,13 +114,15 @@ public class AdminController {
 				file4 = "resources/uploadImage/" + jobopen_cimgf.getOriginalFilename();
 			} else
 				file4 = "NO Image";
-			vo1.setJobopen_cimg(file4);
-			
-			service.jobopenInsert(vo1, vo2, vo3);
+			vo.setJobopen_cimg(file4);
+		}
+		
+		if (service.jobopenInsert(vo) > 0) {
 			mv.addObject("JOI", "T");
 		} else {
+			// 회원가입 실패 -> /member/doFinish.jsp
 			mv.addObject("Error", "JOE");
-		}
+		} // if
 		mv.setViewName("everyUsing/doFinish");
 		return mv;
 	}// login

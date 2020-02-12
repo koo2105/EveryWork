@@ -54,8 +54,8 @@ public class AdServiceImpl implements AdService {
 	}
 	
 	@Override
-	public int jobopenInsert(JobopenVO vo1,JobcategoryVO vo2,JobqaVO vo3) {
-		return dao.jobopenInsert(vo1,vo2,vo3);
+	public int jobopenInsert(JobopenVO vo) {
+		return dao.jobopenInsert(vo);
 	}
 
 	
