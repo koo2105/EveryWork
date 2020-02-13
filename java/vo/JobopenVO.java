@@ -1,7 +1,5 @@
 package vo;
 
-import java.util.Arrays;
-
 import org.springframework.web.multipart.MultipartFile;
 
 public class JobopenVO {

@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecUniversityVO extends SpecGraduateSchVO{
+public class SpecUniversityVO{
 	private int uni_id;
 	private int spec_id; //REFERENCES spec (spec_id) ON DELETE CASCADE,
 	private String uni_speriod;
@@ -9,6 +9,8 @@ public class SpecUniversityVO extends SpecGraduateSchVO{
 	private String uni_kind;
 	private double uni_grade;
 	private String uni_major;
+	private String uni_smajor1;
+	private String uni_smajor2;
 	public int getUni_id() {
 		return uni_id;
 	}
@@ -57,12 +59,26 @@ public class SpecUniversityVO extends SpecGraduateSchVO{
 	public void setUni_major(String uni_major) {
 		this.uni_major = uni_major;
 	}
+	public String getUni_smajor1() {
+		return uni_smajor1;
+	}
+	public void setUni_smajor1(String uni_smajor1) {
+		this.uni_smajor1 = uni_smajor1;
+	}
+	public String getUni_smajor2() {
+		return uni_smajor2;
+	}
+	public void setUni_smajor2(String uni_smajor2) {
+		this.uni_smajor2 = uni_smajor2;
+	}
 	@Override
 	public String toString() {
-		return "SpecUniversity [uni_id=" + uni_id + ", spec_id=" + spec_id + ", uni_speriod=" + uni_speriod
+		return "SpecUniversityVO [uni_id=" + uni_id + ", spec_id=" + spec_id + ", uni_speriod=" + uni_speriod
 				+ ", uni_eperiod=" + uni_eperiod + ", uni_name=" + uni_name + ", uni_kind=" + uni_kind + ", uni_grade="
-				+ uni_grade + ", uni_major=" + uni_major + "]";
+				+ uni_grade + ", uni_major=" + uni_major + ", uni_smajor1=" + uni_smajor1 + ", uni_smajor2="
+				+ uni_smajor2 + "]";
 	}
+	
 	
 	
 

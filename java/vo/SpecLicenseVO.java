@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecLicenseVO extends SpecCareerVO{
+public class SpecLicenseVO {
 
 	private int lic_id;
 	private int spec_id;

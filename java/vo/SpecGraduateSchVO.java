@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecGraduateSchVO extends SpecLicenseVO {
+public class SpecGraduateSchVO  {
 	
 	private int gra_id;
 	private int spec_id;// REFERENCES spec (spec_id) ON DELETE CASCADE,
@@ -10,7 +10,8 @@ public class SpecGraduateSchVO extends SpecLicenseVO {
 	private String gra_kind;
 	private double gra_grade;
 	private String gra_major;
-	
+	private String gra_smajor1;
+	private String gra_smajor2;
 	public int getGra_id() {
 		return gra_id;
 	}
@@ -59,12 +60,27 @@ public class SpecGraduateSchVO extends SpecLicenseVO {
 	public void setGra_major(String gra_major) {
 		this.gra_major = gra_major;
 	}
+	public String getGra_smajor1() {
+		return gra_smajor1;
+	}
+	public void setGra_smajor1(String gra_smajor1) {
+		this.gra_smajor1 = gra_smajor1;
+	}
+	public String getGra_smajor2() {
+		return gra_smajor2;
+	}
+	public void setGra_smajor2(String gra_smajor2) {
+		this.gra_smajor2 = gra_smajor2;
+	}
 	@Override
 	public String toString() {
-		return "SpecGraduateSch [gra_id=" + gra_id + ", spec_id=" + spec_id + ", gra_speriod=" + gra_speriod
+		return "SpecGraduateSchVO [gra_id=" + gra_id + ", spec_id=" + spec_id + ", gra_speriod=" + gra_speriod
 				+ ", gra_eperiod=" + gra_eperiod + ", gra_name=" + gra_name + ", gra_kind=" + gra_kind + ", gra_grade="
-				+ gra_grade + ", gra_major=" + gra_major + "]";
-	} 
+				+ gra_grade + ", gra_major=" + gra_major + ", gra_smajor1=" + gra_smajor1 + ", gra_smajor2="
+				+ gra_smajor2 + "]";
+	}
+	
+	
 	
 	
 

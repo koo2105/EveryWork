@@ -42,7 +42,8 @@ public class SpecController {
 		mv.addObject("lilist",vo.getLilist());
 		mv.addObject("olist",vo.getOlist());
 		mv.addObject("ulist",vo.getUlist());
-		System.out.println(vo);
+		System.out.println("*************2"+vo);
+		System.out.println("*************2"+vo.getUlist());
 		}
 		mv.setViewName("resume/specForm");
 		

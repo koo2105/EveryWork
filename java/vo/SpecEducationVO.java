@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecEducationVO extends SpecVO{
+public class SpecEducationVO {
 	private int edu_id;
 	private int spec_id;
 	private String edu_name;

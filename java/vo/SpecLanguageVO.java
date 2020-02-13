@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecLanguageVO extends SpecAwardsVO{
+public class SpecLanguageVO {
 	
 	private int lan_id;
 	private int spec_id;
