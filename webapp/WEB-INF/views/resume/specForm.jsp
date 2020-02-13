@@ -793,7 +793,58 @@ body {
 						</div>
 						</c:if>
 						<c:if test="${cvs.index!='0'}">
-						
+						<div class="content ng-scope" id="careerFormPlus${cvs.index}">
+								<div class="category-wrapper ng-scope">
+									<!-- ngRepeat: career in currentApplicant.specs.career track by $index -->
+									<table class="ng-scope career-table category-repeater">
+										<colgroup>
+											<col width="120px">
+											<col width="320px">
+											<col width="120px">
+											<col width="320px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>회사명</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_name}"></td>
+												<th>기간</th>
+												<td><input type="month" style="width: 135px"
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_speriod}"> <span
+													class="duration-wave-mark"> ~ </span> <input type="month"
+													style="width: 135px"
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_eperiod}"></td>
+											</tr>
+											<tr>
+												<th>직급</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_rank}"></td>
+												<th>부서</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_dep}"></td>
+											</tr>
+											<tr class="assignment">
+												<th>담당업무</th>
+												<td colspan="3"><textarea
+														class="ng-pristine ng-untouched ng-valid">${cl.car_work}</textarea></td>
+											</tr>
+											<tr class="resignation">
+												<th>퇴사사유</th>
+												<td colspan="3"><textarea
+														class="ng-pristine ng-untouched ng-valid">${cl.car_res}</textarea></td>
+											</tr>
+											<!-- ngIf: !$first -->
+											<tr class="table-option-row ng-scope">
+												<td colspan="4">
+													<div class="delete-content" onclick="careerdelete('careerFormPlus${cvs.index}')"
+														>삭제하기</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- end ngRepeat: career in currentApplicant.specs.career track by $index -->
+								</div>
+							</div>
 						</c:if>
 						</c:forEach>
 						<div id="con1"></div>
@@ -811,7 +862,9 @@ body {
 						</div>
 						<!-- end ngIf: hasSpecContent(item.category) -->
 						<!-- ngInclude: item.template -->
-						<div class="content ng-scope">
+						<c:forEach var="la" items="${lalist}" varStatus="lavs">
+						<c:if test="${lavs.index=='0'}">
+						<div class="content ng-scope"  id="languageFormPlus${lavs.index}">
 							<div class="category-wrapper ng-scope">
 								<!-- ngRepeat: language in currentApplicant.specs.language track by $index -->
 								<table class="ng-scope language-table category-repeater">
@@ -825,23 +878,20 @@ body {
 										<tr>
 											<th>외국어명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${la.lan_sort}"></td>
 											<th>시험명</th>
 											<td>
 												<!-- <input type="text" ng&#45;model="language.test.content" ng&#45;blur="updateContent(language.test, language.number, item.category)" kr&#45;input> -->
-												<div class="spec-school-major-box">
-													<span class="ng-binding"></span> <span>검색</span>
-													<!-- <span ng&#45;click="search_univ_major('language', item.category, language.number)">검색</span> -->
-												</div>
+												<input type="text" class="spec-school-major-box" value="${la.lan_name}">
 											</td>
 										</tr>
 										<tr>
 											<th class="ng-binding">점수/등급</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${la.lan_grade}"></td>
 											<th>취득일</th>
 											<td><input type="date"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${la.lan_date}"></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -849,6 +899,51 @@ body {
 								<!-- end ngRepeat: language in currentApplicant.specs.language track by $index -->
 							</div>
 						</div>
+						</c:if>
+						
+						<c:if test="${lavs.index=='0'}">
+						<div class="content ng-scope" id="languageFormPlus${lavs.index}">
+								<div class="category-wrapper ng-scope" >
+									<!-- ngRepeat: language in currentApplicant.specs.language track by $index -->
+									<table class="ng-scope language-table category-repeater">
+										<colgroup>
+											<col width="120px">
+											<col width="320px">
+											<col width="120px">
+											<col width="320px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>외국어명</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${la.lan_sort}"></td>
+												<th>시험명</th>
+												<td>
+													<input type="text" class="spec-school-major-box" value="${la.lan_name}">
+												</td>
+											</tr>
+											<tr>
+												<th class="ng-binding">점수/등급</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${la.lan_grade}"></td>
+												<th>취득일</th>
+												<td><input type="date"
+													class="ng-pristine ng-untouched ng-valid" value="${la.lan_date}"></td>
+											</tr>
+											<!-- ngIf: !$first -->
+											<tr class="table-option-row ng-scope">
+											<td colspan="4">
+											<div class="delete-content" onclick="languagedelete('languageFormPlus${lavs.index}')"
+											>삭제하기</div>
+											</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- end ngRepeat: language in currentApplicant.specs.language track by $index -->
+								</div>
+							</div>
+						</c:if>
+						</c:forEach>
 						<div id="con2"></div>
 					</div>
 					<!-- end 어학 -->
@@ -863,7 +958,9 @@ body {
 						</div>
 						<!-- end ngIf: hasSpecContent(item.category) -->
 						<!-- ngInclude: item.template -->
-						<div class="content ng-scope">
+						<c:forEach var="al" items="${alist}" varStatus="avs">
+						<c:if test="${avs.index=='0'}">
+						<div class="content ng-scope" id="awardFormPlus${avs.index}">
 							<div class="category-wrapper ng-scope">
 								<!-- ngRepeat: award in currentApplicant.specs.award track by $index -->
 								<table class="ng-scope award-table category-repeater">
@@ -877,18 +974,18 @@ body {
 										<tr>
 											<th>수상명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_name}"></td>
 											<th>수상내용</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_story}"></td>
 										</tr>
 										<tr>
 											<th>수여기관</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_pub}"></td>
 											<th>수상일</th>
 											<td><input type="date"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_date}"></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -896,6 +993,50 @@ body {
 								<!-- end ngRepeat: award in currentApplicant.specs.award track by $index -->
 							</div>
 						</div>
+						</c:if>
+						<c:if test="${avs.index!='0'}">
+						<div class="content ng-scope" id="awardFormPlus${avs.index}">
+								<div class="category-wrapper ng-scope">
+									<!-- ngRepeat: award in currentApplicant.specs.award track by $index -->
+									<table class="ng-scope award-table category-repeater">
+										<colgroup>
+											<col width="120px">
+											<col width="320px">
+											<col width="120px">
+											<col width="320px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>수상명</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_name}"></td>
+												<th>수상내용</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_story}"></td>
+											</tr>
+											<tr>
+												<th>수여기관</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_pub}"></td>
+												<th>수상일</th>
+												<td><input type="date"
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_date}"></td>
+											</tr>
+											<!-- ngIf: !$first -->
+											<tr class="table-option-row ng-scope">
+											<td colspan="4">
+											<div class="delete-content" onclick="languagedelete('awardFormPlus${avs.index}')"
+											>삭제하기</div>
+											</td>
+											</tr>
+											
+										</tbody>
+									</table>
+									<!-- end ngRepeat: award in currentApplicant.specs.award track by $index -->
+								</div>
+							</div>
+						</c:if>
+						</c:forEach>
 						<div id="con3"></div>
 					</div>
 					<!-- end 수상경력 -->
@@ -910,7 +1051,10 @@ body {
 						</div>
 						<!-- end ngIf: hasSpecContent(item.category) -->
 						<!-- ngInclude: item.template -->
-						<div class="content ng-scope">
+						
+						<c:forEach var="ol" items="${olist}" varStatus="ovs">
+						<c:if test="${ovs.index=='0'}">
+						<div class="content ng-scope" id="abroadFormPlus${ovs.index}">
 							<div class="category-wrapper ng-scope" data-category="8">
 								<!-- ngRepeat: abroad in currentApplicant.specs.abroad track by $index -->
 								<table class="ng-scope abroad-table category-repeater">
@@ -924,15 +1068,15 @@ body {
 										<tr>
 											<th>국가</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${ol.ov_country}"></td>
 											<th>기관</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${ol.ov_pub}"></td>
 										</tr>
 										<tr class="objective">
 											<th>목적 및 내용</th>
 											<td colspan="3"><textarea
-													class="ng-pristine ng-untouched ng-valid"></textarea></td>
+													class="ng-pristine ng-untouched ng-valid">${ol.ov_purpose}</textarea></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -940,6 +1084,46 @@ body {
 								<!-- end ngRepeat: abroad in currentApplicant.specs.abroad track by $index -->
 							</div>
 						</div>
+						</c:if>
+						<c:if test="${ovs.index!='0'}">
+						<div class="content ng-scope" id="abroadFormPlus${ovs.index}">
+								<div class="category-wrapper ng-scope" data-category="8">
+									<!-- ngRepeat: abroad in currentApplicant.specs.abroad track by $index -->
+									<table class="ng-scope abroad-table category-repeater">
+										<colgroup>
+											<col width="120px">
+											<col width="320px">
+											<col width="120px">
+											<col width="320px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>국가</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${ol.ov_country}"></td>
+												<th>기관</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${ol.ov_pub}"></td>
+											</tr>
+											<tr class="objective">
+												<th>목적 및 내용</th>
+												<td colspan="3"><textarea
+														class="ng-pristine ng-untouched ng-valid">${ol.ov_purpose}</textarea></td>
+											</tr>
+											<!-- ngIf: !$first -->
+											<tr class="table-option-row ng-scope">
+												<td colspan="4">
+												<div class="delete-content" onclick="languagedelete('abroadFormPlus${ovs.index}')"
+												>삭제하기</div>
+												</td>
+												</tr>
+										</tbody>
+									</table>
+									<!-- end ngRepeat: abroad in currentApplicant.specs.abroad track by $index -->
+								</div>
+							</div>
+						</c:if>
+						</c:forEach>
 						<div id="con4"></div>
 					</div>
 					<!-- end 해외연수 -->
