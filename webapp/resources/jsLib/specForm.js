@@ -1,6 +1,6 @@
 
 //대학교
-var cnt8 = 0;
+var cnt8 = 1;
 
 function universityAddr(){
 	const str = `<div class="content ng-scope" id=universityFormPlus`+cnt8+`>

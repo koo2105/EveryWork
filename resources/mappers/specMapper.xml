@@ -25,47 +25,47 @@ select * from spec where emem_id=#{emem_id}
 
 </select>
 
-<select id="universityList" resultType="vo.SpecVO">
+<select id="universityList" resultType="vo.SpecUniversityVO">
 
 select * from university where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="graduateSchList" resultType="vo.SpecVO">
+<select id="graduateSchList" resultType="vo.SpecGraduateSchVO">
 
 select * from graduateSch where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="licenseList" resultType="vo.SpecVO">
+<select id="licenseList" resultType="vo.SpecLicenseVO">
 
 select * from license where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="careerList" resultType="vo.SpecVO">
+<select id="careerList" resultType="vo.SpecCareerVO">
 
 select * from career where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="languageList" resultType="vo.SpecVO">
+<select id="languageList" resultType="vo.SpecLanguageVO">
 
 select * from language where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="awardsList" resultType="vo.SpecVO">
+<select id="awardsList" resultType="vo.SpecAwardsVO">
 
 select * from awards where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="overseasList" resultType="vo.SpecVO">
+<select id="overseasList" resultType="vo.SpecOverseasVO">
 
 select * from overseas where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="experienceList" resultType="vo.SpecVO">
+<select id="experienceList" resultType="vo.SpecExperienceVO">
 
 select * from experience where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 
 </select>
-<select id="educationList" resultType="vo.SpecVO">
+<select id="educationList" resultType="vo.SpecEducationVO">
 
 select * from education where spec_id=(select spec_id from spec where emem_id=#{emem_id})
 

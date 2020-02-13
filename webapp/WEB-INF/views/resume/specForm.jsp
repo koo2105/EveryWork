@@ -225,7 +225,7 @@ body {
 						</div>
 						<!-- end ngIf: hasSpecContent(item.category) -->
 						<!-- ngInclude: item.template -->
-						<div class="content ng-scope">
+						<div class="content ng-scope" id="universityFormPlus0">
 							<div class="category-wrapper ng-scope">
 								<!-- ngRepeat: univ in currentApplicant.specs.university track by $index -->
 								<table class="ng-scope university-table category-repeater">
