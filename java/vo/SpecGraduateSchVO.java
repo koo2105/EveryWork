@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecGraduateSchVO  {
+public class SpecGraduateSchVO  extends SpecExperienceVO{
 	
 	private int gra_id;
 	private int spec_id;// REFERENCES spec (spec_id) ON DELETE CASCADE,

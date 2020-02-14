@@ -12,7 +12,41 @@
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/specForm.js"></script>
 <script>
-
+	function specupdate(){
+		ajax({
+			type:'post',
+			url:'',
+			data:{
+				spec_id:spec_id,
+				emem_id:emem_id,
+				spec_pt:spec_pt,
+				spec_name:spec_name,
+				spec_birthd:spec_birthd,
+				spec_gender:spec_gender,
+				spec_Num:spec_Num,
+				spec_phoneNum:spec_phoneNum,
+				spec_email:spec_email,
+				spec_sns:spec_sns,
+				spec_add:spec_add,
+				spec_hsperiod:spec_hsperiod,
+				spec_heperiod:spec_heperiod,
+				spec_hname:spec_hname,
+				spec_hkind:spec_hkind,
+				spec_vet:spec_vet,
+				spec_obs:spec_obs,
+				spec_obscontent:spec_obscontent,
+				spec_mil:spec_mil,
+				spec_milsperiod:spec_milsperiod,
+				spec_mileperiod:spec_mileperiod,
+				spec_mildis:spec_mildis,
+				spec_rank:spec_rank,
+				
+			},
+			success: function(result){
+				$('#calendar-div').html(result);
+			}
+		}); //ajax
+	} 
 </script>
 <style>
 body {
@@ -45,6 +79,7 @@ body {
 						<input name="emem_id" type="hidden" value="${sDetail.emem_id}">
 					</c:if>
 				</div>
+				<form action="#" method="post">
 				<div class="section-content new ng-scope">
 					<div class="fullpage-loading"></div>
 
@@ -1464,6 +1499,7 @@ body {
 					<!-- end 교육 -->
 				<button onclick="">저장하기</button>
 				</div>
+				</form>
 				<!-- end section-content -->
 				
 			</div>

@@ -2,7 +2,7 @@ package vo;
 
 import java.util.ArrayList;
 
-public class SpecVO{
+public class SpecVO extends SpecUniversityVO{
 
 	private int spec_id;
 	private String emem_id;

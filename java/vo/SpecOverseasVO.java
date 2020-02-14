@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecOverseasVO {
+public class SpecOverseasVO extends SpecLicenseVO{
 	private int ov_id;
 	private int spec_id;
 	private String ov_country;
