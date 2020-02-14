@@ -8,6 +8,7 @@ public class SpecEducationVO {
 	private String edu_sdate;
 	private String edu_edate;
 	private String edu_story;
+	
 	public int getEdu_id() {
 		return edu_id;
 	}

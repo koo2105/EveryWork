@@ -106,7 +106,7 @@ function universitydelete(id){
 } // universitydelete(id)
 
 //대학교
-var cnt9 = 0;
+var cnt9 = 1;
 
 function graduate_schoolAddr(){
 	const str = `<div class="content ng-scope" id=graduate_schFormPlus`+cnt9+`>
@@ -241,7 +241,7 @@ function uni_majordelete(id){
 
 
 
-var cnt = 0;
+var cnt = 1;
 function licenseAddr(){
 	  const str = `<div class="content ng-scope"  id=licenseFormPlus`+cnt+` >
 			<div class="category-wrapper ng-scope">
@@ -295,7 +295,7 @@ function licensedelete(id){
 
 
 
-var cnt1 = 0;
+var cnt1 = 1;
 
 function careerAddr(){
 	const str = `<div class="content ng-scope" id=careerFormPlus`+cnt1+`>
@@ -361,7 +361,7 @@ function careerdelete(id){
 
 
 
-var cnt2 = 0;
+var cnt2 = 1;
 function languageAddr(){
 	const str = `<div class="content ng-scope" id=languageFormPlus`+cnt2+`>
 								<div class="category-wrapper ng-scope" >
@@ -417,7 +417,7 @@ function languagedelete(id){
 } // languagedelete(id)
 
 
-var cnt3 = 0;
+var cnt3 = 1;
 function awardAddr(){
 	const str = `<div class="content ng-scope" id=awardFormPlus`+cnt3+`>
 								<div class="category-wrapper ng-scope">
@@ -470,7 +470,7 @@ function awarddelete(id){
 
 
 
-var cnt4 = 0;
+var cnt4 = 1;
 
 function abroadAddr(){
 	const str = `  <div class="content ng-scope" id=abroadFormPlus`+cnt4+`>
@@ -597,7 +597,7 @@ function advantagedelete(id){
 
 
 
-var cnt6 = 0;
+var cnt6 = 1;
 function social_activityAddr(){
 	const str = ` <div class="content ng-scope" id=social_activityFormPlus`+cnt6+`>
 								<div class="category-wrapper ng-scope">
@@ -653,7 +653,7 @@ function social_activitydelete(id){
 
 
 
-var cnt7 = 0;
+var cnt7 = 1;
 
 function educationAddr(){
 	const str = `  <div class="content ng-scope" id=educationFormPlus`+cnt7+`>

@@ -11,6 +11,9 @@
 	href="resources/jsLib/resumeStyle.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/specForm.js"></script>
+<script>
+
+</script>
 <style>
 body {
 	background: #f0f0f0;
@@ -36,6 +39,10 @@ body {
 						<div class="spec-save-time ng-scope">
 							<b>로그인<b>을 하지 않으면 저장되지 않습니다.
 						</div>
+					</c:if>
+					<c:if test="${sDetail.spec_id!=null}">
+						<input name="spec_id" type="hidden" value="${sDetail.spec_id}">
+						<input name="emem_id" type="hidden" value="${sDetail.emem_id}">
 					</c:if>
 				</div>
 				<div class="section-content new ng-scope">
@@ -89,7 +96,7 @@ body {
 													name="spec_birthd" value="${sDetail.spec_birthd}"
 													class="ng-pristine ng-untouched ng-valid"></td>
 												<th>성별</th>
-												<td><select class="ng-pristine ng-untouched ng-valid">
+												<td><select name="spec_gender" class="ng-pristine ng-untouched ng-valid">
 														<c:if test="${sDetail.spec_gender==null}">
 															<option value="" selected="selected">-</option>
 															<option value="0">남자</option>
@@ -175,20 +182,20 @@ body {
 										<tr>
 											<th>기간</th>
 											<td colspan="3"><input type="date"
-												class="ng-pristine ng-untouched ng-valid"
+												class="ng-pristine ng-untouched ng-valid" name="spec_hsperiod" id="spec_hsperiod"
 												value="${sDetail.spec_hsperiod}"> <span
 												class="duration-wave-mark"> ~ </span> <input type="date"
-												class="ng-pristine ng-untouched ng-valid"
+												class="ng-pristine ng-untouched ng-valid" name="spec_heperiod" id="spec_heperiod"
 												value="${sDetail.spec_heperiod}"></td>
 										</tr>
 										<tr>
 											<th>학교명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"
+												class="ng-pristine ng-untouched ng-valid" name="spec_hname" id="spec_hname"
 												value="${sDetail.spec_hname}"></td>
 											<th>분류</th>
 											<td><select
-												class="select-to-save ng-pristine ng-untouched ng-valid">
+												class="select-to-save ng-pristine ng-untouched ng-valid" name="spec_hkind" id="spec_hkind">
 													<c:if test="${sDetail.spec_hkind==null}">
 														<option value="" selected="selected">-</option>
 														<option value="0">문과</option>
@@ -265,18 +272,18 @@ body {
 												<tr>
 													<th>기간</th>
 													<td colspan="5"><input type="date"
-														class="ng-pristine ng-untouched ng-valid"
-														value="${uu.uni_speriod}"> <span
+														class="ng-pristine ng-untouched ng-valid" id="uni_speriod" name="uni_speriod"
+														value="${uu.uni_speriod}" > <span
 														class="duration-wave-mark"> ~ </span> <input type="date"
-														class="ng-pristine ng-untouched ng-valid"
+														class="ng-pristine ng-untouched ng-valid" id="uni_eperiod" name="uni_eperiod"
 														value="${uu.uni_eperiod}"></td>
 												</tr>
 												<tr>
 													<th>학교명</th>
-													<td><input type="text" class="spec-school-major-box"
+													<td><input type="text" class="spec-school-major-box" id="uni_name" name="uni_name"
 														value="${uu.uni_name}"></td>
 													<th>분류</th>
-													<td><select class="ng-pristine ng-untouched ng-valid">
+													<td><select class="ng-pristine ng-untouched ng-valid" id="uni_kind" name="uni_kind">
 															<c:if test="${uu.uni_kind==null}">
 																<option value="" selected="selected">-</option>
 																<option value="0">2년제</option>
@@ -304,26 +311,26 @@ body {
 													</select></td>
 													<th>학점</th>
 													<td><input
-														class="univ-score small-input-text ng-pristine ng-untouched ng-valid"
+														class="univ-score small-input-text ng-pristine ng-untouched ng-valid" id="uni_grade" name="uni_grade"
 														type="text" value="${uu.uni_grade}"></td>
 												</tr>
 												<tr>
 													<th>주전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${uu.uni_major}">
+														class="spec-school-major-box" value="${uu.uni_major}" id="uni_major" name="uni_major">
 														<!-- <div class="add-del-btn inner-btn btn" onclick="uni_majorAddr()">+</div> -->
 													</td>
 												</tr>
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${uu.uni_smajor1}">
+														class="spec-school-major-box" value="${uu.uni_smajor1}" id="uni_smajor1" name="uni_smajor1">
 													</td>
 												</tr>
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${uu.uni_smajor2}">
+														class="spec-school-major-box" value="${uu.uni_smajor2}" id="uni_smajor2" name="uni_smajor2">
 													</td>
 												</tr>
 
@@ -355,18 +362,18 @@ body {
 												<tr>
 													<th>기간</th>
 													<td colspan="5"><input type="date"
-														class="ng-pristine ng-untouched ng-valid"
+														class="ng-pristine ng-untouched ng-valid" id="uni_speriod" name="uni_speriod"
 														value="${uu.uni_speriod}"> <span
 														class="duration-wave-mark"> ~ </span> <input type="date"
-														class="ng-pristine ng-untouched ng-valid"
+														class="ng-pristine ng-untouched ng-valid" id="uni_eperiod" name="uni_eperiod"
 														value="${uu.uni_eperiod}"></td>
 												</tr>
 												<tr>
 													<th>학교명</th>
-													<td><input type="text" class="spec-school-major-box"
+													<td><input type="text" class="spec-school-major-box" id="uni_name" name="uni_name"
 														value="${uu.uni_name}"></td>
 													<th>분류</th>
-													<td><select class="ng-pristine ng-untouched ng-valid">
+													<td><select class="ng-pristine ng-untouched ng-valid" id="uni_kind" name="uni_kind">
 															<c:if test="${uu.uni_kind==null}">
 																<option value="" selected="selected">-</option>
 																<option value="0">2년제</option>
@@ -394,26 +401,26 @@ body {
 													</select></td>
 													<th>학점</th>
 													<td><input
-														class="univ-score small-input-text ng-pristine ng-untouched ng-valid"
+														class="univ-score small-input-text ng-pristine ng-untouched ng-valid" id="uni_grade" name="uni_grade"
 														type="text" value="${uu.uni_grade}"></td>
 												</tr>
 												<tr>
 													<th>주전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${uu.uni_major}">
+														class="spec-school-major-box" value="${uu.uni_major}" id="uni_major" name="uni_major">
 													</td>
 												</tr>
 
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${uu.uni_smajor1}">
+														class="spec-school-major-box" value="${uu.uni_smajor1}" id="uni_smajor1" name="uni_smajor1">
 													</td>
 												</tr>
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${uu.uni_smajor2}">
+														class="spec-school-major-box" value="${uu.uni_smajor2}" id="uni_smajor2" name="uni_smajor2">
 													</td>
 												</tr>
 												<!-- ngRepeat: minor_subject in univ.minor_subject track by $index -->
@@ -470,18 +477,18 @@ body {
 												<tr>
 													<th>기간</th>
 													<td colspan="5"><input type="date"
-														class="ng-pristine ng-untouched ng-valid"
+														class="ng-pristine ng-untouched ng-valid" id="gra_speriod" name="gra_speriod"
 														value="${gg.gra_speriod}"> <span
 														class="duration-wave-mark"> ~ </span> <input type="date"
-														class="ng-pristine ng-untouched ng-valid"
+														class="ng-pristine ng-untouched ng-valid" id="gra_eperiod" name="gra_eperiod"
 														value="${gg.gra_eperiod}"></td>
 												</tr>
 												<tr>
 													<th>학교명</th>
-													<td><input type="text" class="spec-school-major-box"
+													<td><input type="text" class="spec-school-major-box" id="gra_name" name="gra_name"
 														value="${gg.gra_name}"></td>
 													<th>분류</th>
-													<td><select class="ng-pristine ng-untouched ng-valid">
+													<td><select class="ng-pristine ng-untouched ng-valid" id="gra_kind" name="gra_kind">
 															<c:if test="${gg.gra_kind==null}">
 																<option value="" selected="selected">-</option>
 																<option value="0">석사과정</option>
@@ -509,24 +516,24 @@ body {
 													</select></td>
 													<th>학점</th>
 													<td><input
-														class="univ-score small-input-text ng-pristine ng-untouched ng-valid"
+														class="univ-score small-input-text ng-pristine ng-untouched ng-valid" id="gra_grade" name="gra_grade"
 														type="text" value="${gg.gra_grade}"></td>
 												</tr>
 												<tr>
 													<th>주전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${gg.gra_major}">
+														class="spec-school-major-box" value="${gg.gra_major}" id="gra_major" name="gra_major">
 													</td>
 												</tr>
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${gg.gra_smajor1}"></td>
+														class="spec-school-major-box" value="${gg.gra_smajor1}" id="gra_smajor1" name="gra_smajor1"></td>
 												</tr>
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${gg.gra_smajor2}"></td>
+														class="spec-school-major-box" value="${gg.gra_smajor2}" id="gra_smajor2" name="gra_smajor2"></td>
 												</tr>
 												<!-- ngRepeat: minor_subject in gradu.minor_subject track by $index -->
 												<!-- ngIf: !$first -->
@@ -556,18 +563,18 @@ body {
 												<tr>
 													<th>기간</th>
 													<td colspan="5"><input type="date"
-														class="ng-pristine ng-untouched ng-valid"
+														class="ng-pristine ng-untouched ng-valid" id="gra_speriod" name="gra_speriod"
 														value="${gg.gra_speriod}"> <span
 														class="duration-wave-mark"> ~ </span> <input type="date"
-														class="ng-pristine ng-untouched ng-valid"
+														class="ng-pristine ng-untouched ng-valid" id="gra_eperiod" name="gra_eperiod"
 														value="${gg.gra_eperiod}"></td>
 												</tr>
 												<tr>
 													<th>학교명</th>
-													<td><input type="text" class="spec-school-major-box"
+													<td><input type="text" class="spec-school-major-box" id="gra_name" name="gra_name"
 														value="${gg.gra_name}"></td>
 													<th>분류</th>
-													<td><select class="ng-pristine ng-untouched ng-valid">
+													<td><select class="ng-pristine ng-untouched ng-valid" id="gra_kind" name="gra_kind">
 															<c:if test="${gg.gra_kind==null}">
 																<option value="" selected="selected">-</option>
 																<option value="0">석사과정</option>
@@ -595,25 +602,25 @@ body {
 													</select></td>
 													<th>학점</th>
 													<td><input
-														class="univ-score small-input-text ng-pristine ng-untouched ng-valid"
+														class="univ-score small-input-text ng-pristine ng-untouched ng-valid" id="gra_grade" name="gra_grade"
 														type="text" value="${gg.gra_grade}"></td>
 												</tr>
 												<tr>
 													<th>주전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${gg.gra_major}">
+														class="spec-school-major-box" value="${gg.gra_major}" id="gra_major" name="gra_major">
 													</td>
 												</tr>
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${gg.gra_smajor1}">
+														class="spec-school-major-box" value="${gg.gra_smajor1}" id="gra_smajor1" name="gra_smajor1">
 													</td>
 												</tr>
 												<tr class="ng-scope">
 													<th>전공</th>
 													<td colspan="5"><input type="text"
-														class="spec-school-major-box" value="${gg.gra_smajor2}"></td>
+														class="spec-school-major-box" value="${gg.gra_smajor2}" id="gra_smajor2" name="gra_smajor2"></td>
 												</tr>
 												<!-- ngRepeat: minor_subject in gradu.minor_subject track by $index -->
 												<!-- ngIf: !$first -->
@@ -663,18 +670,18 @@ body {
 													<td colspan="3">
 														<!-- <input type="text" ng&#45;model="certificate.name.content" ng&#45;blur="updateContent(certificate.name, certificate.number, item.category)" kr&#45;input> -->
 														<input type="text" class="spec-school-major-box"
-														value="${li.lic_name}">
+														value="${li.lic_name}" id="lic_name" name="lic_name">
 													</td>
 												</tr>
 												<tr>
 													<th>발행처/기관</th>
 													<td><input type="text"
 														class="ng-pristine ng-untouched ng-valid"
-														value="${li.lic_pub}"></td>
+														value="${li.lic_pub}" id="lic_pub" name="lic_pub"></td>
 													<th>등급</th>
 													<td><input type="text"
 														class="ng-pristine ng-untouched ng-valid"
-														value="${li.lic_grade}"></td>
+														value="${li.lic_grade}" id="lic_grade" name="lic_grade"></td>
 												</tr>
 												<!-- ngIf: !$first -->
 
@@ -701,18 +708,18 @@ body {
 													<td colspan="3">
 														<!-- <input type="text" ng&#45;model="certificate.name.content" ng&#45;blur="updateContent(certificate.name, certificate.number, item.category)" kr&#45;input> -->
 														<input type="text" class="spec-school-major-box"
-														value="${li.lic_name}">
+														value="${li.lic_name}" id="lic_name" name="lic_name">
 													</td>
 												</tr>
 												<tr>
 													<th>발행처/기관</th>
 													<td><input type="text"
 														class="ng-pristine ng-untouched ng-valid"
-														value="${li.lic_pub}"></td>
+														value="${li.lic_pub}" id="lic_pub" name="lic_pub"></td>
 													<th>등급</th>
 													<td><input type="text"
 														class="ng-pristine ng-untouched ng-valid"
-														value="${li.lic_grade}"></td>
+														value="${li.lic_grade}" id="lic_grade" name="lic_grade"></td>
 												</tr>
 												<!-- ngIf: !$first -->
 												<tr class="table-option-row ng-scope">
@@ -759,31 +766,31 @@ body {
 										<tr>
 											<th>회사명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${cl.car_name}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${cl.car_name}" id="car_name" name="car_name"></td>
 											<th>기간</th>
 											<td><input type="date" style="width: 135px"
-												class="ng-pristine ng-untouched ng-valid" value="${cl.car_speriod}"> <span
+												class="ng-pristine ng-untouched ng-valid" value="${cl.car_speriod}" id="car_speriod" name="car_speriod"> <span
 												class="duration-wave-mark"> ~ </span> <input type="date"
 												style="width: 135px"
-												class="ng-pristine ng-untouched ng-valid" value="${cl.car_eperiod}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${cl.car_eperiod}" id="car_eperiod" name="car_eperiod"></td>
 										</tr>
 										<tr>
 											<th>직급</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${cl.car_rank}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${cl.car_rank}" id="car_rank" name="car_rank"></td>
 											<th>부서</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${cl.car_dep}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${cl.car_dep}" id="car_dep" name="car_dep"></td>
 										</tr>
 										<tr class="assignment">
 											<th>담당업무</th>
 											<td colspan="3"><textarea
-													class="ng-pristine ng-untouched ng-valid">${cl.car_work}</textarea></td>
+													class="ng-pristine ng-untouched ng-valid" id="car_work" name="car_work">${cl.car_work}</textarea></td>
 										</tr>
 										<tr class="resignation">
 											<th>퇴사사유</th>
 											<td colspan="3"><textarea
-													class="ng-pristine ng-untouched ng-valid">${cl.car_res}</textarea></td>
+													class="ng-pristine ng-untouched ng-valid" id="car_res" name="car_res">${cl.car_res}</textarea></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -807,31 +814,31 @@ body {
 											<tr>
 												<th>회사명</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${cl.car_name}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_name}" id="car_name" name="car_name"></td>
 												<th>기간</th>
 												<td><input type="month" style="width: 135px"
-													class="ng-pristine ng-untouched ng-valid" value="${cl.car_speriod}"> <span
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_speriod}" id="car_speriod" name="car_speriod"> <span
 													class="duration-wave-mark"> ~ </span> <input type="month"
 													style="width: 135px"
-													class="ng-pristine ng-untouched ng-valid" value="${cl.car_eperiod}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_eperiod}" id="car_eperiod" name="car_eperiod"></td>
 											</tr>
 											<tr>
 												<th>직급</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${cl.car_rank}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_rank}" id="car_rank" name="car_rank"></td>
 												<th>부서</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${cl.car_dep}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${cl.car_dep}" id="car_dep" name="car_dep"></td>
 											</tr>
 											<tr class="assignment">
 												<th>담당업무</th>
 												<td colspan="3"><textarea
-														class="ng-pristine ng-untouched ng-valid">${cl.car_work}</textarea></td>
+														class="ng-pristine ng-untouched ng-valid" id="car_work" name="car_work">${cl.car_work}</textarea></td>
 											</tr>
 											<tr class="resignation">
 												<th>퇴사사유</th>
 												<td colspan="3"><textarea
-														class="ng-pristine ng-untouched ng-valid">${cl.car_res}</textarea></td>
+														class="ng-pristine ng-untouched ng-valid" id="car_res" name="car_res">${cl.car_res}</textarea></td>
 											</tr>
 											<!-- ngIf: !$first -->
 											<tr class="table-option-row ng-scope">
@@ -878,20 +885,20 @@ body {
 										<tr>
 											<th>외국어명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${la.lan_sort}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${la.lan_sort}" id="lan_sort" name="lan_sort"></td>
 											<th>시험명</th>
 											<td>
 												<!-- <input type="text" ng&#45;model="language.test.content" ng&#45;blur="updateContent(language.test, language.number, item.category)" kr&#45;input> -->
-												<input type="text" class="spec-school-major-box" value="${la.lan_name}">
+												<input type="text" class="spec-school-major-box" value="${la.lan_name}" id="lan_name" name="lan_name">
 											</td>
 										</tr>
 										<tr>
 											<th class="ng-binding">점수/등급</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${la.lan_grade}"></td>
-											<th>취득일</th>
+												class="ng-pristine ng-untouched ng-valid" value="${la.lan_grade}" id="lan_grade" name="lan_grade"></td>
+											<th>취득일</th> 
 											<td><input type="date"
-												class="ng-pristine ng-untouched ng-valid" value="${la.lan_date}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${la.lan_date}" id="lan_date" name="lan_date"></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -901,7 +908,7 @@ body {
 						</div>
 						</c:if>
 						
-						<c:if test="${lavs.index=='0'}">
+						<c:if test="${lavs.index!='0'}">
 						<div class="content ng-scope" id="languageFormPlus${lavs.index}">
 								<div class="category-wrapper ng-scope" >
 									<!-- ngRepeat: language in currentApplicant.specs.language track by $index -->
@@ -916,19 +923,19 @@ body {
 											<tr>
 												<th>외국어명</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${la.lan_sort}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${la.lan_sort}" id="lan_sort" name="lan_sort"></td>
 												<th>시험명</th>
 												<td>
-													<input type="text" class="spec-school-major-box" value="${la.lan_name}">
+													<input type="text" class="spec-school-major-box" value="${la.lan_name}" id="lan_name" name="lan_name">
 												</td>
 											</tr>
 											<tr>
 												<th class="ng-binding">점수/등급</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${la.lan_grade}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${la.lan_grade}" id="lan_grade" name="lan_grade"></td>
 												<th>취득일</th>
 												<td><input type="date"
-													class="ng-pristine ng-untouched ng-valid" value="${la.lan_date}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${la.lan_date}" id="lan_date" name="lan_date"></td>
 											</tr>
 											<!-- ngIf: !$first -->
 											<tr class="table-option-row ng-scope">
@@ -974,18 +981,18 @@ body {
 										<tr>
 											<th>수상명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${al.aw_name}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_name}" id="aw_name" name="aw_name"></td>
 											<th>수상내용</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${al.aw_story}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_story}" id="aw_story" name="aw_story"></td>
 										</tr>
 										<tr>
 											<th>수여기관</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${al.aw_pub}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_pub}" id="aw_pub" name="aw_pub"></td>
 											<th>수상일</th>
 											<td><input type="date"
-												class="ng-pristine ng-untouched ng-valid" value="${al.aw_date}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${al.aw_date}" id="aw_date" name="aw_date"></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -1009,18 +1016,18 @@ body {
 											<tr>
 												<th>수상명</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${al.aw_name}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_name}" id="aw_name" name="aw_name"></td>
 												<th>수상내용</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${al.aw_story}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_story}" id="aw_story" name="aw_story"></td>
 											</tr>
 											<tr>
 												<th>수여기관</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${al.aw_pub}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_pub}" id="aw_pub" name="aw_pub"></td>
 												<th>수상일</th>
 												<td><input type="date"
-													class="ng-pristine ng-untouched ng-valid" value="${al.aw_date}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${al.aw_date}" id="aw_date" name="aw_date"></td>
 											</tr>
 											<!-- ngIf: !$first -->
 											<tr class="table-option-row ng-scope">
@@ -1068,15 +1075,15 @@ body {
 										<tr>
 											<th>국가</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${ol.ov_country}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${ol.ov_country}" id="ov_country" name="ov_country"></td>
 											<th>기관</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${ol.ov_pub}"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${ol.ov_pub}" id="ov_pub" name="ov_pub"></td>
 										</tr>
 										<tr class="objective">
 											<th>목적 및 내용</th>
 											<td colspan="3"><textarea
-													class="ng-pristine ng-untouched ng-valid">${ol.ov_purpose}</textarea></td>
+													class="ng-pristine ng-untouched ng-valid" id="ov_purpose" name="ov_purpose">${ol.ov_purpose}</textarea></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -1100,15 +1107,15 @@ body {
 											<tr>
 												<th>국가</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${ol.ov_country}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${ol.ov_country}" id="ov_country" name="ov_country"></td>
 												<th>기관</th>
 												<td><input type="text"
-													class="ng-pristine ng-untouched ng-valid" value="${ol.ov_pub}"></td>
+													class="ng-pristine ng-untouched ng-valid" value="${ol.ov_pub}" id="ov_pub" name="ov_pub"></td>
 											</tr>
 											<tr class="objective">
 												<th>목적 및 내용</th>
 												<td colspan="3"><textarea
-														class="ng-pristine ng-untouched ng-valid">${ol.ov_purpose}</textarea></td>
+														class="ng-pristine ng-untouched ng-valid" id="ov_purpose" name="ov_purpose">${ol.ov_purpose}</textarea></td>
 											</tr>
 											<!-- ngIf: !$first -->
 											<tr class="table-option-row ng-scope">
@@ -1151,20 +1158,20 @@ body {
 											<tr>
 												<th>보훈사항</th>
 												<td colspan="3"><c:if test="${sDetail.spec_vet==null}">
-														<input type="radio" name="patriot" value="0"
+														<input type="radio" name="spec_vet" value="0"
 															class="ng-pristine ng-untouched ng-valid">대상
-													<input type="radio" name="patriot" value="1"
+													<input type="radio" name="spec_vet" value="1"
 															class="ng-pristine ng-untouched ng-valid">비대상
 													</c:if> <c:if test="${sDetail.spec_vet=='0'}">
-														<input type="radio" name="patriot" value="0"
+														<input type="radio" name="spec_vet" value="0"
 															checked="checked"
 															class="ng-pristine ng-untouched ng-valid">대상
-													<input type="radio" name="patriot" value="1"
+													<input type="radio" name="spec_vet" value="1"
 															class="ng-pristine ng-untouched ng-valid">비대상
 													</c:if> <c:if test="${sDetail.spec_vet=='1'}">
-														<input type="radio" name="patriot" value="0"
+														<input type="radio" name="spec_vet" value="0"
 															class="ng-pristine ng-untouched ng-valid">대상
-													<input type="radio" name="patriot" value="1"
+													<input type="radio" name="spec_vet" value="1"
 															checked="checked"
 															class="ng-pristine ng-untouched ng-valid">비대상
 													</c:if></td>
@@ -1172,23 +1179,23 @@ body {
 											<tr>
 												<th>장애여부</th>
 												<td colspan="3"><c:if test="${sDetail.spec_obs==null}">
-														<input type="radio" name="handicapped" value="0"
+														<input type="radio" name="spec_obs" value="0"
 															class="ng-pristine ng-untouched ng-valid">대상
-												<input type="radio" name="handicapped" value="1"
+												<input type="radio" name="spec_obs" value="1"
 															class="ng-pristine ng-untouched ng-valid">비대상
 												</c:if> <c:if test="${sDetail.spec_obs=='0'}">
-														<input type="radio" name="handicapped" value="0"
+														<input type="radio" name="spec_obs" value="0"
 															checked="checked"
 															class="ng-pristine ng-untouched ng-valid">대상
-												<input type="radio" name="handicapped" value="1"
+												<input type="radio" name="spec_obs" value="1"
 															class="ng-pristine ng-untouched ng-valid">비대상
 												</c:if> <c:if test="${sDetail.spec_obs=='1'}">
-														<input type="radio" name="handicapped" value="0"
+														<input type="radio" name="spec_obs" value="0"
 															class="ng-pristine ng-untouched ng-valid">대상
-												<input type="radio" name="handicapped" value="1"
+												<input type="radio" name="spec_obs" value="1"
 															checked="checked"
 															class="ng-pristine ng-untouched ng-valid">비대상
-												</c:if> <input type="text" name="넣어야댐"
+												</c:if> <input type="text" name="spec_obscontent"
 													value="${sDetail.spec_obscontent}"
 													class="ng-pristine ng-untouched ng-valid ng-hide">
 												</td>
@@ -1196,54 +1203,54 @@ body {
 											<tr>
 												<th>병역구분</th>
 												<td><c:if test="${sDetail.spec_mil==null}">
-														<input type="radio" name="military_division"
+														<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="0">군필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="1">미필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="2">면제
 												</c:if> <c:if test="${sDetail.spec_mil=='0'}">
-														<input type="radio" name="military_division"
+														<input type="radio" name="spec_mil"
 															checked="checked"
 															class="ng-pristine ng-untouched ng-valid" value="0">군필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="1">미필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="2">면제
 												</c:if> <c:if test="${sDetail.spec_mil=='1'}">
-														<input type="radio" name="military_division"
+														<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="0">군필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															checked="checked"
 															class="ng-pristine ng-untouched ng-valid" value="1">미필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="2">면제
 												</c:if> <c:if test="${sDetail.spec_mil=='2'}">
-														<input type="radio" name="military_division"
+														<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="0">군필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															class="ng-pristine ng-untouched ng-valid" value="1">미필
-													<input type="radio" name="military_division"
+													<input type="radio" name="spec_mil"
 															checked="checked"
 															class="ng-pristine ng-untouched ng-valid" value="2">면제
 												</c:if></td>
 												<th>복무기간</th>
 												<td><input type="date" style="width: 135px"
-													value="${sDetail.spec_milsperiod}"
+													value="${sDetail.spec_milsperiod}" name="spec_milsperiod"
 													class="ng-pristine ng-untouched ng-valid"> <span
 													class="duration-wave-mark"> ~ </span> <input type="date"
-													style="width: 135px" value="${sDetail.spec_mileperiod}"
+													style="width: 135px" value="${sDetail.spec_mileperiod}" name="spec_mileperiod"
 													class="ng-pristine ng-untouched ng-valid"></td>
 											</tr>
 											<tr>
 												<th>군별</th>
 												<td><input type="text"
 													class="ng-pristine ng-untouched ng-valid"
-													value="${sDetail.spec_mildis}"></td>
+													value="${sDetail.spec_mildis}" name="spec_mildis"></td>
 												<th>계급</th>
 												<td><input type="text"
 													class="ng-pristine ng-untouched ng-valid"
-													value="${sDetail.spec_rank}"></td>
+													value="${sDetail.spec_rank}" name="spec_rank"></td>
 											</tr>
 											<!-- ngIf: !$first -->
 										</tbody>
@@ -1266,7 +1273,10 @@ body {
 						</div>
 						<!-- end ngIf: hasSpecContent(item.category) -->
 						<!-- ngInclude: item.template -->
-						<div class="content ng-scope">
+						
+						<c:forEach var="exl" items="${exlist}" varStatus="exvs">
+						<c:if test="${exvs.index=='0'}">
+						<div class="content ng-scope" id="social_activityFormPlus${exvs.index}">
 							<div class="category-wrapper ng-scope">
 								<!-- ngRepeat: social in currentApplicant.specs.social_activity track by $index -->
 								<table class="ng-scope social-activity-table category-repeater">
@@ -1280,22 +1290,22 @@ body {
 										<tr>
 											<th>활동명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${exl.exp_name}" name="exp_name"></td>
 											<th>기관/장소</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${exl.exp_pub}" name="exp_pub"></td>
 										</tr>
 										<tr>
 											<th>활동기간</th>
 											<td colspan="3"><input type="date"
-												class="ng-pristine ng-untouched ng-valid"> <span
+												class="ng-pristine ng-untouched ng-valid" value="${exl.exp_sdate}" name="exp_sdate"> <span
 												class="duration-wave-mark"> ~ </span> <input type="date"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${exl.exp_edate}" name="exp_edate"></td>
 										</tr>
 										<tr class="activities">
 											<th>내용</th>
 											<td colspan="3"><textarea
-													class="ng-pristine ng-untouched ng-valid"></textarea></td>
+													class="ng-pristine ng-untouched ng-valid" name="exp_story">${exl.exp_story}</textarea></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -1303,11 +1313,56 @@ body {
 								<!-- end ngRepeat: social in currentApplicant.specs.social_activity track by $index -->
 							</div>
 						</div>
+						</c:if>
+						<c:if test="${exvs.index!='0'}">
+						<div class="content ng-scope" id="social_activityFormPlus${exvs.index}">
+								<div class="category-wrapper ng-scope">
+									<!-- ngRepeat: social in currentApplicant.specs.social_activity track by $index -->
+									<table class="ng-scope social-activity-table category-repeater">
+										<colgroup>
+											<col width="120px">
+											<col width="320px">
+											<col width="120px">
+											<col width="320px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>활동명</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${exl.exp_name}" name="exp_name"></td>
+												<th>기관/장소</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${exl.exp_pub}" name="exp_pub"></td>
+											</tr>
+											<tr>
+												<th>활동기간</th>
+												<td colspan="3"><input type="date"
+													class="ng-pristine ng-untouched ng-valid" value="${exl.exp_sdate}" name="exp_sdate"> <span
+													class="duration-wave-mark"> ~ </span> <input type="date"
+													class="ng-pristine ng-untouched ng-valid" value="${exl.exp_edate}" name="exp_edate"></td>
+											</tr>
+											<tr class="activities">
+												<th>내용</th>
+												<td colspan="3"><textarea
+														class="ng-pristine ng-untouched ng-valid" name="exp_story">${exl.exp_story}</textarea></td>
+											</tr>
+											<!-- ngIf: !$first -->
+											<tr class="table-option-row ng-scope">
+												<td colspan="4">
+												<div class="delete-content" onclick="social_activitydelete('social_activityFormPlus${exvs.index}')"
+												>삭제하기</div>
+												</td>
+												</tr>
+										</tbody>
+									</table>
+									<!-- end ngRepeat: social in currentApplicant.specs.social_activity track by $index -->
+								</div>
+							</div> 
+						</c:if>
+						</c:forEach>
 						<div id="con6"></div>
 					</div>
 					<!-- end 관련활동 및 사회경험 -->
-
-
 					<div class="specs edit-spec ng-scope education"
 						id="educationFormPlus">
 						<!-- ngIf: hasSpecContent(item.category) -->
@@ -1318,7 +1373,9 @@ body {
 						</div>
 						<!-- end ngIf: hasSpecContent(item.category) -->
 						<!-- ngInclude: item.template -->
-						<div class="content ng-scope">
+						<c:forEach var="edl" items="${edlist}" varStatus="edvs">
+						<c:if test="${edvs.index=='0'}">
+						<div class="content ng-scope" id="educationFormPlus${edvs.index}">
 							<div class="category-wrapper ng-scope">
 								<!-- ngRepeat: education in currentApplicant.specs.education track by $index -->
 								<table class="ng-scope education-table category-repeater">
@@ -1332,22 +1389,22 @@ body {
 										<tr>
 											<th>교육명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_name}" name="exp_name"></td>
 											<th>교육기관</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_pub}" name="exp_pub"></td>
 										</tr>
 										<tr>
 											<th>활동기간</th>
 											<td colspan="3"><input type="date"
-												class="ng-pristine ng-untouched ng-valid"> <span
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_sdate}" name="exp_sdate"> <span
 												class="duration-wave-mark"> ~ </span> <input type="date"
-												class="ng-pristine ng-untouched ng-valid"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_edate}" name="exp_edate"></td>
 										</tr>
 										<tr class="educations">
 											<th>내용</th>
 											<td colspan="3"><textarea
-													class="ng-pristine ng-untouched ng-valid"></textarea></td>
+													class="ng-pristine ng-untouched ng-valid" name="exp_story">${edl.edu_story}</textarea></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>
@@ -1355,15 +1412,62 @@ body {
 								<!-- end ngRepeat: education in currentApplicant.specs.education track by $index -->
 							</div>
 						</div>
+						</c:if>
+						<c:if test="${edvs.index!='0'}">
+						<div class="content ng-scope" id="educationFormPlus${edvs.index}">
+								<div class="category-wrapper ng-scope">
+									<!-- ngRepeat: education in currentApplicant.specs.education track by $index -->
+									<table class="ng-scope education-table category-repeater">
+										<colgroup>
+											<col width="120px">
+											<col width="320px">
+											<col width="120px">
+											<col width="320px">
+										</colgroup>
+										<tbody>
+											<tr>
+												<th>교육명</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${edl.edu_name}" name="edu_name"></td>
+												<th>교육기관</th>
+												<td><input type="text"
+													class="ng-pristine ng-untouched ng-valid" value="${edl.edu_pub}" name="edu_pub"></td>
+											</tr>
+											<tr>
+												<th>활동기간</th>
+												<td colspan="3"><input type="date"
+													class="ng-pristine ng-untouched ng-valid" value="${edl.edu_sdate}" name="edu_sdate"> <span
+													class="duration-wave-mark"> ~ </span> <input type="date"
+													class="ng-pristine ng-untouched ng-valid" value="${edl.edu_edate}" name="edu_edate"></td>
+											</tr>
+											<tr class="educations">
+												<th>내용</th>
+												<td colspan="3"><textarea
+														class="ng-pristine ng-untouched ng-valid" name="edu_story">${edl.edu_story}</textarea></td>
+											</tr>
+											<!-- ngIf: !$first -->
+											<tr class="table-option-row ng-scope">
+											<td colspan="4">
+											<div class="delete-content" onclick="educationdelete('educationFormPlus${edvs.index}')"
+											>삭제하기</div>
+											</td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- end ngRepeat: education in currentApplicant.specs.education track by $index -->
+								</div>
+							</div>
+						</c:if>
+						</c:forEach>
 						<div id="con7"></div>
 					</div>
 					<!-- end 교육 -->
-
+				<button onclick="">저장하기</button>
 				</div>
 				<!-- end section-content -->
+				
 			</div>
 			<!-- end section-container -->
-
 		</div>
 		<!-- end spec-container -->
 	</div>
