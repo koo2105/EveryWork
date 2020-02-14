@@ -8,7 +8,31 @@
 <title>** Spring [새글 등록] _ inCheck **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script>
+/* function ablistpageGo() {
+	$.ajax({
+		type : 'post',
+		data : {
+			admin_id :admin_id,
+			jobopen_pimg : jobopen_pimg,
+			jobopen_company :jobopen_company,
+			jobopen_link : jobopen_link,
+			jobopen_sdate :jobopen_sdate,
+			jobopen_edate : jobopen_edate,
+			jobopen_cimg:jobopen_cimg,
+			jobopen_pimgf : jobopen_pimgf,
+			jobopen_cimgf : jobopen_cimgf
+		},
+		url : 'jobopeninsert',
+		success : function(result) {
+			$('#adminArea').html('');
+			$('#adminArea').html(result);
+		}
 
+	});
+}; */
+
+</script>
 </head>
 <body>
 <h2>** 새 공고 등록 **</h2>

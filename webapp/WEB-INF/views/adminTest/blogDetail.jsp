@@ -8,7 +8,23 @@
 <title>** 자소서연구소 상세 페이지 **</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script>
 
+function axblogUpdate(lab_id) {
+	$.ajax({
+		type : 'post',
+		data : {
+			lab_id : lab_id
+		},
+		url : 'blogUpdatef',
+		success : function(result) {
+			$('#adminArea').html('');
+			$('#adminArea').html(result);
+		}
+
+	});
+};
+</script>
 </head>
 <body>
 <h2>** 자소서연구소 상세 페이지 **</h2>
@@ -31,9 +47,9 @@
 	<td><img src="${binfoDetail.lab_img}" width="70" height="100"></td></tr>
 </table>
 <br>
-<a href="binfoDelete?lab_id=${binfoDetail.lab_id}" class="button" >게시글삭제</a>&nbsp;&nbsp;
-<a href="minfoUpdate?lab_id=${binfoDetail.lab_id}" class="button" >게시글수정</a><br><br>
 
+<a href="#" onclick="axblogUpdate('${binfoDetail.lab_id}')" class="button" >게시글수정</a>&nbsp;&nbsp;
+<a href="binfoDelete?lab_id=${binfoDetail.lab_id}" class="button" >게시글삭제</a><br><br>
 <hr>
 <a href=adminhome>adminHome</a>
 </body>

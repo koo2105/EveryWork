@@ -1,5 +1,7 @@
 package vo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class SelflabVO {
 
 	private int lab_id;
@@ -10,6 +12,7 @@ public class SelflabVO {
 	private String lab_date;
 	private String lab_content;
 	private String lab_img;
+	private MultipartFile lab_imgf;
 	public int getLab_id() {
 		return lab_id;
 	}
@@ -58,12 +61,20 @@ public class SelflabVO {
 	public void setLab_img(String lab_img) {
 		this.lab_img = lab_img;
 	}
+	public MultipartFile getLab_imgf() {
+		return lab_imgf;
+	}
+	public void setLab_imgf(MultipartFile lab_imgf) {
+		this.lab_imgf = lab_imgf;
+	}
 	@Override
 	public String toString() {
 		return "SelflabVO [lab_id=" + lab_id + ", admin_id=" + admin_id + ", lab_title=" + lab_title + ", lab_cat="
 				+ lab_cat + ", lab_count=" + lab_count + ", lab_date=" + lab_date + ", lab_content=" + lab_content
-				+ ", lab_img=" + lab_img + "]";
+				+ ", lab_img=" + lab_img + ", lab_imgf=" + lab_imgf + "]";
 	}
+	
+	
 	
 	
 	

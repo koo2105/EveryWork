@@ -73,5 +73,33 @@ public class AdminDAO {
 		return dao.selectOne(NS + "answerDetail",vo);
 	} // answerDetail()
 	
+	public int answerDelete(InquiryVO vo) {
+		return dao.delete(NS + "answerDelete",vo);
+	} // answerDelete()
+	
+	public int bDelete(JobopenVO vo) {
+		return dao.delete(NS + "bDelete",vo);
+	} // answerDelete()
+	
+	public int blogInsert(SelflabVO vo) {
+		int cnt = 0;
+
+		if (vo != null) {
+			cnt = dao.insert(NS + "blogInsert", vo);
+		}
+		return cnt;
+	} // insert
+	
+	public int blogUpdate(SelflabVO vo) {
+		return dao.update(NS+"blogUpdate", vo);
+	} // update
+	
+	public int answerProcess(InquiryVO vo) {
+		return dao.update(NS+"answerProcess", vo);
+	}
+	
+	public int answerUpdate(InquiryVO vo) {
+		return dao.update(NS+"answerUpdate", vo);
+	}//answerUpdate()
 	
 }// end EmemberDAO

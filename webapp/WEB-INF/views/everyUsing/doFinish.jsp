@@ -5,20 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>** Member MVC2 DoFinish **</title>
+<title>**admin DoFinish **</title>
 </head>
 <body>
-<c:if test="${JOI=='T'}">
+
+<c:if test="${JOI=='T'}"> 
 	<h3>공고 등록 성공</h3>
 	<h3>홈으로</h3>
-	===> <a href="adminhome">[어드민홈]</a>
+	===> <a href="adminhome">[어드민홈]</a> 
 </c:if>
-<c:if test="${Error=='JOE'}">
-	<h3>공고 등록 실패..</h3>
+<c:if test="${Error=='JOE'}"> --%>
+	 <h3>공고 등록 실패..</h3>
 	<h3>홈으로</h3>
-	===> <a href="adminhome">[어드민홈]</a>
+	===> <a href="adminhome">[어드민홈]</a> 
 </c:if>
-
+ --%>
 <c:if test="${Error=='J'}">
 	<h3>회원 가입 실패~~</h3>
 	<h3>다시 하시겠습니까 ?</h3>
@@ -32,21 +33,50 @@
 </c:if>
 <c:if test="${Success=='T'}">
 	<h3>정보 수정 완료</h3>
-	===> <a href="home">[홈으로]</a>
+	===> <a href="adminhome">[홈으로]</a>
 </c:if>
 
 <c:if test="${Success=='AT'}">
 	<h3>문의 등록 완료</h3>
-	===> <a href="home">[홈으로]</a>
+	===> <a href="adminhome">[홈으로]</a>
 </c:if>
 
 <c:if test="${Error=='AU'}">
 	<h3>문의 등록에 실패하셨습니다~~~</h3>
 	<h3>다시 하시겠습니까 ?</h3>
-	===> <a href="home">[홈으로]</a>
+	===> <a href="adminhome">[홈으로]</a>
 </c:if>
 
+<c:if test="${BOGI=='T'}">
+	<h3>자소서연구소 등록 성공</h3>
+	<h3>홈으로</h3>
+	===> <a href="adminhome">[어드민홈]</a>
+</c:if>
+<c:if test="${Error=='BOGE'}">
+	<h3>자소서연구소 등록 실패..</h3>
+	<h3>홈으로</h3>
+	===> <a href="adminhome">[어드민홈]</a>
+</c:if>
 
+<c:if test="${Error=='UU'}">
+	<h3>자소서연구소 수정에 실패했습니다~~~</h3>
+	<h3>다시 하시겠습니까 ?</h3>
+	===> <a href="blogUpdatef?id=${adloginID}">[자소서연구소정보]</a>
+</c:if>
+<c:if test="${Success=='B'}">
+	<h3>정보 수정 완료</h3>
+	===> <a href="adminhome">[홈으로]</a>
+</c:if>
+
+<c:if test="${Success=='AS'}">
+	<h3>상태 수정 완료</h3>
+	===> <a href="adminhome">[홈으로]</a>
+</c:if>
+<c:if test="${Error=='AE'}">
+	<h3>상태 수정에 실패했습니다~~~</h3>
+	<h3>다시 하시겠습니까 ?</h3>
+	===> <a href="answerUpdatef?id=${adloginID}">[문의]</a>
+</c:if>
 
 <br>
 <hr>

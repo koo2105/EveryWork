@@ -11,11 +11,11 @@
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
 <script>
-function bdetail(jobopen_company) {
+function bdetail(jobopen_id) {
 	$.ajax({
 		type : 'post',
 		data : {
-			jobopen_company : jobopen_company
+			jobopen_id : jobopen_id
 		},
 		url : 'bdetail',
 		success : function(result) {
@@ -27,6 +27,7 @@ function bdetail(jobopen_company) {
 };
 
 </script>
+
 <style>
 	.result { color:blue; }
 	
@@ -42,6 +43,8 @@ function bdetail(jobopen_company) {
 </style>
 </head>
 <body>
+
+
 <h2>** 채용 공고 관리 **</h2>
 <table width=800>
 <tr class="admin-title" >
@@ -51,34 +54,33 @@ function bdetail(jobopen_company) {
 <c:forEach var="mm" items="${Joblist}" varStatus="vs">
 	<tr height=30 align="center">
 	 <!-- jQuery 를 이용해서 값전달 Test -->
-	 <td>${mm.jobopen_id}</td>
-	 
-	<td align="left">
-		<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
-		<c:if test="${loginID!=mm.admin_id}">
-			<a href="#" onclick=" bdetail('${mm.jobopen_company}')">${mm.jobopen_company}</a>
-		</c:if>
-		<!-- <a href="#"            .... scroll 위치 이동 
+	 <td>
+	 	<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
+	 <%-- <c:if test="${loginID!=mm.admin_id}"> 	</c:if> --%>
+			<a href="#" onclick="bdetail('${mm.jobopen_id}')">${mm.jobopen_id}</a>
+	
+			<!-- <a href="#"            .... scroll 위치 이동 
 			 <a href="javascript:;" .... 사용하면 해결         -->
 			 
 			 
 		<!-- detail 에서 countUp(조회수 증가) 안하는경우 -->
+	<%-- 	
 		<c:if test="${loginID==mm.admin_id}">
-			<a href="#" onclick="#">${mm.jobopen_company}</a>
-		</c:if>
-	</td> 
+			<a href="#" onclick="#">${mm.jobopen_id}</a>
+		</c:if> --%>
+	</td>
 	 
-
-	
-	<td align="left">${mm.admin_id}</td>
+	<td>	
+		${mm.jobopen_company}	
+	</td> 
+	<td>${mm.admin_id}</td>
 	<td>${mm.jobopen_sdate}</td><td>${mm.jobopen_edate}</td><td>${mm.jobopen_count}</td>
 	</tr>
 </c:forEach>
 </table>
 <hr>
 <a href="#" class="button" onclick="gonggoinsert()">공고 등록</a>
-<a href="#" class="button" onclick="gonggoupdate()">공고 수정</a>
-<a href="#" class="button">공고 삭제</a>
+
 
 
 

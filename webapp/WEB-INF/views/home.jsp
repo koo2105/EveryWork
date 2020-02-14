@@ -24,16 +24,10 @@
 			<span class="main-title"><strong>${loginID}</strong></span><span class="title">님 맞춤 공고</span> 
 			</c:if>
 			<span class="sub-title">EveryWork의 이용 패턴을 분석해 연관성 높은 공고를 추천합니다.</span></div>
-				<div class="wrap-item-top"><a href="#"></a>1</div>
-				<div class="wrap-item-top"><a href="#"></a>2</div>
-				<div class="wrap-item-top"><a href="#"></a>3</div>
-				<div class="wrap-item-top"><a href="#"></a>4</div>
-				<div class="wrap-item-top"><a href="#"></a>5</div>
-				<div class="wrap-item-bottom"><a href="#"></a>6</div>
-				<div class="wrap-item-bottom"><a href="#"></a>7</div>
-				<div class="wrap-item-bottom"><a href="#"></a>8</div>
-				<div class="wrap-item-bottom"><a href="#"></a>9</div>
-				<div class="wrap-item-bottom"><a href="#"></a>10</div>
+				<c:forEach var="jh" items="${JobList}">
+				<div class="wrap-item-top"><a href="#"><img width="190px" height="190px" src="${jh.jobopen_pimg}"></a></div>
+
+				</c:forEach>
 		</div>
 	</div>
 </div> 

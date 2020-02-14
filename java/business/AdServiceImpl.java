@@ -87,4 +87,34 @@ public class AdServiceImpl implements AdService {
 	public int binfodelete(SelflabVO vo) {
 		return dao.binfoDelete(vo);
 	}
+
+	@Override
+	public int answerDelete(InquiryVO vo) {
+		
+		return dao.answerDelete(vo);
+	}
+
+	@Override
+	public int bDelete(JobopenVO vo) {
+		return dao.bDelete(vo);
+	}
+
+	@Override
+	public int blogInsert(SelflabVO vo) {
+		return dao.blogInsert(vo);
+	}
+
+	@Override
+	public int blogUpdate(SelflabVO vo) {
+		return dao.blogUpdate(vo);
+	}
+
+	@Override
+	public int answerProcess(InquiryVO vo) {
+		return dao.answerProcess(vo);
+	}
+	@Override
+	public int answerUpdate(InquiryVO vo) {
+		return dao.answerUpdate(vo);
+	}
 } // class

@@ -24,7 +24,14 @@ function answerDetail(inq_id) {
 
 	});
 };
+
 </script>
+<c:if test="${Success=='AS'}">
+<script>
+	alert('수정되었습니다.');
+</script>
+</c:if>
+
 <style>
 	.result { color:blue; }
 	
@@ -54,11 +61,20 @@ function answerDetail(inq_id) {
 		<td align="left">
 			${mm.inq_title}
 		</td> 
-	 
-
 	
 	<td align="left">${mm.emem_id}</td><td>${mm.inq_date}</td>
-	<td>${mm.inq_state}</td><td>${mm.inq_count}</td>
+	<td>
+	<c:if test="${mm.inq_state=='1'}">
+	대기중
+	</c:if>
+	<c:if test="${mm.inq_state=='2'}">
+	처리중
+	</c:if>
+	<c:if test="${mm.inq_state=='3'}">
+	완료
+	</c:if>
+	
+	</td><td>${mm.inq_count}</td>
 	</tr>
 </c:forEach>
 </table>

@@ -28,7 +28,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/adminhome")
 	public ModelAndView adminhome(ModelAndView mv) {
-		mv.setViewName("adminTest/adminhome");
+		mv.setViewName("adminTest/adminHome");
 		return mv;
 	}// mlist
 
@@ -134,6 +134,18 @@ public class AdminController {
 		return mv;
 	}// mlist 
 	
+	@RequestMapping(value = "/bDelete")
+	public ModelAndView bDelete(HttpServletRequest request, ModelAndView mv, JobopenVO vo) {
+		if (service.bDelete(vo)>0) {
+			// 회원 탈퇴 성공 : session 삭제 -> home.jsp
+			mv.addObject("Success", "SS");
+		}else { // doFinish.jsp 로  
+			mv.addObject("Success", "XX");
+		}
+		mv.setViewName("adminTest/adminHome");
+		return mv ;
+	}// mdelete
+	
 	@RequestMapping(value = "/minfo")
 	public ModelAndView minfo(ModelAndView mv,EmemberVO vo) {
 		vo=service.minfo(vo);
@@ -161,7 +173,7 @@ public class AdminController {
 	public ModelAndView binfoDetail(ModelAndView mv,SelflabVO vo) {
 		vo=service.binfoDetail(vo);
 		mv.addObject("binfoDetail", vo);
-		mv.setViewName("adminTest/binfoDetail");
+		mv.setViewName("adminTest/blogDetail");
 		return mv;
 	}// binfoDetail 
 	
@@ -181,8 +193,101 @@ public class AdminController {
 	@RequestMapping(value = "/answerDetail")
 	public ModelAndView answerDetail(ModelAndView mv,InquiryVO vo) {
 		vo=service.answerDetail(vo);
+		if("2".equals(vo.getInq_state())) {
+			service.answerProcess(vo);
+		}
 		mv.addObject("answerDetail", vo);
 		mv.setViewName("adminTest/answerDetail");
 		return mv;
 	}// binfoDetail 
+	
+	@RequestMapping(value = "/answerDelete")
+	public ModelAndView answerDelete(HttpServletRequest request, ModelAndView mv, InquiryVO vo) {
+		if (service.answerDelete(vo)>0) {
+			// 회원 탈퇴 성공 : session 삭제 -> home.jsp
+			mv.addObject("Success", "SS");
+		}else { // doFinish.jsp 로  
+			mv.addObject("Success", "XX");
+		}
+		mv.setViewName("adminTest/adminHome");
+		return mv ;
+	}// mdelete
+	
+	@RequestMapping(value = "/blogInsert")
+	public ModelAndView blogInsert(HttpServletRequest request, ModelAndView mv, SelflabVO vo) throws IOException {
+		if (vo != null) {
+
+			MultipartFile lab_imgf = vo.getLab_imgf();
+			String file1, file2;
+			if (!lab_imgf.isEmpty()) {
+
+				file1 = "D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"
+						+ lab_imgf.getOriginalFilename();
+				lab_imgf.transferTo(new File(file1));
+				file2 = "resources/uploadImage/" + lab_imgf.getOriginalFilename();
+			} else
+				file2 = "NO Image";
+			vo.setLab_img(file2);
+		}
+		
+		if (service.blogInsert(vo) > 0) {
+			mv.addObject("BOGI", "T");
+		} else {
+			// 회원가입 실패 -> /member/doFinish.jsp
+			mv.addObject("Error", "BOGE");
+		} // if
+		mv.setViewName("everyUsing/doFinish");
+		return mv;
+	}//blogInsert
+	
+	
+	@RequestMapping(value = "/blogUpdatef")
+	public ModelAndView blogUpdatef(ModelAndView mv, SelflabVO vo) {
+		vo = service.binfoDetail(vo);	
+		mv.addObject("BlogD", vo);
+		mv.setViewName("adminTest/blogUpdate");
+		return mv;
+	}// loginf 
+
+	
+	@RequestMapping(value = "/blogUpdate")
+	public ModelAndView blogUpdate(ModelAndView mv, SelflabVO vo) throws IOException  {
+
+		 MultipartFile lab_imgf = vo.getLab_imgf();
+		 String file1, file2= "NO Image"; 
+		 if(!lab_imgf.isEmpty()) {
+			 
+			 file1="D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"+lab_imgf.getOriginalFilename();
+			 lab_imgf.transferTo(new File(file1));		 
+			 file2="resources/uploadImage/"+lab_imgf.getOriginalFilename();
+			 vo.setLab_img(file2);
+		 }
+		
+		
+		if (service.blogUpdate(vo)>0) { 
+			// 회원수정 성공 
+			// -> memberList.jsp 으로  
+			//request.getSession().setAttribute("loginNM", vo.getEmem_name());
+			mv.addObject("Success","B");
+			mv.setViewName("everyUsing/doFinish");
+		}else { 
+			// 회원수정 실패 -> /member/doFinish.jsp
+			mv.addObject("Error","UU");
+			mv.setViewName("everyUsing/doFinish");
+		} // if		
+		return mv ;
+	}// update
+	@RequestMapping(value = "/answerUpdate")
+	public ModelAndView answerUpdate(ModelAndView mv, InquiryVO vo) {
+
+		if (service.answerUpdate(vo)>0) { 
+			mv.addObject("Success","AS");
+			mv.setViewName("adminTest/answerList");
+		}else { 
+			mv.addObject("Error","AE");
+			mv.setViewName("everyUsing/doFinish");
+		} // if		
+		return mv ;
+	}// update
+	
 } // class

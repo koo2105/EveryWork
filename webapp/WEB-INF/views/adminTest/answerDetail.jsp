@@ -8,10 +8,27 @@
 <title>**문의사항  상세 페이지**</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
-
+<script>
+function answerUpdate(inq_id,inq_state){
+	$.ajax({
+		type : 'post',
+		data : {
+			inq_id : inq_id,
+			inq_state : inq_state
+		},
+		url : 'answerUpdate',
+		success : function(result) {
+			$('#adminArea').html('');
+			$('#adminArea').html(result);
+		}
+	});
+}
+</script>
 </head>
 <body>
 <h2>** 문의사항 상세 페이지 **</h2>
+<form action="answerUpdate" method="post">
+<input type="hidden" name="inq_id" value="${answerDetail.inq_id}">
 <table>
 <tr height="40"><td class="admin-title">문의번호</td>
 	<td>${answerDetail.inq_id}</td></tr>
@@ -24,14 +41,35 @@
 <tr height="40"><td class="admin-title">날짜</td>
 	<td>${answerDetail.inq_date}</td></tr>
 <tr height="40"><td class="admin-title">상태</td>
-	<td>${answerDetail.inq_state}</td></tr>
+	<td><select name="inq_state" id="inq_state">
+	<c:if test="${answerDetail.inq_state=='1'}">
+	<option value="1" selected="selected">대기중</option>
+	<option value="2" >처리중</option>
+	<option value="3">완료</option>
+	</c:if>
+	<c:if test="${answerDetail.inq_state=='2'}">
+	<option value="1">대기중</option>
+	<option value="2" selected="selected">처리중</option>
+	<option value="3">완료</option>
+	</c:if>
+	<c:if test="${answerDetail.inq_state=='3'}">
+	<option value="1">대기중</option>
+	<option value="2">처리중</option>
+	<option value="3" selected="selected">완료</option>
+	</c:if>
+	
+</select></td></tr>
 <tr height="40"><td class="admin-title">조회수</td>
 	<td>${answerDetail.inq_count}</td></tr>
 </table>
+<input type="submit" value="저장">
+<a href="#" onclick="answerUpdate(${answerDetail.inq_id},${answerDetail.inq_state})">a태그저장버튼 제발</a>
+</form>
 <br>
-<a href="minfoDelete?emem_id=${answerDetail.inq_id}" class="button" >게시글삭제</a><br><br>
+<br><br>
+<a href="answerDelete?inq_id=${answerDetail.inq_id}" class="button" >게시글삭제</a><br><br>
 
 <hr>
-<a href=adminhome>adminHome</a>
+<a href="adminhome">adminHome</a>
 </body>
 </html>

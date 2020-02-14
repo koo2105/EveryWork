@@ -30,7 +30,7 @@
   
   <insert id="answerInsert">
   insert into inquiry values((select nvl(max(inq_id), 0)+1 from inquiry), #{emem_id}, 
-  #{inq_title}, #{inq_content} ,SYSDATE,'대기중',0)
+  #{inq_title}, #{inq_content} ,SYSDATE,'1',0)
  </insert>
  
 	</mapper>

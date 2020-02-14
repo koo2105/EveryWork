@@ -13,6 +13,8 @@
 <body>
 <h2>** 공고 상세 페이지 **</h2>
 <table>
+<tr height="40"><td class="admin-title">공고 번호</td>
+	<td>${Detail.jobopen_id}</td></tr>
 <tr height="40"><td class="admin-title">I D</td>
 	<td>${Detail.admin_id}</td></tr>
 <tr height="40"><td class="admin-title">pro_Image</td>
@@ -28,6 +30,9 @@
 		
 </table>
 <br>
+<a href="#" class="button" onclick="gonggoupdate()">공고 수정</a>&nbsp;&nbsp;
+<a href="bDelete?jobopen_id=${Detail.jobopen_id}" class="button">공고 삭제</a>
+<br><br>
 <hr>
 
 <a href=adminhome>adminHome</a><br>

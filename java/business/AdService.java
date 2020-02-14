@@ -27,6 +27,12 @@ public interface AdService {
 	SelflabVO binfoDetail(SelflabVO vo);
 	InquiryVO answerDetail(InquiryVO vo);
 	int binfodelete(SelflabVO vo);
+	int answerDelete(InquiryVO vo);
+	int bDelete(JobopenVO vo);
+	int blogInsert(SelflabVO vo);
+	int blogUpdate(SelflabVO vo);
+	int answerProcess(InquiryVO vo);
+	int answerUpdate(InquiryVO vo);
 
 
 }

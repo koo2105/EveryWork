@@ -42,6 +42,7 @@ function binfoDetail(lab_id) {
 </head>
 <body>
 <h2>** 자소서 연구소 관리 **</h2>
+
 <table width=800>
 <tr class="admin-title" >
 	<td>글 번호</td><td>제목</td><td>카테고리</td>
@@ -65,12 +66,9 @@ function binfoDetail(lab_id) {
 </c:forEach>
 </table>
 <hr>
-<a href="#" class="button" onclick="bloginsertf()">글 등록</a>
-<a href="#" class="button" onclick="blogupdatef()">글 수정</a>
-<a href="#" class="button" onclick="#">글 삭제</a>
-<c:if test="${loginID!=null}">
-	<a href="#">[새글등록]</a>&nbsp;
-</c:if>
+<a href="#" class="button" onclick="bloginsertf()" >글 등록</a><br>
+
+
 
 <div id="content"></div>
 </body>
