@@ -71,7 +71,22 @@ select * from education where spec_id=(select spec_id from spec where emem_id=#{
 
 </select>
 
+<update id="specUpdate">
+update spec set spec_pt=#{spec_pt}, spec_name=#{spec_name}, spec_birthd=#{spec_birthd},
+spec_gender=#{spec_gender}, spec_num=#{spec_num}, spec_phoneNum=#{spec_phoneNum}, 
+spec_email=#{spec_email}, spec_sns=#{spec_sns}, spec_add=#{spec_add}, spec_hsperiod=#{spec_hsperiod},
+spec_heperiod=#{spec_heperiod}, spec_hname=#{spec_hname}, spec_hkind=#{spec_hkind}, 
+spec_vet=#{spec_vet}, spec_obs=#{spec_obs}, spec_obscontent=#{spec_obscontent}, spec_mil=#{spec_mil},
+spec_milsperiod=#{spec_milsperiod}, spec_mileperiod=#{spec_mileperiod}, spec_mildis=#{spec_mildis}, 
+spec_rank=#{spec_rank} where spec_id=#{spec_id}
+</update>
 
-
+<insert id="specInsert">
+	insert into spec values((select nvl(max(spec_id), 0)+1 from spec),#{emem_id},#{spec_pt},#{spec_name},
+	#{spec_birthd},#{spec_gender},#{spec_Num},#{spec_phoneNum},#{spec_email},#{spec_sns},#{spec_add},
+	#{spec_hsperiod},#{spec_heperiod},#{spec_hname},#{spec_hkind},#{spec_vet},#{spec_obs},#{spec_obscontent},#{spec_mil},
+	#{spec_milsperiod},#{spec_mileperiod},#{spec_mildis},#{spec_rank});
+	
+</insert>
 
 </mapper>

@@ -1,22 +1,22 @@
 package vo;
 
 public class SpecAwardsVO {
-	private int aw_id;
-	private int spec_id;
+	private Integer aw_id;
+	private Integer spec_id;
 	private String aw_name;
 	private String aw_story;
 	private String aw_pub;
 	private String aw_date;
-	public int getAw_id() {
+	public Integer getAw_id() {
 		return aw_id;
 	}
-	public void setAw_id(int aw_id) {
+	public void setAw_id(Integer aw_id) {
 		this.aw_id = aw_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getAw_name() {

@@ -1,7 +1,5 @@
 package com.every.work;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +27,6 @@ public class SpecController {
 	
 	@RequestMapping(value = "/specForm")
 	public ModelAndView sdetail(ModelAndView mv, SpecVO vo) {
-		System.out.println(vo);
 		if(vo!=null){
 		vo = service.specSelectOne(vo);
 		mv.addObject("sDetail", vo);
@@ -42,10 +39,23 @@ public class SpecController {
 		mv.addObject("lilist",vo.getLilist());
 		mv.addObject("olist",vo.getOlist());
 		mv.addObject("ulist",vo.getUlist());
-		System.out.println("*************2"+vo);
-		System.out.println("*************2"+vo.getUlist());
 		}
 		mv.setViewName("resume/specForm");
+		
+		return mv;
+	}// loginf	
+	
+	
+
+	@RequestMapping(value = "/specUpdate")
+	public ModelAndView specUpdate(ModelAndView mv, SpecVO vo) {
+		int cnt=0;
+			if(vo.getSpec_id()!=null) {
+				System.out.println("********************"+service.specUpdate(vo));
+			}else {
+				System.out.println(vo.getEmem_id());
+			}
+		mv.setViewName("home");
 		
 		return mv;
 	}// loginf	

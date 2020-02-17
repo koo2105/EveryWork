@@ -1,24 +1,23 @@
 package vo;
 
 public class SpecEducationVO extends SpecCareerVO{
-	private int edu_id;
-	private int spec_id;
+	private Integer edu_id;
+	private Integer spec_id;
 	private String edu_name;
 	private String edu_pub;
 	private String edu_sdate;
 	private String edu_edate;
 	private String edu_story;
-	
-	public int getEdu_id() {
+	public Integer getEdu_id() {
 		return edu_id;
 	}
-	public void setEdu_id(int edu_id) {
+	public void setEdu_id(Integer edu_id) {
 		this.edu_id = edu_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getEdu_name() {
@@ -51,12 +50,13 @@ public class SpecEducationVO extends SpecCareerVO{
 	public void setEdu_story(String edu_story) {
 		this.edu_story = edu_story;
 	}
-	
 	@Override
 	public String toString() {
 		return "SpecEducationVO [edu_id=" + edu_id + ", spec_id=" + spec_id + ", edu_name=" + edu_name + ", edu_pub="
 				+ edu_pub + ", edu_sdate=" + edu_sdate + ", edu_edate=" + edu_edate + ", edu_story=" + edu_story + "]";
 	}
+	
+
 	
 	
 	

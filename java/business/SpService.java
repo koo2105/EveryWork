@@ -11,5 +11,6 @@ public interface SpService {
 
 	// selctOne
 	SpecVO specSelectOne(SpecVO vo);
-
+	int specUpdate(SpecVO vo);
+	public int specInsert(SpecVO vo);
 }

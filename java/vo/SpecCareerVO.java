@@ -2,8 +2,8 @@ package vo;
 
 public class SpecCareerVO extends SpecAwardsVO{
 	
-	private int car_id;
-	private int spec_id;
+	private Integer car_id;
+	private Integer spec_id;
 	private String car_name;
 	private String car_speriod;
 	private String car_eperiod;
@@ -11,16 +11,16 @@ public class SpecCareerVO extends SpecAwardsVO{
 	private String car_dep;
 	private String car_work;
 	private String car_res;
-	public int getCar_id() {
+	public Integer getCar_id() {
 		return car_id;
 	}
-	public void setCar_id(int car_id) {
+	public void setCar_id(Integer car_id) {
 		this.car_id = car_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getCar_name() {

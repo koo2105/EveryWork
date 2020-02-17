@@ -2,21 +2,21 @@ package vo;
 
 public class SpecLicenseVO extends SpecLanguageVO {
 
-	private int lic_id;
-	private int spec_id;
+	private Integer lic_id;
+	private Integer spec_id;
 	private String lic_name;
 	private String lic_pub;
 	private String lic_grade;
-	public int getLic_id() {
+	public Integer getLic_id() {
 		return lic_id;
 	}
-	public void setLic_id(int lic_id) {
+	public void setLic_id(Integer lic_id) {
 		this.lic_id = lic_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getLic_name() {
@@ -43,7 +43,6 @@ public class SpecLicenseVO extends SpecLanguageVO {
 				+ lic_pub + ", lic_grade=" + lic_grade + "]";
 	}
 	
-
 	
 	
 

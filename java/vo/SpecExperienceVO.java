@@ -1,23 +1,23 @@
 package vo;
 
 public class SpecExperienceVO  extends SpecEducationVO{
-	private int exp_id;
-	private int spec_id;
+	private Integer exp_id;
+	private Integer spec_id;
 	private String exp_name;
 	private String exp_pub;
 	private String exp_sdate;
 	private String exp_edate;
 	private String exp_story;
-	public int getExp_id() {
+	public Integer getExp_id() {
 		return exp_id;
 	}
-	public void setExp_id(int exp_id) {
+	public void setExp_id(Integer exp_id) {
 		this.exp_id = exp_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getExp_name() {
@@ -55,8 +55,7 @@ public class SpecExperienceVO  extends SpecEducationVO{
 		return "SpecExperienceVO [exp_id=" + exp_id + ", spec_id=" + spec_id + ", exp_name=" + exp_name + ", exp_pub="
 				+ exp_pub + ", exp_sdate=" + exp_sdate + ", exp_edate=" + exp_edate + ", exp_story=" + exp_story + "]";
 	}
-	
-	
+
 	
 	
 }

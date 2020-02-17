@@ -2,8 +2,8 @@ package vo;
 
 public class SpecGraduateSchVO  extends SpecExperienceVO{
 	
-	private int gra_id;
-	private int spec_id;// REFERENCES spec (spec_id) ON DELETE CASCADE,
+	private Integer gra_id;
+	private Integer spec_id;// REFERENCES spec (spec_id) ON DELETE CASCADE,
 	private String gra_speriod;
 	private String gra_eperiod;
 	private String gra_name;
@@ -12,16 +12,16 @@ public class SpecGraduateSchVO  extends SpecExperienceVO{
 	private String gra_major;
 	private String gra_smajor1;
 	private String gra_smajor2;
-	public int getGra_id() {
+	public Integer getGra_id() {
 		return gra_id;
 	}
-	public void setGra_id(int gra_id) {
+	public void setGra_id(Integer gra_id) {
 		this.gra_id = gra_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getGra_speriod() {
@@ -79,8 +79,7 @@ public class SpecGraduateSchVO  extends SpecExperienceVO{
 				+ gra_grade + ", gra_major=" + gra_major + ", gra_smajor1=" + gra_smajor1 + ", gra_smajor2="
 				+ gra_smajor2 + "]";
 	}
-	
-	
+
 	
 	
 

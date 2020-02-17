@@ -1,8 +1,8 @@
 package vo;
 
 public class SpecUniversityVO extends SpecOverseasVO{
-	private int uni_id;
-	private int spec_id; //REFERENCES spec (spec_id) ON DELETE CASCADE,
+	private Integer uni_id;
+	private Integer spec_id; //REFERENCES spec (spec_id) ON DELETE CASCADE,
 	private String uni_speriod;
 	private String uni_eperiod;
 	private String uni_name;
@@ -11,16 +11,16 @@ public class SpecUniversityVO extends SpecOverseasVO{
 	private String uni_major;
 	private String uni_smajor1;
 	private String uni_smajor2;
-	public int getUni_id() {
+	public Integer getUni_id() {
 		return uni_id;
 	}
-	public void setUni_id(int uni_id) {
+	public void setUni_id(Integer uni_id) {
 		this.uni_id = uni_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getUni_speriod() {
@@ -78,7 +78,7 @@ public class SpecUniversityVO extends SpecOverseasVO{
 				+ uni_grade + ", uni_major=" + uni_major + ", uni_smajor1=" + uni_smajor1 + ", uni_smajor2="
 				+ uni_smajor2 + "]";
 	}
-	
+
 	
 	
 

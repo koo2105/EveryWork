@@ -74,12 +74,13 @@ body {
 							<b>로그인<b>을 하지 않으면 저장되지 않습니다.
 						</div>
 					</c:if>
-					<c:if test="${sDetail.spec_id!=null}">
+					
+				</div>
+				<form action="specUpdate" method="post">
+				<c:if test="${sDetail.spec_id!=null}">
 						<input name="spec_id" type="hidden" value="${sDetail.spec_id}">
 						<input name="emem_id" type="hidden" value="${sDetail.emem_id}">
 					</c:if>
-				</div>
-				<form action="#" method="post">
 				<div class="section-content new ng-scope">
 					<div class="fullpage-loading"></div>
 
@@ -151,27 +152,25 @@ body {
 											</tr>
 											<tr>
 												<th>전화번호</th>
-												<td colspan="3"><input type="text" id="spec_Num "
-													name="spec_Num " value="${sDetail.spec_Num}"
+												<td colspan="3"><input type="text" id="spec_num"
+													name="spec_num" value="${sDetail.spec_num}"
 													class="ng-pristine ng-untouched ng-valid"></td>
 												<th>휴대폰번호</th>
 												<td colspan="3"><input type="text" id="spec_phoneNum"
 													name="spec_phoneNum"
-													value="${sDetail.spec_phoneNum}
-													class="
-													ng-pristine ng-untouchedng-valid"></td>
+													value="${sDetail.spec_phoneNum}"
+													class="ng-pristine ng-untouchedng-valid"></td>
 											</tr>
 											<tr>
 												<th>이메일</th>
 												<td colspan="3"><input type="text" id="spec_email"
 													name="spec_email"
-													value="${sDetail.spec_email}
-													class="
-													ng-pristine ng-untouchedng-valid"></td>
+													value="${sDetail.spec_email}"
+													class="	ng-pristine ng-untouchedng-valid"></td>
 												<th>SNS</th>
 												<td colspan="3"><input type="text" id="spec_sns"
 													name="spec_sns"
-													value="${sDetail.spec_sns}
+													value="${sDetail.spec_sns}"
 													class="
 													ng-pristine ng-untouchedng-valid"></td>
 											</tr>
@@ -179,7 +178,7 @@ body {
 												<th>주소</th>
 												<td colspan="7"><input type="text" id="spec_add"
 													name="spec_add"
-													value="${sDetail.spec_add}
+													value="${sDetail.spec_add}"
 													class="
 													basic-info-addr ng-pristine ng-untouchedng-valid"></td>
 											</tr>

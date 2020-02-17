@@ -23,17 +23,20 @@ public class SpServiceImpl implements SpService {
 	SpecDAO dao ;
 	
 	// selectList
-	
-//	@Override
-//	public ArrayList<SpecVO> specSelectList() {
-//		return dao.specSelectList();
-//	}
+
 	
 	// selctOne
 		@Override
 		public SpecVO specSelectOne(SpecVO vo) {
 			return dao.specSelectOne(vo);
 		}
-	
+@Override
+	public int specInsert(SpecVO vo) {
+		return dao.specInsert(vo);
+	}
+@Override
+public int specUpdate(SpecVO vo) {
+	return dao.specUpdate(vo);
+}
 	
 } // class

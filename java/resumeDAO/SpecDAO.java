@@ -27,6 +27,13 @@ public class SpecDAO {
 		vo.setOlist((ArrayList)dao.selectList(NS+"overseasList",vo));
 		vo.setUlist((ArrayList)dao.selectList(NS+"universityList",vo));
 		return vo;
-	} // selectOne
+	} // select
+	
+	public int specUpdate(SpecVO vo) {  
+		return dao.update(NS+"specUpdate",vo);
+	}
+	public int specInsert(SpecVO vo) {
+		return dao.insert(NS+"specInsert",vo);
+	}
 	
 }

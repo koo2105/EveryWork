@@ -2,23 +2,22 @@ package vo;
 
 public class SpecLanguageVO extends SpecGraduateSchVO{
 	
-	private int lan_id;
-	private int spec_id;
+	private Integer lan_id;
+	private Integer spec_id;
 	private String lan_sort;
 	private String lan_name;
 	private String lan_grade;
 	private String lan_date;
-	
-	public int getLan_id() {
+	public Integer getLan_id() {
 		return lan_id;
 	}
-	public void setLan_id(int lan_id) {
+	public void setLan_id(Integer lan_id) {
 		this.lan_id = lan_id;
 	}
-	public int getSpec_id() {
+	public Integer getSpec_id() {
 		return spec_id;
 	}
-	public void setSpec_id(int spec_id) {
+	public void setSpec_id(Integer spec_id) {
 		this.spec_id = spec_id;
 	}
 	public String getLan_sort() {
@@ -50,6 +49,7 @@ public class SpecLanguageVO extends SpecGraduateSchVO{
 		return "SpecLanguageVO [lan_id=" + lan_id + ", spec_id=" + spec_id + ", lan_sort=" + lan_sort + ", lan_name="
 				+ lan_name + ", lan_grade=" + lan_grade + ", lan_date=" + lan_date + "]";
 	}
+	
 	
 	
 	
