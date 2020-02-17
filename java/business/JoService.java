@@ -8,4 +8,6 @@ public interface JoService {
 	
 	ArrayList<JobopenVO> jobopenHome();
 
+	ArrayList<JobopenVO> jobopenPopular();
+
 }

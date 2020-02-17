@@ -1,10 +1,7 @@
 package com.every.work;
 
-import java.text.DateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Locale;
-
+import java.time.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -12,14 +9,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import business.AdService;
 import business.JoService;
-import vo.EmemberVO;
 import vo.JobopenVO;
 
 /**
@@ -37,14 +31,50 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET)
-	public ModelAndView home(Locale locale, Model model, HttpServletRequest request, JobopenVO vo,ModelAndView mv) {
+	public ModelAndView home(HttpServletRequest request, JobopenVO vo, ModelAndView mv) {
 		ArrayList<JobopenVO> list = service.jobopenHome();
 		mv.addObject("JobList", list);
+		
+		ArrayList<JobopenVO> plist = service.jobopenPopular();
+		LocalDate today = LocalDate.now();
+		for(int i=0; i<plist.size();i++) {
+			
+			String eDates = plist.get(i).getJobopen_edate();
+			eDates= eDates.substring(0, 10);
+			LocalDate eDate = LocalDate.parse(eDates); 
+			Period test =Period.between(eDate, today);
+			
+			plist.get(i).setEndDday(test.getDays());
+			
+		}
+		mv.addObject("PopularList", plist);
+		
+		
+		
 		mv.setViewName("home");
 		return mv;
 	}
 	
+	/*
+	 * @RequestMapping(value = "/jobopenPopular") public ModelAndView
+	 * joinForm(ModelAndView mv,JobopenVO vo) { ArrayList<JobopenVO> list =
+	 * service.jobopenPopular(); LocalDate today = LocalDate.now(); for(int i=0;
+	 * i<list.size();i++) {
+	 * 
+	 * String eDates = list.get(i).getJobopen_edate(); eDates= eDates.substring(0,
+	 * 9); LocalDate eDate = LocalDate.parse(eDates); Period test
+	 * =Period.between(eDate, today);
+	 * 
+	 * list.get(i).setEndDday(test.getDays());
+	 * 
+	 * } mv.addObject("PopularList", list); mv.setViewName("home"); return mv; }
+	 */
+	
+	
+	
 	//Áö¿µ¾²
+	
+	
 	@RequestMapping(value = "/joinForm")
 	public ModelAndView joinForm(ModelAndView mv) {
 		mv.setViewName("member/joinForm");

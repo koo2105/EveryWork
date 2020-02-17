@@ -21,6 +21,10 @@ public class JobopenDAO {
 	public ArrayList<JobopenVO> jobopenHome() {
 		return (ArrayList) dao.selectList(NS + "jobopenHome");
 	} // selectList()
+	
+	public ArrayList<JobopenVO> jobopenPopular() {
+		return (ArrayList) dao.selectList(NS + "jobopenPopular");
+	} // selectList()
 
 	
 }//end EmemberDAO 

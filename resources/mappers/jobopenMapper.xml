@@ -12,7 +12,10 @@
 <select id="jobopenHome" resultType="vo.JobopenVO">
 		<![CDATA[ select * from (select * from jobopen order by jobopen_id desc) where rownum<=10]]>
 </select>
+<select id="jobopenPopular" resultType="vo.JobopenVO">
+		<![CDATA[ select * from (select * from jobopen order by jobopen_count desc) where rownum<=5]]>
+</select>
 
- 
+
 
 	</mapper>

@@ -14,6 +14,15 @@ public class JobopenVO {
 	private String jobopen_cimg;
 	private MultipartFile jobopen_cimgf;
 	private String jobopen_count;
+	private int endDday;
+	
+	
+	public int getEndDday() {
+		return endDday;
+	}
+	public void setEndDday(int endDday) {
+		this.endDday = endDday;
+	}
 	public int getJobopen_id() {
 		return jobopen_id;
 	}
@@ -86,10 +95,9 @@ public class JobopenVO {
 				+ ", jobopen_pimgf=" + jobopen_pimgf + ", jobopen_company=" + jobopen_company + ", jobopen_link="
 				+ jobopen_link + ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate=" + jobopen_edate
 				+ ", jobopen_cimg=" + jobopen_cimg + ", jobopen_cimgf=" + jobopen_cimgf + ", jobopen_count="
-				+ jobopen_count + "]";
+				+ jobopen_count + ", endDday=" + endDday + "]";
 	}
-
-
+	
 	
 
 }

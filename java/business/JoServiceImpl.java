@@ -10,14 +10,19 @@ import vo.JobopenVO;
 
 @Service
 public class JoServiceImpl implements JoService {
- 
+
 	@Autowired
-	JobopenDAO dao ;
-	
-	
+	JobopenDAO dao;
+
 	@Override
 	public ArrayList<JobopenVO> jobopenHome() {
 		return dao.jobopenHome();
+	}
+
+	@Override
+	public ArrayList<JobopenVO> jobopenPopular() {
+
+		return dao.jobopenPopular();
 	}
 
 }

@@ -17,6 +17,8 @@
 <div class="main-banner">
  <a href="http://www.naver.com"><img src="./resources/img/test.jpg"/></a>
  
+</div> <!-- end main-banner -->
+<%-- 	
 	<div class="wrap-container">
 		<div class="wrap">
 			<div class="wrap-title">
@@ -24,15 +26,90 @@
 			<span class="main-title"><strong>${loginID}</strong></span><span class="title">님 맞춤 공고</span> 
 			</c:if>
 			<span class="sub-title">EveryWork의 이용 패턴을 분석해 연관성 높은 공고를 추천합니다.</span></div>
+			<div class="employments-sets">
 				<c:forEach var="jh" items="${JobList}">
-				<div class="wrap-item-top"><a href="#"><img width="190px" height="190px" src="${jh.jobopen_pimg}"></a></div>
-
+				<div class="wrap-item-top">
+					 <div class="logo"> 
+					<a href="#"><img width="190px" height="190px" src="${jh.jobopen_pimg}"></a>
+					</div>
+						<div class="company-name">${jh.jobopen_company}</div>
+						</div> 
 				</c:forEach>
+				</div>
+				
 		</div>
 	</div>
-</div> 
+	 --%>
+	
+	
+	
+	
+	 <div class="recommended-employments-container">
+		<div class="inner-wrapper">
+			<div class="title-container">
+				<!-- ngIf: !userSignedIn -->
+				<c:if test="${loginID ==null}">
+				<span class="main-title ng-scope" >로그인하고
+					<strong>나의 맞춤 공고</strong>를 받아보세요!
+				</span>
+				</c:if>
+				<c:if test="${loginID !=null}">
+				<span class="main-title ng-scope" ><strong>${loginID}</strong>
+				님 맞춤 공고
+				</span>
+				</c:if>
+				<!-- end ngIf: !userSignedIn -->
+				<!-- ngIf: userSignedIn -->
+				<span class="sub-title">EveryWork의 이용 패턴을 분석해 연관성 높은 공고를 추천합니다.</span>
+			</div>
+			
+			<div class="employments-container">
+				<div class="employments">
+					<div class="employments-sets">
+						<div class="employments-set ">
+						<c:forEach var="jh" items="${JobList}">
+							<div class="employment ng-scope">
+								<!-- <div class="cover"></div> -->
+								<div class="logo">
+									<a href="#"><img src="${jh.jobopen_pimg}"></a>
+								</div>
+								<div class="company-name dotdotdot ng-binding
+								">${jh.jobopen_company}</div>
+							</div>
+							</c:forEach>
+						</div>
+						<!-- end employments-set set-0 -->
+					</div>
+					<!--  end employments-sets -->
+				</div>
+				<!-- end employments -->
+			</div>
+			<!-- end employments-container -->
+		</div>
+		<!-- end inner-wrapper -->
+	</div>
+	<!-- end recommended-employments-container -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 <!-- employments -->
+
+
 <div class="top-employments-container">
 
 	<div class="in-24-hours">
@@ -41,68 +118,25 @@
 		</div>
 		<div class="top-employments">
 			<div class="items">
+				<c:forEach var="pl" items="${PopularList}" varStatus="pvs">
 				<div class="item">
-					<div class="item-number">1</div>
+					<div class="item-number">${pvs.count}</div>
 						<div class="item-detail">
 							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
+								<div class="item-name">${pl.jobopen_company}</div>
 									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
+									<span> ${pl.endDday}일 남음 | </span> 
+										<span>${pl.jobopen_count}</span>
 										명 작성
 									</div>
 							</div>
 				</div>
-				<div class="item">
-					<div class="item-number">2</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
-				<div class="item">
-					<div class="item-number">3</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
+			</c:forEach>
+			
 		
-				<div class="item">
-					<div class="item-number">4</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
-				<div class="item">
-					<div class="item-number">5</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
-			</div>
+		
+			
+			</div> <!-- end items -->
 		</div>
 	</div>
 
@@ -115,55 +149,6 @@
 			<div class="items">
 				<div class="item">
 					<div class="item-number">1</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
-				<div class="item">
-					<div class="item-number">2</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
-				<div class="item">
-					<div class="item-number">3</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
-		
-				<div class="item">
-					<div class="item-number">4</div>
-						<div class="item-detail">
-							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
-									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
-										명 작성
-									</div>
-							</div>
-				</div>
-				<div class="item">
-					<div class="item-number">5</div>
 						<div class="item-detail">
 							<div class="item-name-container">
 								<div class="item-name">GS파워</div>
