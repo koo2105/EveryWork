@@ -31,6 +31,11 @@ function answerDetail(inq_id) {
 	alert('수정되었습니다.');
 </script>
 </c:if>
+<c:if test="${Error=='AE'}">
+<script>
+	alert('수정실패');
+</script>
+</c:if>
 
 <style>
 	.result { color:blue; }

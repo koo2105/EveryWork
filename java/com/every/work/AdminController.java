@@ -279,14 +279,15 @@ public class AdminController {
 	}// update
 	@RequestMapping(value = "/answerUpdate")
 	public ModelAndView answerUpdate(ModelAndView mv, InquiryVO vo) {
-
+		System.out.println(vo);
 		if (service.answerUpdate(vo)>0) { 
 			mv.addObject("Success","AS");
-			mv.setViewName("adminTest/answerList");
 		}else { 
 			mv.addObject("Error","AE");
-			mv.setViewName("everyUsing/doFinish");
 		} // if		
+		ArrayList<InquiryVO> list = service.answerList();
+		mv.addObject("Answerlist", list);
+		mv.setViewName("adminTest/answerList");
 		return mv ;
 	}// update
 	

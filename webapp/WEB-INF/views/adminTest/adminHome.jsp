@@ -67,13 +67,23 @@
 				}
 			});
 		});
-			
-			
-		
-
 	});// ready
 
-	
+	function answerUpdate(inq_id){
+		var inq_state=$("select option:selected").val();
+		
+		$.ajax({
+			type : 'post',
+			data : {
+				inq_id : inq_id,
+				inq_state : inq_state
+			},
+			url : 'answerUpdate',
+			success : function(result) {
+				$('#adminArea').html(result);
+			}
+		});
+	}
 </script>
 <style>
 div {

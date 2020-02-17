@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import business.SpService;
+import vo.SpecUniversityVO;
 import vo.SpecVO;
 
 
@@ -27,35 +28,79 @@ public class SpecController {
 	
 	@RequestMapping(value = "/specForm")
 	public ModelAndView sdetail(ModelAndView mv, SpecVO vo) {
-		if(vo!=null){
-		vo = service.specSelectOne(vo);
-		mv.addObject("sDetail", vo);
-		mv.addObject("alist",vo.getAlist());
-		mv.addObject("clist",vo.getClist());
-		mv.addObject("edlist",vo.getEdlist());
-		mv.addObject("exlist",vo.getExlist());
-		mv.addObject("mlist",vo.getMlist());
-		mv.addObject("lalist",vo.getLalist());
-		mv.addObject("lilist",vo.getLilist());
-		mv.addObject("olist",vo.getOlist());
-		mv.addObject("ulist",vo.getUlist());
+		System.out.println("***********" + vo);
+		if (vo.getEmem_id() != null) {
+			try {
+				vo = service.specSelectOne(vo);
+				mv.addObject("sDetail", vo);
+			} catch (NullPointerException e) {
+				System.out.println(e.toString());
+				mv.setViewName("resume/specForm");
+				return mv;
+			}
+			if (vo.getSpec_id() != null) {
+				if(vo.getAlist().size()!=0) {
+					mv.addObject("alist", vo.getAlist());
+				}
+				if(vo.getClist().size()!=0) {
+					mv.addObject("clist", vo.getClist());
+				}
+				
+				if(vo.getEdlist().size()!=0) {
+					mv.addObject("edlist", vo.getEdlist());
+				}
+				if(vo.getExlist().size()!=0) {
+					mv.addObject("exlist", vo.getExlist());
+				}
+				if(vo.getMlist().size()!=0) {
+					mv.addObject("mlist", vo.getMlist());
+				}
+				if(vo.getLalist().size()!=0) {
+					mv.addObject("lalist", vo.getLalist());
+				}
+				if(vo.getLilist().size()!=0) {
+					mv.addObject("lilist", vo.getLilist());
+				}
+				if(vo.getOlist().size()!=0) {
+					mv.addObject("olist", vo.getOlist());
+				}
+				if(vo.getUlist().size()!=0) {
+					mv.addObject("ulist", vo.getUlist());
+				}
+			}
+
 		}
 		mv.setViewName("resume/specForm");
-		
+
 		return mv;
-	}// loginf	
+	}// loginf
 	
 	
 
 	@RequestMapping(value = "/specUpdate")
 	public ModelAndView specUpdate(ModelAndView mv, SpecVO vo) {
-		int cnt=0;
 			if(vo.getSpec_id()!=null) {
-				System.out.println("********************"+service.specUpdate(vo));
+				service.specUpdate(vo);
 			}else {
-				System.out.println(vo.getEmem_id());
+				service.specInsert(vo);
 			}
-		mv.setViewName("home");
+			
+			service.specAllDelete(vo);
+			for(int i=0;i<vo.getUni_eperiod().size();i++) {
+				SpecUniversityVO uvo = null;
+				uvo.setSpec_id(vo.getSpec_id());
+				uvo.setUni_speriod(vo.getUni_speriod().get(i));
+				uvo.setUni_eperiod(vo.getUni_eperiod().get(i));
+				uvo.setUni_name(vo.getUni_name().get(i));
+				uvo.setUni_kind(vo.getUni_name().get(i));
+				uvo.setUni_grade(vo.getUni_grade().get(i));
+				uvo.setUni_major(vo.getUni_major().get(i));
+				uvo.setUni_smajor1(vo.getUni_smajor1().get(i));
+				uvo.setUni_smajor2(vo.getUni_smajor2().get(i));
+				
+				service.universityInsert(uvo);
+			}
+			mv.setViewName("home");
 		
 		return mv;
 	}// loginf	

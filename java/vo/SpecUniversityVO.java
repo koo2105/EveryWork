@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecUniversityVO extends SpecOverseasVO{
+public class SpecUniversityVO{
 	private Integer uni_id;
 	private Integer spec_id; //REFERENCES spec (spec_id) ON DELETE CASCADE,
 	private String uni_speriod;

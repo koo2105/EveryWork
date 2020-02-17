@@ -9,20 +9,7 @@
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script>
-function answerUpdate(inq_id,inq_state){
-	$.ajax({
-		type : 'post',
-		data : {
-			inq_id : inq_id,
-			inq_state : inq_state
-		},
-		url : 'answerUpdate',
-		success : function(result) {
-			$('#adminArea').html('');
-			$('#adminArea').html(result);
-		}
-	});
-}
+
 </script>
 </head>
 <body>
@@ -57,13 +44,11 @@ function answerUpdate(inq_id,inq_state){
 	<option value="2">처리중</option>
 	<option value="3" selected="selected">완료</option>
 	</c:if>
-	
 </select></td></tr>
 <tr height="40"><td class="admin-title">조회수</td>
 	<td>${answerDetail.inq_count}</td></tr>
 </table>
-<input type="submit" value="저장">
-<a href="#" onclick="answerUpdate(${answerDetail.inq_id},${answerDetail.inq_state})">a태그저장버튼 제발</a>
+<input type="button" onclick="answerUpdate(${answerDetail.inq_id})" value="저장">
 </form>
 <br>
 <br><br>

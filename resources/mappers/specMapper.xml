@@ -83,10 +83,79 @@ spec_rank=#{spec_rank} where spec_id=#{spec_id}
 
 <insert id="specInsert">
 	insert into spec values((select nvl(max(spec_id), 0)+1 from spec),#{emem_id},#{spec_pt},#{spec_name},
-	#{spec_birthd},#{spec_gender},#{spec_Num},#{spec_phoneNum},#{spec_email},#{spec_sns},#{spec_add},
+	#{spec_birthd},#{spec_gender},#{spec_num},#{spec_phoneNum},#{spec_email},#{spec_sns},#{spec_add},
 	#{spec_hsperiod},#{spec_heperiod},#{spec_hname},#{spec_hkind},#{spec_vet},#{spec_obs},#{spec_obscontent},#{spec_mil},
-	#{spec_milsperiod},#{spec_mileperiod},#{spec_mildis},#{spec_rank});
+	#{spec_milsperiod},#{spec_mileperiod},#{spec_mildis},#{spec_rank})
 	
 </insert>
+
+<delete id="universityDelete">
+	delete university where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="graduateSchDelete">
+	delete graduateSch where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="licenseDelete">
+	delete license where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="careerDelete">
+	delete career where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="languageDelete">
+	delete language where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="awardsDelete">
+	delete awards where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="overseasDelete">
+	delete overseas where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="experienceDelete">
+	delete experience where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+<delete id="educationDelete">
+	delete education where spec_id=(select spec_id from spec where emem_id=#{emem_id})
+</delete>
+
+<insert id="universityInsert">
+	insert into university values((select nvl(max(uni_id), 0)+1 from university),
+	#{spec_id},#{uni_speriod},#{uni_eperiod},#{uni_name},#{uni_kind},#{uni_grade},
+	#{uni_major},#{uni_smajor1},#{uni_smajor2})
+</insert>
+<insert id="graduateSchInsert">
+	insert into graduateSch values((select nvl(max(gra_id), 0)+1 from graduateSch),
+	#{spec_id},#{gra_speriod},#{gra_eperiod},#{gra_name},#{gra_kind},#{gra_grade},
+	#{gra_major},#{gra_smajor1},#{gra_smajor2})
+</insert>
+<insert id="licenseInsert">
+	insert into license values((select nvl(max(lic_id), 0)+1 from license),#{spec_id},
+	#{lic_name},#{lic_pub},#{lic_grade})
+</insert>
+<insert id="careerInsert">
+	insert into career values((select nvl(max(car_id), 0)+1 from career),#{spec_id},
+	#{car_name},#{car_speriod},#{car_eperiod},#{car_rank},#{car_dep},#{car_work},#{car_res})
+</insert>
+<insert id="languageInsert">
+	insert into language values((select nvl(max(lan_id), 0)+1 from language),#{spec_id},
+	#{lan_sort},#{lan_name},#{lan_grade},#{lan_date})
+</insert>
+<insert id="awardsInsert">
+	insert into awards values((select nvl(max(aw_id), 0)+1 from awards),#{spec_id},
+	#{aw_name},#{aw_story},#{aw_pub},#{aw_date})
+</insert>
+<insert id="overseasInsert">
+	insert into overseas values((select nvl(max(ov_id), 0)+1 from overseas),#{spec_id},
+	#{ov_country},#{ov_pub},#{ov_purpose})
+</insert>
+<insert id="experienceInsert">
+	insert into experience values((select nvl(max(exp_id), 0)+1 from experience),#{spec_id},
+	#{exp_name},#{exp_pub},#{exp_sdate},#{exp_edate},#{exp_story})
+</insert>
+<insert id="educationInsert">
+	insert into education values((select nvl(max(edu_id), 0)+1 from education),#{spec_id},
+	#{edu_name},#{edu_pub},#{edu_sdate},#{edu_edate},#{edu_story})
+</insert>
+
+
 
 </mapper>
