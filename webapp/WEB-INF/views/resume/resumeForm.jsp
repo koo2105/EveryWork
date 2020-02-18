@@ -28,27 +28,30 @@ body{
 	      <h3>자소서 목록</h3>
 	      </div>
 	         <ul>
-	            <li><a href="resume-list" ><span>자소서 몽농노</span></a></li>
-	            <li><a href="resume-list" ><span>자소서 몽농노</span></a></li>
-	            <li><a href="resume-list" ><span>자소서 몽농노</span></a></li>
-	            <li><a href="resume-list" ><span>자소서 몽농노</span></a></li>
+	         <c:forEach var="tl" items="${titleList}" varStatus="tlvs">
+	            <li><a href="resume-list" ><span>${tl.ja_name}</span></a></li>
+	         </c:forEach>
 	         </ul>
 	    </div>
 
 	<!-- resumeForm2 -->
 
 	<div class="resume-container">
-	<div class="resume-form">
+	<div id="rform" class="resume-form">
 	
-		<form id="theform" action="javascript:void(0);">
+		<form id="theform" action="resumesave">
 
-			<div for="about-yourself" class="resume-title" id="resume-plus">자기소개서</div>
+			<div for="about-yourself" class="resume-title" id="resume-plus">자기소개서</div><br><br>
+			
+			회사명 : <input type="text" id="ja_name" name="ja_name" value="${ja_name}">
+			
 			<div class="ta-container">
-				<textarea id="question" class="ta-question" name="about-yourself"
+				
+				<textarea id="selfqa_q" class="ta-question" name="selfqa_q"
 					rows="3" cols="75" data-maxchars="20" data-over="false"
 					placeholder="질문을 입력해주세요." required style="border-bottom: 2px;"></textarea>
 						<hr>
-				<textarea  class="ta-answer" name="about-yourself"
+				<textarea  class="ta-answer" name="selfqa_a" id="selfqa_a"
 					rows="6" cols="75" data-maxchars="20" data-over="false"
 					placeholder="답변을 입력해주세요" required></textarea>
 				<div class="status-bar">

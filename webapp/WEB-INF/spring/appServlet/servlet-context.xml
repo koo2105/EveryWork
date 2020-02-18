@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.every.work, business, memberDAO, adminDAO, selflabDAO, vo,resumeDAO, jobopenDAO" />
+	<context:component-scan base-package="com.every.work, business, memberDAO, adminDAO, selflabDAO, vo, resumeDAO, jobopenDAO" />
 	
 		<!-- JSON View -->
 	<beans:bean id="jsonView"

@@ -25,6 +25,7 @@
 				spec_gender:spec_gender,
 				spec_num:spec_num,
 				spec_phoneNum:spec_phoneNum,
+				
 				spec_email:spec_email,
 				spec_sns:spec_sns,
 				spec_add:spec_add,
@@ -1824,22 +1825,22 @@ body {
 										<tr>
 											<th>교육명</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_name}" name="exp_name"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_name}" name="edu_name"></td>
 											<th>교육기관</th>
 											<td><input type="text"
-												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_pub}" name="exp_pub"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_pub}" name="edu_pub"></td>
 										</tr>
 										<tr>
 											<th>활동기간</th>
 											<td colspan="3"><input type="date"
-												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_sdate}" name="exp_sdate"> <span
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_sdate}" name="edu_sdate"> <span
 												class="duration-wave-mark"> ~ </span> <input type="date"
-												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_edate}" name="exp_edate"></td>
+												class="ng-pristine ng-untouched ng-valid" value="${edl.edu_edate}" name="edu_edate"></td>
 										</tr>
 										<tr class="educations">
 											<th>내용</th>
 											<td colspan="3"><textarea
-													class="ng-pristine ng-untouched ng-valid" name="exp_story">${edl.edu_story}</textarea></td>
+													class="ng-pristine ng-untouched ng-valid" name="edu_story">${edl.edu_story}</textarea></td>
 										</tr>
 										<!-- ngIf: !$first -->
 									</tbody>

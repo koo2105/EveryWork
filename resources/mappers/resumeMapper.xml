@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="work.mappers.resumeMapper">
+
+<!-- selectList -->
+
+<select id="selfTitleList" resultType="vo.SelftitleVO">
+		select * from selftitle where emem_id=#{emem_id} order by ja_id desc
+	</select>
+
+<insert id="selftitleInsert">
+	insert into selftitle values((select nvl(max(ja_id), 0)+1 from selftitle),
+	#{emem_id},#{ja_name})
+</insert>
+
+<insert id="selfqaInsert">
+	insert into selfqa values((select nvl(max(selfqa_id), 0)+1 from selfqa),
+	#{ja_id},#{selfqa_q},#{selfqa_a})
+</insert>	
+
+<update id="resumeUpdate">
+	update selftitle set ja_name=#{ja_name} where ja_name=#{ja_name}
+</update>
+	
+<delete id="selfqaDelete">
+	delete selfqa where ja_name=#{ja_name}
+</delete>
+
+<delete id="selftitleDelete">
+	delete selftitle where ja_name=#{ja_name}
+</delete>
+
+
+
+
+	
+
+	</mapper>

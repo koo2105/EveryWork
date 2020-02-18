@@ -80,11 +80,7 @@ public class HomeController {
 		mv.setViewName("member/joinForm");
 		return mv;
 	}
-	@RequestMapping(value = "/resumeForm")
-	public ModelAndView resumeForm(ModelAndView mv) {
-		mv.setViewName("resume/resumeForm");
-		return mv;
-	}
+
 
 	//µÕ Áö¿µ¾²
 

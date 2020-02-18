@@ -270,9 +270,9 @@ function careerAddr(){
 												<td><input type="text"
 													class="ng-pristine ng-untouched ng-valid" id="car_name" name="car_name"></td>
 												<th>기간</th>
-												<td><input type="month" style="width: 135px"
+												<td><input type="date" style="width: 135px"
 													class="ng-pristine ng-untouched ng-valid" id="car_speriod" name="car_speriod"> <span
-													class="duration-wave-mark"> ~ </span> <input type="month"
+													class="duration-wave-mark"> ~ </span> <input type="date"
 													style="width: 135px"
 													class="ng-pristine ng-untouched ng-valid" id="car_eperiod" name="car_eperiod" ></td>
 											</tr>

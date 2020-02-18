@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecLanguageVO extends SpecGraduateSchVO{
+public class SpecLanguageVO {
 	
 	private Integer lan_id;
 	private Integer spec_id;

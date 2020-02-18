@@ -1,6 +1,6 @@
 package vo;
 
-public class SpecCareerVO extends SpecAwardsVO{
+public class SpecCareerVO {
 	
 	private Integer car_id;
 	private Integer spec_id;

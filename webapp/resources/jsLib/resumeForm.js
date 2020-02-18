@@ -105,14 +105,14 @@ function initialise() {
 }
 
 
-var cnt =0;
+var cnt =1;
 function attachAddr(){
 	  const str = `<div class="ta-container" id=resumeFormPlus`+cnt+`>
-			<textarea id="question" class="ta-question" name="about-yourself"
+			<textarea id="selfqa_q" class="ta-question" name="selfqa_q"
 			rows="3" cols="75" data-maxchars="20" data-over="false"
 			placeholder="질문을 입력해주세요." required style="border-bottom: 2px;"></textarea>
 				<hr>
-		<textarea  class="ta-answer" name="about-yourself"
+		<textarea  class="ta-answer" name="selfqa_a" id="selfqa_a"
 			rows="6" cols="75" data-maxchars="20" data-over="false"
 			placeholder="답변을 입력해주세요" required></textarea>
 		<div class="status-bar">
