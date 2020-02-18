@@ -10,12 +10,19 @@
 
 
 <select id="jobopenHome" resultType="vo.JobopenVO">
-		<![CDATA[ select * from (select * from jobopen order by jobopen_id desc) where rownum<=10]]>
+		<![CDATA[ select * from (select * from jobopen order by jobopen_id desc) where  (jobopen_edate>=sysdate) and rownum<=15]]>
 </select>
 <select id="jobopenPopular" resultType="vo.JobopenVO">
-		<![CDATA[ select * from (select * from jobopen order by jobopen_count desc) where rownum<=5]]>
+		<![CDATA[ select * from (select * from jobopen order by jobopen_count desc ) where (jobopen_edate>=sysdate) and rownum<=5]]>
 </select>
 
+<select id="jobopenThisWeek" resultType="vo.JobopenVO">
+		<![CDATA[ select * from (select j.*, ROW_NUMBER() OVER(order by jobopen_edate asc)rnum from jobopen j 
+		where (jobopen_edate>=sysdate) and (jobopen_edate<=(sysdate+6))) where rnum <6]]>
+</select>
 
+<select id="jobopenDetail" resultType="vo.JobopenVO">
+		select * from jobopen where jobopen_id=#{jobopen_id} 
+</select>
 
 	</mapper>

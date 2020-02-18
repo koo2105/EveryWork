@@ -24,5 +24,16 @@ public class JoServiceImpl implements JoService {
 
 		return dao.jobopenPopular();
 	}
+	
+	
+	@Override
+	public ArrayList<JobopenVO> jobopenThisWeek() {
+		return dao.jobopenThisWeek();
+	}
 
+	
+	@Override
+	public JobopenVO jobopenDetail(JobopenVO vo) {
+		return dao.jobopenDetail(vo);
+	}
 }

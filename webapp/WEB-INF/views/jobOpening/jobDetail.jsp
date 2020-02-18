@@ -19,15 +19,15 @@
 	<div class="x-btn"><a href="#" onclick="jDetailClose()"><img alt="닫기" src="resources/img/x_btn.png"></a></div>
 		<div class="detail-top"> <!-- 상세의 윗부분 -->
 			<div class="detail-header"><!-- 공고의 헤더 -->
-				<div class="header-img">사진이 들어갈 자리</div>
+				<div class="header-img">${jDetail.jobopen_pimg}</div>
 				<div class="header-content">
 					<div class="header-time">
-						<span class="header-time-span"><span class="header-times">2020.01.20</span> ~ <span class="header-timee">2020.02.01</span><span> (00일남음)</span></span>
+						<span class="header-time-span"><span class="header-times">${jDetail.jobopen_sdate}</span> ~ <span class="header-timee">${jDetail.jobopen_edate}</span><span>${jDetail.endDday}</span></span>
 					</div>
 					<div class="header-link">
-						<div><a href="#">홈페이지</a></div>
+						<div><a href="${jDetail.jobopen_link}">홈페이지</a></div>
 					</div>
-					<div class="header-count">카운트 입력부분</div>
+					<div class="header-count">${jDetail.jobopen_count}</div>
 				</div>
 			</div>
 			<div class="detail-self"><!-- 자소서바로가기 -->
@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div> <!-- 상세의 아랫부분 (이미지) -->
-		<img src="resources/img/jobDetailEx.png" width="100%">
+		<img src="${jDetail.jobopen_cimg}" width="100%">
 			<img>
 		</div>
 	</div>

@@ -14,13 +14,13 @@ public class JobopenVO {
 	private String jobopen_cimg;
 	private MultipartFile jobopen_cimgf;
 	private String jobopen_count;
-	private int endDday;
+	private long endDday;
 	
 	
-	public int getEndDday() {
+	public long getEndDday() {
 		return endDday;
 	}
-	public void setEndDday(int endDday) {
+	public void setEndDday(long endDday) {
 		this.endDday = endDday;
 	}
 	public int getJobopen_id() {

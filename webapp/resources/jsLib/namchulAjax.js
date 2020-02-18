@@ -15,6 +15,7 @@ function filtering(){
 	$('#filtering-container').toggle();
 }
 function jDetailOpen(){
+	
 /*	var url='jdetail';
 	window.open(url,"_blank","toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,width=600,height=300");*/
 	$('.jobDetail-div').show();

@@ -68,7 +68,7 @@
 					<div class="employments-sets">
 						<div class="employments-set ">
 						<c:forEach var="jh" items="${JobList}">
-							<div class="employment ng-scope">
+							<div class="employment ng-scope" onclick="location.href='jobopenDetail?jobopen_id=${jh.jobopen_id}'">
 								<!-- <div class="cover"></div> -->
 								<div class="logo">
 									<a href="#"><img src="${jh.jobopen_pimg}"></a>
@@ -119,7 +119,8 @@
 		<div class="top-employments">
 			<div class="items">
 				<c:forEach var="pl" items="${PopularList}" varStatus="pvs">
-				<div class="item">
+				<div class="item" onclick="location.href='jobopenDetail?jobopen_id=${pl.jobopen_id}'" > 
+				<%-- <a href="jobopenDetail?jobopen_id=${pl.jobopen_id}"> --%>
 					<div class="item-number">${pvs.count}</div>
 						<div class="item-detail">
 							<div class="item-name-container">
@@ -130,6 +131,7 @@
 										명 작성
 									</div>
 							</div>
+							<!-- </a> -->
 				</div>
 			</c:forEach>
 			
@@ -141,27 +143,29 @@
 	</div>
 
 
-	<div class="in-this-week">
+ 	<div class="in-this-week">
 		<div class="title">
           7일 내에 마감하는 인기공고
 		</div>
 		<div class="top-employments">
 			<div class="items">
-				<div class="item">
-					<div class="item-number">1</div>
+			<c:forEach var="twl" items="${thisWeekList}" varStatus="tvs" >
+				<div class="item" onclick="location.href='jobopenDetail?jobopen_id=${twl.jobopen_id}'">
+					<div class="item-number">${tvs.count}</div>
 						<div class="item-detail">
 							<div class="item-name-container">
-								<div class="item-name">GS파워</div>
+								<div class="item-name">${twl.jobopen_company}</div>
 									<div class="item-name"></div>
-										<span> 5일 남음 | </span>
-										<span>1527</span>
+										<span> ${twl.endDday} | </span>
+										<span>${twl.jobopen_count}</span>
 										명 작성
 									</div>
 							</div>
 				</div>
-			</div>
+				</c:forEach>
+			</div><!-- end items -->
 		</div>
-	</div>
+	</div> <!-- end in-this-week --> 
 	
 
 	

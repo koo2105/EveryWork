@@ -10,4 +10,8 @@ public interface JoService {
 
 	ArrayList<JobopenVO> jobopenPopular();
 
+	ArrayList<JobopenVO> jobopenThisWeek();
+
+	JobopenVO jobopenDetail(JobopenVO vo);
+
 }

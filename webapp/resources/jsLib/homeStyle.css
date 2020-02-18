@@ -90,7 +90,7 @@ a {
 
 .recommended-employments-container .inner-wrapper {
 	width: 1200px;
-	height: 70%;
+	height: 600px;
 	padding: 0 40px;
 	margin: 0 auto;
 	position: relative;
@@ -159,12 +159,13 @@ a {
 }
 
 .recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment:nth-child(1),
-	.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment:nth-child(6)
+	.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment:nth-child(6),
+	.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment:nth-child(11)
 	{
 	margin-left: 0;
 }
 
-.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment:nth-child(n+6)
+.recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment:nth-child(n+6), .recommended-employments-container .inner-wrapper .employments-container .employments .employments-sets .employments-set .employment:nth-child(n+11)
 	{
 	margin-top: 4px;
 }
@@ -229,6 +230,7 @@ a {
 	padding: 0 40px;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .item-number {

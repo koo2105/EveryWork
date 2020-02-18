@@ -20,11 +20,19 @@ public class JobopenDAO {
 	
 	public ArrayList<JobopenVO> jobopenHome() {
 		return (ArrayList) dao.selectList(NS + "jobopenHome");
-	} // selectList()
+	} //jobopenHome()
 	
 	public ArrayList<JobopenVO> jobopenPopular() {
 		return (ArrayList) dao.selectList(NS + "jobopenPopular");
-	} // selectList()
+	} // jobopenPopular()
+	
+	public ArrayList<JobopenVO> jobopenThisWeek() {
+		return (ArrayList) dao.selectList(NS + "jobopenThisWeek");
+	} // jobopenThisWeek()
 
+	public JobopenVO jobopenDetail(JobopenVO vo) {
+		return dao.selectOne(NS + "jobopenDetail",vo);
+	} // selectList()
+	
 	
 }//end EmemberDAO 
