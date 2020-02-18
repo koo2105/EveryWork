@@ -86,8 +86,9 @@ public class SpecController {
 			}
 			
 			service.specAllDelete(vo);
+			
 			for(int i=0;i<vo.getUni_eperiod().size();i++) {
-				SpecUniversityVO uvo = null;
+				SpecUniversityVO uvo = new SpecUniversityVO(); 
 				uvo.setSpec_id(vo.getSpec_id());
 				uvo.setUni_speriod(vo.getUni_speriod().get(i));
 				uvo.setUni_eperiod(vo.getUni_eperiod().get(i));
