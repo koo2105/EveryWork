@@ -21,6 +21,8 @@ public interface AdService {
 	ArrayList<SelflabVO> blogList();
 	AdminVO adminLogin(AdminVO vo);
 	int jobopenInsert(JobopenVO vo);
+	int jobqaInsert(JobqaVO vo);
+	int jobcaInsert(JobcategoryVO vo);
 	JobopenVO bdetail(JobopenVO vo);
 	EmemberVO minfo(EmemberVO vo);
 	int delete(EmemberVO vo);
@@ -33,6 +35,9 @@ public interface AdService {
 	int blogUpdate(SelflabVO vo);
 	int answerProcess(InquiryVO vo);
 	int answerUpdate(InquiryVO vo);
-
+	JobcategoryVO jobcaMaxID();
+	JobopenVO jobopenMaxID();
+	ArrayList<JobcategoryVO> jobcategoryList(JobopenVO vo);
+	ArrayList<JobqaVO> jobqaList(JobopenVO vo);
 
 }

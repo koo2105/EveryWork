@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 import vo.SelflabVO;
 
 @Repository
@@ -41,12 +43,21 @@ public class AdminDAO {
 
 	public int jobopenInsert(JobopenVO vo) {
 		int cnt = 0;
-
 		if (vo != null) {
 			cnt = dao.insert(NS + "jobopenInsert", vo);
 		}
 		return cnt;
 	} // insert
+	
+	public int jobcaInsert(JobcategoryVO vo) {
+		return dao.insert(NS + "jobcaInsert", vo);
+	} // insert
+	
+	
+	public int jobqaInsert(JobqaVO vo) {		
+		return dao.insert(NS + "jobqaInsert", vo);
+	} // insert
+	
 
 	public JobopenVO bdetail(JobopenVO vo) {
 		return dao.selectOne(NS + "bdetail",vo);
@@ -102,4 +113,20 @@ public class AdminDAO {
 		return dao.update(NS+"answerUpdate", vo);
 	}//answerUpdate()
 	
+	
+	public JobcategoryVO jobcaMaxID() {
+		return dao.selectOne(NS+"jobcaMaxID");
+	}
+	
+	public JobopenVO jobopenMaxID() {
+		return dao.selectOne(NS+"jobopenMaxID");
+	}
+	
+	public ArrayList<JobcategoryVO> jobcategoryList(JobopenVO vo) {
+		return (ArrayList)dao.selectList(NS+"jobcategoryList",vo);
+	}
+	
+	public ArrayList<JobqaVO> jobqaList(JobopenVO vo) {
+		return (ArrayList)dao.selectList(NS+"jobqaList",vo);
+	}
 }// end EmemberDAO

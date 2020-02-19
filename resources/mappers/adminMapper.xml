@@ -43,13 +43,15 @@
   	insert into jobopen values((select nvl(max(jobopen_id), 0)+1 from jobopen),#{admin_id},#{jobopen_pimg},#{jobopen_company},#{jobopen_link},#{jobopen_sdate},#{jobopen_edate},#{jobopen_cimg},0 )
 </insert>
 
-<insert id="jobcategoryInsert">
-  	insert into jobcategory values((select nvl(max(jc_id), 0)+1 from jobcategory),#{jobopen_id},#{jc_div},#{jc_part})
+<insert id="jobcaInsert">
+insert into jobcategory values((select nvl(max(jc_id), 0)+1 from jobcategory), #{jobopen_id},#{jc_div} ,#{jc_part})
+
 </insert>
 
 <insert id="jobqaInsert">
-  	insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from jobqa), #{jobopen_id},#{jobqa_q})
+insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from jobqa),#{jc_id},#{jobqa_q})
 </insert>
+
 
 <delete id="minfoDelete">
 	 delete from emember where emem_id=#{emem_id}	
@@ -89,5 +91,21 @@
 <update id="blogUpdate">
   update selflab set lab_cat=#{lab_cat}, lab_title=#{lab_title}, lab_content=#{lab_content}, lab_img=#{lab_img} where lab_id=#{lab_id}	
 </update>
+
+<select  id="jobcaMaxID" resultType="vo.JobcategoryVO">
+	select * from jobcategory where jc_id=(select nvl(max(jc_id),0)+1 from jobcategory)-1
+</select>
+
+<select  id="jobopenMaxID" resultType="vo.JobopenVO">
+	select * from jobopen where jobopen_id=(select nvl(max(jobopen_id),0)+1 from jobopen)-1
+</select>
+
+<select id="jobcategoryList" resultType="vo.JobcategoryVO">
+	select * from jobcategory where jobopen_id=#{jobopen_id}
+</select>
+
+<select id="jobqaList" resultType="vo.JobqaVO">
+	select c.jc_id, q.jobqa_q from jobcategory c, jobqa q where c.jc_id=q.jc_id and c.jobopen_id=#{jobopen_id}
+</select>
 
 	</mapper>

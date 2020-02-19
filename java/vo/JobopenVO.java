@@ -1,5 +1,7 @@
 package vo;
 
+import java.util.ArrayList;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class JobopenVO {
@@ -15,14 +17,8 @@ public class JobopenVO {
 	private MultipartFile jobopen_cimgf;
 	private String jobopen_count;
 	private long endDday;
-	
-	
-	public long getEndDday() {
-		return endDday;
-	}
-	public void setEndDday(long endDday) {
-		this.endDday = endDday;
-	}
+	private ArrayList<String> jc_div;
+	private ArrayList<String> jc_part;
 	public int getJobopen_id() {
 		return jobopen_id;
 	}
@@ -89,14 +85,34 @@ public class JobopenVO {
 	public void setJobopen_count(String jobopen_count) {
 		this.jobopen_count = jobopen_count;
 	}
+	public long getEndDday() {
+		return endDday;
+	}
+	public void setEndDday(long endDday) {
+		this.endDday = endDday;
+	}
+	public ArrayList<String> getJc_div() {
+		return jc_div;
+	}
+	public void setJc_div(ArrayList<String> jc_div) {
+		this.jc_div = jc_div;
+	}
+	public ArrayList<String> getJc_part() {
+		return jc_part;
+	}
+	public void setJc_part(ArrayList<String> jc_part) {
+		this.jc_part = jc_part;
+	}
 	@Override
 	public String toString() {
 		return "JobopenVO [jobopen_id=" + jobopen_id + ", admin_id=" + admin_id + ", jobopen_pimg=" + jobopen_pimg
 				+ ", jobopen_pimgf=" + jobopen_pimgf + ", jobopen_company=" + jobopen_company + ", jobopen_link="
 				+ jobopen_link + ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate=" + jobopen_edate
 				+ ", jobopen_cimg=" + jobopen_cimg + ", jobopen_cimgf=" + jobopen_cimgf + ", jobopen_count="
-				+ jobopen_count + ", endDday=" + endDday + "]";
+				+ jobopen_count + ", endDday=" + endDday + ", jc_div=" + jc_div + ", jc_part=" + jc_part + "]";
 	}
+	
+	
 	
 	
 

@@ -55,19 +55,7 @@ function bdetail(jobopen_id) {
 	<tr height=30 align="center">
 	 <!-- jQuery 를 이용해서 값전달 Test -->
 	 <td>
-	 	<!-- detail 에서 countUp(조회수 증가) 하는경우 -->
-	 <%-- <c:if test="${loginID!=mm.admin_id}"> 	</c:if> --%>
 			<a href="#" onclick="bdetail('${mm.jobopen_id}')">${mm.jobopen_id}</a>
-	
-			<!-- <a href="#"            .... scroll 위치 이동 
-			 <a href="javascript:;" .... 사용하면 해결         -->
-			 
-			 
-		<!-- detail 에서 countUp(조회수 증가) 안하는경우 -->
-	<%-- 	
-		<c:if test="${loginID==mm.admin_id}">
-			<a href="#" onclick="#">${mm.jobopen_id}</a>
-		</c:if> --%>
 	</td>
 	 
 	<td>	

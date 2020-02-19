@@ -115,7 +115,9 @@ body{
 			<div class="plus-btn"><a href="#" onclick="attachAddr()">+</a></div>
 			
 			<input class="btn" id="submitbtn" type="submit" value="저장">&nbsp;
-			<input class="btn" id="resetbtn" type="reset" value="취소">
+			<input class="btn" id="resetbtn" type="reset" value="취소">&nbsp;
+			<a class="btn" href="resumeForm?emem_id=${loginID}">새 자소서</a>
+			
 
 			</form>
 			</div>

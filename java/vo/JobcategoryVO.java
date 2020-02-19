@@ -1,12 +1,14 @@
 package vo;
 
+import java.util.ArrayList;
+
 public class JobcategoryVO {
 	
 	private int jc_id; 
 	private int jobopen_id ; //references jobopen(jobopen_id)
 	private String jc_div ; 
 	private String jc_part ;
-	
+	private ArrayList<String> jobqa_q;
 	public int getJc_id() {
 		return jc_id;
 	}
@@ -31,11 +33,19 @@ public class JobcategoryVO {
 	public void setJc_part(String jc_part) {
 		this.jc_part = jc_part;
 	}
+	public ArrayList<String> getJobqa_q() {
+		return jobqa_q;
+	}
+	public void setJobqa_q(ArrayList<String> jobqa_q) {
+		this.jobqa_q = jobqa_q;
+	}
+	
 	@Override
 	public String toString() {
 		return "JobcategoryVO [jc_id=" + jc_id + ", jobopen_id=" + jobopen_id + ", jc_div=" + jc_div + ", jc_part="
-				+ jc_part + "]";
-	} 
+				+ jc_part + ", jobqa_q=" + jobqa_q + "]";
+	}
+
 	
 	
 	

@@ -25,6 +25,18 @@
 	<td>${Detail.jobopen_link}</td></tr>
 <tr height="40"><td class="admin-title">Date</td>
 	<td>${Detail.jobopen_sdate}~${Detail.jobopen_edate}</td></tr>
+<tr height="40"><td class="admin-title">Content</td>
+	<td>
+	<c:forEach var="cl" items="${clist}" varStatus="clvs">
+	조건: ${cl.jc_div}&nbsp;&nbsp;직무: ${cl.jc_part}<br>
+		<c:forEach var="qal" items="${qalist}" varStatus="qavs">
+			<c:if test="${cl.jc_id==qal.jc_id}">
+			문항: ${qal.jobqa_q}<br>
+			</c:if>
+		</c:forEach>
+	</c:forEach>
+	</td>
+	</tr>	
 <tr height="40"><td class="admin-title" >Image</td>
 	<td><img src="${Detail.jobopen_cimg}" width="70" height="100"></td></tr>	
 		

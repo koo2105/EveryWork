@@ -117,4 +117,34 @@ public class AdServiceImpl implements AdService {
 	public int answerUpdate(InquiryVO vo) {
 		return dao.answerUpdate(vo);
 	}
+
+	@Override
+	public int jobqaInsert(JobqaVO vo) {
+		return dao.jobqaInsert(vo);
+	}
+
+	@Override
+	public int jobcaInsert(JobcategoryVO vo) {
+		return dao.jobcaInsert(vo);
+	}
+	
+	@Override
+	public JobcategoryVO jobcaMaxID() {
+		return dao.jobcaMaxID();
+	}
+	
+	@Override
+	public JobopenVO jobopenMaxID() {
+		return dao.jobopenMaxID();
+	}
+
+	
+	@Override
+	public ArrayList<JobcategoryVO> jobcategoryList(JobopenVO vo) {
+		return dao.jobcategoryList(vo);
+	}
+	@Override
+	public ArrayList<JobqaVO> jobqaList(JobopenVO vo) {
+		return dao.jobqaList(vo);
+	}
 } // class

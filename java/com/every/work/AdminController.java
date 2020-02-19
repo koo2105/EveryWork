@@ -17,7 +17,9 @@ import business.AdService;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 import vo.SelflabVO;
 
 @Controller
@@ -87,7 +89,7 @@ public class AdminController {
 	}// login
 
 	@RequestMapping(value = "/jobopeninsert")
-	public ModelAndView jobopeninsert(HttpServletRequest request, ModelAndView mv, JobopenVO vo) throws IOException {
+	public ModelAndView jobopeninsert(HttpServletRequest request, ModelAndView mv, JobopenVO vo, JobcategoryVO jcvo) throws IOException {
 		if (vo != null) {
 
 			MultipartFile jobopen_pimgf = vo.getJobopen_pimgf();
@@ -114,9 +116,29 @@ public class AdminController {
 				file4 = "NO Image";
 			vo.setJobopen_cimg(file4);
 		}
-		
+			
 		if (service.jobopenInsert(vo) > 0) {
-			mv.addObject("JOI", "T");
+			JobopenVO vo2=service.jobopenMaxID();
+			
+			for (int i = 0; i < vo.getJc_div().size(); i++) {
+				JobcategoryVO jcvo2 = new JobcategoryVO();
+				jcvo2.setJobopen_id(vo2.getJobopen_id());
+				jcvo2.setJc_div(vo.getJc_div().get(i));
+				jcvo2.setJc_part(vo.getJc_part().get(i));
+				service.jobcaInsert(jcvo2);
+				jcvo2=service.jobcaMaxID();
+				int j = 0;
+				for (; j < jcvo.getJobqa_q().size(); j++) {
+					JobqaVO qavo=new JobqaVO();
+					if("end".equals(jcvo.getJobqa_q().get(j))) {
+						break;
+					}
+					qavo.setJc_id(jcvo2.getJc_id());
+					qavo.setJobqa_q(jcvo.getJobqa_q().get(j));
+					service.jobqaInsert(qavo);
+				}
+			}
+	//		mv.addObject("JOI", "T");
 		} else {
 			// 회원가입 실패 -> /member/doFinish.jsp
 			mv.addObject("Error", "JOE");
@@ -128,8 +150,16 @@ public class AdminController {
 	
 	@RequestMapping(value = "/bdetail")
 	public ModelAndView bdetail(ModelAndView mv,JobopenVO vo) {
-		vo=service.bdetail(vo);
-		mv.addObject("Detail", vo);
+		if(vo!=null) {
+			vo=service.bdetail(vo);
+			System.out.println("==================="+vo);
+			mv.addObject("Detail", vo);
+			ArrayList<JobcategoryVO> clist = service.jobcategoryList(vo);
+			mv.addObject("clist",clist);
+			ArrayList<JobqaVO> qalist = service.jobqaList(vo);
+			mv.addObject("qalist",qalist);
+		}
+		
 		mv.setViewName("adminTest/bdetail");
 		return mv;
 	}// mlist 

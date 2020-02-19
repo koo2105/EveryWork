@@ -9,28 +9,36 @@
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script>
-/* function ablistpageGo() {
-	$.ajax({
-		type : 'post',
-		data : {
-			admin_id :admin_id,
-			jobopen_pimg : jobopen_pimg,
-			jobopen_company :jobopen_company,
-			jobopen_link : jobopen_link,
-			jobopen_sdate :jobopen_sdate,
-			jobopen_edate : jobopen_edate,
-			jobopen_cimg:jobopen_cimg,
-			jobopen_pimgf : jobopen_pimgf,
-			jobopen_cimgf : jobopen_cimgf
-		},
-		url : 'jobopeninsert',
-		success : function(result) {
-			$('#adminArea').html('');
-			$('#adminArea').html(result);
-		}
+var cnt =0;
+function attachAddr(){
+	  const str = `<li id=conadd`+cnt+`>
+	                조건 <input type="text" name="jc_div" id="jc_div" maxlength="80" />
+	                직무 <input type="text" name="jc_part" id="jc_part" maxlength="900" />
+	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd`+cnt+`')">삭제</a>
+	        <div id=selfq`+cnt+`>
+	        
+	        </div>
+	        <input type="hidden" name="jobqa_q" id="jobqa_q" value="end">
+	        <div class="txts">
+            <a href="#" onclick="selfqadd(`+cnt+`); return false;"><img width="15px" src="resources/img/gonggo+.png"></a>
+        	</div>
+	        </li>`;
+	  $("#con").append(str); // JQuery를 이용해서 juso24라는 id값을 가져와서 그곳에 append 시킨다.
+	  cnt++;
+	}
+function attachdelete(id){
+	$('#'+id).remove();
+} 
 
-	});
-}; */
+var cnt2=0;
+function selfqadd(cnt){
+	const str =`<li id=qadd`+cnt2+`>
+      문항 <input type="text" name="jobqa_q" id="jobqa_q" maxlength="80" />
+    	  <a href="#delete"  onclick="attachdelete('qadd`+cnt2+`')"><img width="15px" src="resources/img/gonggo-.png"></a>
+      </li>`;
+      $("#selfq"+cnt).append(str);
+      cnt2++;
+}
 
 </script>
 </head>
@@ -54,6 +62,17 @@
 		<span id="dMessage" class="eMessage"></span>
 		~ <input type="date" name="jobopen_edate" id="jobopen_edate">
 		<span id="dMessage" class="eMessage"></span></td></tr>
+<tr height="40"><td class="admin-title">Content</td>
+      <td class="left">
+      <div id="con">
+      </div>
+      <li class="cbox">
+          <div class="txts">
+              <a href="#" onclick="attachAddr(); return false;" class="plus-button">추가</a>
+          </div>
+      </li>
+      </td>
+  </tr>		
 <tr height="40"><td class="admin-title" >Image</td>
 		<td><input type="file" id="jobopen_cimgf" name="jobopen_cimgf"><br>
 		<img src="" class="select_img"/>
