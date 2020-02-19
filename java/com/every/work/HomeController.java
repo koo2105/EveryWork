@@ -2,6 +2,8 @@ package com.every.work;
 
 import java.util.ArrayList;
 import java.time.*;
+import java.time.temporal.ChronoUnit;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -42,12 +44,24 @@ public class HomeController {
 			String eDates = plist.get(i).getJobopen_edate();
 			eDates= eDates.substring(0, 10);
 			LocalDate eDate = LocalDate.parse(eDates); 
-			Period test =Period.between(eDate, today);
 			
-			plist.get(i).setEndDday(test.getDays());
+			plist.get(i).setEndDday(ChronoUnit.DAYS.between(eDate, today));
 			
 		}
 		mv.addObject("PopularList", plist);
+		
+		ArrayList<JobopenVO> twlist = service.jobopenThisWeek();
+		LocalDate twToday = LocalDate.now();
+		for(int i=0; i<twlist.size();i++) {
+			
+			String tDates = twlist.get(i).getJobopen_edate();
+			tDates= tDates.substring(0, 10);
+			LocalDate tDate = LocalDate.parse(tDates); 
+			twlist.get(i).setEndDday(ChronoUnit.DAYS.between(tDate, twToday));
+			
+			System.out.println(twlist.get(i).getEndDday());
+		}
+		mv.addObject("thisWeekList", twlist);
 		
 		
 		
