@@ -10,6 +10,16 @@
 <select id="selfTitleList" resultType="vo.SelftitleVO">
 		select * from selftitle where emem_id=#{emem_id} order by ja_id desc
 	</select>
+<select id="selftitleMaxId" resultType="vo.SelftitleVO">
+	select * from selftitle where ja_id=(select nvl(max(ja_id),0)+1 from selftitle)-1
+</select>
+<select id="selftitleOne" resultType="vo.SelftitleVO">
+	select * from selftitle where ja_id=#{ja_id}
+</select>
+
+<select id="selfqaList" resultType="vo.SelfqaVO">
+	select * from selfqa where ja_id=#{ja_id}
+</select>
 
 <insert id="selftitleInsert">
 	insert into selftitle values((select nvl(max(ja_id), 0)+1 from selftitle),
@@ -22,15 +32,15 @@
 </insert>	
 
 <update id="resumeUpdate">
-	update selftitle set ja_name=#{ja_name} where ja_name=#{ja_name}
+	update selftitle set ja_name=#{ja_name} where ja_id=#{ja_id}
 </update>
 	
 <delete id="selfqaDelete">
-	delete selfqa where ja_name=#{ja_name}
+	delete selfqa where ja_id=#{ja_id}
 </delete>
 
 <delete id="selftitleDelete">
-	delete selftitle where ja_name=#{ja_name}
+	delete selftitle where ja_id=#{ja_id}
 </delete>
 
 

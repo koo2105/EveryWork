@@ -29,6 +29,11 @@ public ArrayList<SelftitleVO> selfTitleList(SelftitleVO vo) {
 }
 
 @Override
+public ArrayList<SelfqaVO> selfqaList(SelftitleVO vo) {
+	return dao.selfqaList(vo);
+}
+
+@Override
 public int resumeUpdate(SelftitleVO vo) {
 	return dao.resumeUpdate(vo);
 }
@@ -51,6 +56,16 @@ public int selfqaDelete(SelftitleVO vo) {
 @Override
 public int selftitleDelete(SelftitleVO vo) {
 	return dao.selftitleDelete(vo);
+}
+
+@Override
+public SelftitleVO selftitleMaxId() {
+	return dao.selftitleMaxId();
+}
+
+@Override
+public SelftitleVO selftitleOne(SelftitleVO vo) {
+	return dao.selftitleOne(vo);
 }
 
 } // class

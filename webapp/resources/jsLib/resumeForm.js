@@ -105,9 +105,9 @@ function initialise() {
 }
 
 
-var cnt =1;
+var jcnt =50;
 function attachAddr(){
-	  const str = `<div class="ta-container" id=resumeFormPlus`+cnt+`>
+	  const str = `<div class="ta-container" id=resumeFormPlus`+jcnt+`>
 			<textarea id="selfqa_q" class="ta-question" name="selfqa_q"
 			rows="3" cols="75" data-maxchars="20" data-over="false"
 			placeholder="질문을 입력해주세요." required style="border-bottom: 2px;"></textarea>
@@ -120,11 +120,11 @@ function attachAddr(){
 <tr><td>자소서는 EveryWork에서 :)</td><td class="charcount"></td></tr>
 			</table>
 		</div>
-	<div class="plus-btn"><a onclick="attachdelete('resumeFormPlus`+cnt+`')">-</a></div>
+	<div class="plus-btn"><a onclick="attachdelete('resumeFormPlus`+jcnt+`')">-</a></div>
 	</div>	
 	`;
 	  $("#con").append(str); // JQuery를 이용해서 juso24라는 id값을 가져와서 그곳에 append 시킨다.
-	  cnt++;
+	  jcnt++;
 	}
 function attachdelete(id){
 	$('#'+id).remove();

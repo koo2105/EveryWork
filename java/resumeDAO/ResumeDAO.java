@@ -23,13 +23,22 @@ public class ResumeDAO {
 		return (ArrayList)dao.selectList(NS+"selfTitleList",vo);
 	}
 	
+	public ArrayList<SelfqaVO> selfqaList(SelftitleVO vo) {  
+		return (ArrayList)dao.selectList(NS+"selfqaList",vo);
+	}
+	
 	public int resumeUpdate(SelftitleVO vo) {  
 		return dao.update(NS+"resumeUpdate",vo);
 	}
 	public int selftitleInsert(SelftitleVO vo) {
 		return dao.insert(NS+"selftitleInsert",vo);
 	}
-	
+	public SelftitleVO selftitleMaxId() {
+		return dao.selectOne(NS+"selftitleMaxId");
+	}
+	public SelftitleVO selftitleOne(SelftitleVO vo) {
+		return dao.selectOne(NS+"selftitleOne",vo);
+	}
 	public int selfqaInsert(SelfqaVO vo) {
 		return dao.insert(NS+"selfqaInsert",vo);
 	}
@@ -40,6 +49,7 @@ public class ResumeDAO {
 	public int selftitleDelete(SelftitleVO vo) {
 		return dao.delete(NS+"selftitleDelete",vo);
 	}	
+	
 	
 
 }

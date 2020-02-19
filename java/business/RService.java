@@ -24,4 +24,7 @@ public interface RService {
 	int selfqaInsert(SelfqaVO vo);
 	int selfqaDelete(SelftitleVO vo);
 	int selftitleDelete(SelftitleVO vo);
+	SelftitleVO selftitleMaxId();
+	SelftitleVO selftitleOne(SelftitleVO vo);
+	ArrayList<SelfqaVO> selfqaList(SelftitleVO vo);
 }
