@@ -14,7 +14,21 @@ function movecal(year, month){
 function filtering(){
 	$('#filtering-container').toggle();
 }
-function jDetailOpen(){
+
+function jDetailOpen(jobopen_id){
+	$.ajax({
+		type:'Post',
+		url:'jobopenDetail',
+		data:{
+		jobopen_id:jobopen_id,
+		
+		},
+		success: function(result){
+			//$('.jobDetail-div').html(result);
+			$('.jobDetail-div').html(result);
+		}
+	});//ajax
+	
 	
 /*	var url='jdetail';
 	window.open(url,"_blank","toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,width=600,height=300");*/

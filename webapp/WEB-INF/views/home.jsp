@@ -4,6 +4,8 @@
 <head>
    <title>EveryWork</title>
 	<link rel="stylesheet" type="text/css" href="resources/jsLib/homeStyle.css">
+	<link rel="stylesheet" type="text/css" href="resources/jsLib/jobStyle.css">
+	
 	<script src="resources/jsLib/namchulAjax.js"></script>
 	
 
@@ -68,7 +70,7 @@
 					<div class="employments-sets">
 						<div class="employments-set ">
 						<c:forEach var="jh" items="${JobList}">
-							<div class="employment ng-scope" onclick="location.href='jobopenDetail?jobopen_id=${jh.jobopen_id}'">
+							<div class="employment ng-scope" onclick="jDetailOpen('${jh.jobopen_id}')">
 								<!-- <div class="cover"></div> -->
 								<div class="logo">
 									<a href="#"><img src="${jh.jobopen_pimg}"></a>
@@ -91,7 +93,7 @@
 	<!-- end recommended-employments-container -->
 	
 	
-	
+	<div class="jobDetail-div"></div>
 	
 	
 	
