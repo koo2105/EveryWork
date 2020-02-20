@@ -19,6 +19,8 @@ public class JobopenVO {
 	private long endDday;
 	private ArrayList<String> jc_div;
 	private ArrayList<String> jc_part;
+	
+	
 	public int getJobopen_id() {
 		return jobopen_id;
 	}

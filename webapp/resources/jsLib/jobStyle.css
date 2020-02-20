@@ -61,12 +61,6 @@ padding-bottom: 10px;
 margin-bottom: 10px;
 }
 
-.jobDetail-div{
-display: none;
-position: absolute;
-top: 80px;
-left: 50%;
-}
 
 
 
@@ -144,27 +138,742 @@ float: left;
 
  */
 
+/* main-tab */
 
 
+
+.main-tab {
+    position: relative;
+    height: calc(100% - 45px);
+    min-width: 968px;
+    overflow-y: auto;
+    width: 100%;
+    transition: width 0.5s;
+}
+
+.calendar-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.calendar-container .recruit-top {
+    height: 60px;
+    background: #fafafa;
+    border-bottom: 1px solid #ddd;
+}
+.calendar-container .recruit-top .calendar-switch>div.active {
+    color: #ff6813;
+}
+
+.calendar-container .recruit-top .calendar-switch>div:first-child {
+    margin-right: 2px;
+}
+.calendar-container .recruit-top .calendar-switch>div {
+    font-size: 15px;
+    font-weight: 700;
+    color: #999;
+    cursor: pointer;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    padding: 5px 7px;
+    display: inline-block;
+    background: #fff;
+}
+
+.calendar-container .recruit-top .calendar-switch>div:nth-child(2) {
+    margin-left: 2px;
+}
+
+
+.calendar-container .recruit-top .calendar-filter {
+    width: calc(100% - 225px);
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.calendar-container .recruit-top .calendar-switch {
+    text-align: center;
+    width: 225px;
+    height: calc(100% - 30px);
+    margin: 15px 0;
+    border-right: 1px solid #ddd;
+}
+.calendar-container .recruit-top .calendar-switch, .calendar-container .recruit-top .calendar-filter {
+    float: left;
+}
+
+.calendar-container .recruit-top .calendar-filter .calendar-filter-title {
+    color: #999;
+    font-weight: bold;
+}
+
+.calendar-container .recruit-top .calendar-filter .toggle-calendar-option-buttons {
+    color: #bbb;
+    width: 120px;
+    margin-left: 20px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    font-size: 13px;
+    user-select: none;
+    padding: 0 0 5px 5px;
+}
+
+.calendar-container .recruit-top .calendar-filter .toggle-calendar-option-buttons .caret {
+    width: 9px;
+    float: right;
+    margin-top: 8px;
+    margin-right: 2px;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+
+.calendar-container .recruit-top .calendar-option {
+    color: #999;
+    position: absolute;
+    background: #fff;
+    z-index: 10;
+    border: 1px solid #ddd;
+    left: 50px;
+    top: 50px;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-header {
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    padding: 16px 0;
+    background: #fafafa;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-header .description {
+    display: block;
+    margin: 0 auto;
+    height: 18px;
+}
+
+img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-header .close-button {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    cursor: pointer;
+    opacity: 0.252;
+}
+.calendar-container .recruit-top .calendar-option .calendar-option-body {
+    padding: 30px 20px;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body>div {
+    float: left;
+    width: 130px;
+    margin: 0 10px;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body>div .filter-header {
+    padding-bottom: 4px;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body label {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    font-weight: normal;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body>div .filter-header .filter-header-left {
+    display: inline-block;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body>div .filter-header .filter-head-right {
+    display: inline;
+    width: calc(100% - 13px);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    padding-bottom: 2px;
+}
+
+
+.calendar-container .recruit-top .calendar-option {
+    color: #999;
+    position: absolute;
+    background: #fff;
+    z-index: 10;
+    border: 1px solid #ddd;
+    left: 50px;
+    top: 50px;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body>div {
+    float: left;
+    width: 130px;
+    margin: 0 10px;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body>div .filter-header .filter-header-left {
+    display: inline-block;
+}
+
+.calendar-container .recruit-top .calendar-option .calendar-option-body>div .body {
+    padding-top: 5px;
+}
+
+.calendar-container .recruit-bottom {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 60px);
+}
+
+element.style {
+    width: calc((100% - 180px) - 17px);
+}
+.calendar-container .calendar-right-head {
+    top: 0px;
+    left: 180px;
+    height: 90px;
+    position: absolute;
+    background: #f0f0f0;
+    width: calc(100% - 180px);
+    z-index: 1;
+}
+
+.calendar-container .calendar-right-head .nav-search-bar {
+    height: calc(100% - 42px);
+    width: 100%;
+    border-right: solid 1px #d8d8d8;
+}
+
+.calendar-container .calendar-right-head .nav-search-bar .calendar-left-toggle {
+    float: left;
+    background: white;
+    height: 100%;
+    width: 16px;
+    border-right: solid 1px #d8d8d8;
+    line-height: 46px;
+    cursor: pointer;
+}
+.calendar-container .calendar-right-head .nav-search-bar .calendar-nav {
+    position: absolute;
+    left: 50%;
+    margin-left: -67px;
+    padding: 10px;
+    float: left;
+    font-size: 21px;
+}
+
+.calendar-container .calendar-right-head .nav-search-bar .calendar-nav .prev, .calendar-container .calendar-right-head .nav-search-bar .calendar-nav .next {
+    color: #999;
+    cursor: pointer;
+}
+
+.calendar-container .calendar-right-head .nav-search-bar .calendar-nav .current {
+    color: #ff6813;
+    font-weight: 700;
+}
+
+.calendar-container .calendar-right-head .nav-search-bar .search {
+    position: relative;
+    padding: 10px;
+    float: right;
+}
+
+.calendar-container .calendar-right-head .nav-search-bar .search>img {
+    position: absolute;
+    top: 13px;
+    left: 16px;
+    width: 24px;
+    margin: 0px;
+}
+
+
+.calendar-container .calendar-right-head .nav-search-bar .search input {
+    font-size: 12px;
+    height: 35px;
+    width: 200px;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    padding-left: 30px;
+    margin: -3px -3px 0 0;
+}
+
+.calendar-container .calendar-right-head .nav-search-bar .add-schedule {
+    background: #ff6813;
+    float: left;
+    padding: 5px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.calendar-container .calendar-right-head .dayname-container {
+    position: absolute;
+    bottom: 20px;
+    height: 21px;
+    width: 100%;
+}
+
+.calendar-container .calendar-right-head .dayname-container .calendar-cell {
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    width: 14.28571%;
+    text-align: center;
+    float: left;
+}
+
+.calendar-container .calendar-right-head .dayname-container .name-of-days {
+    padding: 1px;
+    background: #bbb;
+    font-size: 12px;
+    color: #fff;
+}
+
+.calendar-container .calendar-right-head .top-calendar-week {
+    position: absolute;
+    z-index: 100;
+    bottom: 0px;
+    width: 100%;
+    height: 21px;
+}
+
+
+.calendar-container .calendar-right-head .top-calendar-week .day-label {
+    color: #777;
+    background: #fafafa;
+    border-bottom: none;
+}
+
+.calendar-container .calendar-right {
+    position: absolute;
+    top: 0px;
+    left: 180px;
+    height: 100%;
+    width: calc(100% - 180px);
+    overflow: auto;
+}
+
+.calendar-container .calendar-right .body {
+    overflow-y: scroll;
+    margin-top: 70px;
+    background: #fff;
+    display: table;
+    width: 100%;
+}
+
+
+.calendar-container .calendar-right .body .calendar-week {
+    overflow: hidden;
+    position: relative;
+    display: table-row;
+}
+
+.calendar-container .calendar-right .body .calendar-week .calendar-cell {
+    height: 100%;
+    display: table-cell;
+}
+
+.calendar-container .calendar-right .body .calendar-cell {
+    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    width: 14.28571%;
+    text-align: center;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-label {
+    color: #777;
+    position: relative;
+    height: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fafafa;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content {
+    min-height: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.calendar-container .calendar-right .body .calendar-cell .day-content .calendar-item {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div {
+    height: 20px;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company {
+    float: left;
+    margin-right: 5px;
+    font-size: 13px;
+    height: 100%;
+    width: calc(100% - 20px);
+}
+
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company>div.calendar-label.end {
+    background: #3f4b5e;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company>div.calendar-label {
+    color: #fff;
+    font-size: 10px;
+    border-radius: 4px;
+    height: 14px;
+    width: 14px;
+    margin-top: 2px;
+    margin-right: 3px;
+}
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company>div {
+    float: left;
+}
+
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company>div.company-name {
+    width: calc(100% - 17px);
+    height: 19px;
+    overflow: hidden;
+    text-align: left;
+    line-height: 19px;
+    word-break: break-all;
+    cursor: pointer;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company>div.company-name>span {
+    float: left;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .favorite {
+    float: right;
+    cursor: pointer;
+    height: 100%;
+    padding-top: 2px;
+}
+
+
+.calendar-container .calendar-right .body .calendar-cell .day-content .calendar-item.no-favorite .item-favorite {
+    display: none;
+}
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .favorite img {
+    height: 12px;
+    vertical-align: top;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .favorite img {
+    height: 12px;
+    vertical-align: top;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content .calendar-item {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div {
+    height: 20px;
+}
+ 
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company>div.calendar-label.end {
+    background: #3f4b5e;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .favorite img {
+    height: 12px;
+    vertical-align: top;
+}
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .favorite img {
+    height: 12px;
+    vertical-align: top;
+}
+
+
+.calendar-container .calendar-right .body .calendar-cell .day-content>div .company>div.calendar-label.start {
+    background: #ff6813;
+}
+
+.calendar-container .calendar-left {
+    overflow-y: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    height: 100%;
+    background-color: #fff;
+    border-right: 1px solid #d8d8d8;
+}
+
+.calendar-container .calendar-left .small-calendar {
+    padding: 20px 14px;
+}
+
+.calendar-container .calendar-left .small-calendar .small-calendar-title {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.calendar-container .calendar-left .small-calendar .small-calendar-title .prev, .calendar-container .calendar-left .small-calendar .small-calendar-title .next {
+    color: #999;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: 'liga';
+}
+.calendar-container .calendar-left .small-calendar .small-calendar-title .current {
+    font-weight: 800;
+    color: #ff6813;
+}
+
+.calendar-container .calendar-left .small-calendar .dayname-container {
+    text-align: center;
+    height: calc(20px + 2px + 20px * 6);
+}
+
+
+.calendar-container .calendar-left .small-calendar .dayname-container .day-label {
+    float: left;
+    height: 20px;
+    width: calc(100% / 7);
+}
+.calendar-container .calendar-left .small-calendar .dayname-container .name-of-days {
+    line-height: 20px;
+    font-size: 12px;
+    background: #f0f0f0;
+    margin-bottom: 2px;
+}
+
+.calendar-container .small-calendar .days {
+    cursor: pointer;
+}
+
+
+.calendar-container .calendar-left .gg-items {
+    margin-top: 20px;
+}
 
 
 /* modal-content */
 
+.jobDetail-div{
+display: none;
+position: absolute;
+/* left:50%;
+top:50%;
+margin-left:-150px;
+margin-top:-150px;  */
+}
 
-  .modal-content .modal-body {
+.employment-slide-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.employment-slide-container .employment-slide.slide-left {
+    left: -100%;
+}
+.employment-slide-container .employment-slide {
+    position: absolute;
+    transition: left 0.5s;
+    will-change: left;
+    width: 100%;
+}
+
+.employment-modal .modal-dialog {
+    width: 750px;
+    left: -40px;
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+}
+
+.employment-slide-container .employment-slide.slide-center .navigator.fixed {
+    position: fixed;
+    left: calc(50% - 505px);
+    top: 100px;
+}
+.employment-slide-container .employment-slide .navigator {
+    will-change: margin-left, position;
+    transition: margin-left 0.5s;
+    position: absolute;
+   left: calc(50% - 465px);
+    top: 70px;
+}
+
+.employment-modal .navigator {
+    position: fixed;
+    left: calc(50% - 505px); 
+    top: 100px;
+    width: 90px;
+}
+
+.employment-slide-container .employment-slide.slide-center .navigator.fixed {
+    position: fixed;
+    left: calc(50% - 505px);
+    top: 100px;
+}
+
+.employment-slide-container .employment-slide .navigator {
+    will-change: margin-left, position;
+    transition: margin-left 0.5s;
+    position: absolute;
+    left: calc(50% - 465px);
+    top: 70px;
+}
+.employment-modal .navigator {
+    position: fixed;
+    -webkit-transform: translateZ(0);
+    left: calc(50% - 505px);
+    top: 100px;
+    width: 90px;
+}
+
+.employment-modal .navigator .nav-btn.active {
+    padding-right: 25px;
+    font-weight: 700;
+    width: 100px;
+    margin-left: calc(90px - 100px);
+    right: 7px;
+    background: #ff6813;
+    color: #fff;
+    z-index: 100;
+}
+
+.employment-modal .navigator .nav-btn {
+    cursor: pointer;
+    text-align: right;
+    height: 40px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #999;
+    box-shadow: -1px 1px 8px rgba(80,80,80,0.8);
+    border-radius: 5px 0px 0px 5px;
+    padding-top: 11px;
+    padding-left: 0px;
+    padding-right: 15px;
+    background-color: #f0f0f0;
+}
+
+
+
+.employment-slide-container .employment-slide.slide-center {
+    left: 0px;
+}
+.employment-slide-container .employment-slide {
+    position: absolute;
+    transition: left 0.5s;
+    width: 100%;
+}
+
+
+ .modal-content .modal-body{
     padding: 35px 0px;
     padding-bottom: 50px;
 }
 
-.modal-content {
+.employment-modal .modal-dialog .modal-content{
     border: none;
     background: #f0f0f0;
 }
 
-
 .modal-content {
     box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
+
+.modal-content {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #999999;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    background-clip: padding-box;
+    outline: 0;
+} 
 .x-button {
     position: absolute;
     top: 15px;
@@ -173,11 +882,24 @@ float: left;
     height: 15px;
     z-index: 5;
 }
-.employment-modal img {
-    vertical-align: middle;
-    border: 0;
+
+.employment-modal .modal-dialog .modal-content .modal-body {
+    padding: 35px 0px;
+    padding-bottom: 50px;
 }
-  .modal-content .modal-body .employment-information .ec-info-container {
+.modal-body {
+    position: relative;
+    padding: 15px;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information {
+    margin: 0px 35px 15px;
+}
+.employment-modal .modal-dialog .modal-content .modal-body>div {
+    margin-bottom: 15px;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container {
     position: relative;
     float: right;
     background: #fff;
@@ -190,9 +912,7 @@ float: left;
 }
 
 
-
-
-  .modal-content .modal-body .employment-information .ec-info-container .ec-image {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-image {
     position: relative;
     float: left;
     margin-right: 30px;
@@ -204,35 +924,77 @@ float: left;
     justify-content: center;
 }
 
-  .modal-content .modal-body .employment-information .ec-info-container .ec-image img {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-image img {
     background: #fff;
     max-width: 90px;
     max-height: 140px;
 }
-  .modal-content .modal-body .employment-information .ec-info-container .ec-info {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info {
     position: relative;
     float: left;
 }
-  .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.ec-name {
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.ec-name {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
-  .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content {
     color: #707070;
 }
 
-  .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.period {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.ec-name>img {
+    margin-left: 5px;
+    margin-top: -4px;
+    height: 17px;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .toggle-favorite {
+    cursor: pointer;
+    height: 15px;
+    margin-top: -2px;
+}
+
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.period {
     font-size: 16px;
     margin-bottom: 15px;
 }
 
-.orange {
-    color: #ff6813 !important;
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons {
+    height: 40px;
+    margin-bottom: 10px;
 }
 
-  .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper .ec-option-letters {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper:nth-child(1) {
+    padding-left: initial;
+    margin-left: initial;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper {
+    text-align: center;
+    float: left;
+    width: 120px;
+    height: 40px;
+    margin-left: 10px;
+    border: solid 1px #ddd;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.copy-url {
+    position: relative;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper {
+    text-align: center;
+    float: left;
+    width: 120px;
+    height: 40px;
+    margin-left: 10px;
+    border: solid 1px #ddd;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.copy-url .ec-option-image, .employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.copy-url .ec-option-letters {
+    display: inline-block;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper .ec-option-letters {
     display: block;
     text-align: center;
     line-height: 40px;
@@ -241,67 +1003,135 @@ float: left;
     color: #999999;
     text-decoration: none;
 }
-  .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.copy-url {
-    position: relative;
-}
 
-  .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper {
-    text-align: center;
-    float: left;
-    width: 120px;
-    height: 40px;
-    margin-left: 10px;
-    border: solid 1px #ddd;
-}
-.modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons {
-    height: 40px;
-    margin-bottom: 10px;
-}
 
-.modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.recruit-ref>a {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.recruit-ref>a {
     color: #ff6813;
     text-decoration: none;
 }
-.modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.copy-url .ec-option-image,   .modal-content .modal-body .employment-information .ec-info-container .ec-info .ec-info-content.buttons .ec-wrapper.copy-url .ec-option-letters {
-    display: inline-block;
-}
-.modal-content .modal-body .employment-information .ec-info-container .count-information .count-item:nth-child(1) {
-    padding-left: initial;
-}
-.modal-content .modal-body .employment-information .ec-info-container .count-information .count-item {
-    padding-right: 10px;
-    padding-left: 10px;
-}
 
-.modal-content .modal-body .employment-information .ec-info-container .count-information div {
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
     float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    background-clip: padding-box;
 }
 
-.modal-content .modal-body .employment-information .ec-info-container .count-information .count-item .num {
-    font-weight: bold;
+.employment-modal li {
+    display: list-item;
+    text-align: -webkit-match-parent;
 }
-* {
-    box-sizing: border-box;
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap;
 }
-.modal-content .modal-body .employment-information .ec-info-container .count-information {
+.employment-modal a {
+    color: #428bca;
+    text-decoration: none;
+    background: transparent;
+}
+
+.employment-modal small, .small {
+    font-size: 85%;
+}
+.employment-modal small {
+    font-size: 80%;
+}
+
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information {
     color: #999999;
     font-size: 14px;
 }
 
- .modal-content .modal-body .write-resume table tbody tr:last-child td:not(.resume) {
-    border-bottom: none;
-}
-.modal-content .modal-body .write-resume table tbody td.division {
-    width: 18%;
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information .count-item:nth-child(1) {
+    padding-left: initial;
 }
 
- .modal-content .modal-body .write-resume table tbody td:nth-child(2) {
-    text-align: left;
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information .count-item {
+    padding-right: 10px;
+    padding-left: 10px;
 }
-.modal-content .modal-body .write-resume table tbody td.count {
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information div {
+    float: left;
+}
+
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information .count-item .num {
+    font-weight: bold;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information {
+    color: #999999;
+    font-size: 14px;
+}
+
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information .vertical-line {
+    margin-top: 3px;
+    height: 15px;
+    border-left: 1px solid #707070;
+    width: 1px;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information div {
+    float: left;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-information .ec-info-container .count-information .count-item {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume {
+    margin: 0px 35px 10px;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table {
+    width: 100%;
+    border: solid 1px #ddd;
+}
+
+
+.employment-modal table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: transparent;
+}
+
+.employment-modal tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.employment-modal tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table tbody td.division {
     width: 18%;
 }
-.modal-content .modal-body .write-resume table tbody td {
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table tbody td {
     color: #707070;
     background: #fff;
     font-size: 14px;
@@ -309,25 +1139,44 @@ float: left;
     border-bottom: 1px solid #f0f0f0;
     border-collapse: collapse;
 }
- .modal-content .modal-body .write-resume table th,   .modal-content .modal-body .write-resume table td {
+
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table th, .employment-modal .modal-dialog .modal-content .modal-body .write-resume table td {
     text-align: center;
     font-size: 14px;
 }
-.modal-content .modal-body .write-resume td, th {
+.employment-modal td, th {
     padding: 0;
 }
 
-.modal-content .modal-body .write-resume td {
+
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table tbody td:nth-child(2) {
+    text-align: left;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table tbody td.field {
+    width: 44%;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table th:nth-child(2), .employment-modal .modal-dialog .modal-content .modal-body .write-resume table td:nth-child(2) {
+    width: 200px;
+}
+
+.employment-modal td {
     display: table-cell;
     vertical-align: inherit;
 }
 
-.modal-content .modal-body .write-resume table {
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table tbody td.resume {
+    width: 20%;
+}
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table tbody td {
+    color: #707070;
+    background: #fff;
+    font-size: 14px;
+    height: 40px;
+    border-bottom: 1px solid #f0f0f0;
     border-collapse: collapse;
-    border-spacing: 0;
 }
 
-.modal-content .modal-body .write-resume table tbody td .resume .write-resume-button {
+.employment-modal .modal-dialog .modal-content .modal-body .write-resume table tbody td.resume .write-resume-button {
     background-color: #fff;
     outline: solid 1px #ff6813;
     color: #ff6813;
@@ -337,15 +1186,27 @@ float: left;
     cursor: pointer;
 }
 
- .modal-content .modal-body .employment-notice .content img {
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-notice {
+    position: relative;
+}
+.employment-modal .modal-dialog .modal-content .modal-body>div {
+    margin-bottom: 15px;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-notice .content {
+    background: #fff;
+}
+
+.employment-modal .modal-dialog .modal-content .modal-body .employment-notice .content img {
     float: none !important;
     position: relative !important;
     max-width: 100% !important;
     height: auto !important;
 }
-  .modal-content .modal-body .employment-notice {
-    position: relative;
+.employment-modal img {
+    vertical-align: middle;
+      border: 0;
 }
-  .modal-content .modal-body>div {
-    margin-bottom: 15px;
-}
+
+
