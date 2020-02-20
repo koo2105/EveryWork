@@ -2,11 +2,14 @@ package vo;
 
 import java.util.ArrayList;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class SpecVO{
 
 	private Integer spec_id;
 	private String emem_id;
 	private String spec_pt;
+	private MultipartFile spec_ptf;
 	private String spec_name;
 	private String spec_birthd;	
 	private String spec_gender;
@@ -101,6 +104,12 @@ public class SpecVO{
 	}
 	public void setSpec_pt(String spec_pt) {
 		this.spec_pt = spec_pt;
+	}
+	public MultipartFile getSpec_ptf() {
+		return spec_ptf;
+	}
+	public void setSpec_ptf(MultipartFile spec_ptf) {
+		this.spec_ptf = spec_ptf;
 	}
 	public String getSpec_name() {
 		return spec_name;
@@ -560,31 +569,34 @@ public class SpecVO{
 	}
 	@Override
 	public String toString() {
-		return "SpecVO [spec_id=" + spec_id + ", emem_id=" + emem_id + ", spec_pt=" + spec_pt + ", spec_name="
-				+ spec_name + ", spec_birthd=" + spec_birthd + ", spec_gender=" + spec_gender + ", spec_num=" + spec_num
-				+ ", spec_phoneNum=" + spec_phoneNum + ", spec_email=" + spec_email + ", spec_sns=" + spec_sns
-				+ ", spec_add=" + spec_add + ", spec_hsperiod=" + spec_hsperiod + ", spec_heperiod=" + spec_heperiod
-				+ ", spec_hname=" + spec_hname + ", spec_hkind=" + spec_hkind + ", spec_vet=" + spec_vet + ", spec_obs="
-				+ spec_obs + ", spec_obscontent=" + spec_obscontent + ", spec_mil=" + spec_mil + ", spec_milsperiod="
-				+ spec_milsperiod + ", spec_mileperiod=" + spec_mileperiod + ", spec_mildis=" + spec_mildis
-				+ ", spec_rank=" + spec_rank + ", aw_name=" + aw_name + ", aw_story=" + aw_story + ", aw_pub=" + aw_pub
-				+ ", aw_date=" + aw_date + ", car_name=" + car_name + ", car_speriod=" + car_speriod + ", car_eperiod="
-				+ car_eperiod + ", car_rank=" + car_rank + ", car_dep=" + car_dep + ", car_work=" + car_work
-				+ ", car_res=" + car_res + ", edu_name=" + edu_name + ", edu_pub=" + edu_pub + ", edu_sdate="
-				+ edu_sdate + ", edu_edate=" + edu_edate + ", edu_story=" + edu_story + ", exp_name=" + exp_name
-				+ ", exp_pub=" + exp_pub + ", exp_sdate=" + exp_sdate + ", exp_edate=" + exp_edate + ", exp_story="
-				+ exp_story + ", gra_speriod=" + gra_speriod + ", gra_eperiod=" + gra_eperiod + ", gra_name=" + gra_name
-				+ ", gra_kind=" + gra_kind + ", gra_grade=" + gra_grade + ", gra_major=" + gra_major + ", gra_smajor1="
-				+ gra_smajor1 + ", gra_smajor2=" + gra_smajor2 + ", lan_sort=" + lan_sort + ", lan_name=" + lan_name
-				+ ", lan_grade=" + lan_grade + ", lan_date=" + lan_date + ", lic_name=" + lic_name + ", lic_pub="
-				+ lic_pub + ", lic_grade=" + lic_grade + ", ov_country=" + ov_country + ", ov_pub=" + ov_pub
-				+ ", ov_purpose=" + ov_purpose + ", uni_speriod=" + uni_speriod + ", uni_eperiod=" + uni_eperiod
-				+ ", uni_name=" + uni_name + ", uni_kind=" + uni_kind + ", uni_grade=" + uni_grade + ", uni_major="
-				+ uni_major + ", uni_smajor1=" + uni_smajor1 + ", uni_smajor2=" + uni_smajor2 + ", alist=" + alist
-				+ ", clist=" + clist + ", edlist=" + edlist + ", exlist=" + exlist + ", mlist=" + mlist + ", lalist="
-				+ lalist + ", lilist=" + lilist + ", olist=" + olist + ", ulist=" + ulist + "]";
+		return "SpecVO [spec_id=" + spec_id + ", emem_id=" + emem_id + ", spec_pt=" + spec_pt + ", spec_ptf=" + spec_ptf
+				+ ", spec_name=" + spec_name + ", spec_birthd=" + spec_birthd + ", spec_gender=" + spec_gender
+				+ ", spec_num=" + spec_num + ", spec_phoneNum=" + spec_phoneNum + ", spec_email=" + spec_email
+				+ ", spec_sns=" + spec_sns + ", spec_add=" + spec_add + ", spec_hsperiod=" + spec_hsperiod
+				+ ", spec_heperiod=" + spec_heperiod + ", spec_hname=" + spec_hname + ", spec_hkind=" + spec_hkind
+				+ ", spec_vet=" + spec_vet + ", spec_obs=" + spec_obs + ", spec_obscontent=" + spec_obscontent
+				+ ", spec_mil=" + spec_mil + ", spec_milsperiod=" + spec_milsperiod + ", spec_mileperiod="
+				+ spec_mileperiod + ", spec_mildis=" + spec_mildis + ", spec_rank=" + spec_rank + ", aw_name=" + aw_name
+				+ ", aw_story=" + aw_story + ", aw_pub=" + aw_pub + ", aw_date=" + aw_date + ", car_name=" + car_name
+				+ ", car_speriod=" + car_speriod + ", car_eperiod=" + car_eperiod + ", car_rank=" + car_rank
+				+ ", car_dep=" + car_dep + ", car_work=" + car_work + ", car_res=" + car_res + ", edu_name=" + edu_name
+				+ ", edu_pub=" + edu_pub + ", edu_sdate=" + edu_sdate + ", edu_edate=" + edu_edate + ", edu_story="
+				+ edu_story + ", exp_name=" + exp_name + ", exp_pub=" + exp_pub + ", exp_sdate=" + exp_sdate
+				+ ", exp_edate=" + exp_edate + ", exp_story=" + exp_story + ", gra_speriod=" + gra_speriod
+				+ ", gra_eperiod=" + gra_eperiod + ", gra_name=" + gra_name + ", gra_kind=" + gra_kind + ", gra_grade="
+				+ gra_grade + ", gra_major=" + gra_major + ", gra_smajor1=" + gra_smajor1 + ", gra_smajor2="
+				+ gra_smajor2 + ", lan_sort=" + lan_sort + ", lan_name=" + lan_name + ", lan_grade=" + lan_grade
+				+ ", lan_date=" + lan_date + ", lic_name=" + lic_name + ", lic_pub=" + lic_pub + ", lic_grade="
+				+ lic_grade + ", ov_country=" + ov_country + ", ov_pub=" + ov_pub + ", ov_purpose=" + ov_purpose
+				+ ", uni_speriod=" + uni_speriod + ", uni_eperiod=" + uni_eperiod + ", uni_name=" + uni_name
+				+ ", uni_kind=" + uni_kind + ", uni_grade=" + uni_grade + ", uni_major=" + uni_major + ", uni_smajor1="
+				+ uni_smajor1 + ", uni_smajor2=" + uni_smajor2 + ", alist=" + alist + ", clist=" + clist + ", edlist="
+				+ edlist + ", exlist=" + exlist + ", mlist=" + mlist + ", lalist=" + lalist + ", lilist=" + lilist
+				+ ", olist=" + olist + ", ulist=" + ulist + "]";
 	}
 
+	
+	
 	
 	
 }//class

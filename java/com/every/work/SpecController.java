@@ -1,8 +1,12 @@
 package com.every.work;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import business.SpService;
@@ -85,10 +89,35 @@ public class SpecController {
 	
 
 	@RequestMapping(value = "/specUpdate")
-	public ModelAndView specUpdate(ModelAndView mv, SpecVO vo) {
+	public ModelAndView specUpdate(ModelAndView mv, SpecVO vo) throws IOException {
+		
 			if(vo.getSpec_id()!=null) {
+				MultipartFile spec_ptf = vo.getSpec_ptf();
+				 String file1, file2= "NO Image"; 
+				 if(!spec_ptf.isEmpty()) {
+					 
+					 file1="D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"+spec_ptf.getOriginalFilename();
+					 spec_ptf.transferTo(new File(file1));		 
+					 file2="resources/uploadImage/"+spec_ptf.getOriginalFilename();
+					 vo.setSpec_pt(file2);
+				 }
 				service.specUpdate(vo);
 			}else {
+				
+				if (vo != null) {
+
+					MultipartFile spec_ptf = vo.getSpec_ptf();
+					String file1, file2;
+					if (!spec_ptf.isEmpty()) {
+
+						file1 = "D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"+spec_ptf.getOriginalFilename();
+						spec_ptf.transferTo(new File(file1));
+						file2 = "resources/uploadImage/" + spec_ptf.getOriginalFilename();
+					} else
+						file2 = "NO Image";
+					
+					vo.setSpec_pt(file2);
+				}
 				service.specInsert(vo);
 			}
 			
@@ -191,19 +220,19 @@ public class SpecController {
 				
 				service.experienceInsert(exvo);
 			}
-			
-			for(int i=0;i<vo.getEdu_name().size();i++) {
-				SpecEducationVO edvo = new SpecEducationVO();
-				edvo.setSpec_id(vo.getSpec_id());
-				edvo.setEdu_name(vo.getEdu_name().get(i));
-				edvo.setEdu_pub(vo.getEdu_pub().get(i));
-				edvo.setEdu_sdate(vo.getEdu_sdate().get(i));
-				edvo.setEdu_edate(vo.getEdu_edate().get(i));
-				edvo.setEdu_story(vo.getEdu_story().get(i));
-				
-				service.educationInsert(edvo);
+			if(vo.getEdu_name()!=null) {
+				for(int i=0;i<vo.getEdu_name().size();i++) {
+					SpecEducationVO edvo = new SpecEducationVO();
+					edvo.setSpec_id(vo.getSpec_id());
+					edvo.setEdu_name(vo.getEdu_name().get(i));
+					edvo.setEdu_pub(vo.getEdu_pub().get(i));
+					edvo.setEdu_sdate(vo.getEdu_sdate().get(i));
+					edvo.setEdu_edate(vo.getEdu_edate().get(i));
+					edvo.setEdu_story(vo.getEdu_story().get(i));
+					
+					service.educationInsert(edvo);
+				}
 			}
-			
 			if (vo.getEmem_id() != null) {
 				try {
 					vo = service.specSelectOne(vo);

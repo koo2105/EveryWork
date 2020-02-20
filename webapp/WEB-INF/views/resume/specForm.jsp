@@ -11,44 +11,6 @@
 	href="resources/jsLib/resumeStyle.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/specForm.js"></script>
-<script>
-	function specupdate(){
-		ajax({
-			type:'post',
-			url:'',
-			data:{
-				spec_id:spec_id,
-				emem_id:emem_id,
-				spec_pt:spec_pt,
-				spec_name:spec_name,
-				spec_birthd:spec_birthd,
-				spec_gender:spec_gender,
-				spec_num:spec_num,
-				spec_phoneNum:spec_phoneNum,
-				
-				spec_email:spec_email,
-				spec_sns:spec_sns,
-				spec_add:spec_add,
-				spec_hsperiod:spec_hsperiod,
-				spec_heperiod:spec_heperiod,
-				spec_hname:spec_hname,
-				spec_hkind:spec_hkind,
-				spec_vet:spec_vet,
-				spec_obs:spec_obs,
-				spec_obscontent:spec_obscontent,
-				spec_mil:spec_mil,
-				spec_milsperiod:spec_milsperiod,
-				spec_mileperiod:spec_mileperiod,
-				spec_mildis:spec_mildis,
-				spec_rank:spec_rank,
-				
-			},
-			success: function(result){
-				$('#calendar-div').html(result);
-			}
-		}); //ajax
-	} 
-</script>
 <style>
 body {
 	background: #f0f0f0;
@@ -77,7 +39,7 @@ body {
 					</c:if>
 					
 				</div>
-				<form action="specUpdate" method="post">
+				<form action="specUpdate" method="post" enctype="multipart/form-data">
 				<input name="emem_id" type="hidden" value="${loginID}">
 				<c:if test="${sDetail.spec_id!=null}">
 						<input name="spec_id" type="hidden" value="${sDetail.spec_id}">
@@ -99,16 +61,25 @@ body {
 								<div class="category-repeater">
 									<div class="image">
 										<div class="image-area">
-											<!-- ngIf: currentApplicant.specs.basic_information.image_url !== null -->
-											<img class="ng-scope">
-											<!-- end ngIf: currentApplicant.specs.basic_information.image_url !== null -->
-											<!-- ngIf: currentApplicant.specs.basic_information.image_url === null -->
+										<img class="select_img" src="${sDetail.spec_pt}" width="70" height="100">
 										</div>
 										<div class="image-buttons">
-											<!-- ngIf: ctrlName === 'spec' -->
-											<div class="btn button-orange button-bordered ng-scope">이미지수정하기</div>
-											<!-- end ngIf: ctrlName === 'spec' -->
-											<!-- ngIf: ctrlName === 'apply_immediately' -->
+											<!-- ngIf: ctrlName === 'spec'
+											<div class="btn button-orange button-bordered ng-scope">이미지수정하기</div> --> 
+											<input type="file" name="spec_ptf" id="spec_ptf"><br>
+													<script>
+													$("#spec_ptf").change(function(){
+														if(this.files && this.files[0]) {
+															var reader = new FileReader;
+															reader.onload=function(data) {
+																$(".select_img").attr("src",data.target.result)
+																.width(70).height(100);
+															}
+															reader.readAsDataURL(this.files[0]);
+														}
+													});
+											
+													</script>
 										</div>
 									</div>
 									<table class="basic-information-table">
