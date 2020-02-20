@@ -7,17 +7,17 @@
 
 <!-- selectList -->
 
-
-
 <select id="jobopenHome" resultType="vo.JobopenVO">
 		<![CDATA[ select * from (select * from jobopen order by jobopen_id desc) where  (jobopen_edate>=sysdate) and rownum<=15]]>
 </select>
 <select id="jobopenPopular" resultType="vo.JobopenVO">
-		<![CDATA[ select * from (select * from jobopen order by jobopen_count desc ) where (jobopen_edate>=sysdate) and rownum<=5]]>
+		
+		<![CDATA[ select jobopen_id ,jobopen_company, jobopen_edate, jobopen_count, round(jobopen_edate-sysdate) endDday from 
+		(select * from jobopen order by jobopen_count desc ) where (jobopen_edate>=sysdate) and rownum<=5]]>
 </select>
 
 <select id="jobopenThisWeek" resultType="vo.JobopenVO">
-		<![CDATA[ select * from (select j.*, ROW_NUMBER() OVER(order by jobopen_edate asc)rnum from jobopen j 
+		<![CDATA[ select jobopen_id ,jobopen_company, jobopen_edate, jobopen_count, round(jobopen_edate-sysdate) endDday from (select j.*, ROW_NUMBER() OVER(order by jobopen_edate asc)rnum from jobopen j 
 		where (jobopen_edate>=sysdate) and (jobopen_edate<=(sysdate+6))) where rnum <6]]>
 </select>
 

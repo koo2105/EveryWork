@@ -313,16 +313,21 @@ float: left;
     text-align: center;
     font-size: 14px;
 }
-td, th {
+.modal-content .modal-body .write-resume td, th {
     padding: 0;
 }
 
-td {
+.modal-content .modal-body .write-resume td {
     display: table-cell;
     vertical-align: inherit;
 }
 
-.modal-content .modal-body .write-resume table tbody td.resume .write-resume-button {
+.modal-content .modal-body .write-resume table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.modal-content .modal-body .write-resume table tbody td .resume .write-resume-button {
     background-color: #fff;
     outline: solid 1px #ff6813;
     color: #ff6813;

@@ -1,6 +1,7 @@
 package com.every.work;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,9 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import business.JoService;
 import business.MService;
 import vo.EmemberVO;
 import vo.InquiryVO;
+import vo.JobopenVO;
 
 
 
@@ -23,6 +26,8 @@ public class MemberController {
 
 	@Autowired
 	MService service ;
+	@Autowired
+	JoService jService;
 	
 	@RequestMapping(value = "/mdetail")
 	public ModelAndView mdetail(ModelAndView mv, EmemberVO vo) {
@@ -59,6 +64,18 @@ public class MemberController {
 			session.setAttribute("loginID",vo.getEmem_id());
 			session.setAttribute("loginNM",vo.getEmem_name());
 		//	mv.addObject("HisGo","H");
+			
+			ArrayList<JobopenVO> list = jService.jobopenHome();
+			mv.addObject("JobList", list);
+			
+			
+			ArrayList<JobopenVO> plist = jService.jobopenPopular();
+			mv.addObject("PopularList", plist);
+			
+			ArrayList<JobopenVO> twlist = jService.jobopenThisWeek();
+			mv.addObject("thisWeekList", twlist);
+			
+			
 			mv.setViewName("home");
 		}else { // // 로그인 실패
 			mv.addObject("Error","L");

@@ -37,30 +37,27 @@ public class HomeController {
 		ArrayList<JobopenVO> list = service.jobopenHome();
 		mv.addObject("JobList", list);
 		
+		//jobopenPopular()
 		ArrayList<JobopenVO> plist = service.jobopenPopular();
-		LocalDate today = LocalDate.now();
-		for(int i=0; i<plist.size();i++) {
-			
-			String eDates = plist.get(i).getJobopen_edate();
-			eDates= eDates.substring(0, 10);
-			LocalDate eDate = LocalDate.parse(eDates); 
-			
-			plist.get(i).setEndDday(ChronoUnit.DAYS.between(eDate, today));
-			
-		}
+//		LocalDate today = LocalDate.now();
+//		for(int i=0; i<plist.size();i++) {
+//			String eDates = plist.get(i).getJobopen_edate();
+//			eDates= eDates.substring(0, 10);
+//			LocalDate eDate = LocalDate.parse(eDates); 
+//			plist.get(i).setEndDday(ChronoUnit.DAYS.between(today, eDate));
+//			
+//		}
 		mv.addObject("PopularList", plist);
+		// end jobopenPopular()
 		
 		ArrayList<JobopenVO> twlist = service.jobopenThisWeek();
-		LocalDate twToday = LocalDate.now();
-		for(int i=0; i<twlist.size();i++) {
-			
-			String tDates = twlist.get(i).getJobopen_edate();
-			tDates= tDates.substring(0, 10);
-			LocalDate tDate = LocalDate.parse(tDates); 
-			twlist.get(i).setEndDday(ChronoUnit.DAYS.between(tDate, twToday));
-			
-			System.out.println(twlist.get(i).getEndDday());
-		}
+//		LocalDate twToday = LocalDate.now();
+//		for(int i=0; i<twlist.size();i++) {
+//			String tDates = twlist.get(i).getJobopen_edate();
+//			tDates= tDates.substring(0, 10);
+//			LocalDate tDate = LocalDate.parse(tDates); 
+//			twlist.get(i).setEndDday(ChronoUnit.DAYS.between(twToday, tDate));
+//		}
 		mv.addObject("thisWeekList", twlist);
 		
 		

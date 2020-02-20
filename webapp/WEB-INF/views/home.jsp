@@ -158,7 +158,7 @@
 							<div class="item-name-container">
 								<div class="item-name">${twl.jobopen_company}</div>
 									<div class="item-name"></div>
-										<span> ${twl.endDday} | </span>
+										<span> ${twl.endDday}일 남음 | </span>
 										<span>${twl.jobopen_count}</span>
 										명 작성
 									</div>
