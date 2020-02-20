@@ -83,10 +83,13 @@ function gonggoinsert(){
 	   });
 	}
 //01-30추가
-function gonggoupdate(){
+function gonggoupdate(jobopen_id){
    $.ajax({
       type : 'Get',
       url : 'bupdatef',
+  	  data:{
+		jobopen_id:jobopen_id
+		},
       success : function(result) {
          $('#adminArea').html(result);
       }

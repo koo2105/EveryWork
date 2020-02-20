@@ -42,7 +42,7 @@
 		
 </table>
 <br>
-<a href="#" class="button" onclick="gonggoupdate()">공고 수정</a>&nbsp;&nbsp;
+<a href="#" class="button" onclick="gonggoupdate('${Detail.jobopen_id}')">공고 수정</a>&nbsp;&nbsp;
 <a href="bDelete?jobopen_id=${Detail.jobopen_id}" class="button">공고 삭제</a>
 <br><br>
 <hr>

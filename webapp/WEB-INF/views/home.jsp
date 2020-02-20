@@ -7,8 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="resources/jsLib/jobStyle.css">
 	
 	<script src="resources/jsLib/namchulAjax.js"></script>
-	
-
 </head>
 <body>
 
@@ -234,8 +232,10 @@
  </script>
 </c:if> --%>
 
-
-
-
+<c:if test="${Error=='L'}">
+<script>
+	alert('아이디 또는 비밀번호가 틀렸습니다.')
+</script>
+</c:if>
 </body>
 </html>

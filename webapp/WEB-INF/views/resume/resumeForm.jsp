@@ -8,6 +8,11 @@
  <link rel="stylesheet" type="text/css" href="resources/jsLib/resumeStyle.css">
  <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
  <script src="resources/jsLib/resumeForm.js"></script>
+ <script>
+ 	function loginCheck(){
+ 		alert('로그인을 해주세요');
+ 	}
+ </script>
 <style>
 body{
 	color: hsl(0, 0%, 50%);
@@ -113,8 +118,15 @@ body{
       
      		 </div>
 			<div class="plus-btn"><a href="#" onclick="attachAddr()">+</a></div>
+			<c:choose>
+				<c:when test="${loginID!=null}">
+					<input class="btn" id="submitbtn" type="submit" value="저장">&nbsp;
+				</c:when>
+				<c:otherwise>
+					<a class="btn" href="#" onclick="loginCheck()">저장</a>
+				</c:otherwise>
+			</c:choose>
 			
-			<input class="btn" id="submitbtn" type="submit" value="저장">&nbsp;
 			<input class="btn" id="resetbtn" type="reset" value="취소">&nbsp;
 			<a class="btn" href="resumeForm?emem_id=${loginID}">새 자소서</a>
 			

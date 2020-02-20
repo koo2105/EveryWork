@@ -129,4 +129,6 @@ public class AdminDAO {
 	public ArrayList<JobqaVO> jobqaList(JobopenVO vo) {
 		return (ArrayList)dao.selectList(NS+"jobqaList",vo);
 	}
+	
+	
 }// end EmemberDAO

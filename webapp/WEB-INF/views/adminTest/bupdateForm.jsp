@@ -28,15 +28,16 @@ function inCheck() {
 		return false;
 	};
 } //inCheck 
-var cnt =0;
+var cnt =50;
 function attachAddr(){
 	  const str = `<li id=conadd`+cnt+`>
-	                조건 <input type="text" name="urlTitle" id="urlTitle" maxlength="80" />
-	                직무 <input type="text" name="url" id="url" maxlength="900" />
+	                조건 <input type="text" name="jc_div" id="jc_div" maxlength="80" />
+	                직무 <input type="text" name="jc_part" id="jc_part" maxlength="900" />
 	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd`+cnt+`')">삭제</a>
 	        <div id=selfq`+cnt+`>
 	        
 	        </div>
+	        <input type="hidden" name="jobqa_q" id="jobqa_q" value="end">
 	        <div class="txts">
             <a href="#" onclick="selfqadd(`+cnt+`); return false;"><img width="15px" src="resources/img/gonggo+.png"></a>
         	</div>
@@ -48,10 +49,10 @@ function attachdelete(id){
 	$('#'+id).remove();
 } 
 
-var cnt2=0;
+var cnt2=50;
 function selfqadd(cnt){
 	const str =`<li id=qadd`+cnt2+`>
-      문항 <input type="text" name="#" id="#" maxlength="80" />
+      문항 <input type="text" name="jobqa_q" id="jobqa_q" maxlength="80" />
     	  <a href="#delete"  onclick="attachdelete('qadd`+cnt2+`')"><img width="15px" src="resources/img/gonggo-.png"></a>
       </li>`;
       $("#selfq"+cnt).append(str);
@@ -62,27 +63,52 @@ function selfqadd(cnt){
 <body>
 <h2>** 기존 공고 수정 **</h2>
 <form action="bupdate" method="post">
+<input type="hidden" name="jobopen_id" value="${Detail.jobopen_id}">
 <table>
 <tr height="40"><td class="admin-title">I D</td>
-	<td><input type="text" name="id" value="${loginID}" readonly="readonly"></td></tr>
+	<td><input type="text" name="id" value="${adloginID}" readonly="readonly"></td></tr>
 <tr height="40"><td class="admin-title">pro_Image</td>
-		<td><input type="file" name="uploadfilef" id="uploadfilef"><br>
-		<img src="" class="select_img"/>
+		<td><img src="${Detail.jobopen_pimg}" width="70" height="100">
+		<input type="text" name="jobopen_pimg" id="jobopen_pimg" value="${Detail.jobopen_pimg}" hidden="true"><br>
+		<input type="file" name="jobopen_pimgf" id="jobopen_pimgf">
+</td></tr>		
+		
 <tr height="40"><td class="admin-title">Company</td>
-	<td><input type="text" name="company" id="company"><br>
+	<td><input type="text" name="company" id="company" value="${Detail.jobopen_company}"><br>
 		<span id="cMessage" class="eMessage"></span></td></tr>
 <tr height="40"><td class="admin-title">Company_link</td>
-	<td><input type="url" name="link" id="link"><br>
+	<td><input type="url" name="link" id="link" value="${Detail.jobopen_link}"><br>
 		<span id="cMessage" class="eMessage"></span></td></tr>
 <tr height="40"><td class="admin-title">Date</td>
-	<td><input type="date" name="date" id="date">
+	<td><input type="date" name="date" id="date" value="${Detail.jobopen_sdate}">
 		<span id="dMessage" class="eMessage"></span>
-		~ <input type="date" name="date" id="date">
+		~ <input type="date" name="date" id="date" value="${Detail.jobopen_edate}">
 		<span id="dMessage" class="eMessage"></span></td></tr>
 <tr height="40"><td class="admin-title">Content</td>
       <td class="left">
       <div id="con">
-      
+      <c:forEach var="cl" items="${clist}" varStatus="clvs">
+			<li id="conadd${clvs.index}">
+	                조건 <input type="text" name="jc_div" id="jc_div" maxlength="80">
+	                직무 <input type="text" name="jc_part" id="jc_part" maxlength="900">
+	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd${clvs.index}')">삭제</a>
+	        <div id="selfq${clvs.index}">
+		       
+				<c:forEach var="qal" items="${qalist}" varStatus="qavs">
+					<c:if test="${cl.jc_id==qal.jc_id}">
+						<li id="qadd${qavs.index}">
+						문항 <input type="text" name="jobqa_q" id="jobqa_q" maxlength="80">
+						<a href="#delete" onclick="attachdelete('qadd${qavs.index}')"><img width="15px" src="resources/img/gonggo-.png"></a>
+					</c:if>
+				</c:forEach>
+			
+		 </div>
+			 <input type="hidden" name="jobqa_q" id="jobqa_q" value="end">
+	        <div class="txts">
+            <a href="#" onclick="selfqadd('${clvs.index}'); return false;"><img width="15px" src="resources/img/gonggo+.png"></a>
+			</div>
+	</c:forEach>
+	
       </div>
       <li class="cbox">
           <div class="txts">
@@ -92,14 +118,14 @@ function selfqadd(cnt){
       </td>
   </tr>		
 		
-<!-- <tr height="20"><td bgcolor="yellow" >Content</td>
-	<td><textarea rows="5" cols="50" name="content">조건</textarea><br>
-	<textarea rows="5" cols="50" name="content">직무</textarea>
-	<a href="#" class="plus-button">+</a>
-	</td></tr> -->
+
 <tr height="40"><td class="admin-title">Image</td>
-		<td><input type="file" name="uploadfilef" id="uploadfilef"><br>
-		<img src="" class="select_img"/>
+		<td><img src="${Detail.jobopen_cimg}" width="70" height="100">
+		<input type="text" name="jobopen_cimg" id="jobopen_cimg" value="${Detail.jobopen_cimg}" hidden="true"><br>
+		<input type="file" name="jobopen_cimgf" id="jobopen_cimgf">
+	</td></tr>		
+		
+				
 <tr><td></td><td><input type="submit" value="수정" onclick="return inCheck()">
                  <input type="reset" value="취소"></td>	
 </table>

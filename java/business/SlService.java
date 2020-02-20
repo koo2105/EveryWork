@@ -11,4 +11,5 @@ public interface SlService {
 
 	ArrayList<SelflabVO> selflabList(SelflabVO vo);
 	ArrayList<SelflabVO> selflablistAll(SelflabVO vo);
+	SelflabVO selflabOne(SelflabVO vo);
 }

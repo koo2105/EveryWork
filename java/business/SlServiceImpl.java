@@ -31,6 +31,11 @@ public class SlServiceImpl implements SlService {
 	public ArrayList<SelflabVO> selflablistAll(SelflabVO vo) {
 		return dao.selflablistAll(vo);
 	}
+
+	@Override
+	public SelflabVO selflabOne(SelflabVO vo) {
+		return dao.selflabOne(vo);
+	}
 	
 
 	

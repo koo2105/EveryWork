@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import vo.AdminVO;
 import vo.SelflabVO;
 
 @Repository
@@ -25,6 +26,9 @@ public class SelflabDAO {
 		return list;
 	} // selectList()
 	
+	public SelflabVO selflabOne(SelflabVO vo) {
+		return dao.selectOne(NS + "selflabOne", vo);
+	} // login
 
 
 }// end EmemberDAO

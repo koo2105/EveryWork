@@ -30,7 +30,7 @@
 </div>
 				<div class="posts">
 				<c:forEach var="rr" items="${resumeList}">
-					<a class="post"  href="labDetail">
+					<a class="post"  href="labDetail?lab_id=${rr.lab_id}">
 						<div class="post-thumbnail">
 							<img src="${rr.lab_img}" width="150" height="150">
 						</div>

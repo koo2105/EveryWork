@@ -29,7 +29,7 @@
 						<a>EveryWork 활용하기</a>
 					</div>
 					<div class="posts">
-						<c:forEach var="bb1" items="${labList1}"><a class="post"  href="labDetail">
+						<c:forEach var="bb1" items="${labList1}"><a class="post"  href="labDetail?lab_id=${bb1.lab_id}">
 							<div class="post-thumbnail">
 								<img src="${bb1.lab_img}" width="200" height="200">
 							</div>

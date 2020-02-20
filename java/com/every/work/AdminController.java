@@ -152,7 +152,6 @@ public class AdminController {
 	public ModelAndView bdetail(ModelAndView mv,JobopenVO vo) {
 		if(vo!=null) {
 			vo=service.bdetail(vo);
-			System.out.println("==================="+vo);
 			mv.addObject("Detail", vo);
 			ArrayList<JobcategoryVO> clist = service.jobcategoryList(vo);
 			mv.addObject("clist",clist);
@@ -320,5 +319,20 @@ public class AdminController {
 		mv.setViewName("adminTest/answerList");
 		return mv ;
 	}// update
+	
+	@RequestMapping(value = "/bupdatef")
+	public ModelAndView bupdatef(ModelAndView mv, JobopenVO vo) {
+		if(vo!=null) {
+			vo=service.bdetail(vo);
+			mv.addObject("Detail", vo);
+			ArrayList<JobcategoryVO> clist = service.jobcategoryList(vo);
+			mv.addObject("clist",clist);
+			ArrayList<JobqaVO> qalist = service.jobqaList(vo);
+			mv.addObject("qalist",qalist);
+		}
+		
+		mv.setViewName("adminTest/bupdateForm");
+		return mv;
+	}
 	
 } // class

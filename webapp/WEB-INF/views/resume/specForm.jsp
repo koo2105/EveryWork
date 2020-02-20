@@ -61,7 +61,7 @@ body {
 								<div class="category-repeater">
 									<div class="image">
 										<div class="image-area">
-										<img class="select_img" src="${sDetail.spec_pt}" width="70" height="100">
+										<img class="select_img" src="${sDetail.spec_pt}" width="160px" height="200px">
 										</div>
 										<div class="image-buttons">
 											<!-- ngIf: ctrlName === 'spec'
@@ -73,7 +73,7 @@ body {
 															var reader = new FileReader;
 															reader.onload=function(data) {
 																$(".select_img").attr("src",data.target.result)
-																.width(70).height(100);
+																.width(160).height(200);
 															}
 															reader.readAsDataURL(this.files[0]);
 														}

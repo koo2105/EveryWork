@@ -153,13 +153,7 @@ public class HomeController {
 		return mv;
 	}
 
-	@RequestMapping(value = "labDetail")
-	public ModelAndView labDetail(ModelAndView mv) {
-
-		// DB연결 후 해당 Dtail 페이지 열도록 코딩
-		mv.setViewName("jasose/post");
-		return mv;
-	}
+	
 
 	// adminPage
 	@RequestMapping(value = "/adminf")
@@ -174,11 +168,7 @@ public class HomeController {
 		return mv;
 	}//
 
-	@RequestMapping(value = "/bupdatef")
-	public ModelAndView bupdatef(ModelAndView mv) {
-		mv.setViewName("adminTest/bupdateForm");
-		return mv;
-	}// 
+
 
 	// 둥 지윤스
 }

@@ -70,8 +70,6 @@ public class ResumeController {
 					service.selfqaInsert(qavo);
 				}
 			}
-			//ja_id가 null이 아니면  qavo만 delete후 insert 
-			//여기까지!
 			ArrayList<SelftitleVO> list = service.selfTitleList(vo);
 			mv.addObject("titleList",list);
 			mv.setViewName("resume/resumeForm");

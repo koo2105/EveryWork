@@ -64,23 +64,17 @@ public class MemberController {
 			session.setAttribute("loginID",vo.getEmem_id());
 			session.setAttribute("loginNM",vo.getEmem_name());
 		//	mv.addObject("HisGo","H");
-			
-			ArrayList<JobopenVO> list = jService.jobopenHome();
-			mv.addObject("JobList", list);
-			
-			
-			ArrayList<JobopenVO> plist = jService.jobopenPopular();
-			mv.addObject("PopularList", plist);
-			
-			ArrayList<JobopenVO> twlist = jService.jobopenThisWeek();
-			mv.addObject("thisWeekList", twlist);
-			
-			
-			mv.setViewName("home");
 		}else { // // 로그인 실패
 			mv.addObject("Error","L");
-			mv.setViewName("member/loginForm");
 		} // if
+		ArrayList<JobopenVO> list = jService.jobopenHome();
+		mv.addObject("JobList", list);
+		ArrayList<JobopenVO> plist = jService.jobopenPopular();
+		mv.addObject("PopularList", plist);
+		ArrayList<JobopenVO> twlist = jService.jobopenThisWeek();
+		mv.addObject("thisWeekList", twlist);
+		
+		mv.setViewName("home");
 		return mv ;
 	}// login
 	

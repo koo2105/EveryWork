@@ -23,6 +23,10 @@ public class SelflabController {
 	public ModelAndView resumelist(ModelAndView mv, HttpServletRequest request , SelflabVO vo) {
 		vo.setLab_cat(request.getParameter("lab_cat"));
 		ArrayList<SelflabVO> list = service.selflabList(vo);
+		for(int i=0;i<list.size();i++) {
+			if(list.get(i).getLab_content().length()>336) 
+			list.get(i).setLab_content(list.get(i).getLab_content().substring(0, 336));	
+		}
 		mv.addObject("resumeList", list);
 		mv.setViewName("jasose/resumeWell");
 		return mv;
@@ -36,15 +40,37 @@ public class SelflabController {
 		
 		vo.setLab_cat("1");
 		list = service.selflablistAll(vo);
+			for(int i=0;i<list.size();i++) {
+				if(list.get(i).getLab_content().length()>60) 
+					list.get(i).setLab_content(list.get(i).getLab_content().substring(0, 60));	
+			}
 		mv.addObject("labList1", list);
+		
 		vo.setLab_cat("2");
 		list = service.selflablistAll(vo);
+			for(int i=0;i<list.size();i++) {
+				if(list.get(i).getLab_content().length()>60) 
+					list.get(i).setLab_content(list.get(i).getLab_content().substring(0, 60));	
+		}
 		mv.addObject("labList2", list);
+		
 		vo.setLab_cat("3");
 		list = service.selflablistAll(vo);
+		for(int i=0;i<list.size();i++) {
+			if(list.get(i).getLab_content().length()>60) 
+				list.get(i).setLab_content(list.get(i).getLab_content().substring(0, 60));	
+		}
 		mv.addObject("labList3", list);
 		
 		mv.setViewName("jasose/blog");
+		return mv;
+	}
+	
+	@RequestMapping(value = "labDetail")
+	public ModelAndView labDetail(ModelAndView mv, SelflabVO vo) {
+		vo = service.selflabOne(vo);
+		mv.addObject("sl", vo);
+		mv.setViewName("jasose/post");
 		return mv;
 	}
 
