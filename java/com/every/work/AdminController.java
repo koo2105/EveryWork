@@ -335,4 +335,37 @@ public class AdminController {
 		return mv;
 	}
 	
+	@RequestMapping(value = "/bupdate")
+	public ModelAndView bupdate(ModelAndView mv, JobopenVO vo, JobcategoryVO cvo) throws IOException {
+		System.out.println(vo);
+		System.out.println(cvo);
+		MultipartFile jobopen_pimgf = vo.getJobopen_pimgf();
+		MultipartFile jobopen_cimgf = vo.getJobopen_cimgf(); 
+		String file1, file2, file3, file4= "NO Image"; 
+		if(!jobopen_pimgf.isEmpty()) {	 
+			file1="D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"+jobopen_pimgf.getOriginalFilename();
+			jobopen_pimgf.transferTo(new File(file1));		 
+			file2="resources/uploadImage/"+jobopen_pimgf.getOriginalFilename();
+			vo.setJobopen_pimg(file2);
+			 
+		}if(!jobopen_cimgf.isEmpty()){
+			file3="D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"+jobopen_cimgf.getOriginalFilename();
+			jobopen_cimgf.transferTo(new File(file3));		 
+			file4="resources/uploadImage/"+jobopen_cimgf.getOriginalFilename();
+			vo.setJobopen_cimg(file4);
+		}
+		
+		if (service.jobopenUpdate(vo)>0) { 
+			mv.addObject("joupdate","T");
+		}else { 
+			mv.addObject("joupdate","F");
+		} // if		
+		
+		ArrayList<JobopenVO> list = service.jobopenList();
+		mv.addObject("Joblist", list);
+		mv.setViewName("adminTest/axboardList");
+
+		return mv ;
+	}// update
+	
 } // class

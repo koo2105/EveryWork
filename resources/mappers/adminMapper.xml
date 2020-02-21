@@ -108,4 +108,18 @@ insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from jobqa),#{jc_id},#{
 	select c.jc_id, q.jobqa_q from jobcategory c, jobqa q where c.jc_id=q.jc_id and c.jobopen_id=#{jobopen_id}
 </select>
 
-	</mapper>
+
+<update id="jobopenUpdate">
+	update jobopen set jobopen_pimg=#{jobopen_pimg}, jobopen_company=#{jobopen_company}, 
+	jobopen_link=#{jobopen_link} ,jobopen_sdate=#{jobopen_sdate}, jobopen_edate=#{jobopen_edate}, 
+	jobopen_cimg=#{jobopen_cimg} where jobopen_id=#{jobopen_id}
+</update>
+
+
+<delete id="jobcatDelete">
+	 delete from jobcategory where jobopen_id=#{jobopen_id}	
+</delete>
+
+
+
+</mapper>

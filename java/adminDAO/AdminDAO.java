@@ -130,5 +130,13 @@ public class AdminDAO {
 		return (ArrayList)dao.selectList(NS+"jobqaList",vo);
 	}
 	
+	public int jobopenUpdate(JobopenVO vo) {
+		return dao.update(NS+"jobopenUpdate", vo);
+	} // update
+	
+	public int jobcatDelete(JobopenVO vo) {
+		return dao.delete(NS + "jobcatDelete",vo);
+	} // 
+	
 	
 }// end EmemberDAO

@@ -147,4 +147,14 @@ public class AdServiceImpl implements AdService {
 	public ArrayList<JobqaVO> jobqaList(JobopenVO vo) {
 		return dao.jobqaList(vo);
 	}
+
+	@Override
+	public int jobopenUpdate(JobopenVO vo) {
+		return dao.jobopenUpdate(vo);
+	}
+
+	@Override
+	public int jobcatDelete(JobopenVO vo) {
+		return dao.jobcatDelete(vo);
+	}
 } // class

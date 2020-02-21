@@ -49,6 +49,8 @@ function attachdelete(id){
 	$('#'+id).remove();
 } 
 
+
+
 var cnt2=50;
 function selfqadd(cnt){
 	const str =`<li id=qadd`+cnt2+`>
@@ -58,15 +60,60 @@ function selfqadd(cnt){
       $("#selfq"+cnt).append(str);
       cnt2++;
 }
+
+$(function (){//진짜로 아닐수도 잇음
+	$('#axjobUpdate').click(function(){
+//		var allData = $('#jobopenUpdate').serialize();
+
+			var jobopen_id=$('#jobopen_id').val();
+			var jobopen_pimg=$('#jobopen_pimg').val();
+			var jobopen_pimgf=$('#jobopen_pimgf').val();
+			var jobopen_company=$('#jobopen_company').val();
+			var jobopen_link=$('#jobopen_link').val();
+			var jobopen_sdate=$('#jobopen_sdate').val();
+			var jobopen_edate=$('#jobopen_edate').val();
+			var jc_div=$('#jc_div').val();
+			var jc_part=$('#jc_part').val();
+			var jobqa_q=$('#jobqa_q').val();
+			var jobopen_cimg=$('#jobopen_cimg').val();
+			var jobopen_cimgf=$('#jobopen_cimgf').val();
+
+
+		$.ajax({
+			type : 'post',
+			data :{
+				jobopen_id : jobopen_id,
+				jobopen_pimg:jobopen_pimg,
+				jobopen_pimgf:jobopen_pimgf,
+				jobopen_company:jobopen_company,
+				jobopen_link:jobopen_link,
+				jobopen_sdate:jobopen_sdate,
+				jobopen_edate:jobopen_edate,
+				jc_div:jc_div,
+				jc_part:jc_part,
+				jobqa_q:jobqa_q,
+				jobopen_cimg:jobopen_cimg,
+				jobopen_cimgf:jobopen_cimgf
+			},
+			processData:false, 
+			contentType:false,
+			url : 'bupdate',
+			success : function(result) {
+				$('#adminArea').html(result);
+			}
+		});	
+	}
+}); // ready
+
 </script>
 </head>
 <body>
 <h2>** 기존 공고 수정 **</h2>
-<form action="bupdate" method="post">
+<form id="jobopenUpdate" name="jobopenUpdate" action="bupdate" method="post" enctype="multipart/form-data">
 <input type="hidden" name="jobopen_id" value="${Detail.jobopen_id}">
 <table>
 <tr height="40"><td class="admin-title">I D</td>
-	<td><input type="text" name="id" value="${adloginID}" readonly="readonly"></td></tr>
+	<td><input type="text" name="admin_id" value="${adloginID}" readonly="readonly"></td></tr>
 <tr height="40"><td class="admin-title">pro_Image</td>
 		<td><img src="${Detail.jobopen_pimg}" width="70" height="100">
 		<input type="text" name="jobopen_pimg" id="jobopen_pimg" value="${Detail.jobopen_pimg}" hidden="true"><br>
@@ -74,42 +121,43 @@ function selfqadd(cnt){
 </td></tr>		
 		
 <tr height="40"><td class="admin-title">Company</td>
-	<td><input type="text" name="company" id="company" value="${Detail.jobopen_company}"><br>
+	<td><input type="text" name="jobopen_company" id="jobopen_company" value="${Detail.jobopen_company}"><br>
 		<span id="cMessage" class="eMessage"></span></td></tr>
 <tr height="40"><td class="admin-title">Company_link</td>
-	<td><input type="url" name="link" id="link" value="${Detail.jobopen_link}"><br>
+	<td><input type="url" name="jobopen_link" id="jobopen_link" value="${Detail.jobopen_link}"><br>
 		<span id="cMessage" class="eMessage"></span></td></tr>
 <tr height="40"><td class="admin-title">Date</td>
-	<td><input type="date" name="date" id="date" value="${Detail.jobopen_sdate}">
+	<td><input type="date" name="jobopen_sdate" id="jobopen_sdate" value="${Detail.jobopen_sdate}">
 		<span id="dMessage" class="eMessage"></span>
-		~ <input type="date" name="date" id="date" value="${Detail.jobopen_edate}">
+		~ <input type="date" name="jobopen_edate" id="jobopen_edate" value="${Detail.jobopen_edate}">
 		<span id="dMessage" class="eMessage"></span></td></tr>
 <tr height="40"><td class="admin-title">Content</td>
       <td class="left">
       <div id="con">
       <c:forEach var="cl" items="${clist}" varStatus="clvs">
 			<li id="conadd${clvs.index}">
-	                조건 <input type="text" name="jc_div" id="jc_div" maxlength="80">
-	                직무 <input type="text" name="jc_part" id="jc_part" maxlength="900">
+	                조건 <input type="text" name="jc_div" id="jc_div" value="${cl.jc_div}" maxlength="80">
+	                직무 <input type="text" name="jc_part" id="jc_part" value="${cl.jc_part}" maxlength="900">
 	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd${clvs.index}')">삭제</a>
 	        <div id="selfq${clvs.index}">
 		       
 				<c:forEach var="qal" items="${qalist}" varStatus="qavs">
 					<c:if test="${cl.jc_id==qal.jc_id}">
 						<li id="qadd${qavs.index}">
-						문항 <input type="text" name="jobqa_q" id="jobqa_q" maxlength="80">
+						문항 <input type="text" name="jobqa_q" id="jobqa_q" value="${qal.jobqa_q}" maxlength="80">
 						<a href="#delete" onclick="attachdelete('qadd${qavs.index}')"><img width="15px" src="resources/img/gonggo-.png"></a>
 					</c:if>
 				</c:forEach>
 			
-		 </div>
-			 <input type="hidden" name="jobqa_q" id="jobqa_q" value="end">
+		
+			<input type="hidden" name="jobqa_q" id="jobqa_q" value="end">
 	        <div class="txts">
-            <a href="#" onclick="selfqadd('${clvs.index}'); return false;"><img width="15px" src="resources/img/gonggo+.png"></a>
-			</div>
+           <a href="#" onclick="selfqadd('${clvs.index}'); return false;"><img width="15px" src="resources/img/gonggo+.png"></a>
+		</div>
+		
 	</c:forEach>
-	
-      </div>
+     </div>
+     </div>
       <li class="cbox">
           <div class="txts">
               <a href="#" onclick="attachAddr(); return false;" class="plus-button">추가</a>
@@ -126,7 +174,9 @@ function selfqadd(cnt){
 	</td></tr>		
 		
 				
-<tr><td></td><td><input type="submit" value="수정" onclick="return inCheck()">
+<tr><td></td><td>
+<input type="button" id="axjobUpdate('${Detail.jobopen_id}')" value="수정!">
+<input type="submit" value="수정" onclick="return inCheck()">
                  <input type="reset" value="취소"></td>	
 </table>
 </form>

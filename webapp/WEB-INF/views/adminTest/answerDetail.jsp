@@ -8,9 +8,7 @@
 <title>**문의사항  상세 페이지**</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/admin.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
-<script>
 
-</script>
 </head>
 <body>
 <h2>** 문의사항 상세 페이지 **</h2>

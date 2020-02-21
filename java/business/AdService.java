@@ -39,5 +39,6 @@ public interface AdService {
 	JobopenVO jobopenMaxID();
 	ArrayList<JobcategoryVO> jobcategoryList(JobopenVO vo);
 	ArrayList<JobqaVO> jobqaList(JobopenVO vo);
-
+	int jobopenUpdate(JobopenVO vo);
+	int jobcatDelete(JobopenVO vo);
 }
