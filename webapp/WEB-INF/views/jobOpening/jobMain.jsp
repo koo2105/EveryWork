@@ -95,7 +95,7 @@
  --%>
 
 
-	<div class="main-tab">
+	<!-- <div class="main-tab"> -->
 		<div class="calendar-container ng-scope">
 			<div class="recruit-top">
 				<div class="calendar-switch">
@@ -386,9 +386,7 @@
 						</div>
 						<!-- end ngRepeat: week in weeks -->
 	
-						<div class="request-recruit"
-							ng-class="{ 'open-chat': show_chat_window }"
-							ng-click="openRequestRecruitModal()">
+						<div class="request-recruit">
 							<img
 								src="/assets/recruit/request_recruit-c3a4aebaf7777803190981cacf943eeaebbb7d2b7d1737893f66811243fa086a.png">
 						</div>
@@ -397,14 +395,12 @@
 
 
 				<!-- ngIf: showLeftCalendar -->
-				<div class="calendar-left ng-scope" ng-if="showLeftCalendar">
+				<div class="calendar-left ng-scope" >
 					<div class="small-calendar">
 						<div class="small-calendar-title">
-							<i class="prev material-icons"
-								ng-click="miniCalendar.addMonth(-1)">chevron_left</i> <span
-								class="current ng-binding"
-								ng-bind="miniCalendar.date | date: 'yyyy.MM'">2020.02</span> <i
-								class="next material-icons" ng-click="miniCalendar.addMonth(1)">chevron_right</i>
+							<i class="prev material-icons">chevron_left</i> <span
+								class="current ng-binding">2020.02</span> 
+								<i class="next material-icons">chevron_right</i>
 						</div>
 
 						<div class="dayname-container">
@@ -431,181 +427,19 @@
 								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">토</div>
 							<!-- end ngRepeat: dayname in ::kor_daynames -->
 							<!-- ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">26</div>
+							<div class="day-label days ng-binding ng-scope">26</div>
 							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">27</div>
+							<div class="day-label days ng-binding ng-scope">27</div>
 							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">28</div>
+							<div class="day-label days ng-binding ng-scope">28</div>
 							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">29</div>
+							<div class="day-label days ng-binding ng-scope">29</div>
 							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">30</div>
+							<div class="day-label days ng-binding ng-scope">30</div>
 							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">31</div>
+							<div class="day-label days ng-binding ng-scope">31</div>
 							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">1</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">2</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">3</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">4</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">5</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">6</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">7</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">8</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">9</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">10</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">11</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">12</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">13</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">14</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">15</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">16</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">17</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">18</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope today"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">19</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">20</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">21</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">22</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">23</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">24</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">25</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">26</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">27</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">28</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
-							<div class="day-label days ng-binding ng-scope"
-								ng-repeat="day in miniCalendar.days" ng-bind="day | date: 'd'"
-								ng-class="{ 'today': day.isToday() }"
-								ng-click="miniCalendar.select(day)">29</div>
-							<!-- end ngRepeat: day in miniCalendar.days -->
+							
 						</div>
 					</div>
 
@@ -619,8 +453,8 @@
 			</div>
 			<!-- ngIf: recruitSlide.isShow -->
 		</div>
-	</div>
-
+<!-- 	</div>
+ -->
 
 
 </body>

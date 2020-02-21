@@ -9,6 +9,7 @@ public class JobcategoryVO {
 	private String jc_div ; 
 	private String jc_part ;
 	private ArrayList<String> jobqa_q;
+	private String jobopen_company;
 	public int getJc_id() {
 		return jc_id;
 	}
@@ -39,13 +40,18 @@ public class JobcategoryVO {
 	public void setJobqa_q(ArrayList<String> jobqa_q) {
 		this.jobqa_q = jobqa_q;
 	}
-	
+	public String getJobopen_company() {
+		return jobopen_company;
+	}
+	public void setJobopen_company(String jobopen_company) {
+		this.jobopen_company = jobopen_company;
+	}
 	@Override
 	public String toString() {
 		return "JobcategoryVO [jc_id=" + jc_id + ", jobopen_id=" + jobopen_id + ", jc_div=" + jc_div + ", jc_part="
-				+ jc_part + ", jobqa_q=" + jobqa_q + "]";
+				+ jc_part + ", jobqa_q=" + jobqa_q + ", jobopen_company=" + jobopen_company + "]";
 	}
-
+	
 	
 	
 	

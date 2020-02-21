@@ -19,7 +19,7 @@ public class ResumeController {
 	
 	@Autowired
 	RService service;
-	
+
 	@RequestMapping(value = "/resumeForm")
 	public ModelAndView resumeForm(ModelAndView mv, SelftitleVO vo) {
 		ArrayList<SelftitleVO> list = service.selfTitleList(vo);

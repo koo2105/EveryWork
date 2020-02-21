@@ -48,10 +48,16 @@ body{
 
 			<div for="about-yourself" class="resume-title" id="resume-plus">자기소개서</div><br><br>
 			
-			회사명 : <input type="text" id="ja_name" name="ja_name" value="${selftitle.ja_name}">
+			회사명 : 
+			<c:if test="${JobqaList==null}">
+			<input type="text" id="ja_name" name="ja_name" value="${selftitle.ja_name}">
+			</c:if>
+			<c:if test="${JobqaList!=null}">
+			<input type="text" id="ja_name" name="ja_name" value="${company}">
+			</c:if>
 			<input type="hidden" name="ja_id" value="${selftitle.ja_id}">
 			<input type="hidden" name="emem_id" value="${loginID}">
-			<c:if test="${qalist==null}">
+			<c:if test="${qalist==null && JobqaList==null}">
 			<div class="ta-container" id="resumeFormPlus0">
 				
 				<textarea id="selfqa_q" class="ta-question" name="selfqa_q"
@@ -114,6 +120,52 @@ body{
 			</div>
 			</c:if>
 			</c:forEach>
+			
+
+			<c:forEach var="qal" items="${JobqaList}" varStatus="qavs">
+			<c:if test="${qavs.index==0}">
+			<div class="ta-container" id="resumeFormPlus${qavs.index}">
+				
+				<textarea id="selfqa_q" class="ta-question" name="selfqa_q"
+					rows="3" cols="75" data-maxchars="20" data-over="false"
+					placeholder="질문을 입력해주세요." required style="border-bottom: 2px;">${qal.jobqa_q}</textarea>
+						<hr>
+				<textarea  class="ta-answer" name="selfqa_a" id="selfqa_a"
+					rows="6" cols="75" data-maxchars="20" data-over="false"
+					placeholder="답변을 입력해주세요" required></textarea>
+				<div class="status-bar">
+				
+        <table>
+          <tr><td>자소서는 EveryWork에서 :)</td><td class="charcount"></td></tr>
+     
+    
+					</table>
+				</div>
+			</div>
+			</c:if>
+			<c:if test="${qavs.index!=0}">
+			<div class="ta-container" id="resumeFormPlus${qavs.index}">
+				
+				<textarea id="selfqa_q" class="ta-question" name="selfqa_q"
+					rows="3" cols="75" data-maxchars="20" data-over="false"
+					placeholder="질문을 입력해주세요." required style="border-bottom: 2px;">${qal.jobqa_q}</textarea>
+						<hr>
+				<textarea  class="ta-answer" name="selfqa_a" id="selfqa_a"
+					rows="6" cols="75" data-maxchars="20" data-over="false"
+					placeholder="답변을 입력해주세요" required></textarea>
+				<div class="status-bar">
+				
+        <table>
+          <tr><td>자소서는 EveryWork에서 :)</td><td class="charcount"></td></tr>
+     
+    
+					</table>
+				</div>
+				<div class="plus-btn"><a onclick="attachdelete('resumeFormPlus${qavs.index}')">-</a></div>
+			</div>
+			</c:if>
+			</c:forEach>
+			
 			 <div id="con">
       
      		 </div>

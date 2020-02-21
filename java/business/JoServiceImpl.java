@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jobopenDAO.JobopenDAO;
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 
 @Service
 public class JoServiceImpl implements JoService {
@@ -36,4 +38,17 @@ public class JoServiceImpl implements JoService {
 	public JobopenVO jobopenDetail(JobopenVO vo) {
 		return dao.jobopenDetail(vo);
 	}
+	
+	@Override
+	public ArrayList<JobcategoryVO> jobcategorySelectList(JobopenVO vo) {
+		return dao.jobcategorySelectList(vo);
+	}
+
+	@Override
+	public ArrayList<JobqaVO> writeResumeBtn(JobcategoryVO vo) {
+		
+		return dao.writeResumeBtn(vo);
+	}
+
+
 }

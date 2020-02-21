@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,22 @@
 	href="resources/jsLib/jobStyle.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
-<style>
-</style>
+
+<script>
+function resumeOpen(){
+	$.ajax({
+		type:'Post',
+		url:'jobopenDetail',
+		data:{
+		jobopen_id:jobopen_id,
+		
+		},
+		success: function(result){
+			//$('.jobDetail-div').html(result);
+			$('.jobDetail-div').html(result);
+		}
+	});//ajax
+</script>
 
 </head>
 <body>
@@ -255,13 +270,14 @@
 									</div>
 								</div>
 							</div>
+						<c:forEach var="jcl" items="${JobcaList}" varStatus=""> 
 							<div class="write-resume">
 								<table>
 									<tbody>
 										<!-- ngRepeat: employment in employments -->
 										<tr class="ng-scope" style="">
-											<td class="division ng-binding">인턴</td>
-											<td class="field ng-binding">IT system 운영</td>
+											<td class="division ng-binding">${jcl.jc_div}</td>
+											<td class="field ng-binding">${jcl.jc_part}</td>
 											<td class="count"><span class="ng-binding">16</span>명 작성</td>
 											<!-- ngIf: employment.employment_resume -->
 											<td class="resume ng-scope">
@@ -269,7 +285,7 @@
 												<div class="write-resume-button ng-scope">
 													<!-- ngIf: direct_apply -->
 													<!-- ngIf: !direct_apply -->
-													<span class="ng-scope">자기소개서 쓰기</span>
+													<span class="ng-scope" onclick="location.href='wResumeDetail?jc_id=${jcl.jc_id}&emem_id=${loginID}&jobopen_company=${jDetail.jobopen_company}'">자기소개서 쓰기</span>
 													<!-- end ngIf: !direct_apply -->
 												</div> <!-- end ngIf: employment.before_end_time --> <!-- ngIf: !employment.before_end_time -->
 											</td>
@@ -280,6 +296,7 @@
 									</tbody>
 								</table>
 							</div>
+							</c:forEach>
 							<div class="employment-notice nav-anchor" nav_id="1">
 								<!-- ngIf: isRecruitErrorShow -->
 								<div class="content ng-binding">

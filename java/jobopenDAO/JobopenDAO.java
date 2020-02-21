@@ -6,7 +6,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 
 
 @Repository
@@ -33,6 +35,16 @@ public class JobopenDAO {
 	public JobopenVO jobopenDetail(JobopenVO vo) {
 		return dao.selectOne(NS + "jobopenDetail",vo);
 	} // selectList()
+	
+	public ArrayList<JobcategoryVO> jobcategorySelectList(JobopenVO vo) {
+		return (ArrayList) dao.selectList(NS + "jobcategorySelectList",vo);
+	} // jobcategorySelectList()
+	
+	public ArrayList<JobqaVO> writeResumeBtn(JobcategoryVO vo) {
+		return (ArrayList) dao.selectList(NS + "writeResumeBtn",vo);
+	} // writeResumeBtn()
+	
+	
 	
 	
 }//end EmemberDAO 

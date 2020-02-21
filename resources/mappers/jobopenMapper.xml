@@ -25,4 +25,14 @@
 		select * from jobopen where jobopen_id=#{jobopen_id} 
 </select>
 
+
+<select id="jobcategorySelectList" resultType="vo.JobcategoryVO">
+		select * from jobcategory where jobopen_id=#{jobopen_id} 
+</select>
+<select id="writeResumeBtn" resultType="vo.JobqaVO">
+		select * from jobqa where jc_id=#{jc_id} 
+</select>
+
+
+
 	</mapper>

@@ -2,7 +2,9 @@ package business;
 
 import java.util.ArrayList;
 
+import vo.JobcategoryVO;
 import vo.JobopenVO;
+import vo.JobqaVO;
 
 public interface JoService {
 	
@@ -13,5 +15,9 @@ public interface JoService {
 	ArrayList<JobopenVO> jobopenThisWeek();
 
 	JobopenVO jobopenDetail(JobopenVO vo);
+
+
+	ArrayList<JobcategoryVO> jobcategorySelectList(JobopenVO vo);
+	ArrayList<JobqaVO> writeResumeBtn(JobcategoryVO vo);
 
 }
