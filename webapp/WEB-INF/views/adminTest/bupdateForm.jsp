@@ -63,9 +63,10 @@ function selfqadd(cnt){
 
 $(function (){//진짜로 아닐수도 잇음
 	$('#axjobUpdate').click(function(){
-//		var allData = $('#jobopenUpdate').serialize();
+		//var allData = $('#jobopenUpdate').serialize();
+		var allData = new FormData(document.getElementById('jobopenUpdate'));
 
-			var jobopen_id=$('#jobopen_id').val();
+		/* 	var jobopen_id=$('#jobopen_id').val();
 			var jobopen_pimg=$('#jobopen_pimg').val();
 			var jobopen_pimgf=$('#jobopen_pimgf').val();
 			var jobopen_company=$('#jobopen_company').val();
@@ -77,24 +78,11 @@ $(function (){//진짜로 아닐수도 잇음
 			var jobqa_q=$('#jobqa_q').val();
 			var jobopen_cimg=$('#jobopen_cimg').val();
 			var jobopen_cimgf=$('#jobopen_cimgf').val();
-
+ */
 
 		$.ajax({
 			type : 'post',
-			data :{
-				jobopen_id : jobopen_id,
-				jobopen_pimg:jobopen_pimg,
-				jobopen_pimgf:jobopen_pimgf,
-				jobopen_company:jobopen_company,
-				jobopen_link:jobopen_link,
-				jobopen_sdate:jobopen_sdate,
-				jobopen_edate:jobopen_edate,
-				jc_div:jc_div,
-				jc_part:jc_part,
-				jobqa_q:jobqa_q,
-				jobopen_cimg:jobopen_cimg,
-				jobopen_cimgf:jobopen_cimgf
-			},
+			data : allData ,
 			processData:false, 
 			contentType:false,
 			url : 'bupdate',
@@ -102,7 +90,7 @@ $(function (){//진짜로 아닐수도 잇음
 				$('#adminArea').html(result);
 			}
 		});	
-	}
+	});
 }); // ready
 
 </script>
@@ -175,7 +163,7 @@ $(function (){//진짜로 아닐수도 잇음
 		
 				
 <tr><td></td><td>
-<input type="button" id="axjobUpdate('${Detail.jobopen_id}')" value="수정!">
+<input type="button" id="axjobUpdate" value="수정!">
 <input type="submit" value="수정" onclick="return inCheck()">
                  <input type="reset" value="취소"></td>	
 </table>
