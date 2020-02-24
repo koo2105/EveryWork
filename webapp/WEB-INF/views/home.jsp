@@ -119,7 +119,7 @@
 		<div class="top-employments">
 			<div class="items">
 				<c:forEach var="pl" items="${PopularList}" varStatus="pvs">
-				<div class="item" onclick="location.href='jobopenDetail?jobopen_id=${pl.jobopen_id}'" > 
+				<div class="item" onclick="jDetailOpen('${pl.jobopen_id}')" > 
 				<%-- <a href="jobopenDetail?jobopen_id=${pl.jobopen_id}"> --%>
 					<div class="item-number">${pvs.count}</div>
 						<div class="item-detail">
@@ -150,7 +150,7 @@
 		<div class="top-employments">
 			<div class="items">
 			<c:forEach var="twl" items="${thisWeekList}" varStatus="tvs" >
-				<div class="item" onclick="location.href='jobopenDetail?jobopen_id=${twl.jobopen_id}'">
+				<div class="item" onclick="jDetailOpen('${twl.jobopen_id}')">
 					<div class="item-number">${tvs.count}</div>
 						<div class="item-detail">
 							<div class="item-name-container">

@@ -252,7 +252,6 @@ float: left;
     border-left: 4px solid transparent;
 }
 
-
 .calendar-container .recruit-top .calendar-option {
     color: #999;
     position: absolute;
@@ -282,10 +281,10 @@ float: left;
     height: 18px;
 }
 
-img {
+.calendar-container .recruit-top .calendar-option img {
     vertical-align: middle;
 }
-img {
+.calendar-container .recruit-top .calendar-option img {
     border: 0;
 }
 
@@ -380,9 +379,6 @@ label {
     margin: 0 10px;
 }
 
-.calendar-container .recruit-top .calendar-option .calendar-option-body>div .filter-header .filter-header-left {
-    display: inline-block;
-}
 
 .calendar-container .recruit-top .calendar-option .calendar-option-body>div .body {
     padding-top: 5px;
@@ -793,7 +789,7 @@ margin-top:-150px;  */
     margin: 10px;
 }
 
-.employment-slide-container .employment-slide.slide-center .navigator.fixed {
+.employment-slide-container .employment-slide .slide-center .navigator.fixed {
     position: fixed;
     left: calc(50% - 505px);
     top: 100px;
@@ -813,26 +809,12 @@ margin-top:-150px;  */
     width: 90px;
 }
 
-.employment-slide-container .employment-slide.slide-center .navigator.fixed {
+.employment-slide-container .employment-slide .slide-center .navigator.fixed {
     position: fixed;
     left: calc(50% - 505px);
     top: 100px;
 }
 
-.employment-slide-container .employment-slide .navigator {
-    will-change: margin-left, position;
-    transition: margin-left 0.5s;
-    position: absolute;
-    left: calc(50% - 465px);
-    top: 70px;
-}
-.employment-modal .navigator {
-    position: fixed;
-    -webkit-transform: translateZ(0);
-    left: calc(50% - 505px);
-    top: 100px;
-    width: 90px;
-}
 
 .employment-modal .navigator .nav-btn.active {
     padding-right: 25px;
@@ -845,24 +827,8 @@ margin-top:-150px;  */
     z-index: 100;
 }
 
-.employment-modal .navigator .nav-btn {
-    cursor: pointer;
-    text-align: right;
-    height: 40px;
-    margin-top: 8px;
-    font-size: 13px;
-    color: #999;
-    box-shadow: -1px 1px 8px rgba(80,80,80,0.8);
-    border-radius: 5px 0px 0px 5px;
-    padding-top: 11px;
-    padding-left: 0px;
-    padding-right: 15px;
-    background-color: #f0f0f0;
-}
 
-
-
-.employment-slide-container .employment-slide.slide-center {
+.employment-slide-container .employment-slide .slide-center {
     left: 0px;
 }
 .employment-slide-container .employment-slide {
@@ -931,6 +897,7 @@ margin-top:-150px;  */
     padding-left: 25px;
     border: solid 1px #ddd;
     font-size: 16px;
+    margin-bottom: 15px;
 }
 
 
