@@ -55,30 +55,16 @@ var cnt2=50;
 function selfqadd(cnt){
 	const str =`<li id=qadd`+cnt2+`>
       문항 <input type="text" name="jobqa_q" id="jobqa_q" maxlength="80" />
-    	  <a href="#delete"  onclick="attachdelete('qadd`+cnt2+`')"><img width="15px" src="resources/img/gonggo-.png"></a>
+    	  <a href="#delete"  onclick="attachdelete('qadd`+cnt+`')"><img width="15px" src="resources/img/gonggo-.png"></a>
       </li>`;
       $("#selfq"+cnt).append(str);
       cnt2++;
 }
 
-$(function (){//진짜로 아닐수도 잇음
+$(function (){
 	$('#axjobUpdate').click(function(){
 		//var allData = $('#jobopenUpdate').serialize();
 		var allData = new FormData(document.getElementById('jobopenUpdate'));
-
-		/* 	var jobopen_id=$('#jobopen_id').val();
-			var jobopen_pimg=$('#jobopen_pimg').val();
-			var jobopen_pimgf=$('#jobopen_pimgf').val();
-			var jobopen_company=$('#jobopen_company').val();
-			var jobopen_link=$('#jobopen_link').val();
-			var jobopen_sdate=$('#jobopen_sdate').val();
-			var jobopen_edate=$('#jobopen_edate').val();
-			var jc_div=$('#jc_div').val();
-			var jc_part=$('#jc_part').val();
-			var jobqa_q=$('#jobqa_q').val();
-			var jobopen_cimg=$('#jobopen_cimg').val();
-			var jobopen_cimgf=$('#jobopen_cimgf').val();
- */
 
 		$.ajax({
 			type : 'post',
@@ -88,7 +74,7 @@ $(function (){//진짜로 아닐수도 잇음
 			url : 'bupdate',
 			success : function(result) {
 				$('#adminArea').html(result);
-				alert('수정되었습니다.22');
+				alert('수정되었습니다.');
 			}
 		});	
 	});
@@ -123,30 +109,34 @@ $(function (){//진짜로 아닐수도 잇음
 <tr height="40"><td class="admin-title">Content</td>
       <td class="left">
       <div id="con">
+      <c:set var="qaindex" value="0"></c:set>
       <c:forEach var="cl" items="${clist}" varStatus="clvs">
 			<li id="conadd${clvs.index}">
 	                조건 <input type="text" name="jc_div" id="jc_div" value="${cl.jc_div}" maxlength="80">
 	                직무 <input type="text" name="jc_part" id="jc_part" value="${cl.jc_part}" maxlength="900">
 	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd${clvs.index}')">삭제</a>
-	        <div id="selfq${clvs.index}">
+	       
 		       
 				<c:forEach var="qal" items="${qalist}" varStatus="qavs">
 					<c:if test="${cl.jc_id==qal.jc_id}">
-						<li id="qadd${qavs.index}">
+						<li id="qadd${qaindex}">
 						문항 <input type="text" name="jobqa_q" id="jobqa_q" value="${qal.jobqa_q}" maxlength="80">
-						<a href="#delete" onclick="attachdelete('qadd${qavs.index}')"><img width="15px" src="resources/img/gonggo-.png"></a>
+						<a href="#delete" onclick="attachdelete('qadd${qaindex}')"><img width="15px" src="resources/img/gonggo-.png"></a>
+						 <c:set var="qaindex" value="${qaindex+1}"></c:set>
 					</c:if>
 				</c:forEach>
-			
-		
+			 <div id="selfq${clvs.index}">
+			</div>
 			<input type="hidden" name="jobqa_q" id="jobqa_q" value="end">
 	        <div class="txts">
+	        
+	        
            <a href="#" onclick="selfqadd('${clvs.index}'); return false;"><img width="15px" src="resources/img/gonggo+.png"></a>
 		</div>
 		
 	</c:forEach>
      </div>
-     </div>
+     
       <li class="cbox">
           <div class="txts">
               <a href="#" onclick="attachAddr(); return false;" class="plus-button">추가</a>

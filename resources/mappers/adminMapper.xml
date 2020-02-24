@@ -93,7 +93,7 @@ insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from jobqa),#{jc_id},#{
 </update>
 
 <select  id="jobcaMaxID" resultType="vo.JobcategoryVO">
-	select * from jobcategory where jc_id=(select nvl(max(jc_id),0)+1 from jobcategory)-1
+	select jc_id from jobcategory where jc_id=(select nvl(max(jc_id),0)+1 from jobcategory)-1
 </select>
 
 <select  id="jobopenMaxID" resultType="vo.JobopenVO">

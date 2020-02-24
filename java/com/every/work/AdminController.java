@@ -355,9 +355,38 @@ public class AdminController {
 			vo.setJobopen_cimg(file4);
 		}	
 		
+		if(service.jobopenUpdate(vo)>0) {
+			if(service.jobcatDelete(vo)>0) {
+								
+				for (int i = 0; i < vo.getJc_div().size(); i++) {
+					JobcategoryVO jcvo2 = new JobcategoryVO();
+					jcvo2.setJobopen_id(vo.getJobopen_id());
+					jcvo2.setJc_div(vo.getJc_div().get(i));
+					jcvo2.setJc_part(vo.getJc_part().get(i));
+					service.jobcaInsert(jcvo2);
+					jcvo2=service.jobcaMaxID();
+					System.out.println(jcvo2.getJc_id());
+					int j = 0;
+					for (; j < cvo.getJobqa_q().size(); j++) {
+						JobqaVO qavo=new JobqaVO();
+						if("end".equals(cvo.getJobqa_q().get(j))) {
+							break;
+						}
+						qavo.setJc_id(jcvo2.getJc_id());
+						qavo.setJobqa_q(cvo.getJobqa_q().get(j));
+						service.jobqaInsert(qavo);
+					}
+				}
+				
+			}
+			
+		}
+		
 		ArrayList<JobopenVO> list = service.jobopenList();
 		mv.addObject("Joblist", list);
 		mv.setViewName("adminTest/axboardList");
+		
+		
 
 		return mv ;
 	}// update
