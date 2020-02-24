@@ -353,13 +353,7 @@ public class AdminController {
 			jobopen_cimgf.transferTo(new File(file3));		 
 			file4="resources/uploadImage/"+jobopen_cimgf.getOriginalFilename();
 			vo.setJobopen_cimg(file4);
-		}
-		
-		if (service.jobopenUpdate(vo)>0) { 
-			mv.addObject("joupdate","T");
-		}else { 
-			mv.addObject("joupdate","F");
-		} // if		
+		}	
 		
 		ArrayList<JobopenVO> list = service.jobopenList();
 		mv.addObject("Joblist", list);

@@ -73,15 +73,5 @@ function bdetail(jobopen_id) {
 
 
 <div id="content"></div>
-<c:if test="${joupdate=='T'}">
-	<script>
-	alert('수정되었습니다.');
-	</script>
-</c:if>
-<c:if test="${joupdate=='F'}">
-	<script>
-	alert('수정실패');
-	</script>
-</c:if>
 </body>
 </html>

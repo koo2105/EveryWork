@@ -88,6 +88,7 @@ $(function (){//진짜로 아닐수도 잇음
 			url : 'bupdate',
 			success : function(result) {
 				$('#adminArea').html(result);
+				alert('수정되었습니다.22');
 			}
 		});	
 	});
