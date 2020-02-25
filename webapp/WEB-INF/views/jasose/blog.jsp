@@ -49,7 +49,7 @@
 						<a>자소서 잘 쓰는 법</a>
 					</div>
 					<div class="posts">
-						<c:forEach var="bb2" items="${labList2}"><a class="post"  href="labDetail">
+						<c:forEach var="bb2" items="${labList2}"><a class="post"  href="labDetail?lab_id=${bb2.lab_id}">
 							<div class="post-thumbnail">
 								<img src="${bb2.lab_img}" width="200" height="200">
 							</div>
@@ -70,7 +70,7 @@
 						<a>EveryWork 소식</a>
 					</div>
 					<div class="posts">
-							<c:forEach var="bb3" items="${labList3}"><a class="post"  href="labDetail">
+							<c:forEach var="bb3" items="${labList3}"><a class="post"  href="labDetail?lab_id=${bb3.lab_id}">
 							<div class="post-thumbnail">
 								<img src="${bb3.lab_img}" width="200" height="200">
 							</div>

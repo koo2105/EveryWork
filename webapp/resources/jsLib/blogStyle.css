@@ -36,14 +36,7 @@ font-size: 25px;
 }
 
 
-.title {
-	font-size: 10px;
-    font-weight: bold;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
-	box-sizing: border-box;
-	
-}
+
 .category-title {
 	font-size: 15px;
     font-weight: bold;
@@ -154,10 +147,10 @@ float: left;
     box-sizing: border-box;
 }
 
-.blog-category-container .posts .post .post-info .title {
+.blog-category-container .posts .post .post-info{
     font-size: 10px;
     color: #555;
-    font-weight: bold;
+   
 }
 .blog-category-container .posts .post .post-info .date-and-count {
     font-size: 11px;
@@ -231,7 +224,7 @@ float: left;
     box-sizing: border-box;
 }
 
-.blog-post-container .post .title {
+.blog-post-container .post  {
     font-size: 20px;
     color: #555;
     margin: 20px 0;
@@ -290,5 +283,7 @@ float: left;
     padding-bottom: 15px;
 	box-sizing: border-box;
 }
+
+
 
 

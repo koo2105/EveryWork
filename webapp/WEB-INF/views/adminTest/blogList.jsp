@@ -55,6 +55,34 @@
 </head>
 <body>
 	<h2>** 자소서 연구소 관리 **</h2>
+	
+		<div id="content"></div>
+		<div id="searchBar" class=""
+		style="padding-left: 0px; padding-right: 0px;">
+		<div class="">
+				<select name="searchType" class="" >
+					<option value="n"
+						<c:out value="${pageMaker.cri.searchType == null?'selected':''}"/>>
+						---</option>
+					<option value="t"
+						<c:out value="${pageMaker.cri.searchType eq 't'?'selected':''}"/>>
+						제목</option>
+					<option value="c"
+						<c:out value="${pageMaker.cri.searchType eq 'c'?'selected':''}"/>>
+						내용</option>
+					<option value="tc"
+						<c:out value="${pageMaker.cri.searchType eq 'tc'?'selected':''}"/>>
+						제목과 내용</option>
+				</select>&nbsp;&nbsp;
+		
+			<div class="">
+				<input type="text" name='keyword' id="keywordInput" class=" "
+					value='${pageMaker.cri.keyword}'> &nbsp;&nbsp;
+				<a class="button" id="searchBtn">Search</a>
+			</div>
+		</div>
+	</div>
+	
 
 	<table width=800>
 		<tr class="admin-title">
@@ -84,9 +112,9 @@
 
 
 
-	<div id="content"></div>
+	
 
-	<div id="searchBar" class=""
+<%-- 	<div id="searchBar" class=""
 		style="padding-left: 0px; padding-right: 0px;">
 		<div class="  " style="padding-right: 0px; padding-left: 0px;">
 			<div class="  " style="padding-right: 0px; padding-left: 0px;">
@@ -114,7 +142,7 @@
 			</div>
 		</div>
 	</div>
-
+ --%>
 	<!--  PagingCri Code 추가   -->
 
 	<div class="container" style="text-align: center;">
@@ -131,13 +159,12 @@
 				var="idx">
 				<c:choose>
 					<c:when test="${pageMaker.cri.page==idx}">
-						<li class="active"><a
-							href="ajlist${pageMaker.makeSearch(idx)}"
-							style="background-color: Crimson; border-color: Crimson;">${idx}</a></li>
+						<a href="ajlist${pageMaker.makeSearch(idx)}"
+							style="background-color: Crimson; border-color: Crimson;">${idx}</a>
 					</c:when>
 					<c:otherwise>
-						<li><a href="ajlist${pageMaker.makeSearch(idx)}"
-							style="color: black;">${idx}</a></li>
+						<a href="ajlist${pageMaker.makeSearch(idx)}"
+							style="color: black;">${idx}</a>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
