@@ -16,9 +16,34 @@ $(function() {
 
 });
 
+//joinform checkbox
+$(document).ready(function(){
+	//최상단 체크박스 클릭
+	$("#checkallRaido").click(function(){
+		//클릭되었으면
+		if($("#checkallRaido").prop("checked")){
+			//input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
+			$("input[name=agree]").prop("checked",true);
+			//클릭이 안되있으면
+		} else{
+			//input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
+			$("input[name=agree]").prop("checked",false);
+		}
+		
+	});
+});
+
+
+
 
 </script>
 <style>
+body{
+
+background-color: #f0f0f0;
+
+}
+
 
  div {
    display: block;
@@ -26,10 +51,11 @@ $(function() {
 
 .join-title {
    font-size: 30px;
-   color: darkslategrey;
+    color: #ff6813;
    font-weight: bold;
    margin-bottom : 30px;
-   margin-top : 70px;
+   margin-top : 50px;
+   padding-top:30px;
    overflow: hidden;
    text-align: center;
 }
@@ -41,35 +67,48 @@ $(function() {
 }
 
 .join-form {
-   width: 300px;
-   height: 30px;
+   width: 400px;
+    height: 50px;
    margin-bottom: 10px;
+   display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+     color: #999;
 }
 
 .join-subtitle {
    font-size : 15;
    font-weight:bold;
    text-align: left;
-   width: 300px;
+   width: 400px;
    margin-left: 5px;
    margin-right: 5px;
    padding-top: 10px;
    padding-bottom: 10px;
 }
 
-.join-button {
+.join-button>input {
    font-size : 15;
    font-weight:bold;
-
-   
-   width: 300px;
+   width: 342px;
    margin-left: 5px;
    margin-right: 5px;
    padding-top: 10px;
    padding-bottom: 10px;
+  
+   background-color : white;
+   border: 1px solid #ddd;
+   border-radius: 4px;
 }
 .radio-sex{
 box-sizing: border-box;
+}
+
+.join-container{
+background-color: #f0f0f0;
 }
 
 
@@ -107,8 +146,8 @@ box-sizing: border-box;
            <input class="radio-sex" type="radio" name="emem_gender" value="남" alt="남자" checked >남자&nbsp;&nbsp;
            <input type="radio" name="emem_gender" value="여" alt="여자" >여자&nbsp;&nbsp;<br><br><br>
            
-           <div class="join-subtitle">모두 동의합니다</div>
-           <input class="radio-sex" type="checkbox" name="agree" value="이용" alt="이용" checked >이용약관 동의<br>
+           <div class="join-subtitle">모두 동의합니다<input class="checkallRaido" type="checkbox"></div>
+           <input type="checkbox" name="agree" value="이용" alt="이용" checked >이용약관 동의<br>
            <input type="checkbox" name="agree" value="개인" alt="개인" >개인정보 취급방침 동의<br>
            <input type="checkbox" name="agree" value="마케팅" alt="마케팅" >마케팅 정보 수신 동의<br><br>
             

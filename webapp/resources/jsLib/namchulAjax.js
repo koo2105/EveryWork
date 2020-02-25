@@ -39,15 +39,15 @@ function jDetailOpen(jobopen_id){
 //jabMain checkBox
 $(document).ready(function(){
     //최상단 체크박스 클릭
-    $("#checkall-rec").click(function(){
+    $("#checkall1").click(function(){
         //클릭되었으면
-        if($("#checkall-rec").prop("checked")){
+        if($("#checkall1").prop("checked")){
             //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
-            $("input[name=chkr]").prop("checked",true);
+            $("input[name=chk1]").prop("checked",true);
             //클릭이 안되있으면
         } else{
             //input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
-            $("input[name=chkr]").prop("checked",false);
+            $("input[name=chk1]").prop("checked",false);
         }
         
     });
@@ -55,15 +55,15 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	//최상단 체크박스 클릭
-	$("#checkall-per").click(function(){
+	$("#checkall2").click(function(){
 		//클릭되었으면
-		if($("#checkall-per").prop("checked")){
+		if($("#checkall2").prop("checked")){
 			//input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
-			$("input[name=chk]").prop("checked",true);
+			$("input[name=chk2]").prop("checked",true);
 			//클릭이 안되있으면
 		} else{
 			//input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
-			$("input[name=chk]").prop("checked",false);
+			$("input[name=chk2]").prop("checked",false);
 		}
 		
 	});
@@ -71,15 +71,15 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	//최상단 체크박스 클릭
-	$("#checkall-par").click(function(){
+	$("#checkall3").click(function(){
 		//클릭되었으면
-		if($("#checkall-par").prop("checked")){
+		if($("#checkall3").prop("checked")){
 			//input태그의 name이 chk인 태그들을 찾아서 checked옵션을 true로 정의
-			$("input[name=chk]").prop("checked",true);
+			$("input[name=chk3]").prop("checked",true);
 			//클릭이 안되있으면
 		} else{
 			//input태그의 name이 chk인 태그들을 찾아서 checked옵션을 false로 정의
-			$("input[name=chk]").prop("checked",false);
+			$("input[name=chk3]").prop("checked",false);
 		}
 		
 	});
@@ -90,6 +90,15 @@ $(document).ready(function(){
 
 
 
+
+
+function caloptionClose(){
+	$('.calendar-option').hide();
+}
+
+function caloptionOpen(){
+	$('.calendar-option').toggle();
+}
 function jDetailClose(){
 	$('.jobDetail-div').hide();
 }
@@ -97,6 +106,7 @@ function jDetailClose(){
 function answerOpen(){
 		$('.answer-div').show();
 	}
+
 function answerClose(){
 		$('.answer-div').hide();
 	}
@@ -167,6 +177,8 @@ function pwCheck() {
 		$('#pMessage').html('비밀번호가 일치하지 않습니다.');
 	}else $('#pMessage').html('');
 }
+
+
 
 
 

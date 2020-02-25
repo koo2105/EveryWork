@@ -26,7 +26,7 @@ body {
 
 	<!-- SpecCtrl -->
 	<div class="spec-ctrl">
-
+		<div class="function-bar"></div>
 		<div class="spec-container">
 			<div class="section-container spec-saver">
 

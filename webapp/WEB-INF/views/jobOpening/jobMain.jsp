@@ -103,34 +103,30 @@
 					<div class="favorite-calendar piwik-my-calendar" >내 채용 공고</div>
 				</div>
 
-				<div class="calendar-filter">
+				<div class="calendar-filter" >
 					<div class="calendar-filter-title" >
-						공고 필터링 <span class="calendar-filter-on-off ng-binding" >OFF</span>
+						공고 필터링 <!-- <span class="calendar-filter-on-off ng-binding" >OFF</span> -->
 					</div>
 					<!-- ngRepeat: option in options track by $index -->
-					<div class="toggle-calendar-option-buttons ng-scope" >
+					<div class="toggle-calendar-option-buttons ng-scope"  onclick="caloptionOpen()">
 						<span  class="ng-binding">채용 형태</span> (<span
-							 class="ng-binding">4</span>) <span
-							class="caret"></span>
+							 class="ng-binding">4</span>)
+						
 					</div>
 					<!-- end ngRepeat: option in options track by $index -->
-					<div class="toggle-calendar-option-buttons ng-scope" >
-						<span  class="ng-binding">기간 설정</span> (<span
-							 class="ng-binding">3</span>) <span
-							class="caret"></span>
+					<div class="toggle-calendar-option-buttons ng-scope" onclick="caloptionOpen()" >
+						<span  class="ng-binding">기간 설정</span> (<span  class="ng-binding">3</span>) 
 					</div>
 					<!-- end ngRepeat: option in options track by $index -->
-					<div class="toggle-calendar-option-buttons ng-scope" >
-						<span  class="ng-binding">직무 선택</span> (<span
-							  class="ng-binding">11</span>) <span
-							class="caret"></span>
+					<div class="toggle-calendar-option-buttons ng-scope" onclick="caloptionOpen()">
+						<span  class="ng-binding">직무 선택</span> (<span  class="ng-binding">11</span>) 
 					</div>
 					<!-- end ngRepeat: option in options track by $index -->
 					<div class="calendar-option hide">
 						<div class="calendar-option-header">
 							<img class="description"
 								src="resources/img/calendar_option_description.png">
-							<img class="close-button" src="resources/img/x_btn.png" onclick="jDetailClose()">
+							<img class="close-button " src="resources/img/x_btn.png" onclick="caloptionClose()">
 						</div>
 						<div class="calendar-option-body">
 							<!-- ngRepeat: option in options -->
@@ -138,7 +134,7 @@
 								<div>
 									<div class="filter-header">
 										<label> <input type="checkbox"
-											class="filter-header-left ng-pristine ng-untouched ng-valid"   id="checkall-rec">
+											class="filter-header-left ng-pristine ng-untouched ng-valid"   id="checkall1">
 											<div class="filter-head-right">
 												<span class="ng-binding">채용 형태</span>
 											</div>
@@ -147,25 +143,25 @@
 									<div class="body">
 										<!-- ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk1"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">신입</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk1"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">경력</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk1"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">인턴</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk1"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">계약직</span>
 										</label>
@@ -179,7 +175,7 @@
 								<div>
 									<div class="filter-header">
 										<label> <input type="checkbox"
-											class="filter-header-left ng-pristine ng-untouched ng-valid"  id="checkall-per" >
+											class="filter-header-left ng-pristine ng-untouched ng-valid"  id="checkall2" >
 											<div class="filter-head-right">
 												<span class="ng-binding">기간 설정</span>
 											</div>
@@ -188,19 +184,19 @@
 									<div class="body">
 										<!-- ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk2"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">시작</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk2"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">종료</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk2"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">수시채용</span>
 										</label>
@@ -214,7 +210,7 @@
 								<div>
 									<div class="filter-header">
 										<label> <input type="checkbox"
-											class="filter-header-left ng-pristine ng-untouched ng-valid "  id="checkall-par">
+											class="filter-header-left ng-pristine ng-untouched ng-valid "  id="checkall3">
 											<div class="filter-head-right">
 												<span class="ng-binding">직무 선택</span>
 											</div>
@@ -223,67 +219,67 @@
 									<div  class="body">
 										<!-- ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">경영∙사무</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">마케팅∙무역∙유통</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">영업∙고객상담</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope"> <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">IT∙인터넷</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">연구개발∙설계</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">생산∙제조</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">전문∙특수직</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">디자인</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">미디어</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span  class="ng-binding">서비스</span>
 										</label>
 										<!-- end ngRepeat: index in option.index_arr -->
 										<label class="checkbox-container ng-scope" > <input
-											type="checkbox" name="chk"
+											type="checkbox" name="chk3"
 											class="option-checkbox ng-pristine ng-untouched ng-valid" >
 											<span class="ng-binding">건설</span>
 										</label>
@@ -333,7 +329,37 @@
 					<div class="dayname-container">
 						<!-- ngRepeat: dayname in daynames -->
 						<div class="calendar-cell ng-scope">
-							<div class="day-label name-of-days ng-binding" >SUN요일 넣는 장소 foreach</div>
+							<div class="day-label name-of-days ng-binding" >SUN</div>
+						</div>
+						<!-- end ngRepeat: dayname in daynames -->
+						<!-- ngRepeat: dayname in daynames -->
+						<div class="calendar-cell ng-scope">
+							<div class="day-label name-of-days ng-binding" >MON</div>
+						</div>
+						<!-- end ngRepeat: dayname in daynames -->
+						<!-- ngRepeat: dayname in daynames -->
+						<div class="calendar-cell ng-scope">
+							<div class="day-label name-of-days ng-binding" >TUE</div>
+						</div>
+						<!-- end ngRepeat: dayname in daynames -->
+						<!-- ngRepeat: dayname in daynames -->
+						<div class="calendar-cell ng-scope">
+							<div class="day-label name-of-days ng-binding" >WED</div>
+						</div>
+						<!-- end ngRepeat: dayname in daynames -->
+						<!-- ngRepeat: dayname in daynames -->
+						<div class="calendar-cell ng-scope">
+							<div class="day-label name-of-days ng-binding" >THR</div>
+						</div>
+						<!-- end ngRepeat: dayname in daynames -->
+						<!-- ngRepeat: dayname in daynames -->
+						<div class="calendar-cell ng-scope">
+							<div class="day-label name-of-days ng-binding" >FRI</div>
+						</div>
+						<!-- end ngRepeat: dayname in daynames -->
+						<!-- ngRepeat: dayname in daynames -->
+						<div class="calendar-cell ng-scope">
+							<div class="day-label name-of-days ng-binding" >SAT</div>
 						</div>
 						<!-- end ngRepeat: dayname in daynames -->
 					
