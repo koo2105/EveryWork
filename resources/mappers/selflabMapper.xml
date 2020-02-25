@@ -5,19 +5,24 @@
 
 <mapper namespace="work.mappers.selflabMapper">
 
-<!-- selectList -->
+	<!-- selectList -->
 
-<select id="selflabList" resultType="vo.SelflabVO">
-		select * from selflab where lab_cat=#{lab_cat} order by lab_id desc
+	<select id="selflabList" resultType="vo.SelflabVO">
+		select * from selflab where
+		lab_cat=#{lab_cat} order by lab_id desc
 	</select>
-	
 
-<select id="selflablistAll" resultType="vo.SelflabVO">
+
+	<select id="selflablistAll" resultType="vo.SelflabVO">
 		<![CDATA[ select * from (select * from selflab where lab_cat=#{lab_cat} order by lab_id desc) where rownum<=2]]>
-</select>
+	</select>
 
- <select id="selflabOne" resultType="vo.SelflabVO">
-		select * from selflab where lab_id=#{lab_id} 
-</select>
+	<select id="selflabOne" resultType="vo.SelflabVO">
+		select * from selflab where
+		lab_id=#{lab_id}
+	</select>
+	<update id="selflabCnt">
+		update selflab set lab_count=((select lab_count from selflab where lab_id=#{lab_id})+1) where lab_id=#{lab_id}
+	</update>
 
-	</mapper>
+</mapper>

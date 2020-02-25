@@ -27,6 +27,7 @@ public class SelflabDAO {
 	} // selectList()
 	
 	public SelflabVO selflabOne(SelflabVO vo) {
+		dao.update(NS+"selflabCnt",vo);
 		return dao.selectOne(NS + "selflabOne", vo);
 	} // login
 

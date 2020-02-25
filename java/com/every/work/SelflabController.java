@@ -69,6 +69,7 @@ public class SelflabController {
 	@RequestMapping(value = "labDetail")
 	public ModelAndView labDetail(ModelAndView mv, SelflabVO vo) {
 		vo = service.selflabOne(vo);
+		// 업데이트문으로 count 증가시키기
 		mv.addObject("sl", vo);
 		mv.setViewName("jasose/post");
 		return mv;

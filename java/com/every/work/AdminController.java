@@ -1,4 +1,4 @@
-package com.every.work;
+	package com.every.work;
 
 import java.io.File;
 import java.io.IOException;
@@ -96,7 +96,7 @@ public class AdminController {
 			String file1, file2;
 			if (!jobopen_pimgf.isEmpty()) {
 
-				file1 = "D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"
+				file1 = "C:/NamChul/eclipse-workspace/EveryWork/src/main/webapp/resources/uploadImage/"
 						+ jobopen_pimgf.getOriginalFilename();
 				jobopen_pimgf.transferTo(new File(file1));
 				file2 = "resources/uploadImage/" + jobopen_pimgf.getOriginalFilename();
@@ -108,7 +108,7 @@ public class AdminController {
 			String file3, file4;
 			if (!jobopen_cimgf.isEmpty()) {
 
-				file3 = "D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"
+				file3 = "C:/NamChul/eclipse-workspace/EveryWork/src/main/webapp/resources/uploadImage/"
 						+ jobopen_cimgf.getOriginalFilename();
 				jobopen_cimgf.transferTo(new File(file3));
 				file4 = "resources/uploadImage/" + jobopen_cimgf.getOriginalFilename();
@@ -119,7 +119,7 @@ public class AdminController {
 			
 		if (service.jobopenInsert(vo) > 0) {
 			JobopenVO vo2=service.jobopenMaxID();
-			
+			int j = 0;
 			for (int i = 0; i < vo.getJc_div().size(); i++) {
 				JobcategoryVO jcvo2 = new JobcategoryVO();
 				jcvo2.setJobopen_id(vo2.getJobopen_id());
@@ -127,10 +127,11 @@ public class AdminController {
 				jcvo2.setJc_part(vo.getJc_part().get(i));
 				service.jobcaInsert(jcvo2);
 				jcvo2=service.jobcaMaxID();
-				int j = 0;
+				
 				for (; j < jcvo.getJobqa_q().size(); j++) {
 					JobqaVO qavo=new JobqaVO();
 					if("end".equals(jcvo.getJobqa_q().get(j))) {
+						j++;
 						break;
 					}
 					qavo.setJc_id(jcvo2.getJc_id());
@@ -357,7 +358,7 @@ public class AdminController {
 		
 		if(service.jobopenUpdate(vo)>0) {
 			if(service.jobcatDelete(vo)>0) {
-								
+				int j=0;
 				for (int i = 0; i < vo.getJc_div().size(); i++) {
 					JobcategoryVO jcvo2 = new JobcategoryVO();
 					jcvo2.setJobopen_id(vo.getJobopen_id());
@@ -366,10 +367,10 @@ public class AdminController {
 					service.jobcaInsert(jcvo2);
 					jcvo2=service.jobcaMaxID();
 					System.out.println(jcvo2.getJc_id());
-					int j = 0;
 					for (; j < cvo.getJobqa_q().size(); j++) {
 						JobqaVO qavo=new JobqaVO();
 						if("end".equals(cvo.getJobqa_q().get(j))) {
+							j++;
 							break;
 						}
 						qavo.setJc_id(jcvo2.getJc_id());
