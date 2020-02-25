@@ -14,6 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import business.AdService;
+import criteria.PageMaker;
+import criteria.SearchCriteria;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
@@ -59,9 +61,14 @@ public class AdminController {
 	}//
 
 	@RequestMapping(value = "/ajlist")
-	public ModelAndView ajlist(ModelAndView mv) {
-		ArrayList<SelflabVO> list = service.blogList();
-		mv.addObject("Bloglist", list);
+	public ModelAndView ajlist(ModelAndView mv, SearchCriteria cri) {
+		cri.setSnoEno();
+		mv.addObject("Bloglist", service.searchCriList(cri));
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(service.searchCriCount(cri));
+		mv.addObject("pageMaker",pageMaker);
+		
 		mv.setViewName("adminTest/blogList");
 		return mv;
 	}//

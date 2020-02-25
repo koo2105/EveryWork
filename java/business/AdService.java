@@ -2,6 +2,7 @@ package business;
 
 import java.util.ArrayList;
 
+import criteria.SearchCriteria;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
@@ -41,4 +42,6 @@ public interface AdService {
 	ArrayList<JobqaVO> jobqaList(JobopenVO vo);
 	int jobopenUpdate(JobopenVO vo);
 	int jobcatDelete(JobopenVO vo);
+	ArrayList<SelflabVO> searchCriList(SearchCriteria cri);
+	int searchCriCount(SearchCriteria cri);
 }

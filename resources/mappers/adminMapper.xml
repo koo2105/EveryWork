@@ -5,121 +5,167 @@
 
 <mapper namespace="work.mappers.adminMapper">
 
-<!-- selectList -->
+	<!-- selectList -->
 
-<select id="selectList" resultType="vo.EmemberVO">
-		select * from emember order by emem_id
+	<select id="selectList" resultType="vo.EmemberVO">
+		select * from emember order
+		by emem_id
+	</select>
+
+	<select id="jobopenList" resultType="vo.JobopenVO">
+		select * from jobopen order
+		by jobopen_id desc
+	</select>
+
+	<select id="answerList" resultType="vo.InquiryVO">
+		select * from inquiry order
+		by inq_id desc
+	</select>
+
+	<select id="blogList" resultType="vo.SelflabVO">
+		select * from selflab order by
+		lab_id desc
+	</select>
+
+	<select id="adminLogin" resultType="vo.AdminVO">
+		select * from admin where admin_id=#{admin_id} and
+		admin_password=#{admin_password}
+	</select>
+
+	<select id="bdetail" resultType="vo.JobopenVO">
+		select * from jobopen where jobopen_id=#{jobopen_id}
+	</select>
+
+	<delete id="bDelete">
+		delete from jobopen where jobopen_id=#{jobopen_id}
+	</delete>
+
+	<select id="minfo" resultType="vo.EmemberVO">
+		select * from emember where emem_id=#{emem_id}
+	</select>
+
+	<insert id="jobopenInsert">
+		insert into jobopen values((select nvl(max(jobopen_id), 0)+1 from
+		jobopen),#{admin_id},#{jobopen_pimg},#{jobopen_company},#{jobopen_link},#{jobopen_sdate},#{jobopen_edate},#{jobopen_cimg},0
+		)
+	</insert>
+
+	<insert id="jobcaInsert">
+		insert into jobcategory values((select nvl(max(jc_id), 0)+1 from
+		jobcategory), #{jobopen_id},#{jc_div} ,#{jc_part})
+
+	</insert>
+
+	<insert id="jobqaInsert">
+		insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from
+		jobqa),#{jc_id},#{jobqa_q})
+	</insert>
+
+
+	<delete id="minfoDelete">
+		delete from emember where emem_id=#{emem_id}
+	</delete>
+
+	<select id="binfoDetail" resultType="vo.SelflabVO">
+		select * from selflab where lab_id=#{lab_id}
+	</select>
+	<delete id="binfoDelete">
+		delete from selflab where lab_id=#{lab_id}
+	</delete>
+
+	<select id="answerDetail" resultType="vo.InquiryVO">
+		select * from inquiry where inq_id=#{inq_id}
+	</select>
+
+	<delete id="answerDelete">
+		delete from inquiry where inq_id=#{inq_id}
+	</delete>
+
+	<update id="answerProcess">
+		update inquiry set inq_state='2' where inq_id=#{inq_id}
+	</update>
+
+
+	<update id="answerUpdate">
+		update inquiry set inq_state=#{inq_state} where inq_id=#{inq_id}
+	</update>
+
+
+
+	<insert id="blogInsert">
+		insert into selflab values((select nvl(max(lab_id), 0)+1 from selflab),
+		#{admin_id},#{lab_cat},#{lab_title},0,sysdate,#{lab_content},#{lab_img})
+	</insert>
+
+	<update id="blogUpdate">
+		update selflab set lab_cat=#{lab_cat}, lab_title=#{lab_title},
+		lab_content=#{lab_content}, lab_img=#{lab_img} where lab_id=#{lab_id}
+	</update>
+
+	<select id="jobcaMaxID" resultType="vo.JobcategoryVO">
+		select jc_id from jobcategory where jc_id=(select nvl(max(jc_id),0)+1 from
+		jobcategory)-1
+	</select>
+
+	<select id="jobopenMaxID" resultType="vo.JobopenVO">
+		select * from jobopen where jobopen_id=(select nvl(max(jobopen_id),0)+1 from
+		jobopen)-1
+	</select>
+
+	<select id="jobcategoryList" resultType="vo.JobcategoryVO">
+		select * from jobcategory where jobopen_id=#{jobopen_id}
+	</select>
+
+	<select id="jobqaList" resultType="vo.JobqaVO">
+		select c.jc_id, q.jobqa_q from jobcategory c, jobqa q where c.jc_id=q.jc_id
+		and c.jobopen_id=#{jobopen_id}
+	</select>
+
+
+	<update id="jobopenUpdate">
+		update jobopen set jobopen_pimg=#{jobopen_pimg},
+		jobopen_company=#{jobopen_company},
+		jobopen_link=#{jobopen_link} ,jobopen_sdate=#{jobopen_sdate}, jobopen_edate=#{jobopen_edate},
+		jobopen_cimg=#{jobopen_cimg} where jobopen_id=#{jobopen_id}
+	</update>
+
+
+	<delete id="jobcatDelete">
+		delete from jobcategory where jobopen_id=#{jobopen_id}
+	</delete>
+
+	<!-- search 기능 -->
+	<sql id="search">
+		<choose>
+			<when test="searchType=='t'.toString()">
+				and lab_title like '%' || #{keyword} || '%')
+			</when>
+			<when test="searchType=='c'.toString()">
+				and lab_content like '%' || #{keyword} || '%')
+			</when>
+			<when test="searchType=='tc'.toString()">
+				and (lab_title like '%' || #{keyword} || '%'
+				OR lab_content like '%' || #{keyword} || '%'))
+			</when>
+
+			<otherwise>)</otherwise>
+		</choose>
+	</sql>
+
+	<!-- searchCriList(일반접속자 1대1문의사항) -->
+	<select id="searchCriList" resultType="vo.SelflabVO">
+		(select rnum, a.lab_id, a.lab_title, a.admin_id, a.lab_cat,
+		a.lab_content, a.lab_date
+		from (
+		select ROW_NUMBER() OVER(ORDER BY lab_id desc) as rnum, lab_id, lab_title,
+		admin_id, lab_cat, lab_content, lab_date
+		from selflab) a where rnum between #{sno} and #{eno}
+		<include refid="search"></include>
+		order by lab_id desc
 	</select>
 	
-<select id="jobopenList" resultType="vo.JobopenVO">
-		select * from jobopen order by jobopen_id desc
-</select>	
-
-<select id="answerList" resultType="vo.InquiryVO">
-		select * from inquiry order by inq_id desc
-</select>	
-
-<select id="blogList" resultType="vo.SelflabVO">
-		select * from selflab order by lab_id desc
-</select>	
-
-<select id="adminLogin" resultType="vo.AdminVO">
-	select * from admin where admin_id=#{admin_id} and admin_password=#{admin_password}
-</select>
-
-<select id="bdetail" resultType="vo.JobopenVO">
-	select * from jobopen where jobopen_id=#{jobopen_id} 
-</select>
-
-<delete id="bDelete">
-	 delete from jobopen where jobopen_id=#{jobopen_id}	
-</delete>
-
-<select id="minfo" resultType="vo.EmemberVO">
-	select * from emember where emem_id=#{emem_id} 
-</select>
-	
-<insert id="jobopenInsert">
-  	insert into jobopen values((select nvl(max(jobopen_id), 0)+1 from jobopen),#{admin_id},#{jobopen_pimg},#{jobopen_company},#{jobopen_link},#{jobopen_sdate},#{jobopen_edate},#{jobopen_cimg},0 )
-</insert>
-
-<insert id="jobcaInsert">
-insert into jobcategory values((select nvl(max(jc_id), 0)+1 from jobcategory), #{jobopen_id},#{jc_div} ,#{jc_part})
-
-</insert>
-
-<insert id="jobqaInsert">
-insert into jobqa values((select nvl(max(jobqa_id), 0)+1 from jobqa),#{jc_id},#{jobqa_q})
-</insert>
-
-
-<delete id="minfoDelete">
-	 delete from emember where emem_id=#{emem_id}	
-</delete>
-
-<select id="binfoDetail" resultType="vo.SelflabVO">
-	select * from selflab where lab_id=#{lab_id} 
-</select>
-<delete id="binfoDelete">
-	 delete from selflab where lab_id=#{lab_id}	
-</delete>
-
-<select id="answerDetail" resultType="vo.InquiryVO">
-	select * from inquiry where inq_id=#{inq_id} 
-</select>
-
-<delete id="answerDelete">
-	 delete from inquiry where inq_id=#{inq_id}	
-</delete>
-
-<update id="answerProcess">
-	update inquiry set inq_state='2' where inq_id=#{inq_id}
-</update>
-
-
-<update id="answerUpdate">
-	update inquiry set inq_state=#{inq_state} where inq_id=#{inq_id}
-</update>
-
-
-
-<insert id="blogInsert">
-  	insert into selflab values((select nvl(max(lab_id), 0)+1 from selflab),
-  	#{admin_id},#{lab_cat},#{lab_title},0,sysdate,#{lab_content},#{lab_img})
-</insert>
-
-<update id="blogUpdate">
-  update selflab set lab_cat=#{lab_cat}, lab_title=#{lab_title}, lab_content=#{lab_content}, lab_img=#{lab_img} where lab_id=#{lab_id}	
-</update>
-
-<select  id="jobcaMaxID" resultType="vo.JobcategoryVO">
-	select jc_id from jobcategory where jc_id=(select nvl(max(jc_id),0)+1 from jobcategory)-1
-</select>
-
-<select  id="jobopenMaxID" resultType="vo.JobopenVO">
-	select * from jobopen where jobopen_id=(select nvl(max(jobopen_id),0)+1 from jobopen)-1
-</select>
-
-<select id="jobcategoryList" resultType="vo.JobcategoryVO">
-	select * from jobcategory where jobopen_id=#{jobopen_id}
-</select>
-
-<select id="jobqaList" resultType="vo.JobqaVO">
-	select c.jc_id, q.jobqa_q from jobcategory c, jobqa q where c.jc_id=q.jc_id and c.jobopen_id=#{jobopen_id}
-</select>
-
-
-<update id="jobopenUpdate">
-	update jobopen set jobopen_pimg=#{jobopen_pimg}, jobopen_company=#{jobopen_company}, 
-	jobopen_link=#{jobopen_link} ,jobopen_sdate=#{jobopen_sdate}, jobopen_edate=#{jobopen_edate}, 
-	jobopen_cimg=#{jobopen_cimg} where jobopen_id=#{jobopen_id}
-</update>
-
-
-<delete id="jobcatDelete">
-	 delete from jobcategory where jobopen_id=#{jobopen_id}	
-</delete>
-
-
-
+	<select id="searchCriCount" resultType="int">
+		(select count(*) from selflab where 0=0
+		<include refid="search"></include>
+	</select>
 </mapper>

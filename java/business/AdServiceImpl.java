@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import adminDAO.AdminDAO;
+import criteria.SearchCriteria;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
@@ -156,5 +157,15 @@ public class AdServiceImpl implements AdService {
 	@Override
 	public int jobcatDelete(JobopenVO vo) {
 		return dao.jobcatDelete(vo);
+	}
+	
+	@Override
+	public int searchCriCount(SearchCriteria cri) {
+		return dao.searchCriCount(cri);
+	}
+	
+	@Override
+	public ArrayList<SelflabVO> searchCriList(SearchCriteria cri) {
+		return dao.searchCriList(cri);
 	}
 } // class

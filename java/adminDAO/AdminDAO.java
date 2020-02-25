@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import criteria.SearchCriteria;
 import vo.AdminVO;
 import vo.EmemberVO;
 import vo.InquiryVO;
@@ -137,6 +138,11 @@ public class AdminDAO {
 	public int jobcatDelete(JobopenVO vo) {
 		return dao.delete(NS + "jobcatDelete",vo);
 	} // 
-	
+	public ArrayList<SelflabVO> searchCriList(SearchCriteria cri){
+		return (ArrayList)dao.selectList(NS + "searchCriList",cri);
+	}
+	public int searchCriCount(SearchCriteria cri) {
+		return dao.selectOne(NS+"searchCriCount",cri);
+	}
 	
 }// end EmemberDAO
