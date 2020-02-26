@@ -12,8 +12,27 @@
 var cnt =0;
 function attachAddr(){
 	  const str = `<li id=conadd`+cnt+`>
-	                조건 <input type="text" name="jc_div" id="jc_div" maxlength="80" />
-	                직무 <input type="text" name="jc_part" id="jc_part" maxlength="900" />
+	                조건  <select name="jc_div" id="jc_div">
+	                <option value="">--</option>
+	            	<option value="1">신입</option>
+	            	<option value="2">경력</option>
+	            	<option value="3">인턴</option>
+	            	<option value="4">계약직</option>
+	            </select>
+	                직무      <select name="jc_part" id="jc_part">
+	                	<option value="">--</option>
+		            	<option value="1">경영∙사무</option>
+		            	<option value="2">마케팅∙무역∙유통</option>
+		            	<option value="3">영업∙고객상담</option>
+		            	<option value="4">IT∙인터넷</option>
+		            	<option value="5">연구개발∙설계</option>
+		            	<option value="6">생산∙제조</option>
+		            	<option value="7">전문∙특수직</option>
+		            	<option value="8">디자인</option>
+		            	<option value="9">미디어</option>
+		            	<option value="10">서비스</option>
+		            	<option value="11">건설</option>
+		            </select> 
 	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd`+cnt+`')">삭제</a>
 	        <div id=selfq`+cnt+`>
 	        

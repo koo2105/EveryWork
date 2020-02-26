@@ -26,7 +26,47 @@
 		});
 	};
 	
-	$(function() {
+	function blogSearch() {
+		var page=1;
+		var perPageNum=5;
+		$.ajax({
+			type : 'post',
+			data : {
+				page : page,
+				perPageNum : perPageNum,
+				searchType : $("select option:selected").val(),
+				keyword : $('#keywordInput').val(),
+			},
+			url : 'ajlist',
+			success : function(result) {
+				$('#adminArea').html('');
+				$('#adminArea').html(result);
+			}
+
+		});
+	};
+	
+	function blogpaging(idx){
+		var page=idx;
+		var perPageNum=5;
+		$.ajax({
+			type : 'post',
+			data : {
+				page : page,
+				perPageNum : perPageNum,
+				searchType : $("select option:selected").val(),
+				keyword : $('#keywordInput').val(),
+			},
+			url : 'ajlist',
+			success : function(result) {
+				$('#adminArea').html('');
+				$('#adminArea').html(result);
+			}
+
+		});
+	};
+	
+/* 	$(function() {
 		$('#searchBtn').on(
 				"click",
 				function(event) {
@@ -34,8 +74,11 @@
 							+ '${pageMaker.makeQuery(1)}' + "&searchType="
 							+ $("select option:selected").val() + "&keyword="
 							+ $('#keywordInput').val();
+				
 				}); // on
-	}); // ready
+	}); // ready */
+	
+	
 </script>
 <style>
 .result {
@@ -78,7 +121,7 @@
 			<div class="">
 				<input type="text" name='keyword' id="keywordInput" class=" "
 					value='${pageMaker.cri.keyword}'> &nbsp;&nbsp;
-				<a class="button" id="searchBtn">Search</a>
+				<a class="button" onclick="blogSearch()">Search</a>
 			</div>
 		</div>
 	</div>
@@ -159,11 +202,11 @@
 				var="idx">
 				<c:choose>
 					<c:when test="${pageMaker.cri.page==idx}">
-						<a href="ajlist${pageMaker.makeSearch(idx)}"
+						<a href="#" onclick="blogpaging('${idx}')"
 							style="background-color: Crimson; border-color: Crimson;">${idx}</a>
 					</c:when>
 					<c:otherwise>
-						<a href="ajlist${pageMaker.makeSearch(idx)}"
+						<a href="#" onclick="blogpaging('${idx}')"
 							style="color: black;">${idx}</a>
 					</c:otherwise>
 				</c:choose>

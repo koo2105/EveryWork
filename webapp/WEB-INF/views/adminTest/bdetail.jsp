@@ -28,7 +28,25 @@
 <tr height="40"><td class="admin-title">Content</td>
 	<td>
 	<c:forEach var="cl" items="${clist}" varStatus="clvs">
-	조건: ${cl.jc_div}&nbsp;&nbsp;직무: ${cl.jc_part}<br>
+	조건: 
+	<c:out value="${cl.jc_div eq '1'?'신입':''}"/>
+	<c:out value="${cl.jc_div eq '2'?'경력':''}"/>
+	<c:out value="${cl.jc_div eq '3'?'인턴':''}"/>
+	<c:out value="${cl.jc_div eq '4'?'계약직':''}"/>
+	&nbsp;&nbsp;
+	직무: 
+	<c:out value="${cl.jc_part eq '1'?'경영∙사무':''}"/>
+	<c:out value="${cl.jc_part eq '2'?'마케팅∙무역∙유통':''}"/>
+	<c:out value="${cl.jc_part eq '3'?'영업∙고객상담':''}"/>
+	<c:out value="${cl.jc_part eq '4'?'IT∙인터넷':''}"/>
+	<c:out value="${cl.jc_part eq '5'?'연구개발∙설계':''}"/>
+	<c:out value="${cl.jc_part eq '6'?'생산∙제조':''}"/>
+	<c:out value="${cl.jc_part eq '7'?'전문∙특수직':''}"/>
+	<c:out value="${cl.jc_part eq '8'?'디자인':''}"/>
+	<c:out value="${cl.jc_part eq '9'?'미디어':''}"/>
+	<c:out value="${cl.jc_part eq '10'?'서비스':''}"/>
+	<c:out value="${cl.jc_part eq '11'?'건설':''}"/>
+	<br>
 		<c:forEach var="qal" items="${qalist}" varStatus="qavs">
 			<c:if test="${cl.jc_id==qal.jc_id}">
 			문항: ${qal.jobqa_q}<br>

@@ -103,7 +103,7 @@ public class AdminController {
 			String file1, file2;
 			if (!jobopen_pimgf.isEmpty()) {
 
-				file1 = "C:/NamChul/eclipse-workspace/EveryWork/src/main/webapp/resources/uploadImage/"
+				file1 = "D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"
 						+ jobopen_pimgf.getOriginalFilename();
 				jobopen_pimgf.transferTo(new File(file1));
 				file2 = "resources/uploadImage/" + jobopen_pimgf.getOriginalFilename();
@@ -115,7 +115,7 @@ public class AdminController {
 			String file3, file4;
 			if (!jobopen_cimgf.isEmpty()) {
 
-				file3 = "C:/NamChul/eclipse-workspace/EveryWork/src/main/webapp/resources/uploadImage/"
+				file3 = "D:/Mywork/EveryWork/src/main/webapp/resources/uploadImage/"
 						+ jobopen_cimgf.getOriginalFilename();
 				jobopen_cimgf.transferTo(new File(file3));
 				file4 = "resources/uploadImage/" + jobopen_cimgf.getOriginalFilename();

@@ -31,8 +31,27 @@ function inCheck() {
 var cnt =50;
 function attachAddr(){
 	  const str = `<li id=conadd`+cnt+`>
-	                조건 <input type="text" name="jc_div" id="jc_div" maxlength="80" />
-	                직무 <input type="text" name="jc_part" id="jc_part" maxlength="900" />
+	                조건 <select name="jc_div" id="jc_div">
+	                <option value="">--</option>
+	            	<option value="1">신입</option>
+	            	<option value="2">경력</option>
+	            	<option value="3">인턴</option>
+	            	<option value="4">계약직</option>
+	            </select>
+	                직무 <select name="jc_part" id="jc_part">
+                	<option value="">--</option>
+	            	<option value="1">경영∙사무</option>
+	            	<option value="2">마케팅∙무역∙유통</option>
+	            	<option value="3">영업∙고객상담</option>
+	            	<option value="4">IT∙인터넷</option>
+	            	<option value="5">연구개발∙설계</option>
+	            	<option value="6">생산∙제조</option>
+	            	<option value="7">전문∙특수직</option>
+	            	<option value="8">디자인</option>
+	            	<option value="9">미디어</option>
+	            	<option value="10">서비스</option>
+	            	<option value="11">건설</option>
+	            </select>
 	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd`+cnt+`')">삭제</a>
 	        <div id=selfq`+cnt+`>
 	        
@@ -112,8 +131,44 @@ $(function (){
       <c:set var="qaindex" value="0"></c:set>
       <c:forEach var="cl" items="${clist}" varStatus="clvs">
 			<li id="conadd${clvs.index}">
-	                조건 <input type="text" name="jc_div" id="jc_div" value="${cl.jc_div}" maxlength="80">
-	                직무 <input type="text" name="jc_part" id="jc_part" value="${cl.jc_part}" maxlength="900">
+	                조건 <select name="jc_div" id="jc_div">
+	                <option value=""
+	                <c:out value="${cl.jc_div == null?'selected':''}"/>>--</option>
+	            	<option value="1"
+	            	<c:out value="${cl.jc_div eq '1'?'selected':''}"/>>신입</option>
+	            	<option value="2"
+	            	<c:out value="${cl.jc_div eq '2'?'selected':''}"/>>경력</option>
+	            	<option value="3"
+	            	<c:out value="${cl.jc_div eq '3'?'selected':''}"/>>인턴</option>
+	            	<option value="4"
+	            	<c:out value="${cl.jc_div eq '4'?'selected':''}"/>>계약직</option>
+	            </select>
+	                직무 	<select name="jc_part" id="jc_part">
+	                	<option value=""
+	                	 <c:out value="${cl.jc_part == null?'selected':''}"/>>--</option>
+		            	<option value="1"
+		            	<c:out value="${cl.jc_part eq '1'?'selected':''}"/>>경영∙사무</option>
+		            	<option value="2"
+		            	<c:out value="${cl.jc_part eq '2'?'selected':''}"/>>마케팅∙무역∙유통</option>
+		            	<option value="3"
+		            	<c:out value="${cl.jc_part eq '3'?'selected':''}"/>>영업∙고객상담</option>
+		            	<option value="4"
+		            	<c:out value="${cl.jc_part eq '4'?'selected':''}"/>>IT∙인터넷</option>
+		            	<option value="5"
+		            	<c:out value="${cl.jc_part eq '5'?'selected':''}"/>>연구개발∙설계</option>
+		            	<option value="6"
+		            	<c:out value="${cl.jc_part eq '6'?'selected':''}"/>>생산∙제조</option>
+		            	<option value="7"
+		            	<c:out value="${cl.jc_part eq '7'?'selected':''}"/>>전문∙특수직</option>
+		            	<option value="8"
+		            	<c:out value="${cl.jc_part eq '8'?'selected':''}"/>>디자인</option>
+		            	<option value="9"
+		            	<c:out value="${cl.jc_part eq '9'?'selected':''}"/>>미디어</option>
+		            	<option value="10"
+		            	<c:out value="${cl.jc_part eq '10'?'selected':''}"/>>서비스</option>
+		            	<option value="11"
+		            	<c:out value="${cl.jc_part eq '11'?'selected':''}"/>>건설</option>
+		            </select>
 	        <a href="#delete" class="plus-button" onclick="attachdelete('conadd${clvs.index}')">삭제</a>
 	       
 		       

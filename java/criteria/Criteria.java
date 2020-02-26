@@ -10,7 +10,7 @@ public class Criteria {
 // 생성자로 초기화
 	public Criteria(){
 		this.page = 1;  
-		this.perPageNum = 3; 
+		this.perPageNum = 5; 
 	}
 	
 	public void setSnoEno(){
