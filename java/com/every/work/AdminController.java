@@ -229,6 +229,7 @@ public class AdminController {
 	
 	@RequestMapping(value = "/answerDetail")
 	public ModelAndView answerDetail(ModelAndView mv,InquiryVO vo) {
+		
 		vo=service.answerDetail(vo);
 		if("2".equals(vo.getInq_state())) {
 			service.answerProcess(vo);

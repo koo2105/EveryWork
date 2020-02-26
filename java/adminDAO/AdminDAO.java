@@ -82,6 +82,7 @@ public class AdminDAO {
 	} // binfoDelete()
 	
 	public InquiryVO answerDetail(InquiryVO vo) {
+		dao.update(NS + "answerCnt", vo);
 		return dao.selectOne(NS + "answerDetail",vo);
 	} // answerDetail()
 	

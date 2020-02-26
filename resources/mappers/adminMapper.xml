@@ -90,6 +90,10 @@
 		update inquiry set inq_state=#{inq_state} where inq_id=#{inq_id}
 	</update>
 
+	<update id="answerCnt">
+		update inquiry set inq_count=((select inq_count from inquiry where inq_id=#{inq_id})+1) where inq_id=#{inq_id}
+	</update>
+	
 
 
 	<insert id="blogInsert">
