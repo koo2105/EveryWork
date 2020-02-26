@@ -22,13 +22,13 @@ public class JobopenController {
 	@Autowired
 	RService service2;
 	
+	
 	@RequestMapping(value = "/jobopenDetail")
 	public ModelAndView jobopenDetail(ModelAndView mv,JobopenVO vo) {
 		vo=service.jobopenDetail(vo);
 		mv.addObject("jDetail", vo);
 		
 		ArrayList<JobcategoryVO> list = service.jobcategorySelectList(vo);
-		System.out.println(list);
 		mv.addObject("JobcaList", list);
 		
 		mv.setViewName("jobOpening/jobDetail");
@@ -51,7 +51,11 @@ public class JobopenController {
 		return mv;
 	}// jobopenDetail
 	
-	
+	@RequestMapping(value = "/jobMain")
+	public ModelAndView jobMain(ModelAndView mv) {
+		mv.setViewName("jobOpening/jobMain");
+		return mv;
+	}
 	
 	
 	

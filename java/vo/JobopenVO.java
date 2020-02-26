@@ -17,10 +17,9 @@ public class JobopenVO {
 	private MultipartFile jobopen_cimgf;
 	private String jobopen_count;
 	private long endDday;
+	private String calendarDate;
 	private ArrayList<String> jc_div;
 	private ArrayList<String> jc_part;
-	
-	
 	public int getJobopen_id() {
 		return jobopen_id;
 	}
@@ -93,6 +92,12 @@ public class JobopenVO {
 	public void setEndDday(long endDday) {
 		this.endDday = endDday;
 	}
+	public String getCalendarDate() {
+		return calendarDate;
+	}
+	public void setCalendarDate(String calendarDate) {
+		this.calendarDate = calendarDate;
+	}
 	public ArrayList<String> getJc_div() {
 		return jc_div;
 	}
@@ -111,9 +116,9 @@ public class JobopenVO {
 				+ ", jobopen_pimgf=" + jobopen_pimgf + ", jobopen_company=" + jobopen_company + ", jobopen_link="
 				+ jobopen_link + ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate=" + jobopen_edate
 				+ ", jobopen_cimg=" + jobopen_cimg + ", jobopen_cimgf=" + jobopen_cimgf + ", jobopen_count="
-				+ jobopen_count + ", endDday=" + endDday + ", jc_div=" + jc_div + ", jc_part=" + jc_part + "]";
+				+ jobopen_count + ", endDday=" + endDday + ", calendarDate=" + calendarDate + ", jc_div=" + jc_div
+				+ ", jc_part=" + jc_part + "]";
 	}
-	
 	
 	
 	

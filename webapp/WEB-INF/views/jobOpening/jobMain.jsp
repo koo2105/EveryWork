@@ -1,5 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@page import="java.util.Date"%>
 <html>
 <head>
 <title>EveryWork</title>
@@ -364,12 +366,14 @@
 						<!-- end ngRepeat: dayname in daynames -->
 					
 					</div>
+					
 					<div class="top-calendar-week">
-
+					<c:forEach items="">
 						<!-- ngRepeat: i in week_arr -->
 						<div class="calendar-cell ng-scope" >
-							<div class="day-label day-0" >날짜  foreach</div>
+							<div class="day-label day-0" >날짜</div>
 						</div>
+						</c:forEach>
 						<!-- end ngRepeat: i in week_arr -->
 					</div>
 				</div>

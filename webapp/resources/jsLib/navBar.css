@@ -5,8 +5,7 @@
    body{
       margin: 0 auto; /* margin: »óÇÏ(0) ÁÂ¿ì(auto) => Áß¾ÓÁ¤·Ä */
       width: 1920px;
-      padding-top: 45px;
-   }
+      padding-top: 45px;}
    
    .nav-container{
    /* display:  flex; */
@@ -93,15 +92,15 @@
 	  
 	  }
 	  
-	  .top-nav-bar .tab_right .tab_email .dropdown-menu {
+	.top-nav-bar .tab_right .tab_email .dropdown-menu {
     right: -20px !important;
     left: auto !important;
-}
+	}
 	  
-	  .open>.dropdown-menu {
+	 .open>.dropdown-menu {
     display: block;
-}
-.dropdown-menu {
+	}
+	.dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;

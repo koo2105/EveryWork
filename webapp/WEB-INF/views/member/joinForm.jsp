@@ -61,46 +61,56 @@ background-color: #f0f0f0;
 
 .join{
    margin: auto;
-   width: 500px;
-   margin-bottom: 30px;
+   width: 400px;
+   
 }
 
 .join-form {
    display: block;
-    height: 50px;
-    width: 80%;
-  /* margin-top: 10px;
-   margin-bottom: 10px;
-  padding: 0 15px; */
+    height: 40px;
+    width: 100%;
     border: 1px solid #ddd;
     border-radius: 4px;
      color: #999;
-     text-align: center;
 }
 
 .join-subtitle {
    font-size : 15;
    font-weight:bold;
    text-align: left;
-   width: 400px;
-   margin-left: 5px;
-   margin-right: 5px;
+   width: 100%;
+   padding-bottom: 5px;
    padding-top: 10px;
-   padding-bottom: 10px;
 }
 
 .join-button>input {
    font-size : 15;
    font-weight:bold;
-   width: 342px;
-   margin-left: 5px;
+   /* margin-left: 5px;
    margin-right: 5px;
    padding-top: 10px;
-   padding-bottom: 10px;
-  
+   padding-bottom: 10px; */
    background-color : white;
    border: 1px solid #ddd;
    border-radius: 4px;
+   vertical-align: middle;
+}
+
+.join-button .jBtn_submit{
+	color: #777777;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 300px;
+    height :40px;
+    vertical-align: center;
+	margin-left: 50px;
+	margin-top: 20px;
+	margin-bottom: 50px;
 }
 .radio-sex{
 box-sizing: border-box;
@@ -151,7 +161,7 @@ background-color: #f0f0f0;
            <input type="checkbox" name="agree" value="마케팅" alt="마케팅" >마케팅 정보 수신 동의<br><br>
             
       	<div class="join-button">
-            <input type="submit" value="회원가입">
+            <input class="jBtn_submit" type="submit" value="회원가입" >
        	</div>
          </div>	 
    </div>

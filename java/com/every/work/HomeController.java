@@ -115,12 +115,6 @@ public class HomeController {
 		return mv;
 	}
 
-	@RequestMapping(value = "/jobMain")
-	public ModelAndView jobMain(ModelAndView mv) {
-		mv.setViewName("jobOpening/jobMain");
-		return mv;
-	}
-
 	@RequestMapping(value = "/jdetail")
 	public ModelAndView jdetail(ModelAndView mv) {
 		mv.setViewName("jobOpening/jobDetail");
