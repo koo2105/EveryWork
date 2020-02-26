@@ -875,14 +875,25 @@ margin-top:-150px;  */
     z-index: 5;
 }
 
-.employment-modal .modal-dialog .modal-content .modal-body {
+.employment-modal .modal-content .modal-body {
     padding: 35px 0px;
     padding-bottom: 50px;
 }
+
+.modal-dialog {
+	top: 40px;
+	left: 50%;
+	margin-left: -375px;
+	
+}
+
+
 .modal-body {
     position: relative;
     padding: 15px;
 }
+
+
 
 .employment-modal .modal-dialog .modal-content .modal-body .employment-information {
     margin: 0px 35px 15px;

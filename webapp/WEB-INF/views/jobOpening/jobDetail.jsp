@@ -161,8 +161,25 @@ function resumeOpen(){
 									<tbody>
 										<!-- ngRepeat: employment in employments -->
 										<tr class="ng-scope" style="">
-											<td class="division ng-binding">${jcl.jc_div}</td>
-											<td class="field ng-binding">${jcl.jc_part}</td>
+											<td class="division ng-binding">
+												<c:out value="${jcl.jc_div eq '1'?'신입':''}"/>
+												<c:out value="${jcl.jc_div eq '2'?'경력':''}"/>
+												<c:out value="${jcl.jc_div eq '3'?'인턴':''}"/>
+												<c:out value="${jcl.jc_div eq '4'?'계약직':''}"/>
+											</td>
+											<td class="field ng-binding">
+												<c:out value="${jcl.jc_part eq '1'?'경영∙사무':''}"/>
+												<c:out value="${jcl.jc_part eq '2'?'마케팅∙무역∙유통':''}"/>
+												<c:out value="${jcl.jc_part eq '3'?'영업∙고객상담':''}"/>
+												<c:out value="${jcl.jc_part eq '4'?'IT∙인터넷':''}"/>
+												<c:out value="${jcl.jc_part eq '5'?'연구개발∙설계':''}"/>
+												<c:out value="${jcl.jc_part eq '6'?'생산∙제조':''}"/>
+												<c:out value="${jcl.jc_part eq '7'?'전문∙특수직':''}"/>
+												<c:out value="${jcl.jc_part eq '8'?'디자인':''}"/>
+												<c:out value="${jcl.jc_part eq '9'?'미디어':''}"/>
+												<c:out value="${jcl.jc_part eq '10'?'서비스':''}"/>
+												<c:out value="${jcl.jc_part eq '11'?'건설':''}"/>
+											</td>
 											<td class="count"><span class="ng-binding">16</span>명 작성</td>
 											<!-- ngIf: employment.employment_resume -->
 											<td class="resume ng-scope">
