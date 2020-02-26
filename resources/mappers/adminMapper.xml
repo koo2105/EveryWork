@@ -144,28 +144,30 @@
 				and lab_content like '%' || #{keyword} || '%')
 			</when>
 			<when test="searchType=='tc'.toString()">
-				and (lab_title like '%' || #{keyword} || '%'
-				OR lab_content like '%' || #{keyword} || '%'))
+				and ( lab_title like '%' || #{keyword} || '%' 
+			    OR lab_content like '%' || #{keyword} || '%'))
 			</when>
 
 			<otherwise>)</otherwise>
 		</choose>
 	</sql>
 
-	<!-- searchCriList(일반접속자 1대1문의사항) -->
+
 	<select id="searchCriList" resultType="vo.SelflabVO">
-		(select rnum, a.lab_id, a.lab_title, a.admin_id, a.lab_cat,
-		a.lab_content, a.lab_date
-		from (
-		select ROW_NUMBER() OVER(ORDER BY lab_id desc) as rnum, lab_id, lab_title,
-		admin_id, lab_cat, lab_content, lab_date
-		from selflab) a where rnum between #{sno} and #{eno}
-		<include refid="search"></include>
-		order by lab_id desc
+
+			<![CDATA[
+		select lab_id,lab_title, 
+	 	 to_char(lab_date,'yyyy/mm/dd/ hh24:mi:ss') lab_date,admin_id,lab_cat, lab_content from 
+	 	 (select b.* , ROW_NUMBER() OVER(order by lab_id desc) rnum 
+	   		from selflab b where lab_id > 0 ]]>
+ 		<include refid="search"></include>     
+		where ( rnum between #{sno} and #{eno} ) 
 	</select>
 	
 	<select id="searchCriCount" resultType="int">
-		(select count(*) from selflab where 0=0
+			<![CDATA[  
+  		select count(lab_id) from selflab 
+  		where ( lab_id>0 ]]>
 		<include refid="search"></include>
 	</select>
 </mapper>
