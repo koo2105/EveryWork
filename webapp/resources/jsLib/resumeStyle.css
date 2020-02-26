@@ -37,8 +37,6 @@
 	padding: 10px 20px;
 	border-bottom: solid 1px #ddd;
 	margin-bottom: 0px;
-	margin-top: 70px; 
-	
 	line-height: calc(60px - 10px * 2 - 1px);
 	height: 60px;
 }

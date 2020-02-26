@@ -2,7 +2,6 @@
 
 a{
 	text-decoration: none;
-    /* color: #428bca; */
 	background: transparent;
 }
  div {
@@ -22,6 +21,7 @@ height: 100%;
 float: left;
 text-align: center; /* 디브 속 내용 가운데정렬 */ 
 box-sizing: border-box;
+
 }
 
 .mb-container {
@@ -36,14 +36,12 @@ font-size: 25px;
 }
 
 
-
 .category-title {
 	font-size: 15px;
     font-weight: bold;
     border-bottom: 2px solid #ddd;
     padding-bottom: 5px;
 	box-sizing: border-box;
-	text-align: 
 }
 .category-name{
 	font-size: 15px;
@@ -60,9 +58,11 @@ font-size: 25px;
 }
 
 .blog-index-container {
-    padding: 65px 35px;
+    /* padding: 65px 35px; */
     height: 100%;
-    overflow-y: auto;
+   /*  overflow-y: auto; */
+    padding-left: 70px;
+    padding-top: 70px;
 }
 
 

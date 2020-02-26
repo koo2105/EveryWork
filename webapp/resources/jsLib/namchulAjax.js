@@ -181,9 +181,6 @@ function pwCheck() {
 
 
 
-
-
-
 $(function(){
 	
 }); //ready

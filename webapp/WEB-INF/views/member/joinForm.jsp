@@ -54,7 +54,6 @@ background-color: #f0f0f0;
     color: #ff6813;
    font-weight: bold;
    margin-bottom : 30px;
-   margin-top : 50px;
    padding-top:30px;
    overflow: hidden;
    text-align: center;
@@ -62,21 +61,21 @@ background-color: #f0f0f0;
 
 .join{
    margin: auto;
-   width: 310px;
+   width: 500px;
    margin-bottom: 30px;
 }
 
 .join-form {
-   width: 400px;
-    height: 50px;
-   margin-bottom: 10px;
    display: block;
-    width: 100%;
-    margin: 10px 0;
-    padding: 0 15px;
+    height: 50px;
+    width: 80%;
+  /* margin-top: 10px;
+   margin-bottom: 10px;
+  padding: 0 15px; */
     border: 1px solid #ddd;
     border-radius: 4px;
      color: #999;
+     text-align: center;
 }
 
 .join-subtitle {
@@ -146,8 +145,8 @@ background-color: #f0f0f0;
            <input class="radio-sex" type="radio" name="emem_gender" value="남" alt="남자" checked >남자&nbsp;&nbsp;
            <input type="radio" name="emem_gender" value="여" alt="여자" >여자&nbsp;&nbsp;<br><br><br>
            
-           <div class="join-subtitle">모두 동의합니다<input class="checkallRaido" type="checkbox"></div>
-           <input type="checkbox" name="agree" value="이용" alt="이용" checked >이용약관 동의<br>
+           <div class="join-subtitle">모두 동의합니다<input id="checkallRaido" type="checkbox"></div>
+           <input type="checkbox" name="agree" value="이용" alt="이용">이용약관 동의<br>
            <input type="checkbox" name="agree" value="개인" alt="개인" >개인정보 취급방침 동의<br>
            <input type="checkbox" name="agree" value="마케팅" alt="마케팅" >마케팅 정보 수신 동의<br><br>
             

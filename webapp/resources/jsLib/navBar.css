@@ -5,7 +5,7 @@
    body{
       margin: 0 auto; /* margin: »óÇÏ(0) ÁÂ¿ì(auto) => Áß¾ÓÁ¤·Ä */
       width: 1920px;
-     /*  padding-top: 45px; */
+      padding-top: 45px;
    }
    
    .nav-container{
@@ -52,7 +52,7 @@
    }
    
    #login-div{
-   z-index: 1000;
+    z-index: 1000;
     position: absolute;
     top: 55px;
     right: 50px;
@@ -61,6 +61,8 @@
     background: #fafafa;
     padding: 15px;
     width: 400px;
+    display: none;
+    
       
    }
    #mInfo-div{
@@ -187,16 +189,16 @@ body {
 .top-nav-bar .logo .tab-logo, .top-nav-bar .sign .tab-logo {
     height: 25px;
 }
-a {
+.top-nav-bar a {
     color: #428bca;
     text-decoration: none;
 }
-a {
+.top-nav-bar a {
     background: transparent;
 }
 
 }
-img {
+.top-nav-bar img {
     vertical-align: middle;
 }
 
@@ -323,7 +325,7 @@ img {
     border-radius: 4px;
 }
 
-input, button, select, textarea {
+.top-nav-bar input, button, select, textarea {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
