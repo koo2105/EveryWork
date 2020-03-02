@@ -74,7 +74,7 @@ jdetail
 .jdetail-detail{
 	background-color: white;
 	width: 750px;
-	height: 700px; 나중에 빼기
+	height: 700px; �굹以묒뿉 鍮쇨린
 	position: absolute;
 	left: 50%;
 	margin-left: -325px;
@@ -400,7 +400,7 @@ float: left;
 .calendar-container .calendar-right-head {
     top: 0px;
     left: 180px;
-    height: 90px;
+    height: 70px;
     position: absolute;
     background: #f0f0f0;
     width: calc(100% - 180px);
@@ -1436,7 +1436,7 @@ Buttons
 	}
 
 
-	Our default prev/next buttons use HTML entities like ‹ › « »
+	Our default prev/next buttons use HTML entities like �� �� 짬 쨩
 	and we'll try to make them look good cross-browser.
 
 
@@ -1448,7 +1448,7 @@ Buttons
 	}
 
 .fc-button-prev .fc-text-arrow,
-.fc-button-next .fc-text-arrow { for ‹ ›
+.fc-button-next .fc-text-arrow { for �� ��
 	font-weight: bold;
 	}
 	
@@ -1951,13 +1951,6 @@ for vertical events
 	}
 	
 	
-
-
-
-
-
-
-
 
 
 

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import calendar.JobCalendar;
 import jobopenDAO.JobopenDAO;
 import vo.JobcategoryVO;
 import vo.JobopenVO;
@@ -49,6 +50,10 @@ public class JoServiceImpl implements JoService {
 		
 		return dao.writeResumeBtn(vo);
 	}
-
+	
+	@Override
+	public ArrayList<JobopenVO> jobopenMonList(JobCalendar jc) {
+		return dao.jobopenMonList(jc);
+	}
 
 }

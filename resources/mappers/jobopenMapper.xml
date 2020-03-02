@@ -33,6 +33,10 @@
 		select * from jobqa where jc_id=#{jc_id} 
 </select>
 
-
+<select id="jobopenMonList" resultType="vo.JobopenVO">
+		
+		<![CDATA[ SELECT * FROM jobopen WHERE jobopen_sdate >= TO_DATE(#{sdateCheck}) AND jobopen_sdate <= TO_DATE(#{edateCheck})
+or jobopen_edate >= TO_DATE(#{sdateCheck}) AND jobopen_edate <= TO_DATE(#{edateCheck})]]>
+</select>
 
 	</mapper>

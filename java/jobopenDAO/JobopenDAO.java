@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import vo.JobcategoryVO;
 import vo.JobopenVO;
 import vo.JobqaVO;
+import calendar.JobCalendar;
 
 
 @Repository
@@ -44,7 +45,9 @@ public class JobopenDAO {
 		return (ArrayList) dao.selectList(NS + "writeResumeBtn",vo);
 	} // writeResumeBtn()
 	
-	
+	public ArrayList<JobopenVO> jobopenMonList(JobCalendar jc) {
+		return (ArrayList) dao.selectList(NS + "jobopenMonList",jc);
+	} //jobopenMonList()
 	
 	
 }//end EmemberDAO 
