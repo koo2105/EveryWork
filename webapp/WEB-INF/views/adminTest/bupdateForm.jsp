@@ -209,9 +209,8 @@ $(function (){
 		
 				
 <tr><td></td><td>
-<input type="button" id="axjobUpdate" value="수정!">
-<input type="submit" value="수정" onclick="return inCheck()">
-                 <input type="reset" value="취소"></td>	
+<input type="button" id="axjobUpdate" value="수정">
+<input type="reset" value="취소"></td>	
 </table>
 </form>
 <br>
