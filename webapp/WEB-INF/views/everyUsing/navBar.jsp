@@ -63,7 +63,7 @@
 	<div class="top-nav-bar">
 		<div class="logo vertical-center">
 			<a href="home"> <img class="tab-logo"
-				src="https://jasoseol.com/assets/main/logo-09e69cf256e09481f42047f3f655395c3cfb1669f81be7172f104e86e7b49a7c.png">
+				src="./resources/img/everyworkLogo.png">
 			</a>
 		</div>
 		<!-- ngIf: showBrowserAlert -->
