@@ -311,14 +311,7 @@
 				<div class="nav-search-bar">
 
 
-					<div class="calendar-left-toggle">
-						<!-- ngIf: !showLeftCalendar -->
-						<!-- ngIf: showLeftCalendar -->
-						<img
-							src="/assets/main/calendar/calendar_left_close-6a77507cd9a7d1e704c042d095055bfd61273f15de9b486e74b5c72c4940cc01.png"
-							class="ng-scope">
-						<!-- end ngIf: showLeftCalendar -->
-					</div>
+	
 					<div class="calendar-nav">
 						<a href="jobMain?month=${jc.month-1}&year=${jc.year}">&lt;</a><span
 							class="prev">&nbsp;</span> <span class="current ng-binding">${jc.year}.${jc.month}</span>
@@ -333,8 +326,7 @@
 					</div>
 
 
-					<div class="add-schedule ng-hide">일정 추가</div>
-					<!-- 내채용공고 -->
+					
 
 				</div>
 				<div class="dayname-container">
@@ -437,7 +429,7 @@
 													<c:if test="${(fn:substring(jl.jobopen_sdate,8,10))==i || (fn:substring(jl.jobopen_edate,8,10))==i}">
 													<div class="company">
 														<c:if test="${(fn:substring(jl.jobopen_sdate,8,10))==i}">
-															<div class="calendar-label end">시</div>
+															<div class="calendar-label start">시</div>
 														</c:if>
 														<c:if test="${(fn:substring(jl.jobopen_edate,8,10))==i}">
 															<div class="calendar-label end">끝</div>
