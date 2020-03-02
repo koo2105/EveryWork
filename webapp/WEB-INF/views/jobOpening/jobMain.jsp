@@ -320,10 +320,10 @@
 						<!-- end ngIf: showLeftCalendar -->
 					</div>
 					<div class="calendar-nav">
-						<a href="jobMain?month=${jc.month-1}&year=${jc.year}">&lt;2</a><span
-							class="prev">&lt;</span> <span class="current ng-binding">${jc.year}.${jc.month}</span>
-						<span class="next">&gt;</span><a
-							href="jobMain?month=${jc.month+1}&year=${jc.year}">&gt;2</a>
+						<a href="jobMain?month=${jc.month-1}&year=${jc.year}">&lt;</a><span
+							class="prev">&nbsp;</span> <span class="current ng-binding">${jc.year}.${jc.month}</span>
+						<span class="next">&nbsp;</span><a
+							href="jobMain?month=${jc.month+1}&year=${jc.year}">&gt;</a>
 					</div>
 
 					<div class="search">
@@ -397,7 +397,7 @@
 						<div>
 							<c:forEach var="j" begin="1" end="${jc.start-1}">
 								<c:if test="${newLine==7}">
-									<br>
+									<div></div>
 									<c:set var="newLine" value="0" />
 								</c:if>
 								<div class="calendar-cell ng-scope">
@@ -422,7 +422,7 @@
 							</c:forEach>
 							<c:forEach var="i" begin="1" end="${jc.endDay}">
 								<c:if test="${newLine==7}">
-									<br>
+										<div></div>
 									<c:set var="newLine" value="0" />
 								</c:if>
 								<div class="calendar-cell ng-scope">

@@ -15,7 +15,7 @@
 
 <!-- banner -->
 <div class="main-banner">
- <a href="http://www.naver.com"><img src="./resources/img/test.jpg"/></a>
+ <a href="http://www.naver.com"><img src="./resources/img/main_banner.png"/></a>
  
 </div> <!-- end main-banner -->
 <%-- 	

@@ -152,13 +152,12 @@ float: left;
 } */
 
 .calendar-container {
-    position: absolute;
+    position: absolute; 
     width: 100%;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: auto; 
    
 }
-
 
 .calendar-container .recruit-top {
     height: 60px;
@@ -197,7 +196,6 @@ float: left;
 	align-items: center;
     padding-left: 20px;
     float: left;
-   
 }
 .calendar-container .recruit-top .calendar-switch {
     text-align: center;
@@ -269,7 +267,7 @@ float: left;
     background: #fff;
     z-index: 10;
     border: 1px solid #ddd;
-    left: 50px;
+/*     left: 50px;*/
     top: 50px;
     display: none;
 }
@@ -431,7 +429,7 @@ float: left;
     font-size: 21px;
 }
 
-.calendar-container .calendar-right-head .nav-search-bar .calendar-nav .prev, .calendar-container .calendar-right-head .nav-search-bar .calendar-nav .next {
+.calendar-container .calendar-right-head .nav-search-bar .calendar-nav .prev, .calendar-container .calendar-right-head .nav-search-bar .calendar-nav .next,.calendar-nav>a {
     color: #999;
     cursor: pointer;
 }
@@ -480,6 +478,7 @@ float: left;
 
 .calendar-container .calendar-right-head .dayname-container {
     position: absolute;
+    top: 50px;
     bottom: 20px;
     height: 21px;
     width: 100%;
@@ -488,7 +487,7 @@ float: left;
 .calendar-container .calendar-right-head .dayname-container .calendar-cell {
     border-right: 1px solid #f0f0f0;
     border-bottom: 1px solid #f0f0f0;
-    width: 14%;
+    width: 240px;
     text-align: center;
     float: left;
 }
@@ -506,6 +505,13 @@ float: left;
     bottom: 0px;
     width: 100%;
     height: 21px;
+}
+
+.calendar-container .calendar-right-head .top-calendar-week:nth-child(8),
+.calendar-container .calendar-right-head .top-calendar-week:nth-child(15), 
+.calendar-container .calendar-right-head .top-calendar-week:nth-child(22),
+.calendar-container .calendar-right-head .top-calendar-week:nth-child(29){
+ display:block; 
 }
 
 
@@ -547,7 +553,8 @@ float: left;
 .calendar-container .calendar-right .body .calendar-cell {
     border-right: 1px solid #f0f0f0;
     border-bottom: 1px solid #f0f0f0;
-    width: 14.28571%;
+    width: 240px;
+    height:180px;
     text-align: center;
 }
 
