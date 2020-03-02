@@ -5,8 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>** Everywork mInfo **</title>
+<link rel="stylesheet" type="text/css" href="resources/jsLib/navBar.css">
 <style>
- div {
+/*  div {
    display: block;
 } 
 
@@ -57,7 +58,7 @@
 box-sizing: border-box;
 }
 
-
+ */
 </style>
 
 </head>

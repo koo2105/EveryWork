@@ -91,6 +91,13 @@
 						<div class="sign-button sign-up piwik-sign-up"
 							onclick="location.href='joinForm'">회원가입</div>
 					</c:if>
+					
+					<c:if test="${loginID!=null}">
+				<div class="dropdown">
+					<a href="#" onclick="mInfo()"><img
+						src="./resources/img/login.png" height="25px"></a>
+				</div>
+			</c:if>
 
 				</div>
 				
