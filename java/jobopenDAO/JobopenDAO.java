@@ -34,8 +34,9 @@ public class JobopenDAO {
 	} // jobopenThisWeek()
 
 	public JobopenVO jobopenDetail(JobopenVO vo) {
+		dao.update(NS + "jobopenCnt",vo);
 		return dao.selectOne(NS + "jobopenDetail",vo);
-	} // selectList()
+	} // 
 	
 	public ArrayList<JobcategoryVO> jobcategorySelectList(JobopenVO vo) {
 		return (ArrayList) dao.selectList(NS + "jobcategorySelectList",vo);
@@ -49,5 +50,5 @@ public class JobopenDAO {
 		return (ArrayList) dao.selectList(NS + "jobopenMonList",jc);
 	} //jobopenMonList()
 	
-	
+
 }//end EmemberDAO 

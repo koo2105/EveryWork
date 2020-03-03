@@ -55,5 +55,7 @@ public class JoServiceImpl implements JoService {
 	public ArrayList<JobopenVO> jobopenMonList(JobCalendar jc) {
 		return dao.jobopenMonList(jc);
 	}
+	
+
 
 }

@@ -39,4 +39,8 @@
 or jobopen_edate >= TO_DATE(#{sdateCheck}) AND jobopen_edate <= TO_DATE(#{edateCheck})]]>
 </select>
 
+<update id="jobopenCnt">
+	update jobopen set jobopen_count=((select jobopen_count from jobopen where jobopen_id=#{jobopen_id})+1) where jobopen_id=#{jobopen_id}
+</update>
+
 	</mapper>
