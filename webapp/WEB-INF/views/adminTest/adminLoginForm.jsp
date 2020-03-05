@@ -5,10 +5,51 @@
 <head>
 <meta charset="UTF-8">
 <title>** Everywork login **</title>
+<script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<script src="resources/jsLib/inCheck.js"></script>
+<script>
+// 1) 전역변수정의
+	var iCheck=false;
+	var pCheck=false;
+// 2) 각 InputTag의 focusout 이벤트핸들러	
+$(function() {
+	$('#id').focus();
+	$('#id').focusout(function() {
+	 	iCheck=idCheck();
+		//if () iCheck=true;
+		//else iCheck=false;
+	}); // id_focusout
+	
+	$('#password').focusout(function() {
+		pCheck=pwCheck();
+	}); // password_focusout
+}); // ready
+
+//3) submit 처리
+function inCheck() {
+	
+	if (iCheck==true && pCheck==true) {
+		return true;
+	}else {
+		if (iCheck==false) {iCheck=idCheck() };
+		if (pCheck==false) {pCheck=pwCheck() };
+		//return false;
+	};
+} //inCheck 
+
+</script>
+
+
 <style>
  div {
    display: block;
 } 
+
+.eMessage {
+	color: red;
+	font-style: italic;
+	font-size: x-small;
+}
 
 .login-title {
    font-size: 30px;
@@ -69,9 +110,12 @@ box-sizing: border-box;
       <div class="login">
          <div class="login-title">로그인</div>
          <div class="login-subtitle">아이디</div>
-         <input class="login-form" id="admin_id" type="text" name="admin_id">
+         <input class="login-form" id="id" type="text" name="admin_id">
+        	 <span id="iMessage" class="eMessage"></span>
          <div class="login-subtitle">패스워드(비밀번호)</div>
-         <input class="login-form" id="admin_password" type="password" name="admin_password">
+         <input class="login-form" id="password" type="password" name="admin_password">
+      		<span id="pMessage" class="eMessage"></span>
+      	
       	<div class="login-button">
             <input type="submit" value="로그인 ">
        	</div>

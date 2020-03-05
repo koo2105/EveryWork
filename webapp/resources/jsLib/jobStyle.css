@@ -267,9 +267,8 @@ float: left;
     background: #fff;
     z-index: 10;
     border: 1px solid #ddd;
-/*     left: 50px;*/
     top: 50px;
-    display: none;
+	display: none;
 }
 
 
@@ -280,10 +279,12 @@ float: left;
 }
 
 .calendar-container .recruit-top .calendar-option .calendar-option-header {
-    height: 20px;
+ 
+    height: 50px;
     border-bottom: 1px solid #ddd;
     padding: 16px 0;
     background: #fafafa;
+
 }
 
 .calendar-container .recruit-top .calendar-option .calendar-option-header .description {

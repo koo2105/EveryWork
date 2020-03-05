@@ -7,6 +7,7 @@
 <head>
 <title>채용공고</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/jobStyle.css">
+<link rel="stylesheet" type="text/css" href="resources/jsLib/homeStyle.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
@@ -142,7 +143,7 @@
 								<div class="filter-header">
 									<label> <input type="checkbox"
 										class="filter-header-left ng-pristine ng-untouched ng-valid"
-										id="checkall1">
+										id="checkall1" checked="checked">
 										<div class="filter-head-right">
 											<span class="ng-binding">채용 형태</span>
 										</div>
@@ -151,25 +152,25 @@
 								<div class="body">
 									<!-- ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk1"
+										type="checkbox" name="chk1" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">신입</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk1"
+										type="checkbox" name="chk1" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">경력</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk1"
+										type="checkbox" name="chk1" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">인턴</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk1"
+										type="checkbox" name="chk1" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">계약직</span>
 									</label>
@@ -184,7 +185,7 @@
 								<div class="filter-header">
 									<label> <input type="checkbox"
 										class="filter-header-left ng-pristine ng-untouched ng-valid"
-										id="checkall2">
+										id="checkall2" checked="checked">
 										<div class="filter-head-right">
 											<span class="ng-binding">기간 설정</span>
 										</div>
@@ -193,23 +194,18 @@
 								<div class="body">
 									<!-- ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk2"
+										type="checkbox" name="chk2" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">시작</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk2"
+										type="checkbox" name="chk2" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">종료</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
-									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk2"
-										class="option-checkbox ng-pristine ng-untouched ng-valid">
-										<span class="ng-binding">수시채용</span>
-									</label>
-									<!-- end ngRepeat: index in option.index_arr -->
+								
 								</div>
 								<div style="clear: both"></div>
 							</div>
@@ -220,7 +216,7 @@
 								<div class="filter-header">
 									<label> <input type="checkbox"
 										class="filter-header-left ng-pristine ng-untouched ng-valid "
-										id="checkall3">
+										id="checkall3" checked="checked">
 										<div class="filter-head-right">
 											<span class="ng-binding">직무 선택</span>
 										</div>
@@ -229,67 +225,67 @@
 								<div class="body">
 									<!-- ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">경영∙사무</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">마케팅∙무역∙유통</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">영업∙고객상담</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">IT∙인터넷</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">연구개발∙설계</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">생산∙제조</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">전문∙특수직</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">디자인</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">미디어</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">서비스</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
 									<label class="checkbox-container ng-scope"> <input
-										type="checkbox" name="chk3"
+										type="checkbox" name="chk3" checked="checked"
 										class="option-checkbox ng-pristine ng-untouched ng-valid">
 										<span class="ng-binding">건설</span>
 									</label>
