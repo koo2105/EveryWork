@@ -1,10 +1,7 @@
 package com.every.work;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +23,6 @@ public class JobopenController {
 	JoService service;
 	@Autowired
 	RService service2;
-	
 	
 	@RequestMapping(value = "/jobopenDetail")
 	public ModelAndView jobopenDetail(ModelAndView mv,JobopenVO vo) {
@@ -90,7 +86,7 @@ public class JobopenController {
 		}
 		
 
-		//년도/월 셋팅
+		// 년 월 셋팅
 		cal.set(jc.getYear(), jc.getMonth()-1, 1);
 		jc.setStartDay(cal.getMinimum(java.util.Calendar.DATE));
 		jc.setEndDay(cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH));
