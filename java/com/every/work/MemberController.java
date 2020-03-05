@@ -94,6 +94,13 @@ public class MemberController {
 			// 회원가입 성공 
 			// -> loginForm 으로  
 			mv.addObject("Join","T");
+			ArrayList<JobopenVO> list = jService.jobopenHome();
+			mv.addObject("JobList", list);
+			ArrayList<JobopenVO> plist = jService.jobopenPopular();
+			mv.addObject("PopularList", plist);
+			ArrayList<JobopenVO> twlist = jService.jobopenThisWeek();
+			mv.addObject("thisWeekList", twlist);
+			mv.addObject("joinSuccess","T");
 			mv.setViewName("home");
 		}else { 
 			// 회원가입 실패 -> /member/doFinish.jsp

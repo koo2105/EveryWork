@@ -17,16 +17,16 @@ var bCheck=false;
 
 
 $(function() {
-	$('#id').focus();
-	$('#id').focusout(function() {
-	 	iCheck=idCheck();
+	$('#joinId').focus();
+	$('#joinId').focusout(function() {
+	 	iCheck=joinIdCheck();
 	}); // id_focusout
 	
-	$('#password').focusout(function() {
-		pCheck=pwCheck();
+	$('#joinPassword').focusout(function() {
+		pCheck=joinPwCheck();
 	}); // password_focusout
 	
-	$('#password2').focusout(function() {
+	$('#joinPassword2').focusout(function() {
 		ptCheck();
 	}); // password_focusout
 	
@@ -71,7 +71,16 @@ $(document).ready(function(){
 });
 
 
-
+function idDupCheck() {
+	if (iCheck==false) {
+		iCheck=joinIdCheck(); 
+	} else {
+		var url="idDupCheck?emem_id="+$('#joinId').val();
+		// idDupCheck?id=banana
+		window.open(url,"_blank"
+			,"toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,width=500,height=400");
+	}
+} // idDupCheck()
 
 </script>
 <style>
@@ -176,16 +185,17 @@ background-color: #f0f0f0;
       <div class="join">
          <div class="join-title">회원가입</div>
          <div class="join-subtitle">아이디(이메일)</div>
-         <input class="join-form" id="id" type="text" name="emem_id">
-		 <span id="iMessage" class="eMessage"></span>
+         <input class="join-form" id="joinId" type="text" name="emem_id">
+		 <input type="button" value="ID 중복확인" onclick="idDupCheck()" id="idDup">
+		 <span id="join-iMessage" class="eMessage"></span>
 	
          <div class="join-subtitle">패스워드(비밀번호)</div>
-         <input class="join-form" id="password" type="password" name="emem_pw">
-		 <span id="pMessage" class="eMessage"></span>
+         <input class="join-form" id="joinPassword" type="password" name="emem_pw">
+		 <span id="join-pMessage" class="eMessage"></span>
 
          <div class="join-subtitle">패스워드 확인(비밀번호)</div>
-         <input class="join-form" id="password2" type="password">
-		 <span id="ptMessage" class="eMessage"></span>
+         <input class="join-form" id="joinPassword2" type="password">
+		 <span id="join-ptMessage" class="eMessage"></span>
 		 
          <div class="join-subtitle">이름</div>
          <input class="join-form" id="name" type="text" name="emem_name">
@@ -208,7 +218,7 @@ background-color: #f0f0f0;
            <input type="checkbox" name="agree" value="마케팅" alt="마케팅" >마케팅 정보 수신 동의<br><br>
             
       	<div class="join-button">
-            <input class="jBtn_submit" type="submit" value="회원가입" onclick="return inCheck()" >
+            <input class="jBtn_submit" type="submit" value="회원가입" onclick="return inCheck()"  >
        	</div>
          </div>	 
    </div>

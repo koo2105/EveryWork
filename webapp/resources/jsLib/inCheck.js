@@ -16,6 +16,23 @@ function idCheck() {
 	}
 } // idCheck()
 
+function joinIdCheck() {
+	var id=$('#joinId').val();
+	if (id.length<5) {
+		$('#join-iMessage').html('ID 는 5 글자 이상 입력하세요 ~~');	
+		$('#joinId').focus();
+		return false;
+	} else if (id.replace(/[a-z.0-9]/gi,'').length>0) {
+		// 영문자 와 숫자 확인 정규식
+		$('#join-iMessage').html('ID 는 영문자 와 숫자 로만 입력하세요 ~~');	
+		$('#joinId').focus();
+		return false;
+	} else {
+		$('#join-iMessage').html('');	
+		return true;
+	}
+} // idCheck()
+
 // pwCheck
 function pwCheck() {
 	var password=$('#password').val();	
@@ -38,12 +55,35 @@ function pwCheck() {
 	} 
 } // pwCheck()
 
+function joinPwCheck() {
+	var password=$('#joinPassword').val();	
+	var pLength=password.length ; 
+	if (password.length<5) {
+		$('#join-pMessage').html('Password 는 5 글자 이상 입력하세요 ~~');	
+		$('#joinPassword').focus();
+		return false;
+	}else if (password.replace(/[!-*]/gi,'').length >= pLength ) {
+		$('#join-pMessage').html('Password는 특수문자를 반드시 1개 이상 입력하세요 ~~');	
+		$('#joinPassword').focus();
+		return false;
+	}else if (password.replace(/[0-9.!-*]/gi,'').length>0) {
+		$('#join-pMessage').html('Password는 숫자와 특수문자 로만 입력하세요 ~~');	
+		$('#joinPassword').focus();
+		return false;
+	}else {
+		$('#join-pMessage').html('');
+		return true;
+	} 
+} // pwCheck()
+
+
+
 function ptCheck() {
-	var pw1 = $('#password').val();
-	var pw2 = $('#password2').val();
+	var pw1 = $('#joinPassword').val();
+	var pw2 = $('#joinPassword2').val();
 	if(pw1!=pw2){
-		$('#ptMessage').html('비밀번호가 일치하지 않습니다.');
-	}else $('#ptMessage').html('');
+		$('#join-ptMessage').html('비밀번호가 일치하지 않습니다.');
+	}else $('#join-ptMessage').html('');
 }
 
 

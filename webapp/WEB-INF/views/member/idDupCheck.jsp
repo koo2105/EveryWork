@@ -21,13 +21,13 @@
 	function idOk() {
 	// joinForm(parent window : opener) 으로 id를 전달하고
 	// 현재의 창은 닫는다.
-		opener.document.getElementById('id').value="${ID}";
+		opener.document.getElementById('joinId').value="${ID}";
 		// id 가 확정된 경우 더이상 id는 입력하지 못하도록 하고,
 		// joinForm의 submit 은 사용할 수 있도록 해줌.
-		opener.document.getElementById('submit').disabled="";
+	//	opener.document.getElementById('submit').disabled="";
 		opener.document.getElementById('idDup').disabled="disabled";
-		opener.$('#id').prop("readonly",true);
-		opener.$('#password').focus();
+		opener.$('#joinId').prop("readonly",true);
+		opener.$('#joinPassword').focus();
 		self.close();
 	} // idOk() 
 	//=> attr()는 HTML의 속성을 취급
@@ -63,7 +63,7 @@
 <h3>** ID 중복확인 **</h3>
 <form action="idDupCheck" method="post">
 UserID:
-	<input type="text" id="id" name="id" value="">
+	<input type="text" id="id" name="emem_id" value="${ID}">
 	<input type="submit" value="ID 중복확인" onclick="return idCheck()">
 	<br><span id="iMessage" class="eMessage"></span>
 </form>
@@ -80,7 +80,7 @@ UserID:
 			현재창의 id 에 focus  --> 
 		<script>
 			$('#id').focus();
-			opener.document.getElementById('id').value='';
+			opener.document.getElementById('joinId').value='';
 		</script>		
 	</c:if>
 </div></div>
