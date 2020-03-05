@@ -10,12 +10,48 @@
 <script src="resources/jsLib/inCheck.js"></script>
 
 <script>
-/* $(function() {
-	$('#password2').focusout(function() {
-		pwCheck2();
-	}); // password_focusout
+var iCheck=false;
+var pCheck=false;
+var nCheck=false;
+var bCheck=false;
 
-}); */
+
+$(function() {
+	$('#id').focus();
+	$('#id').focusout(function() {
+	 	iCheck=idCheck();
+	}); // id_focusout
+	
+	$('#password').focusout(function() {
+		pCheck=pwCheck();
+	}); // password_focusout
+	
+	$('#password2').focusout(function() {
+		ptCheck();
+	}); // password_focusout
+	
+	$('#name').focusout(function() {
+	 	nCheck=nmCheck();
+	}); // name_focusout
+	
+	$('#birthd').focusout(function() {
+		bCheck=bdCheck();
+	}); // birthd_focusout
+});
+
+function inCheck() {
+	if (iCheck==true && pCheck==true &&
+		nCheck==true && bCheck==true) {
+		return true;
+	}else {
+		if (iCheck==false) {iCheck=idCheck() };
+		if (pCheck==false) {pCheck=pwCheck() };
+		if (nCheck==false) {nCheck=nmCheck() };
+		if (bCheck==false) {bCheck=bdCheck() };
+		return false;
+	};
+} //inCheck 
+
 
 //joinform checkbox
 $(document).ready(function(){
@@ -35,73 +71,16 @@ $(document).ready(function(){
 });
 
 
-//1) 전역변수정의
-var iCheck=false;
-var pCheck=false;
-var pCheck2=false;
-var nCheck=false;
-var bCheck=false;
-
-//2) 각 InputTag의 focusout 이벤트핸들러		
-$(function() {
-	$('#id').focus();
-	$('#id').focusout(function() {
-	 	iCheck=idCheck();
-	}); // id_focusout
-	
-	$('#password').focusout(function() {
-		pCheck=pwCheck();
-	}); // password_focusout
-	
-	$('#password2').focusout(function() {
-		pCheck2=pwCheck2();
-	}); // password2_focusout
-	
-	$('#name').focusout(function() {
-	 	nCheck=nmCheck();
-	}); // name_focusout
-	
-	$('#birthd').focusout(function() {
-		bCheck=bdCheck();
-	}); // birthd_focusout
-	
-
-
-}); // ready
-
-//3) submit 처리
-function inCheck() {
-	// input Tag중  focusout 이 발생되지 않은 경우 확인을 위함.   
-	console.log("b,o,w 1 =>"+bCheck+oCheck+wCheck) ;
-	if (iCheck==false) {iCheck=idCheck() };
-	if (pCheck==false) {pCheck=pwCheck() };
-	if (pCheck2==false) {pCheck2=pwCheck2() };
-	if (nCheck==false) {nCheck=nmCheck() };
-	if (bCheck==false) {bCheck=bdCheck() };
-
-	console.log("b,o,w 2 =>"+bCheck+oCheck+wCheck) ;
-	
-	if (iCheck==true && pCheck==true && pCheck2==true &&
-			nCheck==true && bCheck==true ) {
-		  return true;
-	}else return false;		 
-} //inCheck 
-
-
-function idDupCheck() {
-	if (iCheck==false) {
-		iCheck=idCheck(); 
-	} else {
-		var url="idDupCheck?id="+$('#id').val();
-		// idDupCheck?id=banana
-		window.open(url,"_blank"
-			,"toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,width=500,height=400");
-	}
-} // idDupCheck()
 
 
 </script>
 <style>
+.eMessage {
+	color: red;
+	font-style: italic;
+	font-size: x-small;
+}
+
 body{
 
 background-color: #f0f0f0;
@@ -111,9 +90,6 @@ background-color: #f0f0f0;
  div {
    display: block;
 } 
-.eMessage {
-		color:red; font-style:italic; font-size:x-small;
-	}
 
 .join-title {
    font-size: 30px;
@@ -201,25 +177,27 @@ background-color: #f0f0f0;
          <div class="join-title">회원가입</div>
          <div class="join-subtitle">아이디(이메일)</div>
          <input class="join-form" id="id" type="text" name="emem_id">
-         	<input type="button" value="ID 중복확인" onclick="idDupCheck()" id="idDup">
-			<span id="iMessage" class="eMessage"></span>
+		 <span id="iMessage" class="eMessage"></span>
+	
          <div class="join-subtitle">패스워드(비밀번호)</div>
          <input class="join-form" id="password" type="password" name="emem_pw">
-         <span id="pMessage" class="eMessage"></span>
+		 <span id="pMessage" class="eMessage"></span>
 
          <div class="join-subtitle">패스워드 확인(비밀번호)</div>
          <input class="join-form" id="password2" type="password">
-		 <span id="pwMessage" class="eMessage"></span>
+		 <span id="ptMessage" class="eMessage"></span>
 		 
          <div class="join-subtitle">이름</div>
          <input class="join-form" id="name" type="text" name="emem_name">
-			<span id="nMessage" class="eMessage"></span>
+         <span id="nMessage" class="eMessage"></span>
+
          <div class="join-subtitle">휴대폰 번호</div>
          <input class="join-form" id="number" type="text" name="emem_pnum">
 
          <div class="join-subtitle">생년월일</div>
          <input class="join-form" id="birthd" type="date" name="emem_birthd">
          <span id="bMessage" class="eMessage"></span>
+         
          <div class="join-subtitle">성별</div>
            <input class="radio-sex" type="radio" name="emem_gender" value="남" alt="남자" checked >남자&nbsp;&nbsp;
            <input type="radio" name="emem_gender" value="여" alt="여자" >여자&nbsp;&nbsp;<br><br><br>
@@ -230,8 +208,7 @@ background-color: #f0f0f0;
            <input type="checkbox" name="agree" value="마케팅" alt="마케팅" >마케팅 정보 수신 동의<br><br>
             
       	<div class="join-button">
-            <input class="jBtn_submit" type="submit" value="회원가입" onclick="return inCheck()" 
-						id="submit" disabled="disabled" >
+            <input class="jBtn_submit" type="submit" value="회원가입" onclick="return inCheck()" >
        	</div>
          </div>	 
    </div>
