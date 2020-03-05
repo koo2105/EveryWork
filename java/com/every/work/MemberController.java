@@ -156,5 +156,22 @@ public class MemberController {
 		
 	}// joinf 
 	
-
+	@RequestMapping(value = "/idDupCheck")
+	public ModelAndView idDupCheck(ModelAndView mv, EmemberVO vo) {
+		// id 의 존재 여부 확인 : dao 확인
+		// => vo 가 null 값을 받기 전에 id를 보관
+		mv.addObject("ID",vo.getEmem_id());
+		vo = service.selectOne(vo);
+		// => 결과
+		if (vo!=null) { //-> id 있으면 : 사용불가
+			mv.addObject("idUse","F");
+		}else { 		//-> id 없으면 : 사용가능
+			mv.addObject("idUse","T");
+		}
+		mv.setViewName("member/idDupCheck");
+		return mv;
+	}// joinf	
+	
+	
+	
 } // class

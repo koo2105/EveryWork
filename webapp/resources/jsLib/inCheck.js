@@ -38,6 +38,16 @@ function pwCheck() {
 	} 
 } // pwCheck()
 
+function pwCheck2() {
+	var pw1 = $('#password').val();
+	var pw2 = $('#password2').val();
+	if(pw1!=pw2){
+		$('#pwMessage').html('비밀번호가 일치하지 않습니다.');
+	}else $('#pMessage').html('');
+}//pwCheck2()
+
+
+
 // nmCheck
 function nmCheck() {
 	var name=$('#name').val();
@@ -70,56 +80,8 @@ function bdCheck() {
 	}
 } // bdCheck()
 
-//poCheck
-// => 정수 인지 확인
-//		숫자확인 : isNumeric
-//		"." 이 포함되면 안됨
-function poCheck() {
-	var point=$('#point').val();
-	var poLength=point.length;
-	// 주의 : var poLength=$('#point').length;
-	//		=> 정수 부분의 길이만 return 
-	console.log('poLength='+poLength) ;
-	if ($.isNumeric(point)==false || point.replace('.','').length < poLength) {
-		$('#oMessage').html('Point 를 정수로 정확하게 입력하세요 ~~~');
-		$('#point').focus();
-		return false;
-	}else {
-		$('#oMessage').html('');	
-		return true;
-	} 
-} // poCheck()
 
-//wtCheck
-// => 실수 인지 확인
-//		숫자확인 : isNumeric
-//		구간 확인 (DB 의 제약조건과 동일)
-function wtCheck() {
-	var weight=$('#weight').val();
-	if (weight.length<2 || $.isNumeric(weight)==false) {
-		$('#wMessage').html('weight를 정확하게 숫자로 입력하세요 ~~~');
-		$('#weight').focus();
-		return false;
-	}else if (parseFloat(weight) < 20 || parseFloat(weight) > 200) {
-			$('#wMessage').html('weight의 값이 범위를 벗어납니다.~~~');
-			$('#weight').focus();
-			return false;
-	}else {
-		$('#wMessage').html('');	
-		return true;
-	}   
-} // wtCheck()
 
-////////  Board inCheck  ////////
-function ttCheck() {
-	var title=$('#title').val();
-	if (title.length<1) {
-		$('#tMessage').html('글 제목을  입력하세요 ~~~');
-		$('#title').focus();
-		return false;
-	}else {
-		$('#tMessage').html('');	
-		return true;
-	}   
-} // ttCheck()
+
+
 

@@ -5,7 +5,7 @@
 <%@page import="java.util.Date"%>
 <html>
 <head>
-<title>EveryWork</title>
+<title>채용공고</title>
 <link rel="stylesheet" type="text/css" href="resources/jsLib/jobStyle.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>

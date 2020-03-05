@@ -3,7 +3,7 @@
 
 <html>
 <head>
-<title>Blog</title>
+<title>자소서연구소</title>
 <link rel="stylesheet" type="text/css"	href="resources/jsLib/blogStyle.css">
 
 <style>
