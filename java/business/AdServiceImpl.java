@@ -50,8 +50,8 @@ public class AdServiceImpl implements AdService {
 	}
 	
 	@Override
-	public AdminVO adminLogin(AdminVO vo) {
-		return dao.adminLogin(vo);
+	public AdminVO adminlogin(AdminVO vo) {
+		return dao.adminlogin(vo);
 	}
 	
 	@Override

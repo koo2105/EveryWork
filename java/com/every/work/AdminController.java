@@ -83,14 +83,14 @@ public class AdminController {
 	public ModelAndView login(HttpServletRequest request, ModelAndView mv, AdminVO vo) {
 
 		HttpSession session = request.getSession();
-		vo = service.adminLogin(vo);
-		if (vo != null) { // 로그인 성공
+		vo = service.adminlogin(vo);
+		if (vo!=null) { // 로그인 성공
 			session.setAttribute("adloginID", vo.getAdmin_id());
 			session.setAttribute("adloginNM", vo.getAdmin_name());
 			mv.setViewName("adminTest/adminHome");
 		} else { // // 로그인 실패
 			mv.addObject("Error", "AL");
-			mv.setViewName("adminTest/adminHome");
+			mv.setViewName("adminTest/adminLoginForm");
 		} // if
 		return mv;
 	}// login

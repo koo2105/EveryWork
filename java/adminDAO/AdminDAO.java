@@ -38,8 +38,8 @@ public class AdminDAO {
 		return (ArrayList) dao.selectList(NS + "blogList");
 	} // selectList()
 
-	public AdminVO adminLogin(AdminVO vo) {
-		return dao.selectOne(NS + "adminLogin", vo);
+	public AdminVO adminlogin(AdminVO vo) {
+		return dao.selectOne(NS + "adminlogin", vo);
 	} // login
 
 	public int jobopenInsert(JobopenVO vo) {

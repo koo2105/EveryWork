@@ -27,9 +27,8 @@
 		lab_id desc
 	</select>
 
-	<select id="adminLogin" resultType="vo.AdminVO">
-		select * from admin where admin_id=#{admin_id} and
-		admin_password=#{admin_password}
+	<select id="adminlogin" resultType="vo.AdminVO">
+		select * from admin where admin_id=#{admin_id} and admin_password=#{admin_password}
 	</select>
 
 	<select id="bdetail" resultType="vo.JobopenVO">

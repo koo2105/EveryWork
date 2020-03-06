@@ -124,5 +124,11 @@ box-sizing: border-box;
 </form>
 
 
+
+<c:if test="${Error=='AL'}">
+<script>
+	alert('아이디 또는 비밀번호가 틀렸습니다.');
+</script>
+</c:if>
 </body>
 </html>

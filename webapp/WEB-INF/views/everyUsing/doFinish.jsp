@@ -6,6 +6,25 @@
 <head>
 <meta charset="UTF-8">
 <title>**admin DoFinish **</title>
+<script src="resources/jsLib/jquery-3.2.1.min.js"></script>
+<style>
+	body{   
+  		background-color: #FDF5E6 ;
+  		font-family: 맑은고딕;
+		}
+	#wrap{     
+ 		margin-left: 0;
+ 		text-align: center;
+		 }
+	h3 {
+ 		/* font-family: 맑은고딕, Times, serif; */
+	  	font-size: 30px;
+  		color: #00008B;
+  		font-weight: normal;
+		}
+</style>
+
+
 </head>
 <body>
 
