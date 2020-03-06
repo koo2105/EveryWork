@@ -45,8 +45,8 @@ function pwCheck() {
 		$('#pMessage').html('Password는 특수문자를 반드시 1개 이상 입력하세요 ~~');	
 		$('#password').focus();
 		return false;
-	}else if (password.replace(/[0-9.!-*]/gi,'').length>0) {
-		$('#pMessage').html('Password는 숫자와 특수문자 로만 입력하세요 ~~');	
+	}else if (password.replace(/[0-9.!-*.a-z]/gi,'').length>0) {
+		$('#pMessage').html('Password는 숫자와 영어 로만 입력하세요 ~~');	
 		$('#password').focus();
 		return false;
 	}else {
@@ -66,8 +66,8 @@ function joinPwCheck() {
 		$('#join-pMessage').html('Password는 특수문자를 반드시 1개 이상 입력하세요 ~~');	
 		$('#joinPassword').focus();
 		return false;
-	}else if (password.replace(/[0-9.!-*]/gi,'').length>0) {
-		$('#join-pMessage').html('Password는 숫자와 특수문자 로만 입력하세요 ~~');	
+	}else if (password.replace(/[0-9.!-*.a-z]/gi,'').length>0) {
+		$('#join-pMessage').html('Password는 숫자와 영어 로만 입력하세요 ~~');	
 		$('#joinPassword').focus();
 		return false;
 	}else {
@@ -83,6 +83,7 @@ function ptCheck() {
 	var pw2 = $('#joinPassword2').val();
 	if(pw1!=pw2){
 		$('#join-ptMessage').html('비밀번호가 일치하지 않습니다.');
+		$('#joinPassword2').focus();
 	}else $('#join-ptMessage').html('');
 }
 
