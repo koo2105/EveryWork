@@ -479,75 +479,54 @@
 					<!-- end ngRepeat: week in weeks -->
 
 					<div class="request-recruit">
-						<img
-							src="/assets/recruit/request_recruit-c3a4aebaf7777803190981cacf943eeaebbb7d2b7d1737893f66811243fa086a.png">
+						<img src="/assets/recruit/request_recruit-c3a4aebaf7777803190981cacf943eeaebbb7d2b7d1737893f66811243fa086a.png">
 					</div>
 				</div>
 			</div>
-
-
-			<!-- ngIf: showLeftCalendar -->
-			<!-- 여기잠깐 없애봄 <div class="calendar-left ng-scope" >
-					<div class="small-calendar">
-						<div class="small-calendar-title">
-							<i class="prev material-icons">chevron_left</i> <span
-								class="current ng-binding">2020.02</span> 
-								<i class="next material-icons">chevron_right</i>
-						</div>
-
-						<div class="dayname-container">
-							ngRepeat: dayname in ::kor_daynames
-							<div class="day-label name-of-days ng-binding ng-scope"
-								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">일</div>
-							end ngRepeat: dayname in ::kor_daynames
-							<div class="day-label name-of-days ng-binding ng-scope"
-								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">월</div>
-							end ngRepeat: dayname in ::kor_daynames
-							<div class="day-label name-of-days ng-binding ng-scope"
-								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">화</div>
-							end ngRepeat: dayname in ::kor_daynames
-							<div class="day-label name-of-days ng-binding ng-scope"
-								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">수</div>
-							end ngRepeat: dayname in ::kor_daynames
-							<div class="day-label name-of-days ng-binding ng-scope"
-								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">목</div>
-							end ngRepeat: dayname in ::kor_daynames
-							<div class="day-label name-of-days ng-binding ng-scope"
-								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">금</div>
-							end ngRepeat: dayname in ::kor_daynames
-							<div class="day-label name-of-days ng-binding ng-scope"
-								ng-bind="::dayname" ng-repeat="dayname in ::kor_daynames">토</div>
-							end ngRepeat: dayname in ::kor_daynames
-							ngRepeat: day in miniCalendar.days
-							<div class="day-label days ng-binding ng-scope">26</div>
-							end ngRepeat: day in miniCalendar.days
-							<div class="day-label days ng-binding ng-scope">27</div>
-							end ngRepeat: day in miniCalendar.days
-							<div class="day-label days ng-binding ng-scope">28</div>
-							end ngRepeat: day in miniCalendar.days
-							<div class="day-label days ng-binding ng-scope">29</div>
-							end ngRepeat: day in miniCalendar.days
-							<div class="day-label days ng-binding ng-scope">30</div>
-							end ngRepeat: day in miniCalendar.days
-							<div class="day-label days ng-binding ng-scope">31</div>
-							end ngRepeat: day in miniCalendar.days
-							
-						</div>
+			
+			
+			<!-- *********** 냄쵸리 미니달력 여기야 여기 *********** -->
+			
+			<div class="calendar-left ng-scope" >
+				<div class="small-calendar">
+					<div class="small-calendar-title">
+						<i class="prev material-icons" >chevron_left</i> <span
+							class="current ng-binding" >2020.03</span>
+						<i class="next material-icons" >chevron_right</i>
 					</div>
 
-					<div class="gg-items">
-						ngRepeat: gg in ggs
+					<div class="dayname-container">
+						<!-- ngRepeat: dayname in ::kor_daynames -->
+						<div class="day-label name-of-days ng-binding ng-scope">일</div>
+						<!-- end ngRepeat: dayname in ::kor_daynames -->
+						<div class="day-label name-of-days ng-binding ng-scope">월</div>
+						<!-- end ngRepeat: dayname in ::kor_daynames -->
+						<div class="day-label name-of-days ng-binding ng-scope">화</div>
+						<!-- end ngRepeat: dayname in ::kor_daynames -->
+						<div class="day-label name-of-days ng-binding ng-scope">수</div>
+						<!-- end ngRepeat: dayname in ::kor_daynames -->
+						<div class="day-label name-of-days ng-binding ng-scope">목</div>
+						<!-- end ngRepeat: dayname in ::kor_daynames -->
+						<div class="day-label name-of-days ng-binding ng-scope">금</div>
+						<!-- end ngRepeat: dayname in ::kor_daynames -->
+						<div class="day-label name-of-days ng-binding ng-scope" >토</div>
+						<!-- end ngRepeat: dayname in ::kor_daynames -->
+						
+						<!-- ngRepeat: day in miniCalendar.days -->
+						<div class="day-label days ng-binding ng-scope">1</div>
+						<!-- end ngRepeat: day in miniCalendar.days -->
 					</div>
+				</div>
+
+				<div class="gg-items">
+					<!-- ngRepeat: gg in ggs -->
+				</div>
 
 
-				</div> -->
-			<!-- end ngIf: showLeftCalendar -->
-		</div>
-		<!-- ngIf: recruitSlide.isShow -->
-	</div>
-	<!-- 	</div>
- -->
-	<div class="jobDetail-div"></div>
+			</div>
+
+
+			<div class="jobDetail-div"></div>
 
 </body>
 </html>
