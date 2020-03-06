@@ -25,7 +25,7 @@
 	    <div class="blog-content-left">
 			<div class="blog-categories-container">
 				<div class="title">
-					<a href="/blog"> Category </a>
+					<a href="blog"> Category </a>
 				</div>
 				<div class="categories">
 					<a class="category true blog-All" href="blog"> 전체보기 </a> <a

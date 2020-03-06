@@ -242,6 +242,7 @@ body {
     z-index: 1;
     background: #fff;
     padding: 0 20px;
+    border-bottom: 1px solid #ddd;
 }
 
 .top-nav-bar .logo {

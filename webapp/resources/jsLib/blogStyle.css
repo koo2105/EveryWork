@@ -434,6 +434,12 @@ element.style {
     white-space: pre;
     white-space: pre-wrap;
 }
+
+.blog-category-container .category-name {
+    font-size: 15px;
+    color: #ff6813;
+    font-weight: bold;
+}
 /* detail */
 
 

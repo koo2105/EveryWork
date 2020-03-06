@@ -3,18 +3,13 @@
 <html>
 <head>
 <title>EveryWork</title>
-<link rel="stylesheet" type="text/css"
-	href="resources/jsLib/blogStyle.css">
-<style>
-</style>
+<link rel="stylesheet" type="text/css" href="resources/jsLib/blogStyle.css">
+<link rel="stylesheet" type="text/css" href="resources/jsLib/homeStyle.css">
+
 </head>
 <body>
 	<!-- top nav -->
-	<!-- top nav -->
 	<%@ include file="/WEB-INF/views/everyUsing/navBar.jsp"%>
-
-
-
 
 
 		<%-- <div class="blog-content-right">
@@ -82,8 +77,6 @@
   </div>
 </a>
 </c:forEach>
-     
-      
 
   </div>
   <div class="text-center">
