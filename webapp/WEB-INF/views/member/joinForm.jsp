@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>**Everywork Join **</title>
+<link rel="stylesheet" type="text/css" href="resources/jsLib/homeStyle.css">
 <script src="resources/jsLib/namchulAjax.js"></script>
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
 <script src="resources/jsLib/inCheck.js"></script>
+
 
 <script>
 var iCheck=false;
@@ -96,16 +98,12 @@ background-color: #f0f0f0;
 
 }
 
- div {
-   display: block;
-} 
-
 .join-title {
    font-size: 30px;
     color: #ff6813;
    font-weight: bold;
    margin-bottom : 30px;
-   padding-top:30px;
+   padding-top:80px;
    overflow: hidden;
    text-align: center;
 }
@@ -117,7 +115,7 @@ background-color: #f0f0f0;
 }
 
 .join-form {
-   display: block;
+	display: block;
     height: 40px;
     width: 100%;
     border: 1px solid #ddd;
@@ -171,6 +169,25 @@ box-sizing: border-box;
 background-color: #f0f0f0;
 }
 
+#idDup{
+    background: white;
+    color: #ff6813;
+    border: 1px solid #ff6813;
+    padding: 6px 10px 6px;
+    cursor: pointer;
+	display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    margin-top: 5px;
+
+}
+
+}
 
 </style>
 
@@ -185,8 +202,8 @@ background-color: #f0f0f0;
       <div class="join">
          <div class="join-title">회원가입</div>
          <div class="join-subtitle">아이디(이메일)</div>
-         <input class="join-form" id="joinId" type="text" name="emem_id">
-		 <input type="button" value="ID 중복확인" onclick="idDupCheck()" id="idDup">
+         <nobr><input class="join-form" id="joinId" type="text" name="emem_id" >
+		 <input type="button" value="ID 중복확인" onclick="idDupCheck()" id="idDup"></nobr>
 		 <span id="join-iMessage" class="eMessage"></span>
 	
          <div class="join-subtitle">패스워드(비밀번호)</div>
