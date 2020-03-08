@@ -6,10 +6,13 @@
 <html>
 <head>
 <title>채용공고</title>
-<link rel="stylesheet" type="text/css" href="resources/jsLib/jobStyle.css">
-<link rel="stylesheet" type="text/css" href="resources/jsLib/homeStyle.css">
+<link rel="stylesheet" type="text/css"
+	href="resources/jsLib/jobStyle.css">
+<link rel="stylesheet" type="text/css"
+	href="resources/jsLib/homeStyle.css">
 <script src="resources/jsLib/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript"
+	src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
 <style>
 </style>
@@ -205,7 +208,7 @@
 										<span class="ng-binding">종료</span>
 									</label>
 									<!-- end ngRepeat: index in option.index_arr -->
-								
+
 								</div>
 								<div style="clear: both"></div>
 							</div>
@@ -307,7 +310,7 @@
 				<div class="nav-search-bar">
 
 
-	
+
 					<div class="calendar-nav">
 						<a href="jobMain?month=${jc.month-1}&year=${jc.year}">&lt;</a><span
 							class="prev">&nbsp;</span> <span class="current ng-binding">${jc.year}.${jc.month}</span>
@@ -322,7 +325,7 @@
 					</div>
 
 
-					
+
 
 				</div>
 				<div class="dayname-container">
@@ -410,7 +413,7 @@
 							</c:forEach>
 							<c:forEach var="i" begin="1" end="${jc.endDay}">
 								<c:if test="${newLine==7}">
-										<div></div>
+									<div></div>
 									<c:set var="newLine" value="0" />
 								</c:if>
 								<div class="calendar-cell ng-scope">
@@ -422,7 +425,8 @@
 
 											<c:forEach var="jl" items="${joblist}" varStatus="jlvs">
 
-													<c:if test="${(fn:substring(jl.jobopen_sdate,8,10))==i || (fn:substring(jl.jobopen_edate,8,10))==i}">
+												<c:if
+													test="${(fn:substring(jl.jobopen_sdate,8,10))==i || (fn:substring(jl.jobopen_edate,8,10))==i}">
 													<div class="company">
 														<c:if test="${(fn:substring(jl.jobopen_sdate,8,10))==i}">
 															<div class="calendar-label start">시</div>
@@ -479,20 +483,21 @@
 					<!-- end ngRepeat: week in weeks -->
 
 					<div class="request-recruit">
-						<img src="/assets/recruit/request_recruit-c3a4aebaf7777803190981cacf943eeaebbb7d2b7d1737893f66811243fa086a.png">
+						<img
+							src="/assets/recruit/request_recruit-c3a4aebaf7777803190981cacf943eeaebbb7d2b7d1737893f66811243fa086a.png">
 					</div>
 				</div>
 			</div>
-			
-			
+
+
 			<!-- *********** 냄쵸리 미니달력 여기야 여기 *********** -->
-			
-			<div class="calendar-left ng-scope" >
+
+			<div class="calendar-left ng-scope">
 				<div class="small-calendar">
 					<div class="small-calendar-title">
-						<i class="prev material-icons" >chevron_left</i> <span
-							class="current ng-binding" >2020.03</span>
-						<i class="next material-icons" >chevron_right</i>
+						<i class="prev material-icons">&lt;</i> <span
+							class="current ng-binding">${jc.year}.${jc.month}</span> <i
+							class="next material-icons">&gt;</i>
 					</div>
 
 					<div class="dayname-container">
@@ -509,11 +514,29 @@
 						<!-- end ngRepeat: dayname in ::kor_daynames -->
 						<div class="day-label name-of-days ng-binding ng-scope">금</div>
 						<!-- end ngRepeat: dayname in ::kor_daynames -->
-						<div class="day-label name-of-days ng-binding ng-scope" >토</div>
+						<div class="day-label name-of-days ng-binding ng-scope">토</div>
 						<!-- end ngRepeat: dayname in ::kor_daynames -->
-						
+
 						<!-- ngRepeat: day in miniCalendar.days -->
-						<div class="day-label days ng-binding ng-scope">1</div>
+						<c:set var="newLine" value="0" />
+						<c:set var="startCheck" value="1" />
+						<c:forEach var="j" begin="1" end="${jc.start-1}">
+							<div class="day-label days ng-binding ng-scope">&nbsp;</div>
+							<c:if test="${newLine==7}">
+								<div></div>
+								<c:set var="newLine" value="0" />
+							</c:if>
+							<c:set var="newLine" value="${newLine+1}" />
+							<c:set var="startCheck" value="${startCheck+1}" />
+						</c:forEach>
+						<c:forEach var="i" begin="1" end="${jc.endDay}">
+						<div class="day-label days ng-binding ng-scope">${i}</div>
+							<c:if test="${newLine==7}">
+								<div></div>
+								<c:set var="newLine" value="0" />
+							</c:if>
+							<c:set var="newLine" value="${newLine+1}" />
+						</c:forEach>
 						<!-- end ngRepeat: day in miniCalendar.days -->
 					</div>
 				</div>
@@ -527,7 +550,6 @@
 
 
 			<div class="jobDetail-div"></div>
-
 </body>
 </html>
 

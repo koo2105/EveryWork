@@ -10,6 +10,7 @@ public class JobCalendar {
 	private int start;
 	private String sdateCheck;
 	private String edateCheck;
+	private String jobKeyword;
 	public Integer getYear() {
 		return year;
 	}
@@ -58,12 +59,18 @@ public class JobCalendar {
 	public void setEdateCheck(String edateCheck) {
 		this.edateCheck = edateCheck;
 	}
+	public String getJobKeyword() {
+		return jobKeyword;
+	}
+	public void setJobKeyword(String jobKeyword) {
+		this.jobKeyword = jobKeyword;
+	}
 	@Override
 	public String toString() {
 		return "JobCalendar [year=" + year + ", month=" + month + ", date=" + date + ", startDay=" + startDay
 				+ ", endDay=" + endDay + ", start=" + start + ", sdateCheck=" + sdateCheck + ", edateCheck="
-				+ edateCheck + "]";
+				+ edateCheck + ", jobKeyword=" + jobKeyword + "]";
 	}
-
+	
 	
 }
