@@ -10,6 +10,7 @@ import jobopenDAO.JobopenDAO;
 import vo.JobcategoryVO;
 import vo.JobopenVO;
 import vo.JobqaVO;
+import vo.ScrapVO;
 
 @Service
 public class JoServiceImpl implements JoService {
@@ -64,5 +65,5 @@ public class JoServiceImpl implements JoService {
 	public int scrapInsert(JobCalendar jc) {
 		return dao.scrapInsert(jc);
 	}
-
+	
 }

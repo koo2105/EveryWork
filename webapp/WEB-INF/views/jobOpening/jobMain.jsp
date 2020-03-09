@@ -27,7 +27,7 @@
 				emem_id : emem_id,
 				jobopen_id : jobopen_id
 			},
-			success: function(result){
+			success : function(result) {
 				alert('추가되었습니다.');
 			}
 		});
@@ -123,15 +123,17 @@
 	<div class="calendar-container ng-scope">
 		<div class="recruit-top">
 			<div class="calendar-switch">
-				<div class="calendar piwik-recruit-calendar active">채용 공고</div>
+				<div class="calendar piwik-recruit-calendar active">
+				<a class="jobopen-bnt-color" href="jobMain?emem_id=${loginID}">채용 공고</a>
+				</div>
 				<c:if test="${loginID!=null}">
 					<div class="favorite-calendar piwik-my-calendar">
-						<a href="myJob?scrapCode=1&emem_id=${loginID}">내 채용 공고</a>
+						<a class="jobopen-bnt-color" href="myJob?scrapCode=1&emem_id=${loginID}">내 채용 공고</a>
 					</div>
 				</c:if>
 				<c:if test="${loginID==null}">
 					<div class="favorite-calendar piwik-my-calendar">
-						<a href="#" onclick="loginCheck()">내 채용 공고</a>
+						<a class="jobopen-bnt-color" href="#" onclick="loginCheck()">내 채용 공고</a>
 					</div>
 				</c:if>
 			</div>
@@ -465,9 +467,24 @@
 														</div>
 													</div>
 													<div class="favorite">
+													<c:if test="${loginID!=null}">
 														<a onclick="scrapInsert('${loginID}','${jl.jobopen_id}')">
-															<img id="star" src="resources/img/star_select.png">
-															<img id="unstar" src="resources/img/star_unselect.png">
+													</c:if>
+													<c:if test="${loginID==null}">
+														<a onclick="loginCheck()">
+													</c:if>
+															<c:set var="scrapCheck" value="0" />
+															<c:forEach var="sl" items="${scrapList}" varStatus="slvs">
+																<c:if test="${sl.jobopen_id==jl.jobopen_id}">
+																	<img id="star" src="resources/img/star_select.png">
+																	<c:set var="scrapCheck" value="1" />
+																</c:if> 
+																
+															</c:forEach>
+															<c:if test="${scrapCheck!=1}">
+																	<img id="unstar" src="resources/img/star_unselect.png">
+															</c:if>
+																<c:set var="scrapCheck" value="0" />
 														</a>
 
 														<!-- <img class="item-favorite" src="resources/img/star_select.png">
@@ -510,10 +527,7 @@
 					</div>
 					<!-- end ngRepeat: week in weeks -->
 
-					<div class="request-recruit">
-						<img
-							src="/assets/recruit/request_recruit-c3a4aebaf7777803190981cacf943eeaebbb7d2b7d1737893f66811243fa086a.png">
-					</div>
+					
 				</div>
 			</div>
 

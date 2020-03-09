@@ -1220,8 +1220,9 @@ margin-top:-150px;  */
     vertical-align: middle;
       border: 0;
 }
-
-
+.jobopen-bnt-color{
+	color: #ff6813;
+}
 
 /* calendar */
 

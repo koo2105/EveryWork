@@ -6,10 +6,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import calendar.JobCalendar;
 import vo.JobcategoryVO;
 import vo.JobopenVO;
 import vo.JobqaVO;
-import calendar.JobCalendar;
+import vo.ScrapVO;
 
 
 @Repository
@@ -50,12 +51,21 @@ public class JobopenDAO {
 		return (ArrayList) dao.selectList(NS + "jobopenMonList",jc);
 	} //jobopenMonList()
 	
-	public ArrayList<JobopenVO> scrapMonList(JobCalendar js){
-		return (ArrayList) dao.selectList(NS + "scrapMonList", js );
-	}
+	public ArrayList<JobopenVO> scrapMonList(JobCalendar jc){
+		return (ArrayList) dao.selectList(NS + "scrapMonList", jc );
+	} //scrapMonList()
 	
-	public int scrapInsert(JobCalendar js) {
-		return dao.insert(NS + "scrapInsert", js);
-	}
+	public int scrapInsert(JobCalendar jc) {
+		ScrapVO vo = dao.selectOne(NS + "scrapCheck",jc);
+		int cnt=0;
+		if(vo != null) {
+			cnt = dao.delete(NS + "scrapDelete",jc);
+		}else {
+			cnt = dao.insert(NS + "scrapInsert", jc);
+		}
+		return cnt;
+	} //scrapInsert()
+	
+
 
 }//end EmemberDAO 

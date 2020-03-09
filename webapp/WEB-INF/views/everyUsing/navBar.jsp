@@ -70,7 +70,7 @@
 
 		<div class="tab_center">
 		<c:if test="${loginID!=null}">
-		<a class="tab_button tab-recruit" href="jobMain?scrapCode=0&emem_id=${loginID}">
+		<a class="tab_button tab-recruit" href="jobMain?emem_id=${loginID}">
 				<div>채용 공고</div>
 			</a>
 		</c:if>

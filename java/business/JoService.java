@@ -6,6 +6,7 @@ import calendar.JobCalendar;
 import vo.JobcategoryVO;
 import vo.JobopenVO;
 import vo.JobqaVO;
+import vo.ScrapVO;
 
 public interface JoService {
 	

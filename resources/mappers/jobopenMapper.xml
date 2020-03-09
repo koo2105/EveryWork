@@ -67,9 +67,15 @@
 	insert into scrap values((select nvl(max(scrap_id), 0)+1 from scrap),#{emem_id},#{jobopen_id})
 	</insert>
 	
+	<!-- 즐겨찾기 체크 -->
+	<select id="scrapCheck" resultType="vo.ScrapVO">
+		select * from scrap where emem_id=#{emem_id} and jobopen_id=#{jobopen_id}
+	</select>
+	
+	
 	<!-- 즐겨찾기 삭제 -->
 	<delete id="scrapDelete">
-	delete scrap where emem_id=#{emem_id} and jobopen_id=#{jobopen_id} 
+		delete scrap where emem_id=#{emem_id} and jobopen_id=#{jobopen_id} 
 	</delete>
 
 	<update id="jobopenCnt">

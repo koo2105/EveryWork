@@ -14,6 +14,7 @@ import calendar.JobCalendar;
 import vo.JobcategoryVO;
 import vo.JobopenVO;
 import vo.JobqaVO;
+import vo.ScrapVO;
 import vo.SelftitleVO;
 
 @Controller
@@ -64,10 +65,6 @@ public class JobopenController {
 			jc.setYear(Integer.parseInt(strYear));
 		}else {
 			jc.setYear(cal.get(Calendar.YEAR));
-			
-			
-			
-			
 		}
 			
 		if(jc.getMonth()!=null) {
@@ -85,9 +82,6 @@ public class JobopenController {
 			jc.setMonth(cal.get(Calendar.MONTH)+1);
 		}
 		
-		
-		
-		
 		if(jc.getDate()==null) {
 			jc.setDate(cal.get(Calendar.DATE));
 		}
@@ -104,6 +98,10 @@ public class JobopenController {
 		jc.setSdateCheck(sdc);
 		jc.setEdateCheck(edc);
 		ArrayList<JobopenVO> joblist = service.jobopenMonList(jc);
+		ArrayList<JobopenVO> scrapList = service.scrapMonList(jc);
+		if(scrapList!=null) {
+			mv.addObject("scrapList",scrapList);
+		}
 		System.out.println("공고리스트가 나오나?"+joblist);
 		mv.addObject("joblist",joblist);
 		mv.addObject("jc",jc);
@@ -158,6 +156,10 @@ public class JobopenController {
 		jc.setSdateCheck(sdc);
 		jc.setEdateCheck(edc);
 		ArrayList<JobopenVO> joblist = service.scrapMonList(jc);
+		ArrayList<JobopenVO> scrapList = service.scrapMonList(jc);
+		if(scrapList!=null) {
+			mv.addObject("scrapList",scrapList);
+		}
 		mv.addObject("joblist",joblist);
 		mv.addObject("jc",jc);
 		System.out.println(jc.getEmem_id());
@@ -167,6 +169,7 @@ public class JobopenController {
 	}
 	@RequestMapping(value = "/scrapInsert")
 	public ModelAndView scrapInsert(ModelAndView mv, JobCalendar jc) {
+		
 		service.scrapInsert(jc);
 		return mv;
 	}//	scrapInsert
