@@ -607,19 +607,31 @@ border-bottom : 5px solid #ddd;
 	color: hsl(0, 0%, 90%);
 }
 
+.resumeFrom-container .title {
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+
 
 .resume-container .resume-form .plus-btn {
-    font-size: 15px;
-    line-height: 20px;
-  	float: right;
-    width: 20px;
-    height: 20px;
-    padding: 0px;
-    color: white;
-    background-color: #999;
-    text-align: center;
+
+    text-align: center; 
     text-decoration: none;
     cursor: pointer;
+   	font-size: 15px;
+/* 	line-height: 20px; */
+	float: right;
+	width: 20px;
+	height: 20px;
+	color: white;
+	background-color: #999; 
+    font-weight: normal;
+    vertical-align: middle;
+    border: 1px solid;
+    /* padding: 6px 12px; */
+    border-radius: 4px;
+    
     
 }
 

@@ -30,7 +30,7 @@ body{
      	 <div class="resume-menu-container">
        <!-- 메뉴 div -->
 	      <div class="resume-category-title">
-	      <h3>자소서 목록</h3>
+	      <h3 class="title">자소서 목록</h3>
 	      </div>
 	         <ul>
 	         <c:forEach var="tl" items="${titleList}" varStatus="tlvs">
