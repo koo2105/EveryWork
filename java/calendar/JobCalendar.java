@@ -11,6 +11,11 @@ public class JobCalendar {
 	private String sdateCheck;
 	private String edateCheck;
 	private String jobKeyword;
+	private String emem_id;
+	private int jobopen_id;
+	private String scrapCode;
+	
+	
 	public Integer getYear() {
 		return year;
 	}
@@ -65,12 +70,30 @@ public class JobCalendar {
 	public void setJobKeyword(String jobKeyword) {
 		this.jobKeyword = jobKeyword;
 	}
+	public String getEmem_id() {
+		return emem_id;
+	}
+	public void setEmem_id(String emem_id) {
+		this.emem_id = emem_id;
+	}
+	public int getJobopen_id() {
+		return jobopen_id;
+	}
+	public void setJobopen_id(int jobopen_id) {
+		this.jobopen_id = jobopen_id;
+	}
+	public String getScrapCode() {
+		return scrapCode;
+	}
+	public void setScrapCode(String scrapCode) {
+		this.scrapCode = scrapCode;
+	}
 	@Override
 	public String toString() {
 		return "JobCalendar [year=" + year + ", month=" + month + ", date=" + date + ", startDay=" + startDay
 				+ ", endDay=" + endDay + ", start=" + start + ", sdateCheck=" + sdateCheck + ", edateCheck="
-				+ edateCheck + ", jobKeyword=" + jobKeyword + "]";
+				+ edateCheck + ", jobKeyword=" + jobKeyword + ", emem_id=" + emem_id + ", jobopen_id=" + jobopen_id
+				+ ", scrapCode=" + scrapCode + "]";
 	}
-	
 	
 }

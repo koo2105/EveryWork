@@ -69,9 +69,17 @@
 		<!-- ngIf: showBrowserAlert -->
 
 		<div class="tab_center">
-			<a class="tab_button tab-recruit" href="jobMain">
+		<c:if test="${loginID!=null}">
+		<a class="tab_button tab-recruit" href="jobMain?scrapCode=0&emem_id=${loginID}">
 				<div>채용 공고</div>
-			</a> <a class="tab_button tab-resume"
+			</a>
+		</c:if>
+		<c:if test="${loginID==null}">
+		<a class="tab_button tab-recruit" href="jobMain?scrapCode=0">
+				<div>채용 공고</div>
+			</a>
+		</c:if>
+			 <a class="tab_button tab-resume"
 				href="resumeForm?emem_id=${loginID}">
 				<div>자기소개서</div>
 			</a> <a class="tab_button tab-spec" href="specForm?emem_id=${loginID}">

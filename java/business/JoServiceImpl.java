@@ -56,6 +56,13 @@ public class JoServiceImpl implements JoService {
 		return dao.jobopenMonList(jc);
 	}
 	
-
+	@Override
+	public ArrayList<JobopenVO> scrapMonList(JobCalendar jc) {
+		return dao.scrapMonList(jc);
+	}
+	@Override
+	public int scrapInsert(JobCalendar jc) {
+		return dao.scrapInsert(jc);
+	}
 
 }

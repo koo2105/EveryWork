@@ -14,8 +14,25 @@
 <script type="text/javascript"
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <script src="resources/jsLib/namchulAjax.js"></script>
-<style>
-</style>
+<script>
+	function loginCheck() {
+		alert('로그인이 필요합니다.');
+	}
+
+	function scrapInsert(emem_id, jobopen_id) {
+		$.ajax({
+			type : 'Post',
+			url : 'scrapInsert',
+			data : {
+				emem_id : emem_id,
+				jobopen_id : jobopen_id
+			},
+			success: function(result){
+				alert('추가되었습니다.');
+			}
+		});
+	}
+</script>
 </head>
 <body>
 
@@ -107,7 +124,16 @@
 		<div class="recruit-top">
 			<div class="calendar-switch">
 				<div class="calendar piwik-recruit-calendar active">채용 공고</div>
-				<div class="favorite-calendar piwik-my-calendar">내 채용 공고</div>
+				<c:if test="${loginID!=null}">
+					<div class="favorite-calendar piwik-my-calendar">
+						<a href="myJob?scrapCode=1&emem_id=${loginID}">내 채용 공고</a>
+					</div>
+				</c:if>
+				<c:if test="${loginID==null}">
+					<div class="favorite-calendar piwik-my-calendar">
+						<a href="#" onclick="loginCheck()">내 채용 공고</a>
+					</div>
+				</c:if>
 			</div>
 
 			<div class="calendar-filter">
@@ -438,12 +464,14 @@
 															<span onclick="jDetailOpen('${jl.jobopen_id}')">${jl.jobopen_company}</span>
 														</div>
 													</div>
-
 													<div class="favorite">
-														<img class="item-favorite"
-															src="https://jasoseol.com/assets/main/calendar/star_select-c30fc8f4e82378168df71dcc2dc8cba105a91597fa5c771b1600636f3544d976.png ">
-														<img class="item-no-favorite"
-															src="https://jasoseol.com/assets/main/calendar/star_unselect-0487753c5d876594f017088ec977a7f006c768bfcc975c19c4d9ebe00e322bb1.png">
+														<a onclick="scrapInsert('${loginID}','${jl.jobopen_id}')">
+															<img id="star" src="resources/img/star_select.png">
+															<img id="unstar" src="resources/img/star_unselect.png">
+														</a>
+
+														<!-- <img class="item-favorite" src="resources/img/star_select.png">
+														<img class="item-no-favorite" src="resources/img/star_unselect.png"> -->
 													</div>
 												</c:if>
 
@@ -530,7 +558,7 @@
 							<c:set var="startCheck" value="${startCheck+1}" />
 						</c:forEach>
 						<c:forEach var="i" begin="1" end="${jc.endDay}">
-						<div class="day-label days ng-binding ng-scope">${i}</div>
+							<div class="day-label days ng-binding ng-scope">${i}</div>
 							<c:if test="${newLine==7}">
 								<div></div>
 								<c:set var="newLine" value="0" />

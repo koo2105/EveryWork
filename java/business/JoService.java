@@ -21,4 +21,6 @@ public interface JoService {
 	ArrayList<JobcategoryVO> jobcategorySelectList(JobopenVO vo);
 	ArrayList<JobqaVO> writeResumeBtn(JobcategoryVO vo);
 	public ArrayList<JobopenVO> jobopenMonList(JobCalendar jc);
+	ArrayList<JobopenVO> scrapMonList(JobCalendar jc);
+	int scrapInsert(JobCalendar jc);
 }

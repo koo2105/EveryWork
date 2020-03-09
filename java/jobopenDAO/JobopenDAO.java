@@ -50,5 +50,12 @@ public class JobopenDAO {
 		return (ArrayList) dao.selectList(NS + "jobopenMonList",jc);
 	} //jobopenMonList()
 	
+	public ArrayList<JobopenVO> scrapMonList(JobCalendar js){
+		return (ArrayList) dao.selectList(NS + "scrapMonList", js );
+	}
+	
+	public int scrapInsert(JobCalendar js) {
+		return dao.insert(NS + "scrapInsert", js);
+	}
 
 }//end EmemberDAO 
