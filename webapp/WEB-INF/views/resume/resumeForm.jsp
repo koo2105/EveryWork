@@ -17,6 +17,11 @@
 body{
 	color: hsl(0, 0%, 50%);
 }
+
+.ta-question {
+	font-size: 18px;
+	font-weight: bold;
+}
 </style>
 </head>
 

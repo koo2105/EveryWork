@@ -348,8 +348,8 @@
 
 					<div class="search">
 
-						<img src="resources/img/search-01.png"> <input type="text"
-							id="employment_search_word" placeholder="기업명을 검색하세요.">
+						<!-- <img src="resources/img/search-01.png"> <input type="text"
+							id="employment_search_word" placeholder="기업명을 검색하세요."> -->
 					</div>
 
 

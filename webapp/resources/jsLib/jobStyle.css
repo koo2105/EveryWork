@@ -272,6 +272,9 @@ float: left;
 }
 
 
+
+
+
 .calendar-container .calendar-right-head .nav-search-bar {
     height: calc(100% - 42px);
     width: 100%;
@@ -396,14 +399,14 @@ float: left;
 .calendar-container element.style {
     width: calc((100% - 180px) - 17px);
 }
-.calendar-container .calendar-right-head {
+.calendar-container .calendar-right-head  {
     top: 0px;
     left: 180px;
     height: 70px;
     position: absolute;
     background: #f0f0f0;
     width: calc(100% - 180px);
-    z-index: 1;
+    
 }
 
 .calendar-container .calendar-right-head .nav-search-bar {
