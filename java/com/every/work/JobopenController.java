@@ -55,7 +55,6 @@ public class JobopenController {
 	
 	@RequestMapping(value = "/jobMain")
 	public ModelAndView jobMain(ModelAndView mv,JobCalendar jc) {
-		
 		//여기에 달력구현
 		Calendar cal = Calendar.getInstance();
 		String strYear = null;
@@ -66,7 +65,6 @@ public class JobopenController {
 		}else {
 			jc.setYear(cal.get(Calendar.YEAR));
 		}
-			
 		if(jc.getMonth()!=null) {
 			if(jc.getMonth()==0){
 				jc.setYear(Integer.parseInt(strYear)-1);
@@ -81,20 +79,19 @@ public class JobopenController {
 		}else {
 			jc.setMonth(cal.get(Calendar.MONTH)+1);
 		}
-		
 		if(jc.getDate()==null) {
 			jc.setDate(cal.get(Calendar.DATE));
 		}
-		
-
 		// 년 월 셋팅
 		cal.set(jc.getYear(), jc.getMonth()-1, 1);
 		jc.setStartDay(cal.getMinimum(java.util.Calendar.DATE));
 		jc.setEndDay(cal.getActualMaximum(java.util.Calendar.DAY_OF_MONTH));
 		jc.setStart(cal.get(java.util.Calendar.DAY_OF_WEEK));
 		
-		String sdc = Integer.toString(jc.getYear())+(Integer.toString(jc.getMonth()).length()==1 ? "0"+Integer.toString(jc.getMonth()):Integer.toString(jc.getMonth()))+"01";
-		String edc = Integer.toString(jc.getYear())+(Integer.toString(jc.getMonth()).length()==1 ? "0"+Integer.toString(jc.getMonth()):Integer.toString(jc.getMonth()))+jc.getEndDay();
+		String sdc = Integer.toString(jc.getYear())+(Integer.toString(jc.getMonth()).length()==1 ? 
+				"0"+Integer.toString(jc.getMonth()):Integer.toString(jc.getMonth()))+"01";
+		String edc = Integer.toString(jc.getYear())+(Integer.toString(jc.getMonth()).length()==1 ? 
+				"0"+Integer.toString(jc.getMonth()):Integer.toString(jc.getMonth()))+jc.getEndDay();
 		jc.setSdateCheck(sdc);
 		jc.setEdateCheck(edc);
 		ArrayList<JobopenVO> joblist = service.jobopenMonList(jc);
@@ -105,8 +102,6 @@ public class JobopenController {
 		System.out.println("공고리스트가 나오나?"+joblist);
 		mv.addObject("joblist",joblist);
 		mv.addObject("jc",jc);
-		
-		
 		mv.setViewName("jobOpening/jobMain");
 		return mv;
 	}
@@ -139,7 +134,6 @@ public class JobopenController {
 		}else {
 			jc.setMonth(cal.get(Calendar.MONTH)+1);
 		}
-		
 		if(jc.getDate()==null) {
 			jc.setDate(cal.get(Calendar.DATE));
 		}
