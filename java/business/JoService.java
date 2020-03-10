@@ -24,4 +24,5 @@ public interface JoService {
 	public ArrayList<JobopenVO> jobopenMonList(JobCalendar jc);
 	ArrayList<JobopenVO> scrapMonList(JobCalendar jc);
 	int scrapInsert(JobCalendar jc);
+	ScrapVO scrapCheck(JobopenVO vo);
 }

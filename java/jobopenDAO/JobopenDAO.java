@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import calendar.JobCalendar;
+import vo.EmemberVO;
 import vo.JobcategoryVO;
 import vo.JobopenVO;
 import vo.JobqaVO;
@@ -65,6 +66,10 @@ public class JobopenDAO {
 		}
 		return cnt;
 	} //scrapInsert()
+	
+	public ScrapVO scrapCheck(JobopenVO vo) {
+		return dao.selectOne(NS+"scrapCheck",vo);	
+	}
 	
 
 

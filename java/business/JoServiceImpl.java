@@ -65,5 +65,10 @@ public class JoServiceImpl implements JoService {
 	public int scrapInsert(JobCalendar jc) {
 		return dao.scrapInsert(jc);
 	}
+
+	@Override
+	public ScrapVO scrapCheck(JobopenVO vo) {
+		return dao.scrapCheck(vo);
+	}
 	
 }

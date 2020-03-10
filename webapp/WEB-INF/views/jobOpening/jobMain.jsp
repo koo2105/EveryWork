@@ -27,10 +27,15 @@
 				emem_id : emem_id,
 				jobopen_id : jobopen_id
 			},
-			success : function(result) {
-				alert('추가되었습니다.');
+			success : function(data) {
+				if(data.code==200){
+					alert('적용되었습니다.');
+				}else{
+					alert('적용되지 않았습니다.');
+				}
 			}
 		});
+	location.reload();	
 	}
 </script>
 </head>
@@ -463,7 +468,7 @@
 															<div class="calendar-label end">끝</div>
 														</c:if>
 														<div class="company-name">
-															<span onclick="jDetailOpen('${jl.jobopen_id}')">${jl.jobopen_company}</span>
+															<span onclick="jDetailOpen('${jl.jobopen_id}','${loginID}')">${jl.jobopen_company}</span>
 														</div>
 													</div>
 													<div class="favorite">

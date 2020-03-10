@@ -20,6 +20,7 @@ public class JobopenVO {
 	private String calendarDate;
 	private ArrayList<String> jc_div;
 	private ArrayList<String> jc_part;
+	private String emem_id;
 	public int getJobopen_id() {
 		return jobopen_id;
 	}
@@ -110,6 +111,12 @@ public class JobopenVO {
 	public void setJc_part(ArrayList<String> jc_part) {
 		this.jc_part = jc_part;
 	}
+	public String getEmem_id() {
+		return emem_id;
+	}
+	public void setEmem_id(String emem_id) {
+		this.emem_id = emem_id;
+	}
 	@Override
 	public String toString() {
 		return "JobopenVO [jobopen_id=" + jobopen_id + ", admin_id=" + admin_id + ", jobopen_pimg=" + jobopen_pimg
@@ -117,9 +124,8 @@ public class JobopenVO {
 				+ jobopen_link + ", jobopen_sdate=" + jobopen_sdate + ", jobopen_edate=" + jobopen_edate
 				+ ", jobopen_cimg=" + jobopen_cimg + ", jobopen_cimgf=" + jobopen_cimgf + ", jobopen_count="
 				+ jobopen_count + ", endDday=" + endDday + ", calendarDate=" + calendarDate + ", jc_div=" + jc_div
-				+ ", jc_part=" + jc_part + "]";
+				+ ", jc_part=" + jc_part + ", emem_id=" + emem_id + "]";
 	}
-	
 	
 	
 

@@ -15,11 +15,12 @@ function filtering(){
 	$('#filtering-container').toggle();
 }
 
-function jDetailOpen(jobopen_id){
+function jDetailOpen(jobopen_id,loginID){
 	$.ajax({
 		type:'Post',
 		url:'jobopenDetail',
 		data:{
+			emem_id:loginID,
 		jobopen_id:jobopen_id,
 		
 		},

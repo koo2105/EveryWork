@@ -106,8 +106,12 @@ function resumeOpen(){
 										<div class="ec-info-content ec-name">
 											<span class="ng-binding">${jDetail.jobopen_company}</span> 
 											<!-- 별모양 -->
-											<img class="toggle-favorite ng-hide" src="resources/img/star_unselect.png"> 
-											<img class="toggle-favorite" src="resources/img/star_select.png">
+											<c:if test="${starCheck=='T'}">
+												<img class="toggle-favorite" src="resources/img/star_select.png">
+											</c:if>
+											<c:if test="${starCheck=='F' || starCheck==null}">
+												<img class="toggle-favorite ng-hide" src="resources/img/star_unselect.png">												
+											</c:if>
 										</div>
 										<div class="ec-info-content period">
 											<!-- ngIf: item.recruit_type === 0 -->

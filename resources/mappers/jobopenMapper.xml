@@ -22,8 +22,7 @@
 	</select>
 
 	<select id="jobopenDetail" resultType="vo.JobopenVO">
-		select * from jobopen
-		where jobopen_id=#{jobopen_id}
+		select * from jobopen where jobopen_id=#{jobopen_id} 
 	</select>
 
 
@@ -82,6 +81,8 @@
 		update jobopen set jobopen_count=((select jobopen_count from jobopen where
 		jobopen_id=#{jobopen_id})+1) where jobopen_id=#{jobopen_id}
 	</update>
+	
+
 	
 	
 </mapper>
